@@ -32,7 +32,18 @@ Work Experience
   
 Skills
 ======
-* [Add your skills here]
+* Machine Learning & Deep Learning
+* Graph Neural Networks
+* Natural Language Processing
+* Human-Computer Interaction
+* Python, Java, JavaScript
+* Research Design & Data Analysis
+
+Personal Interests
+======
+* 🎾 Tennis
+* 💻 Technology Exploration
+* 📚 Academic Research
 
 Publications
 ======

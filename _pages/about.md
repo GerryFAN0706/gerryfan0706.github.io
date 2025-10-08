@@ -13,6 +13,8 @@ Welcome to my academic website!
 
 I am currently a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and a Ph.D. candidate in Computer Science at Universiti Malaya. My research focuses on Human-Computer Interaction, Artificial Intelligence, and their applications in various domains including education, healthcare, and creative systems.
 
+In my free time, I enjoy playing tennis and exploring new technologies.
+
 ## Research Interests
 
 * Human-AI Interaction and Collaboration
@@ -33,5 +35,7 @@ I am currently a Lecturer at the School of Computer Science and Technology, Taiy
 Taiyuan University of Science and Technology, Taiyuan, China (2018 - Present)
 
 ## Contact
+
+📧 Email: fgr@tyust.edu.cn
 
 Feel free to reach out for research collaboration or academic inquiries.
