@@ -62,7 +62,3 @@ Teaching
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Awards and Honors
-======
-* [Add your awards and honors here]
