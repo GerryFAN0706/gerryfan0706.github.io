@@ -1,5 +1,5 @@
 ---
-title: "Mapping Override Behavior: Investigating Why and How Artists Reject AI Suggestions in Collaborative Creation"
+title: "Mapping Override Behavior: Investigating Why and How Artists Reject AI Suggestions in Collaborative Creation (CCF C)"
 collection: publications
 category: conferences
 permalink: /publication/2025-ijcnn-override-behavior

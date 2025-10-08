@@ -1,5 +1,5 @@
 ---
-title: "The impact of power posing on presentation performance and self-efficacy in higher education: An embodied cognition approach"
+title: "The impact of power posing on presentation performance and self-efficacy in higher education: An embodied cognition approach (SCI 中科院Q4)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ieti-power-posing

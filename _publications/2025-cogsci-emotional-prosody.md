@@ -1,5 +1,5 @@
 ---
-title: "When Machines Speak with Feeling: Investigating Emotional Prosody, Authenticity, and Trust in AI vs. Human Voices"
+title: "When Machines Speak with Feeling: Investigating Emotional Prosody, Authenticity, and Trust in AI vs. Human Voices (CCF B)"
 collection: publications
 category: conferences
 permalink: /publication/2025-cogsci-emotional-prosody

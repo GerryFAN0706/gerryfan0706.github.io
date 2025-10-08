@@ -1,5 +1,5 @@
 ---
-title: "DocPINN: A Neural PDE-Based Framework for Document Image Dewarping"
+title: "DocPINN: A Neural PDE-Based Framework for Document Image Dewarping (CCF C)"
 collection: publications
 category: conferences
 permalink: /publication/2025-icdar-docpinn

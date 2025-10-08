@@ -1,5 +1,5 @@
 ---
-title: "Optimizing Operating Room Scheduling Through Multi-Level Learning and Column Generation: A Novel Hybrid Approach"
+title: "Optimizing Operating Room Scheduling Through Multi-Level Learning and Column Generation: A Novel Hybrid Approach (SCI 中科院Q3)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-hcms-operating-room

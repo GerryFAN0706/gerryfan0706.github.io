@@ -1,5 +1,5 @@
 ---
-title: "The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance: a comparative study with traditional pair programming and individual approaches"
+title: "The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance: a comparative study with traditional pair programming and individual approaches (SCI 中科院Q1 Top)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ijse-ai-pair-programming

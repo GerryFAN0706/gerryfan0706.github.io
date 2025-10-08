@@ -1,5 +1,5 @@
 ---
-title: "Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey"
+title: "Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey (SCI 中科院Q1 Top)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-acme-gnn-survey

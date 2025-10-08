@@ -1,5 +1,5 @@
 ---
-title: "Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading"
+title: "Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading (CCF B)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ijhci-mobile-reading

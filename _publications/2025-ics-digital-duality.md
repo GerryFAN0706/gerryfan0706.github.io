@@ -1,5 +1,5 @@
 ---
-title: "Digital duality: negotiating tradition, modernity, and identity among rural housewife Douyin creators in China"
+title: "Digital duality: negotiating tradition, modernity, and identity among rural housewife Douyin creators in China (SCI 中科院Q4)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ics-digital-duality

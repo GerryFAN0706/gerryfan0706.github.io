@@ -1,5 +1,5 @@
 ---
-title: "DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting"
+title: "DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting (SCI 中科院Q1 Top)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-eaai-dynakey-gnn

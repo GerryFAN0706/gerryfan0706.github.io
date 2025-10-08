@@ -1,5 +1,5 @@
 ---
-title: "Co-Constructing Meaning with Large Language Models: A Longitudinal Analysis of Human-AI Dialogues in Emotional Support Contexts"
+title: "Co-Constructing Meaning with Large Language Models: A Longitudinal Analysis of Human-AI Dialogues in Emotional Support Contexts (CCF B)"
 collection: publications
 category: conferences
 permalink: /publication/2025-cogsci-meaning-construction

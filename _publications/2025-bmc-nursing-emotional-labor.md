@@ -1,5 +1,5 @@
 ---
-title: "Emotional labor and coping strategies of gynecological nurses in recurrent pregnancy loss care: a qualitative phenomenological study"
+title: "Emotional labor and coping strategies of gynecological nurses in recurrent pregnancy loss care: a qualitative phenomenological study (SCI 中科院Q2)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-bmc-nursing-emotional-labor

@@ -1,5 +1,5 @@
 ---
-title: "ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Training for Improved ICU Length-of-Stay Prediction"
+title: "ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Training for Improved ICU Length-of-Stay Prediction (SCI 中科院Q3)"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ieee-access-contrastlos

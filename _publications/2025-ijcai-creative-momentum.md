@@ -1,5 +1,5 @@
 ---
-title: "Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation"
+title: "Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation (CCF A)"
 collection: publications
 category: conferences
 permalink: /publication/2025-ijcai-creative-momentum
