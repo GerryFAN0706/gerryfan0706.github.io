@@ -1,15 +1,25 @@
 ---
 permalink: /
-title: "About Me"
+title: "Home"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Welcome to my academic website!
+## 📰 News
+
+**[2025]** 🏆 Received **First-Class Paper Award** and **Best Presentation Award** at CPEC2025 (第九届中国计算机实践教育学术会议)
+
+**[2025]** 🎤 Oral presentation at **IJCAI 2025 Satellite Event** in Guangzhou, China
+
+**[2025]** 📝 Multiple papers accepted at top-tier conferences and journals including **IJCAI (CCF A)**, **CogSci (CCF B)**, and SCI Q1 journals
+
+---
 
 ## About Me
+
+Welcome to my academic website!
 
 I am currently a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and a Ph.D. candidate in Computer Science at Universiti Malaya. My research focuses on Human-Computer Interaction, Artificial Intelligence, and their applications in various domains including education, healthcare, and creative systems.
 
