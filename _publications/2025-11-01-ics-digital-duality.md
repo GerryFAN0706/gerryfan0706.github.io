@@ -3,7 +3,7 @@ title: "Digital duality: negotiating tradition, modernity, and identity among ru
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ics-digital-duality
-date: 2025-01-01
+date: 2025-11-01
 venue: 'Information, Communication & Society'
 citation: 'Liu, D., & Fan, G. (2025). Digital duality: negotiating tradition, modernity, and identity among rural housewife Douyin creators in China. <i>Information, Communication & Society</i>, 1-18.'
 ---

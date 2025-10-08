@@ -3,7 +3,7 @@ title: "Optimizing Operating Room Scheduling Through Multi-Level Learning and Co
 collection: publications
 category: manuscripts
 permalink: /publication/2025-hcms-operating-room
-date: 2025-01-01
+date: 2025-06-01
 venue: 'Health Care Management Science'
 citation: 'Zhao, R., Quan, Y., & Fan, G. (2025). Optimizing Operating Room Scheduling Through Multi-Level Learning and Column Generation: A Novel Hybrid Approach. <i>Health Care Management Science</i>.'
 ---

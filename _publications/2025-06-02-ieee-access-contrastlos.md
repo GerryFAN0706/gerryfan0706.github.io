@@ -3,7 +3,7 @@ title: "ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Trai
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ieee-access-contrastlos
-date: 2025-01-01
+date: 2025-06-02
 venue: 'IEEE Access'
 citation: 'Fan, G., Liu, A., & Zhang, C. (2025). ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Training for Improved ICU Length-of-Stay Prediction. <i>IEEE Access</i>.'
 ---
