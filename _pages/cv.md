@@ -11,14 +11,24 @@ redirect_from:
 
 Education
 ======
-* [Add your degree, institution, year]
-* [Add your degree, institution, year]
+* **Ph.D. in Computer Science**, Universiti Malaya, Malaysia (In Progress)
+  * Programme: Doctor of Philosophy
+  * Field of Study: Computing (Computer Science)
+  * Mode: Postgraduate Doctorate Research
+
+* **M.S. in Software Engineering**, Shanghai Jiao Tong University, China, 2018
+  * School of Software
+  * September 2014 - February 2018
+
+* **B.S. in Software Engineering**, Huazhong University of Science and Technology, China, 2014
+  * School of Software
+  * September 2010 - June 2014
 
 Work Experience
 ======
-* [Add your work experience]
-  * Institution/Company
-  * Description of role and responsibilities
+* **Lecturer** (June 2018 - Present)
+  * School of Computer Science and Technology
+  * Taiyuan University of Science and Technology, Taiyuan, China
   
 Skills
 ======

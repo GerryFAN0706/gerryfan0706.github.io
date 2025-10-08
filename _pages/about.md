@@ -11,16 +11,27 @@ Welcome to my academic website!
 
 ## About Me
 
-[Add your introduction here. Tell visitors about your background, research interests, and academic journey.]
+I am currently a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and a Ph.D. candidate in Computer Science at Universiti Malaya. My research focuses on Human-Computer Interaction, Artificial Intelligence, and their applications in various domains including education, healthcare, and creative systems.
 
 ## Research Interests
 
-[List your research interests here]
+* Human-AI Interaction and Collaboration
+* AI in Education and Creative Support Systems
+* Graph Neural Networks and Deep Learning
+* Healthcare Informatics and Medical AI
+* Natural Language Processing and Emotional Computing
 
 ## Education
 
-[Add your educational background here]
+* **Ph.D. in Computer Science**, Universiti Malaya, Malaysia (In Progress)
+* **M.S. in Software Engineering**, Shanghai Jiao Tong University, China (2018)
+* **B.S. in Software Engineering**, Huazhong University of Science and Technology, China (2014)
+
+## Current Position
+
+**Lecturer**, School of Computer Science and Technology  
+Taiyuan University of Science and Technology, Taiyuan, China (2018 - Present)
 
 ## Contact
 
-[Add your contact information or preferred method of contact here]
+Feel free to reach out for research collaboration or academic inquiries.
