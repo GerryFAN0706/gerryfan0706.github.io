@@ -47,7 +47,9 @@ Personal Interests
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
+  <!-- Sort publications by rank (lower rank number = higher priority) -->
+  {% assign sorted_pubs = site.publications | sort: "rank" %}
+  <ul>{% for post in sorted_pubs %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
