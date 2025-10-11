@@ -41,8 +41,6 @@ I investigate how people interact with, trust, and are influenced by AI systems 
 - **Trust & Authenticity**: Examining how users perceive and respond to AI-generated content, from emotional prosody to text summaries
 - **Healthcare Informatics**: Exploring human factors in clinical AI adoption and technology-mediated care
 
-My work bridges computational modeling and empirical behavioral research, employing mixed-methods approaches to develop AI systems that are both technically robust and human-centered.
-
 ## Education
 
 * **Ph.D. in Computer Science**, Universiti Malaya, Malaysia (In Progress)
