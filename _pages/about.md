@@ -29,11 +29,21 @@ In my free time, I enjoy playing tennis and exploring new technologies.
 
 ## Research Interests
 
-* Human-AI Interaction and Collaboration
-* AI in Education and Creative Support Systems
-* Graph Neural Networks and Deep Learning
-* Healthcare Informatics and Medical AI
-* Natural Language Processing and Emotional Computing
+My research spans two interconnected areas of **Artificial Intelligence**: the **technical foundations** of intelligent systems and their **human-centered applications**.
+
+**Graph Machine Learning & Algorithm Design**  
+I develop advanced machine learning algorithms based on graph theory, focusing on:
+- **Graph Neural Networks**: Designing efficient architectures for spatio-temporal prediction (traffic flow forecasting, healthcare analytics)
+- **Graph Unlearning**: Developing methods for selective information removal in graph-structured data
+- **Dynamic Graph Learning**: Capturing temporal evolution and key-node identification in large-scale networks
+
+**Human-AI Interaction & Behavioral Computing**  
+I investigate how people interact with, trust, and are influenced by AI systems across diverse contexts:
+- **AI in Education & Creativity**: Understanding cognitive and emotional impacts of AI-assisted tools on learning, creative production, and collaborative work
+- **Trust & Authenticity**: Examining how users perceive and respond to AI-generated content, from emotional prosody to text summaries
+- **Healthcare Informatics**: Exploring human factors in clinical AI adoption and technology-mediated care
+
+My work bridges computational modeling and empirical behavioral research, employing mixed-methods approaches to develop AI systems that are both technically robust and human-centered.
 
 ## Education
 
