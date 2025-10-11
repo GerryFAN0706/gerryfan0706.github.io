@@ -3,7 +3,8 @@ title: "DocPINN: A Neural PDE-Based Framework for Document Image Dewarping (CCF 
 collection: publications
 category: conferences
 permalink: /publication/2025-icdar-docpinn
-date: 2025-07-02
+date: 2025-09-05
+rank: 3
 venue: 'International Conference on Document Analysis and Recognition (ICDAR 2025)'
 citation: 'Fan, G. (2025). DocPINN: A Neural PDE-Based Framework for Document Image Dewarping. In <i>International Conference on Document Analysis and Recognition 2025 (ICDAR 2025)</i>.'
 ---

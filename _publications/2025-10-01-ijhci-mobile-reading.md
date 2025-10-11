@@ -3,7 +3,8 @@ title: "Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehen
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ijhci-mobile-reading
-date: 2025-10-01
+date: 2025-06-18
+rank: 2
 venue: 'International Journal of Human–Computer Interaction'
 citation: 'Fan, G., Liu, D., & Huang, Y. (2025). Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading. <i>International Journal of Human–Computer Interaction</i>.'
 ---

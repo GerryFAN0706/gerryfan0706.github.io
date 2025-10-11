@@ -3,7 +3,8 @@ title: "Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A 
 collection: publications
 category: manuscripts
 permalink: /publication/2025-acme-gnn-survey
-date: 2025-11-02
+date: 2025-08-25
+rank: 1
 venue: 'Archives of Computational Methods in Engineering'
 citation: 'Fan, G., Sabri, A. Q. M., Rahman, S. S. A., Pan, L., & Rahardja, S. (2025). Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey. <i>Archives of Computational Methods in Engineering</i>, 1-45.'
 ---

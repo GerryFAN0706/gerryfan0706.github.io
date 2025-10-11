@@ -3,7 +3,8 @@ title: "The impact of power posing on presentation performance and self-efficacy
 collection: publications
 category: manuscripts
 permalink: /publication/2025-ieti-power-posing
-date: 2025-05-01
+date: 2025-05-10
+rank: 5
 venue: 'Innovations in Education and Teaching International'
 citation: 'Deng, W., Liu, D., & Fan, G. (2025). The impact of power posing on presentation performance and self-efficacy in higher education: An embodied cognition approach. <i>Innovations in Education and Teaching International</i>, 1-18.'
 ---

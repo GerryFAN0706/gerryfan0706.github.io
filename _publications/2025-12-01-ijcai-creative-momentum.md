@@ -3,7 +3,8 @@ title: "Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Sh
 collection: publications
 category: conferences
 permalink: /publication/2025-ijcai-creative-momentum
-date: 2025-12-01
+date: 2025-08-10
+rank: 1
 venue: 'International Joint Conferences on Artificial Intelligence (IJCAI)'
 citation: 'Fan, G., Liu, D., Pan, L., & Huang, Y. (2025). Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation. In <i>International Joint Conferences on Artificial Intelligence (IJCAI)</i>.'
 ---

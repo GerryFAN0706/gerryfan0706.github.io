@@ -15,6 +15,8 @@ redirect_from:
 
 **[2025]** 📝 Multiple papers accepted at top-tier conferences and journals including **IJCAI (CCF A)**, **CogSci (CCF B)**, and SCI Q1 journals
 
+**[2025-10]** 📄 Paper accepted by **Journal of Healthcare Leadership** (中科院2区): "Long-Term Effects of Structured Microbreak Interventions on Musculoskeletal Health, Psychological Wellbeing, and Patient Safety Among Operating Room Nurses"
+
 ---
 
 ## About Me

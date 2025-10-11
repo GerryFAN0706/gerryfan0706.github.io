@@ -3,7 +3,8 @@ title: "Mapping Override Behavior: Investigating Why and How Artists Reject AI S
 collection: publications
 category: conferences
 permalink: /publication/2025-ijcnn-override-behavior
-date: 2025-07-01
+date: 2025-06-30
+rank: 3
 venue: '2025 International Joint Conference on Neural Networks (IJCNN)'
 citation: 'Fan, G., Liu, D., Pan, L., & Huang, Y. (2025). Mapping Override Behavior: Investigating Why and How Artists Reject AI Suggestions in Collaborative Creation. In <i>2025 International Joint Conference on Neural Networks (IJCNN)</i>. IEEE.'
 ---

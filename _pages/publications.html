@@ -15,10 +15,11 @@ author_profile: true
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
+    
+    <!-- Sort publications by rank (lower rank number = higher priority) -->
+    {% assign sorted_pubs = site.publications | where: "category", category[0] | sort: "rank" %}
+    
+    {% for post in sorted_pubs %}
       {% unless title_shown %}
         <h2>{{ category[1].title }}</h2><hr />
         {% assign title_shown = true %}
@@ -27,7 +28,8 @@ author_profile: true
     {% endfor %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
+  {% assign sorted_pubs = site.publications | sort: "rank" %}
+  {% for post in sorted_pubs %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
