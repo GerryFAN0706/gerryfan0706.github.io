@@ -46,6 +46,23 @@ In my free time, I enjoy playing tennis and exploring new technologies.
 **Lecturer**, School of Computer Science and Technology  
 Taiyuan University of Science and Technology, Taiyuan, China (2018 - Present)
 
+## Professional Service
+
+### Conference & Journal Reviewer
+
+* **CHI 2026** - Conference on Human Factors in Computing Systems (CCF A)
+* **Engineering Applications of Artificial Intelligence** (EAAI, SCI 中科院Q1 Top)
+* **International Journal of STEM Education** (SCI 中科院Q1 Top)
+* **Information, Communication & Society** (SSCI 中科院Q1 Top)
+
+<!-- 
+### Conference Organization
+* TBD
+
+### Program Committee & Chair
+* TBD
+-->
+
 ## Contact
 
 📧 Email: fgr@tyust.edu.cn
