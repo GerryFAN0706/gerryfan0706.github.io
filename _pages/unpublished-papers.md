@@ -69,7 +69,7 @@ ___
 
 ## Conferences
 
-### Fse2026: Mon 22 Dec 2025 *Research Papers* Initial notification
+### Fse2026: Mon 22 Dec 2025 *Research Papers* Initial notification  Fri 21 - Tue 25 Nov 2025 Author response
 
 ### CHI: **2025-11-04** Reviews Released
 
@@ -81,7 +81,7 @@ ___
 
 ## ✍️ 写作中（In Progress）
 
-### ICML *3 
+### ICML *3  [Seoul, Korea ]
 - **开始日期：** 2025-XX-XX
 - **目标期刊/会议：** [期刊/会议名称]
 - **预计投稿时间：** 2025-XX-XX
@@ -92,6 +92,10 @@ ___
   - [ ] 论文撰写
   - [ ] 内部审阅
 - **备注：** 
+
+### IJCAI *3 (Bremen, Germany) Unlearning, Traffic, and one more 
+
+### ACL *4  [San Diego, California, United States] (collecting ideas)
 
 ---
 
