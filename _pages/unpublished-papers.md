@@ -59,12 +59,12 @@ ___
 - **预计结果时间：** 2026-02
 - **备注：** 1区top
 
-### Paper Title 2
+### The Consent Illusion: How Label Wording and Placement Shape Perceived Permission for Real‑Person AI Video in China
 
-- **投稿日期：** 2025-XX-XX
-- **目标期刊/会议：** [期刊/会议名称]
-- **当前状态：** Under Review
-- **预计结果时间：** 2025-XX-XX
+- **投稿日期：** 2025-10-11
+- **目标期刊/会议：** TOCHI
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-03
 - **备注：** 
 
 ## Conferences
@@ -123,6 +123,7 @@ ___
     <li>页面链接：<code>https://gerryfan0706.github.io/unpublished/</code></li>
   </ul>
 </div>
+
 
 
 
