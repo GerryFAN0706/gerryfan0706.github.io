@@ -46,7 +46,7 @@ ___
 ### "Fairness Labels" in Feeds: Process Disclosures, Provenance, and User Choice Among Short‑Video Creators in Mainland China
 
 - **投稿日期：** 2025-10-03
-- **目标期刊/会议：** Information, Communication & Society
+- **目标期刊/会议：** Social media + society
 - **当前状态：** With Journal Administrator
 - **预计结果时间：** 2026-02
 - **备注：** 1区top
