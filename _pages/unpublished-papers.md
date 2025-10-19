@@ -71,11 +71,13 @@ ___
 
 ### Fse2026: Mon 22 Dec 2025 *Research Papers* Initial notification  Fri 21 - Tue 25 Nov 2025 Author response
 
-### CHI: **2025-11-04** Reviews Released
+### CHI: **2025-11-04** Reviews Released  **2025-12-04** Resubmission Due **2026-01-15** Decisions Notification
 
 ### AAAI: **November 3, 2025 **Notification of final acceptance or rejection
 
-### WWW: **Authors' rebuttal period:** November 24th - December 1st
+### WWW: **Authors' rebuttal period:** November 24th - December 1st  Paper notification	January 13, 2026
+
+WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** November 30, 2025 **Notification:** January 13, 2026
 
 ---
 
@@ -127,7 +129,6 @@ ___
     <li>页面链接：<code>https://gerryfan0706.github.io/unpublished/</code></li>
   </ul>
 </div>
-
 
 
 
