@@ -62,7 +62,7 @@ ___
 ### The Consent Illusion: How Label Wording and Placement Shape Perceived Permission for Real‑Person AI Video in China
 
 - **投稿日期：** 2025-10-11
-- **目标期刊/会议：** TOCHI
+- 目标期刊/会议：ACM Transactions on Interactive Intelligent Systems// International Journal of Human‑Computer Studies
 - **当前状态：** Submitted
 - **预计结果时间：** 2026-03
 - **备注：** 
