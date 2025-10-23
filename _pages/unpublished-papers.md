@@ -148,3 +148,10 @@ WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** No
 
 
 
+# 想法汇总
+
+1 traffic evaluation: 预测公平性；propose new metrics 
+
+2 out-of-distribution evaluation 
+
+3 cluster and study 3 的idea [利用一些现有高效模型 扩充 改进]
