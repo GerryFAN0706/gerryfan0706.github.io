@@ -77,7 +77,7 @@ ___
 
 ### WWW: **Authors' rebuttal period:** November 24th - December 1st  Paper notification	January 13, 2026
 
-WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** November 30, 2025 **Notification:** January 13, 2026
+WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** November 30, 2025 **Notification:** January 13, 2026  【Liu*2】
 
 ---
 
@@ -117,6 +117,11 @@ WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** No
 ## 🔄 需要修改重投（Revise & Resubmit）
 
 
+
+## 可以申请的各种项目信息
+
+1. 教 育 部科 学 研 究 优 秀 成 果 奖 （ 人 文 社 会 科 学 ）申 报 工 作  【2026-10】
+2. 
 
 ---
 
