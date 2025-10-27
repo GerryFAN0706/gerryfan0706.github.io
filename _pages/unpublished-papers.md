@@ -10,7 +10,7 @@ sitemap: false
 <div style="background-color: #fff3cd; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ffc107; border-radius: 4px;">
   <strong>⚠️ 注意：</strong> 本页面仅用于个人记录和跟踪正在进行中的论文项目，不对外公开展示。请勿分享此链接。
 </div>
-## 📝 在投稿阶段（Under Review）'
+## 📝 在投稿阶段（Under Review）
 
 ## Journals
 
@@ -54,7 +54,7 @@ ___
 ### Seeing Is Believing? Do Douyin‑Style AI‑Generated Videos Induce False Episodic Memories for Real‑Person Events? A Two‑Wave Online Experiment
 
 - **投稿日期：** 2025-10-07
-- **目标期刊/会议：** New Media & Society
+- **目标期刊/会议：** Bid data & society; TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE
 - **当前状态：** With Journal Administrator
 - **预计结果时间：** 2026-02
 - **备注：** 1区top
@@ -62,10 +62,20 @@ ___
 ### The Consent Illusion: How Label Wording and Placement Shape Perceived Permission for Real‑Person AI Video in China
 
 - **投稿日期：** 2025-10-11
-- 目标期刊/会议：ACM Transactions on Interactive Intelligent Systems// International Journal of Human‑Computer Studies
+- 目标期刊/会议：International Journal of Human‑Computer Studies/Maybe ICA 年会
 - **当前状态：** Submitted
 - **预计结果时间：** 2026-03
 - **备注：** 
+
+### Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin
+
+- **投稿日期：** 2025-9-16 （返修）
+- 目标期刊：Journal of Rural Studies
+- **当前状态：** Underview (2/3)
+- **预计结果时间：** 2025-12
+- **备注：** 
+
+
 
 ## Conferences
 
