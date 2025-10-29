@@ -1,5 +1,5 @@
 ---
-permalink: /workshop/ai-personalized-experiment-design/
+permalink: /workshop/aiedu/experiment/
 title: "个性化实验设计生成器 - Java Web开发课程应用案例"
 author_profile: false
 layout: single
@@ -458,7 +458,7 @@ layout: single
 </style>
 
 <div class="demo-container">
-  <a href="/workshop/ai-teaching-demo-oct2025/" class="back-button">← 返回案例总览</a>
+  <a href="/workshop/aiedu/" class="back-button">← 返回案例总览</a>
 
   <div class="hero-section">
     <h1>🔬 个性化实验设计生成器</h1>
@@ -1353,7 +1353,7 @@ scenarios = [
   </section>
 
   <div style="text-align: center; margin: 40px 0;">
-    <a href="/workshop/ai-teaching-demo-oct2025/" class="back-button">← 返回案例总览</a>
+    <a href="/workshop/aiedu/" class="back-button">← 返回案例总览</a>
   </div>
 
 </div>

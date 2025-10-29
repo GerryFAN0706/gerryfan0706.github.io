@@ -1,5 +1,5 @@
 ---
-permalink: /workshop/ai-code-review-java-web/
+permalink: /workshop/aiedu/code-review/
 title: "智能代码审查助手 - Java Web开发课程应用案例"
 author_profile: false
 layout: single
@@ -450,7 +450,7 @@ layout: single
 </style>
 
 <div class="demo-container">
-  <a href="/workshop/ai-teaching-demo-oct2025/" class="back-button">← 返回案例总览</a>
+  <a href="/workshop/aiedu/" class="back-button">← 返回案例总览</a>
 
   <div class="hero-section">
     <h1>💻 智能代码审查助手</h1>
@@ -927,7 +927,7 @@ layout: single
   </section>
 
   <div style="text-align: center; margin: 40px 0;">
-    <a href="/workshop/ai-teaching-demo-oct2025/" class="back-button">← 返回案例总览</a>
+    <a href="/workshop/aiedu/" class="back-button">← 返回案例总览</a>
   </div>
 
 </div>

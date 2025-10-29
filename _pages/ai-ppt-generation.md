@@ -1,5 +1,5 @@
 ---
-permalink: /workshop/ai-ppt-generation-design/
+permalink: /workshop/aiedu/ppt/
 title: "AI驱动的课程PPT生成 - 教学材料制作案例"
 author_profile: false
 layout: single
@@ -395,7 +395,7 @@ layout: single
 </style>
 
 <div class="demo-container">
-  <a href="/workshop/ai-teaching-demo-oct2025/" class="back-button">← 返回案例总览</a>
+  <a href="/workshop/aiedu/" class="back-button">← 返回案例总览</a>
 
   <div class="hero-section">
     <h1>📊 AI驱动的课程PPT生成</h1>
@@ -1670,7 +1670,7 @@ public class LoginServlet extends HttpServlet {
   </section>
 
   <div style="text-align: center; margin: 40px 0;">
-    <a href="/workshop/ai-teaching-demo-oct2025/" class="back-button">← 返回案例总览</a>
+    <a href="/workshop/aiedu/" class="back-button">← 返回案例总览</a>
   </div>
 
 </div>
