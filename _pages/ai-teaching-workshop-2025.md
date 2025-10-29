@@ -303,7 +303,7 @@ layout: single
       <div class="case-teacher">👨‍🏫 樊光瑞</div>
       <div class="case-category">实验设计</div>
       <p class="case-description">
-        利用GPT-4为每位学生生成定制化的编程实验题目，根据学生的学习进度和能力水平调整难度。
+        针对传统实验教学中抄袭严重的痛点，利用 GPT-4/Claude 为每位学生生成个性化的实验题目。相同的知识点，不同的业务场景，从源头杜绝抄袭，并根据学生能力分层设计难度。
       </p>
       <div class="case-tools">
         <span class="tool-tag">GPT-4</span>
@@ -311,18 +311,24 @@ layout: single
         <span class="tool-tag">自研平台</span>
       </div>
       <div class="case-expand">
-        <h4>📋 核心功能：</h4>
+        <h4>📋 解决的痛点：</h4>
         <ul>
-          <li>根据学生水平自动调整题目难度</li>
-          <li>生成多样化的测试用例</li>
-          <li>提供详细的参考答案和解题思路</li>
+          <li>传统实验学生抄袭严重（45% 代码高度相似）</li>
+          <li>一刀切的难度无法满足不同水平学生</li>
+          <li>教师每学期设计新题目工作量巨大</li>
         </ul>
-        <h4>✅ 教学效果：</h4>
+        <h4>✅ AI 解决方案：</h4>
         <ul>
-          <li>实验完成率提升至95%</li>
-          <li>学生满意度达92%</li>
-          <li>有效避免实验雷同</li>
+          <li>一人一题：为每个学生生成不同的实验场景</li>
+          <li>分层设计：基础/进阶/挑战三个难度层次</li>
+          <li>自动生成：完整的实验手册（含测试用例、评分标准）</li>
+          <li>从源头杜绝抄袭，代码相似度降至 < 5%</li>
         </ul>
+        <div style="margin-top: 20px; text-align: center;">
+          <a href="/workshop/ai-personalized-experiment-design/" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+            📖 查看完整案例详情 →
+          </a>
+        </div>
       </div>
       <span class="expand-icon">▼</span>
     </div>
