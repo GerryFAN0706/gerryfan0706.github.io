@@ -385,6 +385,9 @@ document.querySelectorAll('.case-card').forEach(card => {
     // 防止点击工具标签时触发
     if (e.target.classList.contains('tool-tag')) return;
     
+    // 防止点击链接时触发展开/收起
+    if (e.target.tagName === 'A' || e.target.closest('a')) return;
+    
     this.classList.toggle('expanded');
   });
 });
