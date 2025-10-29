@@ -996,12 +996,6 @@ layout: single
       </div>
     </div>
 
-    <div class="alert-box success">
-      <span class="alert-icon">📈</span>
-      <div>
-        <strong>实施效果：</strong>引入 AI 个性化实验后，代码相似度 > 80% 的情况从 <strong>45%</strong> 降至 <strong>< 5%</strong>（仅限确实抄袭的极端情况），学生必须独立完成实验，真实掌握知识点。
-      </div>
-    </div>
   </section>
 
   <!-- 实验手册生成示例 -->

@@ -262,6 +262,10 @@ layout: single
       <div class="case-category">代码教学</div>
       <p class="case-description">
         在 Java Web 开发课程中，以 Cursor 为主要工具，配合测试用例和课程大纲，实现智能化代码审查。自动识别安全问题、代码规范问题，检查知识点掌握情况，提供个性化改进建议。
+        <br><br>
+        <a href="/workshop/ai-code-review-java-web/" style="color: #2563eb; font-weight: 600; text-decoration: none; border-bottom: 2px solid #2563eb; padding-bottom: 2px;">
+          📖 查看详细案例 →
+        </a>
       </p>
       <div class="case-tools">
         <span class="tool-tag">Cursor (主要)</span>
@@ -304,6 +308,10 @@ layout: single
       <div class="case-category">实验设计</div>
       <p class="case-description">
         针对传统实验教学中抄袭严重的痛点，利用 GPT-4/Claude 为每位学生生成个性化的实验题目。相同的知识点，不同的业务场景，从源头杜绝抄袭，并根据学生能力分层设计难度。
+        <br><br>
+        <a href="/workshop/ai-personalized-experiment-design/" style="color: #2563eb; font-weight: 600; text-decoration: none; border-bottom: 2px solid #2563eb; padding-bottom: 2px;">
+          📖 查看详细案例 →
+        </a>
       </p>
       <div class="case-tools">
         <span class="tool-tag">GPT-4</span>
@@ -342,30 +350,39 @@ layout: single
       <div class="case-teacher">👨‍🏫 樊光瑞</div>
       <div class="case-category">教学材料制作</div>
       <p class="case-description">
-        利用AI工具快速生成专业、美观的课程PPT，包括内容组织、排版设计、图表生成等，大幅减轻教师备课负担。
+        在 Cursor 中使用纯文本（LaTeX Beamer 或 Markdown Marp）制作专业PPT。利用 AI 重构旧PPT内容，自动生成代码示例和图表，支持实时预览。通过 Git 版本管理，自动发布到 GitHub/Gitee。
+        <br><br>
+        <a href="/workshop/ai-ppt-generation-design/" style="color: #2563eb; font-weight: 600; text-decoration: none; border-bottom: 2px solid #2563eb; padding-bottom: 2px;">
+          📖 查看详细案例 →
+        </a>
       </p>
       <div class="case-tools">
-        <span class="tool-tag">Gamma AI</span>
-        <span class="tool-tag">Notion AI</span>
+        <span class="tool-tag">Cursor</span>
+        <span class="tool-tag">LaTeX Beamer</span>
+        <span class="tool-tag">Marp</span>
         <span class="tool-tag">GPT-4</span>
-        <span class="tool-tag">Canva AI</span>
+        <span class="tool-tag">Git</span>
       </div>
       <div class="case-expand">
-        <h4>📋 核心功能：</h4>
+        <h4>📋 两种技术路线：</h4>
         <ul>
-          <li>输入课程主题，AI自动生成完整PPT结构</li>
-          <li>智能选择合适的布局模板和配色方案</li>
-          <li>自动生成图表、示意图和可视化内容</li>
-          <li>代码示例的美化展示和语法高亮</li>
-          <li>演讲备注和教学要点自动生成</li>
+          <li><strong>LaTeX Beamer：</strong>适合数学公式多的理论课，学术风格</li>
+          <li><strong>Markdown (Marp)：</strong>适合代码多的实践课，现代风格</li>
+          <li>都在 Cursor 中完成，支持实时预览</li>
         </ul>
-        <h4>✅ 应用效果：</h4>
+        <h4>✅ 核心功能：</h4>
         <ul>
-          <li>PPT制作时间从4小时缩短至30分钟</li>
-          <li>视觉呈现专业度显著提升</li>
-          <li>学生课堂注意力集中度提高40%</li>
-          <li>可快速迭代更新课程内容</li>
+          <li><strong>PPT 重构：</strong>根据旧PPT和教学大纲，AI 智能重组内容</li>
+          <li><strong>自动添加示例：</strong>AI 生成代码示例、流程图、图表</li>
+          <li><strong>版本管理：</strong>Git 追踪每次修改，团队协作</li>
+          <li><strong>自动发布：</strong>推送到 GitHub/Gitee，一键部署</li>
+          <li>制作时间从 4 小时缩短至 30-40 分钟</li>
         </ul>
+        <div style="margin-top: 20px; text-align: center;">
+          <a href="/workshop/ai-ppt-generation-design/" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+            📖 查看完整案例详情 →
+          </a>
+        </div>
       </div>
       <span class="expand-icon">▼</span>
     </div>
@@ -373,7 +390,7 @@ layout: single
   </div>
 
   <div class="footer-note">
-    <p>💡 <strong>提示：</strong>点击案例卡片可查看详细信息</p>
+    <p>💡 <strong>提示：</strong>点击案例描述中的 "📖 查看详细案例 →" 链接可进入详细页面</p>
     <p>📧 如需交流讨论，请联系：fgr@tyust.edu.cn</p>
   </div>
 </div>
