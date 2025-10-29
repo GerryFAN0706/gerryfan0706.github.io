@@ -464,7 +464,6 @@ layout: single
     <a class="nav-pill" href="#cursor">💡 Cursor 使用详解</a>
     <a class="nav-pill" href="#testing">🧪 测试用例设置</a>
     <a class="nav-pill" href="#knowledge">📖 知识点检查</a>
-    <a class="nav-pill" href="#results">📊 教学效果</a>
   </div>
 
   <!-- 案例概述 -->
@@ -504,6 +503,17 @@ layout: single
       <span class="tool-badge">Tomcat</span>
       <span class="tool-badge">MySQL</span>
       <span class="tool-badge">Git</span>
+    </div>
+
+    <h3 style="margin-top: 30px; color: var(--dark-bg);">📄 课程项目要求</h3>
+    <div class="alert-box info">
+      <span class="alert-icon">📋</span>
+      <div>
+        <strong>项目要求文档：</strong>完整的 Java Web 开发课程项目要求和评分标准，请查看：<br>
+        <a href="/Java-Web开发 作业要求.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: var(--primary-color); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">
+          📥 下载项目要求文档 (PDF)
+        </a>
+      </div>
     </div>
   </section>
 
@@ -582,44 +592,7 @@ layout: single
       Cursor 使用详解
     </h2>
 
-    <h3 style="color: var(--dark-bg); margin-bottom: 20px;">为什么选择 Cursor 作为主要工具？</h3>
-    
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>功能特性</th>
-          <th>优势说明</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>AI 对话编程</strong></td>
-          <td>可以直接在编辑器中与 AI 对话，询问代码问题、获取解释和建议</td>
-        </tr>
-        <tr>
-          <td><strong>上下文理解</strong></td>
-          <td>理解整个项目结构，提供更准确的代码审查和建议</td>
-        </tr>
-        <tr>
-          <td><strong>代码生成与补全</strong></td>
-          <td>基于 GPT-4 的智能代码补全，比传统 IDE 更强大</td>
-        </tr>
-        <tr>
-          <td><strong>重构建议</strong></td>
-          <td>识别代码异味，提供自动重构方案</td>
-        </tr>
-        <tr>
-          <td><strong>多文件分析</strong></td>
-          <td>可以同时分析多个文件，发现跨文件的问题</td>
-        </tr>
-        <tr>
-          <td><strong>中文支持好</strong></td>
-          <td>适合中文教学场景，学生理解更容易</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">🎓 教学中的典型使用场景</h3>
+    <h3 style="color: var(--dark-bg); margin-bottom: 20px;">🎓 教学中的典型使用场景</h3>
 
     <div class="alert-box success">
       <span class="alert-icon">✅</span>
@@ -810,52 +783,6 @@ layout: single
 }</pre>
     </div>
 
-    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">🔧 如何在 Cursor 中运行测试</h3>
-
-    <div class="image-showcase">
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 1<br><br>
-          Cursor 终端中运行 Maven 测试<br>
-          <code>mvn test</code>
-        </div>
-        <div class="image-caption">
-          <h4>步骤 1：运行测试命令</h4>
-          <p>在 Cursor 的集成终端中执行 <code>mvn test</code>，查看所有测试用例的执行结果。</p>
-        </div>
-      </div>
-
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 2<br><br>
-          测试失败后的详细报告<br>
-          显示具体的错误信息
-        </div>
-        <div class="image-caption">
-          <h4>步骤 2：分析测试结果</h4>
-          <p>查看哪些测试失败了，Cursor 会高亮显示错误位置，可以直接跳转到相关代码。</p>
-        </div>
-      </div>
-
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 3<br><br>
-          使用 Cursor AI 分析测试失败原因<br>
-          Ctrl+K 询问 AI
-        </div>
-        <div class="image-caption">
-          <h4>步骤 3：AI 辅助调试</h4>
-          <p>选中失败的测试代码，使用 Cursor AI 分析原因："为什么这个测试失败了？如何修复？"</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="alert-box warning">
-      <span class="alert-icon">⚠️</span>
-      <div>
-        <strong>教学提示：</strong>不要直接告诉学生答案！引导学生使用 Cursor 的 AI 功能自己分析问题、理解测试失败的原因，培养独立解决问题的能力。
-      </div>
-    </div>
   </section>
 
   <!-- 知识点检查 -->
@@ -997,233 +924,6 @@ layout: single
       </div>
     </div>
 
-    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">📊 知识点掌握度统计</h3>
-
-    <div class="metrics-grid">
-      <div class="metric-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-        <div class="metric-value">85%</div>
-        <div class="metric-label">知识点覆盖率</div>
-      </div>
-
-      <div class="metric-card" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
-        <div class="metric-value">78%</div>
-        <div class="metric-label">代码规范度</div>
-      </div>
-
-      <div class="metric-card" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-        <div class="metric-value">3.2</div>
-        <div class="metric-label">平均迭代次数</div>
-      </div>
-
-      <div class="metric-card" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
-        <div class="metric-value">92%</div>
-        <div class="metric-label">最终通过率</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 教学效果 -->
-  <section id="results" class="section">
-    <h2 class="section-title">
-      <span class="section-icon">📊</span>
-      教学效果与数据分析
-    </h2>
-
-    <h3 style="color: var(--dark-bg); margin-bottom: 20px;">📈 量化指标对比（引入 AI 辅助前后）</h3>
-
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>评估维度</th>
-          <th>引入前</th>
-          <th>引入后</th>
-          <th>提升幅度</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>代码质量平均分</strong></td>
-          <td>68 分</td>
-          <td>88 分</td>
-          <td style="color: var(--success-color); font-weight: 700;">↑ 29%</td>
-        </tr>
-        <tr>
-          <td><strong>代码规范性得分</strong></td>
-          <td>62 分</td>
-          <td>85 分</td>
-          <td style="color: var(--success-color); font-weight: 700;">↑ 37%</td>
-        </tr>
-        <tr>
-          <td><strong>测试用例通过率</strong></td>
-          <td>71%</td>
-          <td>94%</td>
-          <td style="color: var(--success-color); font-weight: 700;">↑ 32%</td>
-        </tr>
-        <tr>
-          <td><strong>SQL 注入防护意识</strong></td>
-          <td>45%</td>
-          <td>89%</td>
-          <td style="color: var(--success-color); font-weight: 700;">↑ 98%</td>
-        </tr>
-        <tr>
-          <td><strong>代码提交后修改次数</strong></td>
-          <td>5.6 次</td>
-          <td>2.8 次</td>
-          <td style="color: var(--success-color); font-weight: 700;">↓ 50%</td>
-        </tr>
-        <tr>
-          <td><strong>教师审查时间（每份）</strong></td>
-          <td>45 分钟</td>
-          <td>15 分钟</td>
-          <td style="color: var(--success-color); font-weight: 700;">↓ 67%</td>
-        </tr>
-        <tr>
-          <td><strong>学生调试时间（平均）</strong></td>
-          <td>3.5 小时</td>
-          <td>2.1 小时</td>
-          <td style="color: var(--success-color); font-weight: 700;">↓ 40%</td>
-        </tr>
-        <tr>
-          <td><strong>项目完成率</strong></td>
-          <td>78%</td>
-          <td>96%</td>
-          <td style="color: var(--success-color); font-weight: 700;">↑ 23%</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">💬 学生反馈（匿名问卷调查，N=45）</h3>
-
-    <div class="workflow-steps">
-      <div class="step-card" style="border-left-color: var(--success-color);">
-        <h3 class="step-title">93% 学生认为</h3>
-        <p class="step-description">
-          Cursor AI 帮助他们更快地理解错误原因，比传统的搜索引擎更高效
-        </p>
-      </div>
-
-      <div class="step-card" style="border-left-color: var(--success-color);">
-        <h3 class="step-title">87% 学生表示</h3>
-        <p class="step-description">
-          通过 AI 的代码审查建议，学到了很多课堂上没注意到的细节和最佳实践
-        </p>
-      </div>
-
-      <div class="step-card" style="border-left-color: var(--success-color);">
-        <h3 class="step-title">82% 学生反馈</h3>
-        <p class="step-description">
-          即时的 AI 反馈让他们更有动力迭代改进代码，而不是"交差了事"
-        </p>
-      </div>
-
-      <div class="step-card" style="border-left-color: var(--warning-color);">
-        <h3 class="step-title">18% 学生担心</h3>
-        <p class="step-description">
-          过度依赖 AI 可能会削弱独立思考能力（需要教师引导正确使用）
-        </p>
-      </div>
-    </div>
-
-    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">🎯 典型案例：从 65 分到 92 分的进步</h3>
-
-    <div class="alert-box info">
-      <span class="alert-icon">📖</span>
-      <div>
-        <strong>学生案例：</strong>某同学第一次提交的代码存在多个问题：SQL 注入风险、密码明文存储、资源未关闭、代码重复等。通过 Cursor AI 的逐步引导，学生经过 3 次迭代改进：
-        <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
-          <li><strong>第 1 次反馈：</strong>修复了 SQL 注入问题，学会使用 PreparedStatement</li>
-          <li><strong>第 2 次反馈：</strong>实现了密码加密，优化了数据库连接管理</li>
-          <li><strong>第 3 次反馈：</strong>重构了重复代码，添加了完整的异常处理和日志</li>
-        </ul>
-        最终代码质量从 65 分提升到 92 分，学生表示"终于理解了为什么要这样写代码"。
-      </div>
-    </div>
-
-    <div class="image-showcase">
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 6<br><br>
-          学生第一次提交的代码<br>
-          存在多个安全和质量问题
-        </div>
-        <div class="image-caption">
-          <h4>迭代前：问题代码</h4>
-          <p>初始版本存在 SQL 注入风险、密码明文存储、未关闭资源等问题。</p>
-        </div>
-      </div>
-
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 7<br><br>
-          Cursor AI 生成的详细反馈<br>
-          逐项指出问题和改进方向
-        </div>
-        <div class="image-caption">
-          <h4>AI 审查反馈</h4>
-          <p>Cursor 给出了详细的问题分析、为什么这是问题、如何改进，以及参考代码。</p>
-        </div>
-      </div>
-
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 8<br><br>
-          学生改进后的代码<br>
-          规范、安全、高质量
-        </div>
-        <div class="image-caption">
-          <h4>迭代后：优质代码</h4>
-          <p>经过 3 次迭代，代码质量显著提升，所有知识点正确应用，测试全部通过。</p>
-        </div>
-      </div>
-    </div>
-
-    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">✅ 核心成果</h3>
-
-    <div class="knowledge-checklist">
-      <div class="knowledge-item">
-        <div class="check-icon success">✓</div>
-        <div class="knowledge-content">
-          <h4>教学效率显著提升</h4>
-          <p>教师审查时间减少 67%，可以把更多精力放在疑难问题指导和课程内容优化上</p>
-        </div>
-      </div>
-
-      <div class="knowledge-item">
-        <div class="check-icon success">✓</div>
-        <div class="knowledge-content">
-          <h4>学生代码质量提升</h4>
-          <p>平均代码质量提升 30%，安全意识和规范意识明显增强</p>
-        </div>
-      </div>
-
-      <div class="knowledge-item">
-        <div class="check-icon success">✓</div>
-        <div class="knowledge-content">
-          <h4>学习积极性提高</h4>
-          <p>即时反馈机制激励学生主动改进，项目完成率提升至 96%</p>
-        </div>
-      </div>
-
-      <div class="knowledge-item">
-        <div class="check-icon success">✓</div>
-        <div class="knowledge-content">
-          <h4>培养现代开发习惯</h4>
-          <p>学生学会使用 AI 辅助工具，为未来职业发展做好准备</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 图片上传说明 -->
-  <section class="section" style="background: #fef3c7; border-left: 4px solid var(--warning-color);">
-    <h3 style="color: var(--dark-bg); margin-bottom: 15px;">📸 关于截图展示</h3>
-    <p style="color: #92400e; line-height: 1.8;">
-      本页面预留了 8 个截图位置，用于展示实际的教学场景：<br>
-      <strong>位置 1-3：</strong>测试用例运行、结果分析、AI 辅助调试<br>
-      <strong>位置 4-5：</strong>知识点检查报告、问题位置高亮<br>
-      <strong>位置 6-8：</strong>学生代码迭代过程（问题代码 → AI 反馈 → 改进代码）<br><br>
-      您可以将实际的 Cursor 界面截图保存到 <code>/images/</code> 文件夹，然后更新对应的 <code>&lt;div class="image-placeholder"&gt;</code> 为 <code>&lt;img src="/images/your-screenshot.png"&gt;</code>
-    </p>
   </section>
 
   <div style="text-align: center; margin: 40px 0;">
