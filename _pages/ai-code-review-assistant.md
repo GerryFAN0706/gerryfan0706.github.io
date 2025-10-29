@@ -898,29 +898,15 @@ layout: single
 最后给出一个综合评分（0-100分）和总结性评价。</pre>
     </div>
 
-    <div class="image-showcase">
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 4<br><br>
-          Cursor 生成的知识点检查报告<br>
-          显示每个知识点的应用情况
-        </div>
-        <div class="image-caption">
-          <h4>AI 生成的知识点检查报告示例</h4>
-          <p>Cursor 会自动分析代码，对照大纲给出详细的检查结果，包括具体的代码位置和改进建议。</p>
-        </div>
-      </div>
+    <h3 style="color: var(--dark-bg); margin-top: 40px; margin-bottom: 20px;">📄 示例检查报告</h3>
 
-      <div class="image-card">
-        <div class="image-placeholder">
-          📸 截图位置 5<br><br>
-          代码中高亮显示的问题位置<br>
-          直接跳转到需要改进的代码
-        </div>
-        <div class="image-caption">
-          <h4>问题位置高亮显示</h4>
-          <p>Cursor 会在代码中标注出问题位置，点击可直接跳转，方便学生快速定位和修改。</p>
-        </div>
+    <div class="alert-box info">
+      <span class="alert-icon">📋</span>
+      <div>
+        <strong>AI 生成的知识点检查报告示例：</strong>查看一份完整的学生代码审查报告，了解 Cursor AI 如何分析和反馈。<br>
+        <a href="/files/知识点检查报告示例.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: var(--primary-color); color: white; border-radius: 6px; text-decoration: none; font-weight: 600;">
+          📥 下载示例检查报告 (PDF)
+        </a>
       </div>
     </div>
 
