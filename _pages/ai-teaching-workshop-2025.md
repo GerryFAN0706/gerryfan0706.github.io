@@ -44,38 +44,6 @@ layout: single
   opacity: 0.95;
 }
 
-.filter-tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.filter-tab {
-  padding: 10px 24px;
-  border: 2px solid var(--primary-color);
-  background: white;
-  color: var(--primary-color);
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  font-size: 0.95em;
-}
-
-.filter-tab:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.filter-tab.active {
-  background: var(--primary-color);
-  color: white;
-}
-
 .cases-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -97,10 +65,6 @@ layout: single
 .case-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.case-card.hidden {
-  display: none;
 }
 
 .case-header {
@@ -267,44 +231,34 @@ layout: single
 
 <div class="workshop-container">
   <div class="workshop-header">
-    <h1>🎓 AI辅助教学案例展示</h1>
-    <p>太原科技大学计算机学院教学研讨会</p>
-    <p>📅 2025年10月</p>
+    <h1>🎓 AI辅助教学案例</h1>
+    <p style="margin-top: 15px; font-size: 1.05em;">探索人工智能在教学中的创新应用</p>
   </div>
 
   <div class="stats-section">
     <div class="stat-card">
-      <div class="stat-number" id="totalCases">8</div>
+      <div class="stat-number" id="totalCases">3</div>
       <div class="stat-label">教学案例</div>
     </div>
     <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-      <div class="stat-number" id="totalTools">15+</div>
+      <div class="stat-number" id="totalTools">9+</div>
       <div class="stat-label">AI工具应用</div>
     </div>
     <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-      <div class="stat-number">5</div>
+      <div class="stat-number">3</div>
       <div class="stat-label">应用场景</div>
     </div>
   </div>
 
-  <div class="filter-tabs">
-    <button class="filter-tab active" data-category="all">全部案例</button>
-    <button class="filter-tab" data-category="代码">代码教学</button>
-    <button class="filter-tab" data-category="理论">理论讲解</button>
-    <button class="filter-tab" data-category="实验">实验设计</button>
-    <button class="filter-tab" data-category="评估">作业评估</button>
-    <button class="filter-tab" data-category="其他">其他应用</button>
-  </div>
-
   <div class="cases-grid" id="casesGrid">
     
-    <!-- 案例1：示例 - 您可以复制此模板添加更多案例 -->
+    <!-- 案例1：代码审查助手 -->
     <div class="case-card" data-category="代码">
       <div class="case-header">
         <div class="case-icon">💻</div>
         <h3 class="case-title">智能代码审查助手</h3>
       </div>
-      <div class="case-teacher">👨‍🏫 授课教师：樊光瑞</div>
+      <div class="case-teacher">👨‍🏫 樊光瑞</div>
       <div class="case-category">代码教学</div>
       <p class="case-description">
         利用AI工具（GitHub Copilot + ChatGPT）辅助学生进行代码审查，自动识别代码中的潜在问题、优化建议，并提供个性化的改进方案。
@@ -332,46 +286,13 @@ layout: single
       <span class="expand-icon">▼</span>
     </div>
 
-    <!-- 案例2 -->
-    <div class="case-card" data-category="理论">
-      <div class="case-header">
-        <div class="case-icon">📚</div>
-        <h3 class="case-title">AI辅助概念可视化</h3>
-      </div>
-      <div class="case-teacher">👨‍🏫 授课教师：张老师</div>
-      <div class="case-category">理论讲解</div>
-      <p class="case-description">
-        使用AI图像生成工具将抽象的计算机科学概念转化为直观的可视化图表，帮助学生理解复杂的数据结构和算法。
-      </p>
-      <div class="case-tools">
-        <span class="tool-tag">DALL-E</span>
-        <span class="tool-tag">Midjourney</span>
-        <span class="tool-tag">Mermaid AI</span>
-      </div>
-      <div class="case-expand">
-        <h4>📋 应用场景：</h4>
-        <ul>
-          <li>二叉树、图论等数据结构可视化</li>
-          <li>排序算法动态演示图生成</li>
-          <li>系统架构图自动绘制</li>
-        </ul>
-        <h4>✅ 教学效果：</h4>
-        <ul>
-          <li>学生理解速度提升50%</li>
-          <li>课堂互动性显著增强</li>
-          <li>知识点记忆率提高35%</li>
-        </ul>
-      </div>
-      <span class="expand-icon">▼</span>
-    </div>
-
-    <!-- 案例3 -->
+    <!-- 案例2：个性化实验设计 -->
     <div class="case-card" data-category="实验">
       <div class="case-header">
         <div class="case-icon">🔬</div>
         <h3 class="case-title">个性化实验设计生成器</h3>
       </div>
-      <div class="case-teacher">👨‍🏫 授课教师：李老师</div>
+      <div class="case-teacher">👨‍🏫 樊光瑞</div>
       <div class="case-category">实验设计</div>
       <p class="case-description">
         利用GPT-4为每位学生生成定制化的编程实验题目，根据学生的学习进度和能力水平调整难度。
@@ -398,171 +319,38 @@ layout: single
       <span class="expand-icon">▼</span>
     </div>
 
-    <!-- 案例4 -->
-    <div class="case-card" data-category="评估">
-      <div class="case-header">
-        <div class="case-icon">📊</div>
-        <h3 class="case-title">智能作业批改系统</h3>
-      </div>
-      <div class="case-teacher">👨‍🏫 授课教师：王老师</div>
-      <div class="case-category">作业评估</div>
-      <p class="case-description">
-        结合多个AI模型自动批改编程作业，提供详细的反馈报告，包括代码质量、算法效率、可读性等多维度评价。
-      </p>
-      <div class="case-tools">
-        <span class="tool-tag">CodeBERT</span>
-        <span class="tool-tag">GPT-4</span>
-        <span class="tool-tag">JudgeOnline</span>
-      </div>
-      <div class="case-expand">
-        <h4>📋 评估维度：</h4>
-        <ul>
-          <li>代码正确性（单元测试）</li>
-          <li>算法时间/空间复杂度分析</li>
-          <li>代码规范性和可读性</li>
-          <li>创新性和优化建议</li>
-        </ul>
-        <h4>✅ 教学效果：</h4>
-        <ul>
-          <li>批改效率提升10倍</li>
-          <li>反馈及时性从3天缩短至5分钟</li>
-          <li>评分一致性达98%</li>
-        </ul>
-      </div>
-      <span class="expand-icon">▼</span>
-    </div>
-
-    <!-- 案例5 -->
-    <div class="case-card" data-category="理论">
-      <div class="case-header">
-        <div class="case-icon">🤖</div>
-        <h3 class="case-title">AI对话式学习助手</h3>
-      </div>
-      <div class="case-teacher">👨‍🏫 授课教师：赵老师</div>
-      <div class="case-category">理论讲解</div>
-      <p class="case-description">
-        开发基于大语言模型的24/7在线学习助手，为学生提供课后答疑、概念解释、学习路径规划等服务。
-      </p>
-      <div class="case-tools">
-        <span class="tool-tag">ChatGPT</span>
-        <span class="tool-tag">Langchain</span>
-        <span class="tool-tag">知识库RAG</span>
-      </div>
-      <div class="case-expand">
-        <h4>📋 主要功能：</h4>
-        <ul>
-          <li>课程知识点即时答疑</li>
-          <li>编程问题调试建议</li>
-          <li>个性化学习资源推荐</li>
-          <li>学习进度跟踪与提醒</li>
-        </ul>
-        <h4>✅ 使用数据：</h4>
-        <ul>
-          <li>日均对话量：200+次</li>
-          <li>问题解决率：85%</li>
-          <li>学生使用率：78%</li>
-        </ul>
-      </div>
-      <span class="expand-icon">▼</span>
-    </div>
-
-    <!-- 案例6 -->
-    <div class="case-card" data-category="代码">
-      <div class="case-header">
-        <div class="case-icon">🎯</div>
-        <h3 class="case-title">错误模式识别与诊断</h3>
-      </div>
-      <div class="case-teacher">👨‍🏫 授课教师：陈老师</div>
-      <div class="case-category">代码教学</div>
-      <p class="case-description">
-        使用机器学习模型识别学生代码中的常见错误模式，提供针对性的教学干预和个性化辅导。
-      </p>
-      <div class="case-tools">
-        <span class="tool-tag">自研模型</span>
-        <span class="tool-tag">TensorFlow</span>
-        <span class="tool-tag">数据分析平台</span>
-      </div>
-      <div class="case-expand">
-        <h4>📋 识别内容：</h4>
-        <ul>
-          <li>语法错误模式分类</li>
-          <li>逻辑错误常见场景</li>
-          <li>算法理解偏差识别</li>
-          <li>编程思维误区发现</li>
-        </ul>
-        <h4>✅ 应用效果：</h4>
-        <ul>
-          <li>提前发现80%潜在问题</li>
-          <li>针对性辅导效率提升3倍</li>
-          <li>学生错误重复率降低60%</li>
-        </ul>
-      </div>
-      <span class="expand-icon">▼</span>
-    </div>
-
-    <!-- 案例7 -->
+    <!-- 案例3：PPT生成 -->
     <div class="case-card" data-category="其他">
       <div class="case-header">
-        <div class="case-icon">✍️</div>
-        <h3 class="case-title">自动化教学材料生成</h3>
+        <div class="case-icon">📊</div>
+        <h3 class="case-title">AI驱动的课程PPT生成</h3>
       </div>
-      <div class="case-teacher">👨‍🏫 授课教师：刘老师</div>
-      <div class="case-category">其他应用</div>
+      <div class="case-teacher">👨‍🏫 樊光瑞</div>
+      <div class="case-category">教学材料制作</div>
       <p class="case-description">
-        利用AI快速生成课程PPT、练习题、知识点总结等教学材料，大幅减轻教师备课负担。
+        利用AI工具快速生成专业、美观的课程PPT，包括内容组织、排版设计、图表生成等，大幅减轻教师备课负担。
       </p>
       <div class="case-tools">
         <span class="tool-tag">Gamma AI</span>
         <span class="tool-tag">Notion AI</span>
         <span class="tool-tag">GPT-4</span>
+        <span class="tool-tag">Canva AI</span>
       </div>
       <div class="case-expand">
-        <h4>📋 生成内容：</h4>
+        <h4>📋 核心功能：</h4>
         <ul>
-          <li>课程PPT自动排版与美化</li>
-          <li>章节练习题库（含答案）</li>
-          <li>知识点脑图与总结</li>
-          <li>课程大纲与教学计划</li>
+          <li>输入课程主题，AI自动生成完整PPT结构</li>
+          <li>智能选择合适的布局模板和配色方案</li>
+          <li>自动生成图表、示意图和可视化内容</li>
+          <li>代码示例的美化展示和语法高亮</li>
+          <li>演讲备注和教学要点自动生成</li>
         </ul>
-        <h4>✅ 效率提升：</h4>
+        <h4>✅ 应用效果：</h4>
         <ul>
-          <li>备课时间减少70%</li>
-          <li>教学材料多样性提升</li>
-          <li>更新迭代速度提升5倍</li>
-        </ul>
-      </div>
-      <span class="expand-icon">▼</span>
-    </div>
-
-    <!-- 案例8 -->
-    <div class="case-card" data-category="实验">
-      <div class="case-header">
-        <div class="case-icon">🎮</div>
-        <h3 class="case-title">游戏化学习平台</h3>
-      </div>
-      <div class="case-teacher">👨‍🏫 授课教师：周老师</div>
-      <div class="case-category">实验设计</div>
-      <p class="case-description">
-        结合AI技术打造游戏化编程学习平台，通过闯关、积分、排行榜等机制激发学生学习兴趣。
-      </p>
-      <div class="case-tools">
-        <span class="tool-tag">Unity</span>
-        <span class="tool-tag">强化学习</span>
-        <span class="tool-tag">GPT API</span>
-      </div>
-      <div class="case-expand">
-        <h4>📋 核心机制：</h4>
-        <ul>
-          <li>AI动态调整关卡难度</li>
-          <li>智能提示系统（非直接答案）</li>
-          <li>代码对战模式</li>
-          <li>成就系统与社交分享</li>
-        </ul>
-        <h4>✅ 学习效果：</h4>
-        <ul>
-          <li>学生主动学习时长增加200%</li>
-          <li>课程参与度提升至96%</li>
-          <li>知识掌握度提高45%</li>
+          <li>PPT制作时间从4小时缩短至30分钟</li>
+          <li>视觉呈现专业度显著提升</li>
+          <li>学生课堂注意力集中度提高40%</li>
+          <li>可快速迭代更新课程内容</li>
         </ul>
       </div>
       <span class="expand-icon">▼</span>
@@ -573,33 +361,10 @@ layout: single
   <div class="footer-note">
     <p>💡 <strong>提示：</strong>点击案例卡片可查看详细信息</p>
     <p>📧 如需交流讨论，请联系：fgr@tyust.edu.cn</p>
-    <p style="margin-top: 15px; font-size: 0.85em; color: #9ca3af;">
-      本页面仅用于内部教学研讨 | 太原科技大学计算机学院 | 2025年10月
-    </p>
   </div>
 </div>
 
 <script>
-// 筛选功能
-document.querySelectorAll('.filter-tab').forEach(tab => {
-  tab.addEventListener('click', function() {
-    // 更新激活状态
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    this.classList.add('active');
-    
-    const category = this.dataset.category;
-    const cards = document.querySelectorAll('.case-card');
-    
-    cards.forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  });
-});
-
 // 卡片展开/收起功能
 document.querySelectorAll('.case-card').forEach(card => {
   card.addEventListener('click', function(e) {
