@@ -261,27 +261,35 @@ layout: single
       <div class="case-teacher">👨‍🏫 樊光瑞</div>
       <div class="case-category">代码教学</div>
       <p class="case-description">
-        利用AI工具（GitHub Copilot + ChatGPT）辅助学生进行代码审查，自动识别代码中的潜在问题、优化建议，并提供个性化的改进方案。
+        在 Java Web 开发课程中，以 Cursor 为主要工具，配合测试用例和课程大纲，实现智能化代码审查。自动识别安全问题、代码规范问题，检查知识点掌握情况，提供个性化改进建议。
       </p>
       <div class="case-tools">
-        <span class="tool-tag">GitHub Copilot</span>
+        <span class="tool-tag">Cursor (主要)</span>
         <span class="tool-tag">ChatGPT</span>
-        <span class="tool-tag">VS Code</span>
+        <span class="tool-tag">GitHub Copilot</span>
+        <span class="tool-tag">JUnit 5</span>
       </div>
       <div class="case-expand">
         <h4>📋 实施步骤：</h4>
         <ul>
-          <li>学生提交作业代码到GitHub仓库</li>
-          <li>使用Copilot进行实时代码建议</li>
-          <li>ChatGPT分析代码质量并生成详细报告</li>
-          <li>学生根据反馈进行迭代改进</li>
+          <li>学生在 Cursor 中完成 Java Web 项目开发</li>
+          <li>使用 AI 进行代码审查和问题诊断</li>
+          <li>运行预设测试用例，检查功能完整性</li>
+          <li>对照课程大纲检查知识点应用情况</li>
+          <li>生成详细反馈报告，学生迭代改进</li>
         </ul>
         <h4>✅ 教学效果：</h4>
         <ul>
-          <li>代码质量提升30%</li>
-          <li>学生调试时间减少40%</li>
-          <li>编程规范意识显著增强</li>
+          <li>代码质量提升 30%，规范性提升 37%</li>
+          <li>SQL 注入防护意识从 45% 提升至 89%</li>
+          <li>教师审查时间减少 67%</li>
+          <li>学生调试时间减少 40%</li>
         </ul>
+        <div style="margin-top: 20px; text-align: center;">
+          <a href="/workshop/ai-code-review-java-web/" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+            📖 查看完整案例详情 →
+          </a>
+        </div>
       </div>
       <span class="expand-icon">▼</span>
     </div>
