@@ -83,8 +83,6 @@ ___
 
 ### CHI: **2025-11-04** Reviews Released  **2025-12-04** Resubmission Due **2026-01-15** Decisions Notification
 
-### AAAI: **November 3, 2025 **Notification of final acceptance or rejection
-
 ### WWW: **Authors' rebuttal period:** November 24th - December 1st  Paper notification	January 13, 2026
 
 WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** November 30, 2025 **Notification:** January 13, 2026  【Liu*2】
