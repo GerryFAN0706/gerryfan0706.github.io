@@ -9,6 +9,8 @@ redirect_from:
 
 ## 📰 News
 
+**[2025-12]** 🎉 Paper accepted by **AAAI 2026** (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
+
 **[2025]** 🏆 Received **First-Class Paper Award** and **Best Presentation Award** at CPEC2025 (第九届中国计算机实践教育学术会议)
 
 **[2025]** 🎤 Oral presentation at **IJCAI 2025 Satellite Event** in Guangzhou, China
