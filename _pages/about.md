@@ -9,15 +9,121 @@ redirect_from:
 
 ## 📰 News
 
-**[2025-12]** 🎉 Paper accepted by **AAAI 2026** (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
+<style>
+.news-container {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #0ea5e9;
+  margin-bottom: 20px;
+}
 
-**[2025]** 🏆 Received **First-Class Paper Award** and **Best Presentation Award** at CPEC2025 (第九届中国计算机实践教育学术会议)
+.news-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e7ff;
+  transition: all 0.3s ease;
+}
 
-**[2025]** 🎤 Oral presentation at **IJCAI 2025 Satellite Event** in Guangzhou, China
+.news-item:last-child {
+  border-bottom: none;
+}
 
-**[2025]** 📝 Multiple papers accepted at top-tier conferences and journals including **IJCAI (CCF A)**, **CogSci (CCF B)**, and SCI Q1 journals
+.news-item:hover {
+  background: rgba(255, 255, 255, 0.5);
+  padding-left: 10px;
+  border-radius: 6px;
+}
 
-**[2025-10]** 📄 Paper accepted by **Journal of Healthcare Leadership** (中科院2区): "Long-Term Effects of Structured Microbreak Interventions on Musculoskeletal Health, Psychological Wellbeing, and Patient Safety Among Operating Room Nurses"
+.news-more {
+  display: none;
+}
+
+.news-toggle {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.news-toggle:active {
+  transform: translateY(0);
+}
+
+.news-count {
+  display: inline-block;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0369a1;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-left: 10px;
+}
+</style>
+
+<div class="news-container">
+  <div class="news-item">
+    <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
+  </div>
+
+  <div class="news-item">
+    <strong>[2025]</strong> 🏆 Received <strong>First-Class Paper Award</strong> and <strong>Best Presentation Award</strong> at CPEC2025 (第九届中国计算机实践教育学术会议)
+  </div>
+
+  <div class="news-item">
+    <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI 2025 Satellite Event</strong> in Guangzhou, China
+  </div>
+
+  <div class="news-more">
+    <div class="news-item">
+      <strong>[2025]</strong> 📝 Multiple papers accepted at top-tier conferences and journals including <strong>IJCAI (CCF A)</strong>, <strong>CogSci (CCF B)</strong>, and SCI Q1 journals
+    </div>
+
+    <div class="news-item">
+      <strong>[2025-10]</strong> 📄 Paper accepted by <strong>Journal of Healthcare Leadership</strong> (中科院2区): "Long-Term Effects of Structured Microbreak Interventions on Musculoskeletal Health, Psychological Wellbeing, and Patient Safety Among Operating Room Nurses"
+    </div>
+  </div>
+
+  <button class="news-toggle" onclick="toggleNews()">
+    <span id="toggleText">Show More News</span>
+    <span class="news-count" id="moreCount">+2</span>
+  </button>
+</div>
+
+<script>
+let newsExpanded = false;
+
+function toggleNews() {
+  const moreNews = document.querySelector('.news-more');
+  const toggleBtn = document.querySelector('.news-toggle');
+  const toggleText = document.getElementById('toggleText');
+  const moreCount = document.getElementById('moreCount');
+  
+  newsExpanded = !newsExpanded;
+  
+  if (newsExpanded) {
+    moreNews.style.display = 'block';
+    toggleText.textContent = 'Show Less';
+    moreCount.style.display = 'none';
+  } else {
+    moreNews.style.display = 'none';
+    toggleText.textContent = 'Show More News';
+    moreCount.style.display = 'inline-block';
+  }
+}
+</script>
 
 ---
 
