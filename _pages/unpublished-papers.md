@@ -81,7 +81,7 @@ ___
 
 ### Fse2026: Mon 22 Dec 2025 *Research Papers* Initial notification  Fri 21 - Tue 25 Nov 2025 Author response
 
-### CHI: **2025-11-04** Reviews Released  **2025-12-04** Resubmission Due **2026-01-15** Decisions Notification
+### CHI: 4/3 turn to second round  **2025-12-04** Resubmission Due **2026-01-15** Decisions Notification
 
 ### WWW: **Authors' rebuttal period:** November 24th - December 1st  Paper notification	January 13, 2026
 
