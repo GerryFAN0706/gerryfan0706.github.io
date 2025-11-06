@@ -90,15 +90,11 @@ redirect_from:
     <div class="news-item">
       <strong>[2025]</strong> 📝 Multiple papers accepted at top-tier conferences and journals including <strong>IJCAI (CCF A)</strong>, <strong>CogSci (CCF B)</strong>, and SCI Q1 journals
     </div>
-
-    <div class="news-item">
-      <strong>[2025-10]</strong> 📄 Paper accepted by <strong>Journal of Healthcare Leadership</strong> (中科院2区): "Long-Term Effects of Structured Microbreak Interventions on Musculoskeletal Health, Psychological Wellbeing, and Patient Safety Among Operating Room Nurses"
-    </div>
   </div>
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show More News</span>
-    <span class="news-count" id="moreCount">+2</span>
+    <span class="news-count" id="moreCount">+1</span>
   </button>
 </div>
 
