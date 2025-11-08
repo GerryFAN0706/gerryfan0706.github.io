@@ -79,13 +79,97 @@ ___
 
 ## Conferences
 
-### Fse2026: Mon 22 Dec 2025 *Research Papers* Initial notification  Fri 21 - Tue 25 Nov 2025 Author response
+### CHI 2026 (3 papers - Second Round)
 
-### CHI: 4/3 turn to second round  **2025-12-04** Resubmission Due **2026-01-15** Decisions Notification
+#### 1. Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication
+- **投稿日期：** 2025-09-19 (First Round)
+- **目标会议：** CHI 2026 (CCF A)
+- **当前状态：** Second Round (4/3 papers advanced)
+- **重投截止：** 2025-12-04
+- **预计结果时间：** 2026-01-15
+- **Subcommittee:** Interaction Beyond the Individual; Understanding People: Statistical & Quantitative Methods
+- **关键词：** Computer Mediated Communication, Emotion/Affective Computing, Intimate Relationships
+- **备注：** Study 1 (N=152) instrumented authoring + Study 2 (N=704) mixed-effects experiment. Shows competence-integrity dissociation in AI-assisted romantic messages.
 
-### WWW: **Authors' rebuttal period:** November 24th - December 1st  Paper notification	January 13, 2026
+---
 
-WWW Web4Good **Abstract Submission:** November 23, 2025 **Paper Submission:** November 30, 2025 **Notification:** January 13, 2026  【Liu*2】
+#### 2. When Help Hurts: Verification Load and Fatigue with AI Coding Assistants
+- **投稿日期：** 2025-09-19 (First Round)
+- **目标会议：** CHI 2026 (CCF A)
+- **当前状态：** Second Round (4/3 papers advanced)
+- **重投截止：** 2025-12-04
+- **预计结果时间：** 2026-01-15
+- **Subcommittee:** Understanding People: Mixed & Alternative Methods; User Experience & Usability
+- **关键词：** Programming/Development Support, Workplaces, AI Assistance
+- **备注：** Mixed-methods study comparing Inline, Chat, Structured AI modes. Introduces "verification-load" index capturing failures, churn, and context switches.
+
+---
+
+#### 3. Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences
+- **投稿日期：** 2025-09-19 (First Round)
+- **目标会议：** CHI 2026 (CCF A)
+- **当前状态：** Second Round (4/3 papers advanced)
+- **重投截止：** 2025-12-04
+- **预计结果时间：** 2026-01-15
+- **Subcommittee:** Critical Computing, Sustainability, & Social Justice; Understanding People: Mixed & Alternative Methods
+- **关键词：** Behavior Change, Personalization, Sustainability, Nudging
+- **备注：** Two field studies with on-device contextual bandit. Introduces Ethical-Efficacy Frontier (EEF) and Energy ROI accounting.
+
+---
+
+### WWW 2026 (4 papers submitted)
+
+#### 1. Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims
+- **投稿日期：** 2025-11-30
+- **目标会议：** WWW 2026 - Web4Good Track
+- **当前状态：** Under Review
+- **Rebuttal Period:** 2025-11-24 to 2025-12-01
+- **预计结果时间：** 2026-01-13
+- **作者：** Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan, Guangrui Fan
+- **备注：** Web fairness auditing methodology
+
+---
+
+#### 2. From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue
+- **投稿日期：** 2025-11-30
+- **目标会议：** WWW 2026 - Web4Good Track
+- **当前状态：** Under Review
+- **Rebuttal Period:** 2025-11-24 to 2025-12-01
+- **预计结果时间：** 2026-01-13
+- **作者：** Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan, Guangrui Fan
+- **备注：** LLM-facilitated online dialogue study
+
+---
+
+#### 3. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
+- **投稿日期：** 2025-11-30
+- **目标会议：** WWW 2026
+- **当前状态：** Under Review
+- **Rebuttal Period:** 2025-11-24 to 2025-12-01
+- **预计结果时间：** 2026-01-13
+- **作者：** Guangrui Fan, Dandan Liu, Rui Zhang, Lihu Pan
+- **备注：** Long-term algorithmic fairness in content recommendation
+
+---
+
+#### 4. Consent Boundaries by Play: CI-Grounded Micro-Games to Elicit Stable, UI-Robust Web Data-Sharing Preferences
+- **投稿日期：** 2025-11-30
+- **目标会议：** WWW 2026
+- **当前状态：** Under Review
+- **Rebuttal Period:** 2025-11-24 to 2025-12-01
+- **预计结果时间：** 2026-01-13
+- **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Aznul Qalid Md Sabri
+- **备注：** Privacy consent elicitation through interactive micro-games
+
+---
+
+### FSE 2026
+
+#### TBD
+- **预计投稿时间：** 2025-11 (November Author Response)
+- **目标会议：** FSE 2026 (CCF A)
+- **预计结果时间：** 2025-12-22
+- **备注：** Research Papers Track
 
 ---
 
