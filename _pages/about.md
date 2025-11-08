@@ -131,19 +131,30 @@ In my free time, I enjoy playing tennis and exploring new technologies.
 
 ## Research Interests
 
-My research spans two interconnected areas of **Artificial Intelligence**: the **technical foundations** of intelligent systems and their **human-centered applications**.
+My research integrates **machine learning techniques** with **human-centered empirical methods** to build and evaluate AI systems that are technically robust, socially responsible, and aligned with human values. I work at the intersection of **Human-AI Interaction** and **Graph Machine Learning**, with applications spanning social computing, education, and urban systems.
 
-**Graph Machine Learning & Algorithm Design**  
-I develop advanced machine learning algorithms based on graph theory, focusing on:
-- **Graph Neural Networks**: Designing efficient architectures for spatio-temporal prediction (traffic flow forecasting, healthcare analytics)
-- **Graph Unlearning**: Developing methods for selective information removal in graph-structured data
-- **Dynamic Graph Learning**: Capturing temporal evolution and key-node identification in large-scale networks
+**Primary Focus: Responsible Human-AI Interaction (70%)**
 
-**Human-AI Interaction & Behavioral Computing**  
-I investigate how people interact with, trust, and are influenced by AI systems across diverse contexts:
-- **AI in Education & Creativity**: Understanding cognitive and emotional impacts of AI-assisted tools on learning, creative production, and collaborative work
-- **Trust & Authenticity**: Examining how users perceive and respond to AI-generated content, from emotional prosody to text summaries
-- **Healthcare Informatics**: Exploring human factors in clinical AI adoption and technology-mediated care
+I develop computational models and conduct empirical studies to understand how AI systems shape human behavior, cognition, and social dynamics:
+
+- **Trust, Authenticity & Agency**: How do people perceive AI-generated content in intimate communication, creative work, and information consumption? What factors shape trust and acceptance?
+
+- **AI-Mediated Social Computing**: Studying algorithmic fairness, cross-group dialogue, and long-term co-adaptation between users and recommendation systems using causal inference, mixed-methods, and field experiments.
+
+- **Human-Centered AI Design**: Building systems that preserve human agency (e.g., contextual bandits for eco-nudging, verification-aware coding assistants) and evaluating them through rigorous behavioral experiments.
+
+**Secondary Focus: Graph ML for Social & Urban Systems (30%)**
+
+I design graph neural network architectures and apply them to structured, relational data in social and urban contexts:
+
+- **Social Network Analysis**: Graph-based models for community dynamics, information diffusion, and fairness-aware recommendation in social media platforms.
+
+- **Spatio-Temporal Prediction**: Dynamic GNNs for traffic forecasting, healthcare time-series, and urban computing, with emphasis on interpretability and real-world deployment.
+
+- **Graph Unlearning & Privacy**: Methods for selective information removal in graph-structured data, with applications to privacy-preserving social network analysis.
+
+**Methodological Approach**: I combine computational modeling (GNNs, causal inference, contextual bandits) with empirical human-subjects research (mixed-methods experiments, field studies, qualitative analysis) to generate both algorithmic innovations and evidence-based design principles.
+
 
 ## Education
 
