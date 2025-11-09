@@ -3,7 +3,7 @@ title: "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment 
 collection: publications
 category: conferences
 permalink: /publication/2026-aaai-reply-gap
-date: 2025-12-15
+date: 2026-02-01
 rank: 1
 venue: 'AAAI Conference on Artificial Intelligence (AAAI 2026)'
 citation: 'Fan, G., Liu, D., & Pan, L. (2026). Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities. In <i>Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)</i>.'
