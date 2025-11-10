@@ -247,3 +247,188 @@ ___
 2 out-of-distribution evaluation 
 
 3 cluster and study 3 的idea [利用一些现有高效模型 扩充 改进]
+
+---
+
+## 📚 Target Journals: IEEE & ACM 期刊投稿指南
+
+<div style="background-color: #f0f9ff; padding: 15px; margin-bottom: 20px; border-left: 4px solid #3b82f6; border-radius: 4px;">
+  <strong>📌 说明：</strong> 根据研究方向整理的 IEEE 和 ACM 顶级期刊列表，按主题分类，包含审稿周期和适配度评估。
+</div>
+
+### 🎯 方向一：Human-AI Interaction & HCI (主要方向)
+
+| 期刊名称 | 等级 | 影响因子 | 审稿周期 | 适合主题 |
+|---------|------|---------|---------|---------|
+| **ACM TOCHI** | CCF A | ~5.0 | 6-9个月 | AI辅助创作、信任与真实性、人机交互设计 ⭐⭐⭐⭐⭐ |
+| **ACM TiiS** | - | ~3.5 | 4-6个月 | 推荐系统、对话系统、AI中介社交计算 ⭐⭐⭐⭐ |
+| **ACM TSC** | - | ~4.2 | 5-8个月 | 社交媒体研究、在线社区、算法公平性 ⭐⭐⭐⭐ |
+| **IEEE TAFFC** | CCF B | ~10.5 | 4-6个月 | 情感计算、心理健康支持、情感韵律研究 ⭐⭐⭐⭐⭐ |
+| **IEEE THMS** | - | ~3.5 | 5-7个月 | AI辅助编程、验证负载、人机协作 ⭐⭐⭐⭐ |
+
+### 🧠 方向二：AI in Education
+
+| 期刊名称 | 等级 | 影响因子 | 审稿周期 | 适合主题 |
+|---------|------|---------|---------|---------|
+| **IEEE TLT** | CCF B | ~3.0 | 4-6个月 | AI辅助编程教育、认知脚手架、编程焦虑 ⭐⭐⭐⭐ |
+| **IEEE Trans. on Education** | - | ~2.5 | 6-9个月 | 教学方法、学习效果评估 ⭐⭐⭐⭐ |
+
+### 📊 方向三：Graph Neural Networks & Urban Computing
+
+| 期刊名称 | 等级 | 影响因子 | 审稿周期 | 适合主题 |
+|---------|------|---------|---------|---------|
+| **IEEE TKDE** | CCF A | ~8.9 | 6-12个月 | 图神经网络、时空预测、交通流预测 ⭐⭐⭐⭐⭐ |
+| **IEEE TNNLS** | 中科院1区Top | ~10.4 | 8-12个月 | GNN架构、动态图学习、图遗忘 ⭐⭐⭐⭐⭐ |
+| **IEEE TITS** | 中科院1区Top | ~7.9 | 6-9个月 | 交通流预测、时空GNN、城市计算 ⭐⭐⭐⭐⭐ |
+| **ACM TIST** | CCF B | ~5.0 | 5-8个月 | 智能系统、推荐系统、图学习 ⭐⭐⭐⭐ |
+
+### 🔐 方向四：Algorithmic Fairness & Privacy
+
+| 期刊名称 | 等级 | 影响因子 | 审稿周期 | 适合主题 |
+|---------|------|---------|---------|---------|
+| **ACM TOIS** | CCF A | ~5.4 | 6-10个月 | 推荐系统公平性、信息检索、用户建模 ⭐⭐⭐⭐⭐ |
+| **ACM TOPS** | - | ~3.0 | 6-9个月 | 图遗忘、隐私保护、数据共享偏好 ⭐⭐⭐⭐ |
+| **IEEE TDSC** | CCF A | ~7.0 | 8-12个月 | 隐私保护、安全计算、图遗忘 ⭐⭐⭐⭐⭐ |
+
+### 🌐 方向五：Social Computing & Online Communities
+
+| 期刊名称 | 等级 | 影响因子 | 审稿周期 | 适合主题 |
+|---------|------|---------|---------|---------|
+| **ACM TWEB** | CCF B | ~2.7 | 5-8个月 | Web公平性审计、跨群体对话、在线社区 ⭐⭐⭐⭐ |
+| **IEEE TCSS** | - | ~4.5 | 4-6个月 | 社交媒体分析、在线行为、算法影响 ⭐⭐⭐⭐ |
+
+### 🏥 方向六：Healthcare & Mental Health
+
+| 期刊名称 | 等级 | 影响因子 | 审稿周期 | 适合主题 |
+|---------|------|---------|---------|---------|
+| **IEEE JBHI** | 中科院1区Top | ~6.7 | 4-6个月 | 医疗预测、ICU住院时长、健康信息学 ⭐⭐⭐⭐⭐ |
+| **IEEE TCBB** | - | ~3.6 | 5-8个月 | 医疗数据分析、预测模型 ⭐⭐⭐⭐ |
+
+---
+
+### 📝 论文-期刊匹配建议
+
+<table style="width:100%; border-collapse: collapse;">
+<thead>
+  <tr style="background-color: #3b82f6; color: white;">
+    <th style="padding: 10px; border: 1px solid #ddd;">论文主题</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">首选期刊</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">备选期刊</th>
+    <th style="padding: 10px; border: 1px solid #ddd;">第三选择</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>AI辅助编程教育</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TLT</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TOCHI</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE Trans. on Education</td>
+  </tr>
+  <tr style="background-color: #f9fafb;">
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>心理健康社区（AAAI扩展）</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TSC</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TAFFC</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TOCHI</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>算法公平性与推荐系统</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TOIS</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TKDE</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TWEB</td>
+  </tr>
+  <tr style="background-color: #f9fafb;">
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>交通流预测GNN</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TITS</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TKDE</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TNNLS</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>AI生成内容的信任与真实性</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TOCHI</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TiiS</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE THMS</td>
+  </tr>
+  <tr style="background-color: #f9fafb;">
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>图遗忘与隐私</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TOPS</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TDSC</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TIST</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>社交媒体行为研究</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TSC</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TCSS</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TWEB</td>
+  </tr>
+  <tr style="background-color: #f9fafb;">
+    <td style="padding: 8px; border: 1px solid #ddd;"><strong>CHI论文扩展版本</strong></td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TOCHI</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">IEEE TAFFC</td>
+    <td style="padding: 8px; border: 1px solid #ddd;">ACM TiiS</td>
+  </tr>
+</tbody>
+</table>
+
+---
+
+### ⏱️ 投稿时间规划建议
+
+**快速通道（4-6个月）：**
+- IEEE TLT
+- IEEE JBHI
+- IEEE TAFFC
+- ACM TiiS
+- IEEE TCSS
+
+**中等周期（6-9个月）：**
+- ACM TOCHI
+- IEEE TITS
+- IEEE THMS
+- ACM TSC
+- ACM TOPS
+
+**较长周期（8-12个月）：**
+- IEEE TKDE
+- IEEE TNNLS
+- IEEE TDSC
+
+---
+
+### 💡 投稿策略提示
+
+<div style="background-color: #fef3c7; padding: 15px; margin: 15px 0; border-left: 4px solid #f59e0b; border-radius: 4px;">
+  <strong>🎯 重点推荐：</strong>
+  <ul>
+    <li><strong>ACM TOCHI</strong> - HCI领域最顶级期刊，CHI论文的理想扩展投稿目标</li>
+    <li><strong>IEEE TITS</strong> - 交通流预测论文的完美匹配</li>
+    <li><strong>ACM TSC</strong> - 社交计算和心理健康社区研究的最佳选择</li>
+    <li><strong>IEEE TAFFC</strong> - 情感计算和心理健康支持的权威期刊</li>
+  </ul>
+</div>
+
+<div style="background-color: #dbeafe; padding: 15px; margin: 15px 0; border-left: 4px solid #3b82f6; border-radius: 4px;">
+  <strong>📊 期刊缩写对照：</strong>
+  <ul>
+    <li><strong>TOCHI</strong> - Transactions on Computer-Human Interaction</li>
+    <li><strong>TiiS</strong> - Transactions on Interactive Intelligent Systems</li>
+    <li><strong>TSC</strong> - Transactions on Social Computing</li>
+    <li><strong>TAFFC</strong> - Transactions on Affective Computing</li>
+    <li><strong>THMS</strong> - Transactions on Human-Machine Systems</li>
+    <li><strong>TLT</strong> - Transactions on Learning Technologies</li>
+    <li><strong>TKDE</strong> - Transactions on Knowledge and Data Engineering</li>
+    <li><strong>TNNLS</strong> - Transactions on Neural Networks and Learning Systems</li>
+    <li><strong>TITS</strong> - Transactions on Intelligent Transportation Systems</li>
+    <li><strong>TIST</strong> - Transactions on Intelligent Systems and Technology</li>
+    <li><strong>TOIS</strong> - Transactions on Information Systems</li>
+    <li><strong>TOPS</strong> - Transactions on Privacy and Security</li>
+    <li><strong>TDSC</strong> - Transactions on Dependable and Secure Computing</li>
+    <li><strong>TWEB</strong> - Transactions on the Web</li>
+    <li><strong>TCSS</strong> - Transactions on Computational Social Systems</li>
+    <li><strong>JBHI</strong> - Journal of Biomedical and Health Informatics</li>
+    <li><strong>TCBB</strong> - Transactions on Computational Biology and Bioinformatics</li>
+  </ul>
+</div>
+
+---
+
+**更新日期：** 2025-11-10
