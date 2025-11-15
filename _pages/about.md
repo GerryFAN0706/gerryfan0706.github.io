@@ -87,7 +87,7 @@ redirect_from:
   </div>
 
   <div class="news-item">
-    <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI 2025 Satellite Event</strong> in Guangzhou, China
+    <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI (CCF A) 2025 Satellite Event</strong> in Guangzhou, China
   </div>
 
   <div class="news-more">
