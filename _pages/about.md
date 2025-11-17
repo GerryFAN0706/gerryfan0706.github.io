@@ -79,11 +79,15 @@ redirect_from:
   </div>
 
   <div class="news-item">
+    <strong>[2025]</strong> 📝 Paper "<strong>Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin</strong>" accepted by <em>Journal of Rural Studies</em> <strong>(SCI 中科院Q1 Top)</strong>
+  </div>
+
+  <div class="news-item">
     <strong>[2025]</strong> 🏆 Received <strong>First-Class Paper Award</strong> and <strong>Best Presentation Award</strong> at CPEC2025 (第九届中国计算机实践教育学术会议)
   </div>
 
   <div class="news-item">
-    <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI 2025 Satellite Event</strong> in Guangzhou, China
+    <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI (CCF A) 2025 Satellite Event</strong> in Guangzhou, China
   </div>
 
   <div class="news-more">
@@ -94,7 +98,7 @@ redirect_from:
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show More News</span>
-    <span class="news-count" id="moreCount">+1</span>
+    <span class="news-count" id="moreCount">+2</span>
   </button>
 </div>
 
