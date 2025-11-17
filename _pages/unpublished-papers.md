@@ -26,7 +26,7 @@ sitemap: false
 ### Performing for the Algorithm: Examining Risk Behaviors, Monetization, and Self-Presentation in Live Streaming
 
 - **投稿日期：** 2025-04-13
-- **目标期刊/会议：** Humanities and Social Sciences Communications
+- **目标期刊/会议：** Humanities and Social Sciences Communications/// 感觉可以换了
 - **当前状态：** Under Review
 - **预计结果时间：** 2025-12
 - **备注：** 1区top
@@ -54,7 +54,7 @@ ___
 ### Seeing Is Believing? Do Douyin‑Style AI‑Generated Videos Induce False Episodic Memories for Real‑Person Events? A Two‑Wave Online Experiment
 
 - **投稿日期：** 2025-10-07
-- **目标期刊/会议：** Bid data & society; TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE
+- **目标期刊/会议：** Looking for new venue
 - **当前状态：** With Journal Administrator
 - **预计结果时间：** 2026-02
 - **备注：** 1区top
