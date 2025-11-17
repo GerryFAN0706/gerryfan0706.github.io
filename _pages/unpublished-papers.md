@@ -67,15 +67,6 @@ ___
 - **预计结果时间：** 2026-03
 - **备注：** 
 
-### Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin
-
-- **投稿日期：** 2025-9-16 （返修）
-- 目标期刊：Journal of Rural Studies
-- **当前状态：** Underview (2/3)
-- **预计结果时间：** 2025-12
-- **备注：** 
-
-
 
 ## Conferences
 
