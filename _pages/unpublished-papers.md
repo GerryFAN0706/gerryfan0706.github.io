@@ -67,6 +67,48 @@ ___
 - **预计结果时间：** 2026-03
 - **备注：** 
 
+---
+
+### Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees
+
+- **投稿日期：** 2025-11-09
+- **目标期刊/会议：** ACM Transactions on Information Systems (TOIS)
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-05
+- **作者：** Guangrui Fan, Dandan Liu, Lihu Pan
+- **Manuscript ID：** TOIS-2025-0753
+- **备注：** CCF A
+
+---
+
+### Textless, Tiny, and Private: Hashed n-grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media
+
+- **投稿日期：** 2025-11-30
+- **目标期刊/会议：** IEEE Transactions on Computational Social Systems (Special Issue on Mental Disorder Detection on Social Media)
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-02-25
+- **作者：** Dandan Liu, Guangrui Fan (Corresponding), Qian Guo, Rui Zhang, Lihu Pan
+- **重要时间节点：**
+  - 第一轮审稿完成：2026-01-01
+  - 修改稿截止（第一轮）：2026-01-15
+  - 第二轮审稿完成：2026-02-01
+  - 修改稿截止（第二轮）：2026-02-15
+  - 最终决定通知：2026-02-25
+  - 发表时间：2026-04
+- **备注：** 特刊，心理健康筛查，本地差分隐私
+
+---
+
+### NetFair: Network-Aware Fairness for Spatiotemporal Traffic Forecasting
+
+- **投稿日期：** 2025-11-30
+- **目标期刊/会议：** IEEE Transactions on Intelligent Transportation Systems (TITS)
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-08
+- **作者：** Guangrui Fan (Corresponding), Aznul Qalid Md Sabri, Rui Zhang, Lihu Pan
+- **备注：** 中科院1区Top，交通流预测公平性，网络感知公平性框架
+
+---
 
 ## Conferences
 
