@@ -37,9 +37,9 @@ ___
 
 - **投稿日期：** 2025-07-08
 - **目标期刊/会议：** International Journal of Human–Computer Interaction
-- **当前状态：** Under Review
-- **预计结果时间：** 2025-12
-- **备注：** CCF B
+- **当前状态：** Rejected（准备根据审稿意见大修并改投）
+- **预计结果时间：** 待定
+- **备注：** CCF B，根据审稿反馈寻找新的投稿期刊
 
 ___
 
@@ -54,10 +54,10 @@ ___
 ### Seeing Is Believing? Do Douyin‑Style AI‑Generated Videos Induce False Episodic Memories for Real‑Person Events? A Two‑Wave Online Experiment
 
 - **投稿日期：** 2025-10-07
-- **目标期刊/会议：** Looking for new venue
-- **当前状态：** With Journal Administrator
-- **预计结果时间：** 2026-02
-- **备注：** 1区top
+- **目标期刊/会议：** International Journal of Human–Computer Interaction (IJHCI)
+- **当前状态：** Preparing Submission
+- **预计结果时间：** 待定
+- **备注：** 1区top，计划按意见修改后投稿 IJHCI
 
 ### The Consent Illusion: How Label Wording and Placement Shape Perceived Permission for Real‑Person AI Video in China
 
