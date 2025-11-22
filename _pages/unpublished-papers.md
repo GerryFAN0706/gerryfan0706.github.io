@@ -201,8 +201,8 @@ ___
 #### Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation
 - **投稿日期：** 2025-09-10
 - **目标会议：** FSE 2026 (CCF A)
-- **当前状态：** Under Review
-- **预计结果时间：** 2025-12-22
+- **当前状态：** Rejected（准备根据审稿意见大修）
+- **后续计划：** 修订后改投期刊（考虑 TOSEM 等软件工程期刊）
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Qian Guo
 - **Topics:** AI/ML for SE, Requirements Engineering, Human-Computer Interaction, Empirical SE
 - **备注：** Research Papers Track - Multi-domain controlled study (mental-health, finance, fitness) comparing 4 AI configurations vs. human baselines. Heterogeneous-provider plurality shows +14.7% uplift in validated requirements.
