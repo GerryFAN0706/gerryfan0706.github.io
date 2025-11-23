@@ -63,9 +63,9 @@ ___
 
 - **投稿日期：** 2025-10-11
 - 目标期刊/会议：International Journal of Human‑Computer Studies/Maybe ICA 年会
-- **当前状态：** Submitted
-- **预计结果时间：** 2026-03
-- **备注：** 
+- **当前状态：** Rejected（准备根据审稿意见大修）
+- **预计结果时间：** 待定
+- **备注：** 考虑改投其他 HCI 顶级期刊或会议（如 CHI 顶会相关期刊/Track）
 
 ---
 
