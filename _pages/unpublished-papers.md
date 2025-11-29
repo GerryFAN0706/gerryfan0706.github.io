@@ -198,10 +198,9 @@ ___
 ---
 
 #### 5. HEAD‑CONVO: LLM‑Assisted Conversation Compression and Continuous‑Time Modeling for Early Depression Detection on Social Media
-- **投稿日期：** 待补充
+- **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026 - Web4Good Track
 - **当前状态：** Submitted
-- **Rebuttal Period:** 待通知
 - **预计结果时间：** 2026-01-13
 - **作者：** Dandan Liu, Guangrui Fan (Corresponding), Aznul Qalid Md Sabri, Lihu Pan
 - **备注：** LLM-assisted conversation compression and continuous-time modeling for early depression detection on social media
