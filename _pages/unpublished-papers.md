@@ -103,9 +103,10 @@ ___
 
 - **投稿日期：** 2025-11-30
 - **目标期刊/会议：** IEEE Transactions on Intelligent Transportation Systems (TITS)
-- **当前状态：** Submitted
-- **预计结果时间：** 2026-08
+- **当前状态：** Rejected（准备根据审稿意见大修）
+- **预计结果时间：** 已出结果
 - **作者：** Guangrui Fan (Corresponding), Aznul Qalid Md Sabri, Rui Zhang, Lihu Pan
+- **后续计划：** 修订后改投期刊（优先考虑：IEEE TKDE, IEEE TNNLS, Transportation Research Part C）
 - **备注：** 中科院1区Top，交通流预测公平性，网络感知公平性框架
 
 ---
@@ -150,7 +151,7 @@ ___
 
 ---
 
-### WWW 2026 (4 papers submitted)
+### WWW 2026 (5 papers submitted)
 
 #### 1. Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims
 - **投稿日期：** 2025-11-30
@@ -177,9 +178,9 @@ ___
 #### 3. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026
-- **当前状态：** Under Review
+- **当前状态：** Rejected
 - **Rebuttal Period:** 2025-11-24 to 2025-12-01
-- **预计结果时间：** 2026-01-13
+- **预计结果时间：** 2026-01-13（已出结果：Rejected）
 - **作者：** Guangrui Fan, Dandan Liu, Rui Zhang, Lihu Pan
 - **备注：** Long-term algorithmic fairness in content recommendation
 
@@ -188,11 +189,22 @@ ___
 #### 4. Consent Boundaries by Play: CI-Grounded Micro-Games to Elicit Stable, UI-Robust Web Data-Sharing Preferences
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026
-- **当前状态：** Under Review
+- **当前状态：** Rebuttal（答辩中）
 - **Rebuttal Period:** 2025-11-24 to 2025-12-01
 - **预计结果时间：** 2026-01-13
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Aznul Qalid Md Sabri
 - **备注：** Privacy consent elicitation through interactive micro-games
+
+---
+
+#### 5. HEAD‑CONVO: LLM‑Assisted Conversation Compression and Continuous‑Time Modeling for Early Depression Detection on Social Media
+- **投稿日期：** 待补充
+- **目标会议：** WWW 2026 - Web4Good Track
+- **当前状态：** Submitted
+- **Rebuttal Period:** 待通知
+- **预计结果时间：** 2026-01-13
+- **作者：** Dandan Liu, Guangrui Fan (Corresponding), Aznul Qalid Md Sabri, Lihu Pan
+- **备注：** LLM-assisted conversation compression and continuous-time modeling for early depression detection on social media
 
 ---
 
