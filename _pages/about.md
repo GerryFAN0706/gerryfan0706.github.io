@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026]</strong> 🎉 Journal article accepted by <strong>International Journal of STEM Education</strong> (SCI 中科院Q1 Top): "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education"
+  </div>
+
+  <div class="news-item">
     <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
   </div>
 
@@ -98,7 +102,7 @@ redirect_from:
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show More News</span>
-    <span class="news-count" id="moreCount">+2</span>
+    <span class="news-count" id="moreCount">+1</span>
   </button>
 </div>
 

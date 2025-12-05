@@ -17,9 +17,9 @@ sitemap: false
 ### Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education
 - **投稿日期：** 2025-07-01
 - **目标期刊/会议：** International Journal of STEM Education
-- **当前状态：** Under Review
-- **预计结果时间：** 2025-11
-- **备注：** 1区top
+- **当前状态：** Accepted（In Press）
+- **预计结果时间：** 2025-11（已出结果：Accepted）
+- **备注：** 1区top，已被 International Journal of STEM Education 接收
 
 ---
 
