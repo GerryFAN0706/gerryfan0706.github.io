@@ -196,7 +196,7 @@ author_profile: true
 <div class="pub-filters">
   <div class="pub-filters-group">
     <label for="pub-year-filter">Year:</label>
-    <select id="pub-year-filter" onchange="applyPubFilters()">
+    <select id="pub-year-filter">
       <option value="all">All</option>
       {% assign pubs_by_year = site.publications | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" | reverse %}
       {% for year_group in pubs_by_year %}
@@ -206,7 +206,7 @@ author_profile: true
   </div>
   <div class="pub-filters-group">
     <label for="pub-type-filter">Type:</label>
-    <select id="pub-type-filter" onchange="applyPubFilters()">
+    <select id="pub-type-filter">
       <option value="all">All</option>
       <option value="manuscripts">Journal Articles</option>
       <option value="conferences">Conference Papers</option>
@@ -264,31 +264,34 @@ document.querySelectorAll('.pub-nav-link').forEach(link => {
 });
 
 // Client-side publication filters
-window.applyPubFilters = function() {
+document.addEventListener('DOMContentLoaded', function() {
   const yearSelect = document.getElementById('pub-year-filter');
   const typeSelect = document.getElementById('pub-type-filter');
   const pubItems = document.querySelectorAll('.pub-item');
 
-  const yearVal = yearSelect ? yearSelect.value : 'all';
-  const typeVal = typeSelect ? typeSelect.value : 'all';
+  function applyPubFilters() {
+    const yearVal = yearSelect ? yearSelect.value : 'all';
+    const typeVal = typeSelect ? typeSelect.value : 'all';
 
-  Array.prototype.forEach.call(pubItems, function(item) {
-    const itemYear = item.getAttribute('data-year');
-    const itemCat = item.getAttribute('data-category');
+    Array.prototype.forEach.call(pubItems, function(item) {
+      const itemYear = item.getAttribute('data-year');
+      const itemCat = item.getAttribute('data-category');
 
-    const matchYear = (yearVal === 'all' || itemYear === yearVal);
-    const matchType = (typeVal === 'all' || itemCat === typeVal);
+      const matchYear = (yearVal === 'all' || itemYear === yearVal);
+      const matchType = (typeVal === 'all' || itemCat === typeVal);
 
-    if (matchYear && matchType) {
-      item.style.display = '';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-};
+      if (matchYear && matchType) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
 
-// Initialize filters on page load
-document.addEventListener('DOMContentLoaded', function() {
+  if (yearSelect) yearSelect.addEventListener('change', applyPubFilters);
+  if (typeSelect) typeSelect.addEventListener('change', applyPubFilters);
+
+  // Initialize once
   applyPubFilters();
 });
 </script>
