@@ -111,37 +111,6 @@ author_profile: true
   scroll-margin-top: 20px;
 }
 
-.pub-filters {
-  background: #f9fafb;
-  padding: 15px 20px;
-  border-radius: 12px;
-  margin: 20px 0 30px 0;
-  border-left: 4px solid #4f46e5;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
-}
-
-.pub-filters label {
-  font-weight: 600;
-  color: #374151;
-}
-
-.pub-filters select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
-  background-color: white;
-  font-size: 0.9em;
-}
-
-.pub-filters-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 @media (max-width: 768px) {
   .pub-nav-links {
     flex-direction: column;
@@ -189,28 +158,6 @@ author_profile: true
       <span class="pub-stat-number">{{ rank1_pubs }}</span>
       <span class="pub-stat-label">CCF A / Q1 Top</span>
     </div>
-  </div>
-</div>
-
-<!-- Client-side Filters -->
-<div class="pub-filters">
-  <div class="pub-filters-group">
-    <label for="pub-year-filter">Year:</label>
-    <select id="pub-year-filter">
-      <option value="all">All</option>
-      {% assign pubs_by_year = site.publications | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" | reverse %}
-      {% for year_group in pubs_by_year %}
-        <option value="{{ year_group.name }}">{{ year_group.name }}</option>
-      {% endfor %}
-    </select>
-  </div>
-  <div class="pub-filters-group">
-    <label for="pub-type-filter">Type:</label>
-    <select id="pub-type-filter">
-      <option value="all">All</option>
-      <option value="manuscripts">Journal Articles</option>
-      <option value="conferences">Conference Papers</option>
-    </select>
   </div>
 </div>
 
@@ -263,37 +210,6 @@ document.querySelectorAll('.pub-nav-link').forEach(link => {
   });
 });
 
-// Client-side publication filters
-document.addEventListener('DOMContentLoaded', function() {
-  const yearSelect = document.getElementById('pub-year-filter');
-  const typeSelect = document.getElementById('pub-type-filter');
-  const pubItems = document.querySelectorAll('.pub-item');
-
-  function applyPubFilters() {
-    const yearVal = yearSelect ? yearSelect.value : 'all';
-    const typeVal = typeSelect ? typeSelect.value : 'all';
-
-    Array.prototype.forEach.call(pubItems, function(item) {
-      const itemYear = item.getAttribute('data-year');
-      const itemCat = item.getAttribute('data-category');
-
-      const matchYear = (yearVal === 'all' || itemYear === yearVal);
-      const matchType = (typeVal === 'all' || itemCat === typeVal);
-
-      if (matchYear && matchType) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-
-  if (yearSelect) yearSelect.addEventListener('change', applyPubFilters);
-  if (typeSelect) typeSelect.addEventListener('change', applyPubFilters);
-
-  // Initialize once
-  applyPubFilters();
-});
 </script>
 
 
