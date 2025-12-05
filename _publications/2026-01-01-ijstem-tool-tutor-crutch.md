@@ -12,3 +12,4 @@ citation: 'To appear in <i>International Journal of STEM Education</i>, 2026.'
 Grounded theory study of how students use AI coding assistants as tools, tutors, and cognitive crutches in programming education, with implications for scaffolding and offloading.
 
 
+

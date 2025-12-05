@@ -15,7 +15,7 @@
 {% assign pub_year = post.date | default: "1900-01-01" | date: "%Y" %}
 {% assign pub_category = post.category | default: "" %}
 
-<div class="{{ include.type | default: "list" }}__item"
+<div class="{{ include.type | default: "list" }}__item pub-item"
      data-year="{{ pub_year }}"
      data-category="{{ pub_category }}">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
