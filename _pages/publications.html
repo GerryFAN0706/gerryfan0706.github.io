@@ -264,33 +264,31 @@ document.querySelectorAll('.pub-nav-link').forEach(link => {
 });
 
 // Client-side publication filters
-document.addEventListener('DOMContentLoaded', function() {
-  const yearSelect = document.getElementById('pub-year-filter');
-  const typeSelect = document.getElementById('pub-type-filter');
-  const items = document.querySelectorAll('.list__item');
+const yearSelect = document.getElementById('pub-year-filter');
+const typeSelect = document.getElementById('pub-type-filter');
+const pubItems = document.querySelectorAll('.list__item');
 
-  function applyFilters() {
-    const yearVal = yearSelect ? yearSelect.value : 'all';
-    const typeVal = typeSelect ? typeSelect.value : 'all';
+function applyPubFilters() {
+  const yearVal = yearSelect ? yearSelect.value : 'all';
+  const typeVal = typeSelect ? typeSelect.value : 'all';
 
-    items.forEach(item => {
-      const itemYear = item.getAttribute('data-year');
-      const itemCat = item.getAttribute('data-category');
+  pubItems.forEach(item => {
+    const itemYear = item.getAttribute('data-year');
+    const itemCat = item.getAttribute('data-category');
 
-      const matchYear = (yearVal === 'all' || itemYear === yearVal);
-      const matchType = (typeVal === 'all' || itemCat === typeVal);
+    const matchYear = (yearVal === 'all' || itemYear === yearVal);
+    const matchType = (typeVal === 'all' || itemCat === typeVal);
 
-      if (matchYear && matchType) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
+    if (matchYear && matchType) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
 
-  if (yearSelect) yearSelect.addEventListener('change', applyFilters);
-  if (typeSelect) typeSelect.addEventListener('change', applyFilters);
-});
+if (yearSelect) yearSelect.addEventListener('change', applyPubFilters);
+if (typeSelect) typeSelect.addEventListener('change', applyPubFilters);
 </script>
 
 
