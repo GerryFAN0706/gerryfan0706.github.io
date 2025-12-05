@@ -196,7 +196,7 @@ author_profile: true
 <div class="pub-filters">
   <div class="pub-filters-group">
     <label for="pub-year-filter">Year:</label>
-    <select id="pub-year-filter">
+    <select id="pub-year-filter" onchange="applyPubFilters()">
       <option value="all">All</option>
       {% assign pubs_by_year = site.publications | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" | reverse %}
       {% for year_group in pubs_by_year %}
@@ -206,7 +206,7 @@ author_profile: true
   </div>
   <div class="pub-filters-group">
     <label for="pub-type-filter">Type:</label>
-    <select id="pub-type-filter">
+    <select id="pub-type-filter" onchange="applyPubFilters()">
       <option value="all">All</option>
       <option value="manuscripts">Journal Articles</option>
       <option value="conferences">Conference Papers</option>
@@ -264,15 +264,15 @@ document.querySelectorAll('.pub-nav-link').forEach(link => {
 });
 
 // Client-side publication filters
-const yearSelect = document.getElementById('pub-year-filter');
-const typeSelect = document.getElementById('pub-type-filter');
-const pubItems = document.querySelectorAll('.pub-item');
+window.applyPubFilters = function() {
+  const yearSelect = document.getElementById('pub-year-filter');
+  const typeSelect = document.getElementById('pub-type-filter');
+  const pubItems = document.querySelectorAll('.pub-item');
 
-function applyPubFilters() {
   const yearVal = yearSelect ? yearSelect.value : 'all';
   const typeVal = typeSelect ? typeSelect.value : 'all';
 
-  pubItems.forEach(item => {
+  Array.prototype.forEach.call(pubItems, function(item) {
     const itemYear = item.getAttribute('data-year');
     const itemCat = item.getAttribute('data-category');
 
@@ -285,13 +285,12 @@ function applyPubFilters() {
       item.style.display = 'none';
     }
   });
-}
+};
 
-if (yearSelect) yearSelect.addEventListener('change', applyPubFilters);
-if (typeSelect) typeSelect.addEventListener('change', applyPubFilters);
-
-// Optionally apply filters once on load (keeps "All" state consistent)
-applyPubFilters();
+// Initialize filters on page load
+document.addEventListener('DOMContentLoaded', function() {
+  applyPubFilters();
+});
 </script>
 
 
