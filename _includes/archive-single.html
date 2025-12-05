@@ -7,12 +7,17 @@
 {% endif %}
 
 {% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign title = post.title %}
+{% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+{% assign pub_year = post.date | default: "1900-01-01" | date: "%Y" %}
+{% assign pub_category = post.category | default: "" %}
+
+<div class="{{ include.type | default: "list" }}__item"
+     data-year="{{ pub_year }}"
+     data-category="{{ pub_category }}">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">

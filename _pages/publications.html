@@ -111,6 +111,37 @@ author_profile: true
   scroll-margin-top: 20px;
 }
 
+.pub-filters {
+  background: #f9fafb;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin: 20px 0 30px 0;
+  border-left: 4px solid #4f46e5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.pub-filters label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.pub-filters select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  font-size: 0.9em;
+}
+
+.pub-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 @media (max-width: 768px) {
   .pub-nav-links {
     flex-direction: column;
@@ -161,6 +192,28 @@ author_profile: true
   </div>
 </div>
 
+<!-- Client-side Filters -->
+<div class="pub-filters">
+  <div class="pub-filters-group">
+    <label for="pub-year-filter">Year:</label>
+    <select id="pub-year-filter">
+      <option value="all">All</option>
+      {% assign pubs_by_year = site.publications | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" | reverse %}
+      {% for year_group in pubs_by_year %}
+        <option value="{{ year_group.name }}">{{ year_group.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="pub-filters-group">
+    <label for="pub-type-filter">Type:</label>
+    <select id="pub-type-filter">
+      <option value="all">All</option>
+      <option value="manuscripts">Journal Articles</option>
+      <option value="conferences">Conference Papers</option>
+    </select>
+  </div>
+</div>
+
 <!-- Year Statistics -->
 <div id="year-statistics" class="year-stats">
   <h3>📊 Publications by Year</h3>
@@ -180,7 +233,8 @@ author_profile: true
   {% for category in site.publication_category  %}
     {% assign sorted_pubs = site.publications | where: "category", category[0] | sort: "rank" %}
     {% if sorted_pubs.size > 0 %}
-      <div class="category-section" id="{% if category[0] == 'manuscripts' %}journal-articles{% else %}conference-papers{% endif %}">
+      <div class="category-section"
+           id="{% if category[0] == 'manuscripts' %}journal-articles{% elsif category[0] == 'conferences' %}conference-papers{% else %}{{ category[0] }}{% endif %}">
         <h2>{{ category[1].title }}</h2>
         <hr />
         {% for post in sorted_pubs %}
@@ -207,6 +261,35 @@ document.querySelectorAll('.pub-nav-link').forEach(link => {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
+});
+
+// Client-side publication filters
+document.addEventListener('DOMContentLoaded', function() {
+  const yearSelect = document.getElementById('pub-year-filter');
+  const typeSelect = document.getElementById('pub-type-filter');
+  const items = document.querySelectorAll('.list__item');
+
+  function applyFilters() {
+    const yearVal = yearSelect ? yearSelect.value : 'all';
+    const typeVal = typeSelect ? typeSelect.value : 'all';
+
+    items.forEach(item => {
+      const itemYear = item.getAttribute('data-year');
+      const itemCat = item.getAttribute('data-category');
+
+      const matchYear = (yearVal === 'all' || itemYear === yearVal);
+      const matchType = (typeVal === 'all' || itemCat === typeVal);
+
+      if (matchYear && matchType) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  if (yearSelect) yearSelect.addEventListener('change', applyFilters);
+  if (typeSelect) typeSelect.addEventListener('change', applyFilters);
 });
 </script>
 
