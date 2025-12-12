@@ -79,6 +79,12 @@ redirect_from:
   </div>
 
   <div class="news-item">
+    <strong>[2025]</strong> 🏅 Paper "<strong>The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance</strong>" in <em>International Journal of STEM Education</em> selected as:
+    <br />- <strong>Most cited articles (past two years)</strong>
+    <br />- <strong>Most popular articles (past 9 months)</strong> (Rank 1)
+  </div>
+
+  <div class="news-item">
     <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
   </div>
 
