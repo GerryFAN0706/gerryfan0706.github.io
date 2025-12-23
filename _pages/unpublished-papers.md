@@ -223,15 +223,39 @@ ___
 ## ✍️ 写作中（In Progress）
 
 <div style="background-color: #fee2e2; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ef4444; border-radius: 4px;">
-  <strong>⏰ 紧急提醒：</strong> 以下会议截稿日期临近，请优先安排！
+  <strong>⏰ 紧急提醒：</strong> 以下会议截稿日期临近，请优先安排！<br>
+  <strong>📅 更新日期：</strong> 2025-12-23
 </div>
 
-### 🔥 ACL 2026 - **54天后截稿** (最紧急)
+---
+
+## 📅 Conference Deadline Calendar (2026)
+
+<div style="background-color: #f0fdf4; padding: 15px; margin-bottom: 20px; border-left: 4px solid #22c55e; border-radius: 4px;">
+  <strong>🗓️ 即将到来的截止日期一览</strong>
+</div>
+
+| 会议 | Track | 地点 & 时间 | 摘要截止 | 论文截止 | Notification | 等级 |
+|:-----|:------|:-----------|:---------|:---------|:-------------|:-----|
+| **ACL 2026** | Main (via ARR) | San Diego, USA · Jul 2–7 | — | **Jan 5, 2026** | Apr 4, 2026 | CCF A |
+| **IJCAI 2026** | Main track | Bremen, Germany · Aug 15–21 | **Jan 12, 2026** | **Jan 19, 2026** | Apr 29, 2026 | CCF A |
+| **ESEC/FSE 2026** | SE Education Track | Montréal, Canada · Jul 5–9 | — | Jan 22, 2026 | Mar 17, 2026 | CCF A |
+| **ICML 2026** | Main | Seoul, Korea · Jul 6–12 | **Jan 23, 2026** | **Jan 28, 2026** | Apr 30, 2026 | CCF A |
+| **ISSTA 2026** | — | Oakland, USA · Oct 3–9 | — | **Jan 29, 2026** | Apr 16, 2026 (initial) | CCF A |
+| **KDD 2026 (Cycle 2)** | — | Aug 2026 | **Feb 1, 2026** | Feb 8, 2026 | TBD | CCF A |
+| **ESEC/FSE 2026** | R&R Track | Montréal, Canada · Jul 5–9 | — | Feb 24, 2026 | Mar 24, 2026 | CCF A |
+
+---
+
+### 🔥 ACL 2026 - **13天后截稿** (最紧急！)
 - **会议时间：** 2026-07-02 至 2026-07-07
-- **会议地点：** San Diego, California, United States
-- **截稿日期：** 2026-01-06 19:59:59 (UTC+8)
-- **会议等级：** CCF A, CORE A*, THCPL A
-- **录用率：** 21.4% (943/4407, 2024年数据)
+- **会议地点：** San Diego, California, USA
+- **截稿日期：** 2026-01-05 (via ARR)
+- **Reviews Released:** 2026-03-09
+- **Commitment to ACL:** 2026-03-14
+- **Notification:** 2026-04-04
+- **Camera-Ready:** 2026-04-19
+- **会议等级：** CCF A, CORE A*
 - **目标论文数：** 4篇 (collecting ideas)
 - **完成进度：** 
   - [ ] 确定研究问题
@@ -245,13 +269,16 @@ ___
 
 ---
 
-### 🔥 IJCAI 2026 - **68天后截稿** (注意摘要截止)
+### 🔥 IJCAI 2026 - **20天后摘要截止** (注意摘要截止！)
 - **会议时间：** 2026-08-15 至 2026-08-21
 - **会议地点：** Bremen, Germany
-- **摘要截止：** 2026-01-20 19:59:59 (UTC+8) ⚠️
-- **全文截止：** 约2026-01-27 (待确认)
-- **会议等级：** CCF A, CORE A*, THCPL B
-- **录用率：** 14.0% (791/5651, 2024年数据)
+- **摘要截止：** 2026-01-12 ⚠️
+- **全文截止：** 2026-01-19
+- **Phase I Notification:** 2026-03-04
+- **Author Response:** 2026-04-07 to 2026-04-10
+- **Final Notification:** 2026-04-29
+- **Camera-Ready:** 2026-05-15
+- **会议等级：** CCF A, CORE A*
 - **目标论文数：** 3篇
 - **研究方向：**
   1. **Graph Unlearning** - 图遗忘与隐私保护
@@ -268,13 +295,26 @@ ___
 
 ---
 
-### 🔥 ICML 2026 - **77天后截稿**
+### 🔥 ESEC/FSE 2026 (SE Education Track) - **30天后截稿**
+- **会议时间：** 2026-07-05 至 2026-07-09
+- **会议地点：** Montréal, Canada
+- **截稿日期：** 2026-01-22
+- **Notification:** 2026-03-17
+- **Camera-Ready:** 2026-04-02
+- **会议等级：** CCF A
+- **目标论文数：** 1篇（可选）
+- **研究方向：** AI辅助编程教育、软件工程教育
+- **备注：** 软件工程教育专题，可考虑将教学相关研究投稿
+
+---
+
+### 🔥 ICML 2026 - **36天后截稿**
 - **会议时间：** 2026-07-06 至 2026-07-12
-- **会议地点：** Seoul, Korea
-- **投稿开放：** 2026-01-08 12:00 AM (UTC+0) on OpenReview
-- **截稿日期：** 2026-01-29 19:59:59 (UTC+8) / 2026-01-29 11:59:59 (UTC+0)
-- **会议等级：** CCF A, CORE A*, THCPL A
-- **录用率：** 27.5% (2609/9473, 2024年数据)
+- **会议地点：** Seoul, Korea (COEX)
+- **摘要截止：** 2026-01-23
+- **全文截止：** 2026-01-28
+- **Notification:** 2026-04-30
+- **会议等级：** CCF A, CORE A*
 - **目标论文数：** 3篇
 - **研究方向：**
   - 图神经网络方法创新
@@ -291,11 +331,15 @@ ___
 
 ---
 
-### ISSTA 2026 - **78天后截稿**
+### ISSTA 2026 - **37天后截稿**
 - **会议时间：** 2026-10-03 至 2026-10-09
-- **会议地点：** Oakland, California, United States
-- **截稿日期：** 2026-01-30 19:59:59 (UTC+8) / 2026-01-29 23:59:59 (AoE)
-- **会议等级：** CCF A, CORE A, THCPL A
+- **会议地点：** Oakland, California, USA
+- **截稿日期：** 2026-01-29
+- **Author Response:** 2026-03-24 to 2026-03-26
+- **Initial Notification:** 2026-04-16
+- **Final Notification:** 2026-06-25
+- **Camera-Ready:** 2026-07-23
+- **会议等级：** CCF A, CORE A
 - **领域：** 软件工程/系统软件/程序设计语言
 - **目标论文数：** 1篇（可选）
 - **研究方向：** AI辅助编程、软件测试、程序分析
@@ -309,37 +353,55 @@ ___
 
 ---
 
+### KDD 2026 (Cycle 2) - **40天后摘要截止**
+- **会议时间：** 2026-08
+- **摘要截止：** 2026-02-01
+- **全文截止：** 2026-02-08
+- **会议等级：** CCF A
+- **领域：** 数据挖掘、知识发现
+- **目标论文数：** TBD
+- **研究方向：** 图神经网络、推荐系统、时空预测
+- **备注：** 数据挖掘顶会，适合图学习和推荐系统相关研究
+
+---
+
 ### 📊 投稿优先级建议
 
 | 会议 | 截稿倒计时 | 优先级 | 建议行动 |
-|------|----------|--------|---------|
-| **ACL 2026** | 54天 | 🔴 最高 | 立即确定4篇论文主题，启动写作 |
-| **IJCAI 2026** | 68天 (摘要) | 🔴 最高 | 完成3篇论文的摘要和大纲 |
-| **ICML 2026** | 77天 | 🟡 高 | 加速数据分析，准备初稿 |
-| **ISSTA 2026** | 78天 | 🟢 中 | 评估可行性，决定是否投稿 |
+|:-----|:----------|:-------|:--------|
+| **ACL 2026** | 13天 | 🔴🔴 紧急 | 立即完成论文终稿！ |
+| **IJCAI 2026** | 20天 (摘要) / 27天 (全文) | 🔴 最高 | 完成摘要和大纲，加速写作 |
+| **FSE 2026 (Edu)** | 30天 | 🟡 高 | 评估可行性，决定是否投稿 |
+| **ICML 2026** | 36天 | 🟡 高 | 加速数据分析，准备初稿 |
+| **ISSTA 2026** | 37天 | 🟢 中 | 评估可行性，决定是否投稿 |
+| **KDD 2026 Cycle 2** | 40天 | 🟢 中 | 整理现有工作，考虑投稿 |
 
 ---
 
 ### 💡 时间规划建议
 
-**第1-2周（现在-12月底）：**
-- ✅ 确定 ACL 4篇论文的具体主题和分工
+**本周（12月23日-12月29日）：** 🔴 冲刺 ACL
+- ✅ ACL 论文进入最终冲刺阶段
 - ✅ 完成 IJCAI 3篇论文的摘要初稿
 - ✅ 推进 ICML 数据分析
 
-**第3-4周（1月初）：**
-- ✅ ACL 论文进入写作阶段
-- ✅ IJCAI 摘要定稿并提交（1月20日前）
-- ✅ ICML 完成实验，开始撰写
+**第2周（12月30日-1月5日）：** 🔴 ACL 截止
+- ✅ ACL 论文定稿并提交（1月5日前！）
+- ✅ IJCAI 摘要完善
+- ✅ ICML 完成实验
 
-**第5-7周（1月中下旬）：**
-- ✅ ACL 论文内部审阅并修改
+**第3周（1月6日-1月12日）：** 🔴 IJCAI 摘要截止
+- ✅ IJCAI 摘要定稿并提交（1月12日前！）
 - ✅ IJCAI 全文写作
-- ✅ ICML 论文定稿
-- ✅ 决定是否投稿 ISSTA
+- ✅ ICML 论文撰写
 
-**第8周（1月底-2月初）：**
-- ✅ 所有论文最终检查并提交
+**第4-5周（1月13日-1月28日）：**
+- ✅ IJCAI 全文提交（1月19日前）
+- ✅ ICML 论文定稿（1月28日前）
+- ✅ ISSTA 决定是否投稿并完成（1月29日前）
+
+**第6周（1月29日-2月8日）：**
+- ✅ KDD Cycle 2 考虑投稿
 
 ---
 
@@ -581,4 +643,21 @@ ___
 
 ---
 
-**更新日期：** 2025-11-10
+**更新日期：** 2025-12-23
+
+---
+
+## 📅 Conference Deadlines
+
+| CONFERENCE (AREA) | TRACK / TYPE | LOCATION & EVENT DATES | NEXT DUE | ABSTRACT DDL | PAPER DDL | REVIEWS / REBUTTAL | NOTIFICATION | CAMERA-READY |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **THE WEB CONFERENCE (WWW) 2026** | Web4Good special track | Dubai, UAE<br>Apr 13–17, 2026 | — | Nov 23, 2025 | Nov 30, 2025 | — | Jan 13, 2026 | Jan 25, 2026 |
+| **CHI 2026** | Papers | — | — | Sep 4, 2025 | Sep 11, 2025 | Reviews Released Nov 4, 2025<br>Resubmission Dec 4, 2025 | Jan 15, 2026 | — |
+| **ICASSP 2026** | Regular papers | — | — | — | Sep 17, 2025 | Author Response<br>Dec 22, 2025 | Jan 16, 2026 | Jan 28, 2026 |
+| **ACL 2026** | Main conference papers (via ARR) | San Diego, USA<br>Jul 2–7, 2026 | — | — (submit to ARR) | Jan 5, 2026 | ARR reviews released Mar 9, 2026;<br>Commitment to ACL Mar 14, 2026 | Apr 4, 2026 | Apr 19, 2026 |
+| **IJCAI 2026** | Main track | Bremen, Germany<br>Aug 15–21, 2026 | — | **Jan 12, 2026** | **Jan 19, 2026** | Phase I Notif: Mar 4<br>Author Resp: Apr 7–10 | **Apr 29, 2026** | May 15, 2026 |
+| **ESEC/FSE 2026** | Software Engineering Education Track | Montréal, Canada<br>Jul 5–9, 2026 | — | — | Jan 22, 2026 | — | Mar 17, 2026 | Apr 2, 2026 |
+| **ICML 2026** | Main conference | Seoul, Korea (COEX)<br>Jul 6–12, 2026 | — | **Jan 23, 2026** | **Jan 28, 2026** | — | **Apr 30, 2026** | — |
+| **ESEC/FSE 2026** | Revise & Resubmit | Montréal, Canada<br>Jul 5–9, 2026 | — | — | Feb 24, 2026 | — | Mar 24, 2026 | — |
+| **ISSTA 2026**<br>Software Testing & Analysis (SE) | — | Oakland, USA<br>Oct 3–9, 2026 | Jan 29, 2026 (paper) | — | Jan 29, 2026 | Author response<br>Mar 24–26, 2026 | Initial Apr 16, 2026;<br>final Jun 25, 2026 | Jul 23, 2026 |
+| **KDD 2026 (Cycle 2)**<br>Knowledge Discovery & Data Mining (AI) | — | Aug 2026<br>details on site | Feb 1, 2026 (abstract) | Feb 1, 2026 | Feb 8, 2026 | (Cycle-2)<br>rebuttal/notifications<br>not yet posted on CfP | — | — |
