@@ -139,35 +139,21 @@ function toggleNews() {
 
 ## About Me
 
-I am currently a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and a Ph.D. candidate in Computer Science at Universiti Malaya. My research focuses on Human-Computer Interaction, Artificial Intelligence, and their applications in various domains including education, healthcare, and creative systems.
+I am a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and a Ph.D. candidate in Computer Science at Universiti Malaya. My research focuses on **Human-Centered AI** and **Human-AI Interaction**, with applications in education, mental health, and social computing.
 
-In my free time, I enjoy playing tennis and exploring new technologies.
+I am particularly interested in understanding how AI transforms human learning, communication, and decision-making—and how we can design AI systems that genuinely serve human needs.
 
 ## Research Interests
 
-My research integrates **machine learning techniques** with **human-centered empirical methods** to build and evaluate AI systems that are technically robust, socially responsible, and aligned with human values. I work at the intersection of **Human-AI Interaction** and **Graph Machine Learning**, with applications spanning social computing, education, and urban systems.
+My research develops **Human-Centered AI** to understand and improve how humans interact with AI systems. I focus on three interconnected areas:
 
-**Primary Focus: Responsible Human-AI Interaction (70%)**
+**AI in Education.** How does AI reshape learning and teaching? I study cognitive scaffolding and offloading in AI-assisted programming, examining when AI helps students grow versus when it becomes a crutch. Our work in *International Journal of STEM Education* (Q1 Top) investigates AI's impact on motivation, anxiety, and collaborative learning.
 
-I develop computational models and conduct empirical studies to understand how AI systems shape human behavior, cognition, and social dynamics:
+**AI-Mediated Communication & Trust.** As AI increasingly mediates human communication, new challenges emerge around authenticity, trust, and memory. I explore how AI-assisted content creation affects perceived authorship, how AI-generated videos may induce false memories, and how users navigate privacy consent in AI-driven platforms.
 
-- **Trust, Authenticity & Agency**: How do people perceive AI-generated content in intimate communication, creative work, and information consumption? What factors shape trust and acceptance?
+**AI for Social Good.** I develop AI methods to support mental health communities (e.g., predicting response delays in online support forums) and ensure algorithmic fairness in recommender systems and urban computing (e.g., fair spatiotemporal traffic prediction).
 
-- **AI-Mediated Social Computing**: Studying algorithmic fairness, cross-group dialogue, and long-term co-adaptation between users and recommendation systems using causal inference, mixed-methods, and field experiments.
-
-- **Human-Centered AI Design**: Building systems that preserve human agency (e.g., contextual bandits for eco-nudging, verification-aware coding assistants) and evaluating them through rigorous behavioral experiments.
-
-**Secondary Focus: Graph ML for Social & Urban Systems (30%)**
-
-I design graph neural network architectures and apply them to structured, relational data in social and urban contexts:
-
-- **Social Network Analysis**: Graph-based models for community dynamics, information diffusion, and fairness-aware recommendation in social media platforms.
-
-- **Spatio-Temporal Prediction**: Dynamic GNNs for traffic forecasting, healthcare time-series, and urban computing, with emphasis on interpretability and real-world deployment.
-
-- **Graph Unlearning & Privacy**: Methods for selective information removal in graph-structured data, with applications to privacy-preserving social network analysis.
-
-**Methodological Approach**: I combine computational modeling (GNNs, causal inference, contextual bandits) with empirical human-subjects research (mixed-methods experiments, field studies, qualitative analysis) to generate both algorithmic innovations and evidence-based design principles.
+Across these areas, I combine **empirical HCI methods** (experiments, surveys, qualitative studies) with **machine learning techniques** (graph neural networks, LLMs, conformal prediction) to bridge the gap between AI capabilities and human needs.
 
 
 ## Education
