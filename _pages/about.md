@@ -169,6 +169,10 @@ Taiyuan University of Science and Technology, Taiyuan, China (2018 - Present)
 
 ## Professional Service
 
+### Program Committee Member
+
+* **The Web Conference (WWW) 2026** - Special Track: Web4Good (CCF A)
+
 ### Conference & Journal Reviewer
 
 * **CHI 2026** - Conference on Human Factors in Computing Systems (CCF A)
