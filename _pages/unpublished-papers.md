@@ -69,6 +69,30 @@ ___
 
 ---
 
+### FairSynth: Fairness-Aware Evaluation and Calibration of Generative AI Surveys against Cross-National Ground Truth
+
+- **投稿日期：** 2025-12-22
+- **目标期刊/会议：** ACL ARR 2026 January Submission
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-04 (ACL 2026)
+- **作者：** Guangrui Fan, Dandan Liu, Qian Guo, Xueying Niu, Lihu Pan
+- **关键词：** Large Language Models, Survey Simulation, Measurement Fairness, Calibration, Cross-Cultural NLP
+- **备注：** CCF A，提出FairSynth框架评估和校准LLM问卷模拟器的公平性，在跨国调查中降低最差组误差达44%
+
+---
+
+### Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity
+
+- **投稿日期：** 2025-12-23
+- **目标期刊/会议：** ACL ARR 2026 January Submission
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-04 (ACL 2026)
+- **作者：** Guangrui Fan, Dandan Liu, Aznul Qalid Md Sabri, Rui Zhang, Lihu Pan
+- **关键词：** Normative Affect, Feeling Rules, Emotional Appropriateness, LLM Alignment, Affective Computing
+- **备注：** CCF A，提出Feeling Rules Atlas基准测试，揭示LLM中隐藏的情感规范判断差异
+
+---
+
 ### Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees
 
 - **投稿日期：** 2025-11-09
@@ -207,13 +231,14 @@ ___
 
 ---
 
-### FSE 2026
+### FSE 2026 - Revise & Resubmit 🔄
 
 #### Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation
 - **投稿日期：** 2025-09-10
 - **目标会议：** FSE 2026 (CCF A)
-- **当前状态：** Rejected（准备根据审稿意见大修）
-- **后续计划：** 修订后改投期刊（考虑 TOSEM 等软件工程期刊）
+- **当前状态：** Revise & Resubmit（修改后重投）
+- **修改稿截止：** 2026-02-24 ⚠️
+- **预计结果时间：** 2026-03-24
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Qian Guo
 - **Topics:** AI/ML for SE, Requirements Engineering, Human-Computer Interaction, Empirical SE
 - **备注：** Research Papers Track - Multi-domain controlled study (mental-health, finance, fitness) comparing 4 AI configurations vs. human baselines. Heterogeneous-provider plurality shows +14.7% uplift in validated requirements.
@@ -224,8 +249,54 @@ ___
 
 <div style="background-color: #fee2e2; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ef4444; border-radius: 4px;">
   <strong>⏰ 紧急提醒：</strong> 以下会议截稿日期临近，请优先安排！<br>
-  <strong>📅 更新日期：</strong> 2025-12-23
+  <strong>📅 更新日期：</strong> 2026-01-06
 </div>
+
+### ✅ ACL 2026 - 已提交2篇 ✅
+
+已于 2025年12月 提交以下论文至 ACL ARR January：
+1. ✅ **FairSynth**: Fairness-Aware Evaluation and Calibration of Generative AI Surveys against Cross-National Ground Truth
+2. ✅ **Feeling Rules in Language Models**: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity
+
+---
+
+### 🔥 IJCAI 2026 - **6天后摘要截止** (最紧急！)
+- **摘要截止：** 2026-01-12 ⚠️
+- **全文截止：** 2026-01-19
+- **目标论文数：** 3篇
+- **研究方向：**
+  1. **Graph Unlearning** - 图遗忘与隐私保护
+  2. **Traffic Prediction** - 交通流预测与时空GNN
+  3. **TBD** - 待定第三篇
+- **完成进度：** 
+  - [ ] 确定第三篇主题
+  - [ ] 实验完成
+  - [ ] 论文撰写
+  - [ ] 内部审阅
+
+---
+
+### 🔥 ICML 2026 - **22天后截稿**
+- **摘要截止：** 2026-01-23
+- **全文截止：** 2026-01-28
+- **目标论文数：** 3篇
+- **研究方向：**
+  - 图神经网络方法创新
+  - 因果推断与公平性
+  - 多模态学习
+- **完成进度：** 
+  - [x] 数据收集
+  - [x] 实验设计
+  - [ ] 数据分析
+  - [ ] 论文撰写
+  - [ ] 内部审阅
+
+---
+
+### ISSTA 2026 / KDD 2026 Cycle 2 - **待评估**
+- **ISSTA 截稿：** 2026-01-29
+- **KDD 摘要：** 2026-02-01 | **全文：** 2026-02-08
+- **状态：** 评估可行性中
 
 ---
 
@@ -247,29 +318,24 @@ ___
 
 ---
 
-### 🔥 ACL 2026 - **13天后截稿** (最紧急！)
+### ✅ ACL 2026 - **已提交** ✅
 - **会议时间：** 2026-07-02 至 2026-07-07
 - **会议地点：** San Diego, California, USA
-- **截稿日期：** 2026-01-05 (via ARR)
+- **截稿日期：** 2026-01-05 (via ARR) ✅ 已提交
 - **Reviews Released:** 2026-03-09
 - **Commitment to ACL:** 2026-03-14
 - **Notification:** 2026-04-04
 - **Camera-Ready:** 2026-04-19
 - **会议等级：** CCF A, CORE A*
-- **目标论文数：** 4篇 (collecting ideas)
-- **完成进度：** 
-  - [ ] 确定研究问题
-  - [ ] 文献综述
-  - [ ] 实验设计
-  - [ ] 数据收集
-  - [ ] 论文撰写
-  - [ ] 内部审阅
-- **备注：** 自然语言处理顶会，适合 LLM 相关研究、跨群体对话、中文幽默评估等主题
+- **已提交论文：** 2篇
+  1. ✅ FairSynth: Fairness-Aware Evaluation and Calibration of Generative AI Surveys
+  2. ✅ Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness
+- **备注：** 自然语言处理顶会
 - **官网：** https://2026.aclweb.org/
 
 ---
 
-### 🔥 IJCAI 2026 - **20天后摘要截止** (注意摘要截止！)
+### 🔥 IJCAI 2026 - **6天后摘要截止** (最紧急！)
 - **会议时间：** 2026-08-15 至 2026-08-21
 - **会议地点：** Bremen, Germany
 - **摘要截止：** 2026-01-12 ⚠️
@@ -286,8 +352,7 @@ ___
   3. **TBD** - 待定第三篇
 - **完成进度：** 
   - [ ] 确定第三篇主题
-  - [ ] 实验设计
-  - [ ] 数据分析
+  - [ ] 实验完成
   - [ ] 论文撰写
   - [ ] 内部审阅
 - **备注：** AI顶会，竞争激烈，需提前准备摘要
@@ -369,52 +434,69 @@ ___
 
 | 会议 | 截稿倒计时 | 优先级 | 建议行动 |
 |:-----|:----------|:-------|:--------|
-| **ACL 2026** | 13天 | 🔴🔴 紧急 | 立即完成论文终稿！ |
-| **IJCAI 2026** | 20天 (摘要) / 27天 (全文) | 🔴 最高 | 完成摘要和大纲，加速写作 |
-| **FSE 2026 (Edu)** | 30天 | 🟡 高 | 评估可行性，决定是否投稿 |
-| **ICML 2026** | 36天 | 🟡 高 | 加速数据分析，准备初稿 |
-| **ISSTA 2026** | 37天 | 🟢 中 | 评估可行性，决定是否投稿 |
-| **KDD 2026 Cycle 2** | 40天 | 🟢 中 | 整理现有工作，考虑投稿 |
+| **ACL 2026** | ✅ 已提交 | ✅ 完成 | 等待审稿结果 (Mar 9) |
+| **IJCAI 2026** | 6天 (摘要) / 13天 (全文) | 🔴🔴 最紧急 | 立即完成摘要提交！ |
+| **FSE 2026 (Edu)** | 16天 | 🟡 高 | 评估可行性，决定是否投稿 |
+| **ICML 2026** | 22天 | 🔴 高 | 加速论文撰写 |
+| **ISSTA 2026** | 23天 | 🟢 中 | 评估可行性，决定是否投稿 |
+| **KDD 2026 Cycle 2** | 26天 (摘要) | 🟢 中 | 整理现有工作，考虑投稿 |
+| **FSE 2026 (R&R)** | 49天 | 🔴 高 | 根据审稿意见修改论文 |
 
 ---
 
 ### 💡 时间规划建议
 
-**本周（12月23日-12月29日）：** 🔴 冲刺 ACL
-- ✅ ACL 论文进入最终冲刺阶段
-- ✅ 完成 IJCAI 3篇论文的摘要初稿
-- ✅ 推进 ICML 数据分析
+**本周（1月6日-1月12日）：** 🔴🔴 冲刺 IJCAI 摘要
+- ⚡ IJCAI 摘要定稿并提交（1月12日前！）
+- ⚡ IJCAI 全文加速写作
+- ⚡ ICML 论文撰写启动
 
-**第2周（12月30日-1月5日）：** 🔴 ACL 截止
-- ✅ ACL 论文定稿并提交（1月5日前！）
-- ✅ IJCAI 摘要完善
-- ✅ ICML 完成实验
-
-**第3周（1月6日-1月12日）：** 🔴 IJCAI 摘要截止
-- ✅ IJCAI 摘要定稿并提交（1月12日前！）
-- ✅ IJCAI 全文写作
+**第2周（1月13日-1月19日）：** 🔴 IJCAI 全文截止
+- ✅ IJCAI 全文提交（1月19日前！）
 - ✅ ICML 论文撰写
+- ✅ WWW 2026 结果通知（1月13日）
 
-**第4-5周（1月13日-1月28日）：**
-- ✅ IJCAI 全文提交（1月19日前）
-- ✅ ICML 论文定稿（1月28日前）
-- ✅ ISSTA 决定是否投稿并完成（1月29日前）
+**第3周（1月20日-1月28日）：** 🔴 ICML 截止
+- ✅ ICML 论文定稿并提交（1月28日前）
+- ✅ CHI 2026 结果通知（1月15日）
+- ✅ ISSTA 决定是否投稿
 
-**第6周（1月29日-2月8日）：**
-- ✅ KDD Cycle 2 考虑投稿
+**第4周（1月29日-2月8日）：**
+- ✅ ISSTA 提交（若决定投稿，1月29日前）
+- ✅ KDD Cycle 2 考虑投稿（2月8日前）
 
 ---
 
 ## 💡 想法阶段（Ideas）
 
-### ACL: Chinese humor evaluation of LLM 
+### IJCAI/ICML: Graph Unlearning for Privacy Protection
+- **研究方向：** 图遗忘与隐私保护
+- **潜在合作者：** TBD
+- **目标会议：** IJCAI 2026 / ICML 2026
+- **备注：** 待确定具体方法
+
 ---
 
-### Research Idea 2
-- **研究方向：** [方向描述]
-- **潜在合作者：** 
-- **预计开始时间：** 2025-XX-XX
-- **备注：** 
+### IJCAI/ICML: Fairness in Traffic Prediction
+- **研究方向：** 时空交通预测中的公平性
+- **潜在合作者：** TBD
+- **目标会议：** IJCAI 2026 / ICML 2026
+- **备注：** 可扩展 NetFair 工作
+
+---
+
+### ACL 2026 (Future): Chinese Humor Evaluation of LLM 
+- **研究方向：** 中文幽默理解与生成评估
+- **状态：** 待 2026 年 ACL 下一轮投稿
+- **备注：** 已提交2篇，本想法留待后续
+
+---
+
+### Research Idea: Multimodal Learning
+- **研究方向：** 多模态学习与融合
+- **潜在合作者：** TBD
+- **目标会议：** ICML 2026
+- **备注：** 待进一步细化 
 
 ---
 

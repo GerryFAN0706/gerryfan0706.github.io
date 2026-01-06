@@ -42,8 +42,11 @@
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-          {% if post.most_cited_recent or post.most_popular_recent_rank %}
+          {% if post.esi_highly_cited or post.most_cited_recent or post.most_popular_recent_rank %}
             <p>
+              {% if post.esi_highly_cited %}
+                🔥 <strong>ESI Highly Cited Paper (ESI 高被引论文)</strong><br />
+              {% endif %}
               {% if post.most_cited_recent %}
                 🏅 <strong>Most cited articles (past two years)</strong> in {{ post.venue }}<br />
               {% endif %}
