@@ -182,7 +182,7 @@ ___
 - **目标会议：** WWW 2026 - Web4Good Track (CCF A)
 - **当前状态：** ✅ Accepted
 - **预计结果时间：** 2026-01-13（已出结果：Accepted）
-- **作者：** Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan, Guangrui Fan
+- **作者：** Guangrui Fan, Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan
 - **备注：** Web fairness auditing methodology，CCF A 顶会
 
 ---

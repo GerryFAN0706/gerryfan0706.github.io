@@ -5,11 +5,11 @@ permalink: /publication/2026-www-audit-of-audits
 date: 2026-04-01
 venue: 'The Web Conference (WWW) 2026 - Web4Good Track'
 paperurl: ''
-citation: 'D. Liu, A.Q.M. Sabri, L. Pan, G. Fan. (2026). &quot;Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims.&quot; <i>The Web Conference 2026</i>.'
+citation: 'G. Fan, D. Liu, A.Q.M. Sabri, L. Pan. (2026). &quot;Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims.&quot; <i>The Web Conference 2026</i>.'
 rank: 1
 ---
 
-**Authors:** Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan, Guangrui Fan
+**Authors:** Guangrui Fan, Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan
 
 **Conference:** The Web Conference (WWW) 2026 - Web4Good Track (CCF A)
 
