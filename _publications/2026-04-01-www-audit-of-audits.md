@@ -1,28 +1,17 @@
 ---
-title: "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
+title: "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims (CCF A)"
 collection: publications
+category: conferences
 permalink: /publication/2026-www-audit-of-audits
 date: 2026-04-01
-venue: 'The Web Conference (WWW) 2026 - Web4Good Track'
-paperurl: ''
-citation: 'G. Fan, D. Liu, A.Q.M. Sabri, L. Pan. (2026). &quot;Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims.&quot; <i>The Web Conference 2026</i>.'
 rank: 1
+venue: 'The Web Conference (WWW) 2026'
+citation: 'Fan, G., Liu, D., Sabri, A.Q.M., & Pan, L. (2026). Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims. In <i>Proceedings of The Web Conference 2026 (WWW 2026)</i>.'
 ---
 
-**Authors:** Guangrui Fan, Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan
-
-**Conference:** The Web Conference (WWW) 2026 - Web4Good Track (CCF A)
-
-**Location:** Dubai, UAE, April 13-17, 2026
+This paper presents a Bayesian meta-evaluation framework for auditing fairness claims on the web, yielding interval-valued, threshold-aligned fairness assessments for more robust and interpretable fairness guarantees.
 
 **Keywords:** Web fairness, algorithmic auditing, Bayesian meta-evaluation, fairness claims, threshold alignment
 
-**Abstract:** This paper presents a Bayesian meta-evaluation framework for auditing fairness claims on the web. Our approach yields interval-valued, threshold-aligned fairness assessments that provide more robust and interpretable fairness guarantees for web-based algorithmic systems.
-
----
-
-**Highlights:**
-- CCF A Conference
-- Web4Good Special Track
-- Novel Bayesian meta-evaluation methodology for fairness auditing
+**Track:** Web4Good Special Track
 
