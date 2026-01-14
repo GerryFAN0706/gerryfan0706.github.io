@@ -175,26 +175,25 @@ ___
 
 ---
 
-### WWW 2026 (5 papers submitted)
+### WWW 2026 (5 papers submitted - 1 Accepted ✅)
 
-#### 1. Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims
+#### 1. ✅ Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims
 - **投稿日期：** 2025-11-30
-- **目标会议：** WWW 2026 - Web4Good Track
-- **当前状态：** Under Review
-- **Rebuttal Period:** 2025-11-24 to 2025-12-01
-- **预计结果时间：** 2026-01-13
+- **目标会议：** WWW 2026 - Web4Good Track (CCF A)
+- **当前状态：** ✅ Accepted
+- **预计结果时间：** 2026-01-13（已出结果：Accepted）
 - **作者：** Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan, Guangrui Fan
-- **备注：** Web fairness auditing methodology
+- **备注：** Web fairness auditing methodology，CCF A 顶会
 
 ---
 
 #### 2. From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026 - Web4Good Track
-- **当前状态：** Under Review
-- **Rebuttal Period:** 2025-11-24 to 2025-12-01
-- **预计结果时间：** 2026-01-13
+- **当前状态：** Rejected（寻找新投稿目标）
+- **预计结果时间：** 2026-01-13（已出结果：Rejected）
 - **作者：** Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan, Guangrui Fan
+- **后续计划：** 修订后改投期刊或其他会议
 - **备注：** LLM-facilitated online dialogue study
 
 ---
@@ -202,10 +201,10 @@ ___
 #### 3. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026
-- **当前状态：** Rejected
-- **Rebuttal Period:** 2025-11-24 to 2025-12-01
+- **当前状态：** Rejected（寻找新投稿目标）
 - **预计结果时间：** 2026-01-13（已出结果：Rejected）
 - **作者：** Guangrui Fan, Dandan Liu, Rui Zhang, Lihu Pan
+- **后续计划：** 修订后改投期刊或其他会议
 - **备注：** Long-term algorithmic fairness in content recommendation
 
 ---
@@ -213,10 +212,10 @@ ___
 #### 4. Consent Boundaries by Play: CI-Grounded Micro-Games to Elicit Stable, UI-Robust Web Data-Sharing Preferences
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026
-- **当前状态：** Rebuttal（答辩中）
-- **Rebuttal Period:** 2025-11-24 to 2025-12-01
-- **预计结果时间：** 2026-01-13
+- **当前状态：** Rejected（寻找新投稿目标）
+- **预计结果时间：** 2026-01-13（已出结果：Rejected）
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Aznul Qalid Md Sabri
+- **后续计划：** 修订后改投期刊或其他会议
 - **备注：** Privacy consent elicitation through interactive micro-games
 
 ---
@@ -224,9 +223,10 @@ ___
 #### 5. HEAD‑CONVO: LLM‑Assisted Conversation Compression and Continuous‑Time Modeling for Early Depression Detection on Social Media
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026 - Web4Good Track
-- **当前状态：** Submitted
-- **预计结果时间：** 2026-01-13
+- **当前状态：** Rejected（寻找新投稿目标）
+- **预计结果时间：** 2026-01-13（已出结果：Rejected）
 - **作者：** Dandan Liu, Guangrui Fan (Corresponding), Aznul Qalid Md Sabri, Lihu Pan
+- **后续计划：** 修订后改投期刊或其他会议
 - **备注：** LLM-assisted conversation compression and continuous-time modeling for early depression detection on social media
 
 ---

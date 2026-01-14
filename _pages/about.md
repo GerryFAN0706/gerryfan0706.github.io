@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
+  </div>
+
+  <div class="news-item">
     <strong>[2026]</strong> 🎉 Journal article accepted by <strong>International Journal of STEM Education</strong> (SCI 中科院Q1 Top): "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education"
   </div>
 
@@ -89,11 +93,11 @@ redirect_from:
     <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
   </div>
 
+  <div class="news-more">
   <div class="news-item">
     <strong>[2025]</strong> 📝 Paper "<strong>Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin</strong>" accepted by <em>Journal of Rural Studies</em> <strong>(SCI 中科院Q1 Top)</strong>
   </div>
 
-  <div class="news-more">
   <div class="news-item">
     <strong>[2025]</strong> 🏆 Received <strong>First-Class Paper Award</strong> and <strong>Best Presentation Award</strong> at CPEC2025 (第九届中国计算机实践教育学术会议)
   </div>
@@ -109,7 +113,7 @@ redirect_from:
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show More News</span>
-    <span class="news-count" id="moreCount">+3</span>
+    <span class="news-count" id="moreCount">+4</span>
   </button>
 </div>
 
