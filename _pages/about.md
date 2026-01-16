@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-01]</strong> 🎉🎉🎉 <strong>3 papers accepted by CHI 2026</strong> (CCF A): "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication", "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants", and "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
   </div>
 
@@ -113,7 +117,7 @@ redirect_from:
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show More News</span>
-    <span class="news-count" id="moreCount">+4</span>
+    <span class="news-count" id="moreCount">+5</span>
   </button>
 </div>
 

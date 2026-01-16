@@ -137,38 +137,35 @@ ___
 
 ## Conferences
 
-### CHI 2026 (3 papers - Second Round)
+### CHI 2026 (3 papers - ✅ All Accepted!)
 
-#### 1. Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication
+#### 1. ✅ Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication
 - **投稿日期：** 2025-09-19 (First Round)
 - **目标会议：** CHI 2026 (CCF A)
-- **当前状态：** Second Round (4/3 papers advanced)
-- **重投截止：** 2025-12-04
-- **预计结果时间：** 2026-01-15
+- **当前状态：** ✅ Accepted
+- **预计结果时间：** 2026-01-15（已出结果：Accepted）
 - **Subcommittee:** Interaction Beyond the Individual; Understanding People: Statistical & Quantitative Methods
 - **关键词：** Computer Mediated Communication, Emotion/Affective Computing, Intimate Relationships
 - **备注：** Study 1 (N=152) instrumented authoring + Study 2 (N=704) mixed-effects experiment. Shows competence-integrity dissociation in AI-assisted romantic messages.
 
 ---
 
-#### 2. When Help Hurts: Verification Load and Fatigue with AI Coding Assistants
+#### 2. ✅ When Help Hurts: Verification Load and Fatigue with AI Coding Assistants
 - **投稿日期：** 2025-09-19 (First Round)
 - **目标会议：** CHI 2026 (CCF A)
-- **当前状态：** Second Round (4/3 papers advanced)
-- **重投截止：** 2025-12-04
-- **预计结果时间：** 2026-01-15
+- **当前状态：** ✅ Accepted
+- **预计结果时间：** 2026-01-15（已出结果：Accepted）
 - **Subcommittee:** Understanding People: Mixed & Alternative Methods; User Experience & Usability
 - **关键词：** Programming/Development Support, Workplaces, AI Assistance
 - **备注：** Mixed-methods study comparing Inline, Chat, Structured AI modes. Introduces "verification-load" index capturing failures, churn, and context switches.
 
 ---
 
-#### 3. Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences
+#### 3. ✅ Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences
 - **投稿日期：** 2025-09-19 (First Round)
 - **目标会议：** CHI 2026 (CCF A)
-- **当前状态：** Second Round (4/3 papers advanced)
-- **重投截止：** 2025-12-04
-- **预计结果时间：** 2026-01-15
+- **当前状态：** ✅ Accepted
+- **预计结果时间：** 2026-01-15（已出结果：Accepted）
 - **Subcommittee:** Critical Computing, Sustainability, & Social Justice; Understanding People: Mixed & Alternative Methods
 - **关键词：** Behavior Change, Personalization, Sustainability, Nudging
 - **备注：** Two field studies with on-device contextual bandit. Introduces Ethical-Efficacy Frontier (EEF) and Energy ROI accounting.
