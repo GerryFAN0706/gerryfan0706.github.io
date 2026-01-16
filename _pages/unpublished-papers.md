@@ -228,14 +228,13 @@ ___
 
 ---
 
-### FSE 2026 - Revise & Resubmit 🔄
+### FSE 2026 - ✅ Accepted
 
-#### Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation
+#### ✅ Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation
 - **投稿日期：** 2025-09-10
 - **目标会议：** FSE 2026 (CCF A)
-- **当前状态：** Revise & Resubmit（修改后重投）
-- **修改稿截止：** 2026-02-24 ⚠️
-- **预计结果时间：** 2026-03-24
+- **当前状态：** ✅ Accepted
+- **预计结果时间：** 2026-01（已出结果：Accepted）
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Qian Guo
 - **Topics:** AI/ML for SE, Requirements Engineering, Human-Computer Interaction, Empirical SE
 - **备注：** Research Papers Track - Multi-domain controlled study (mental-health, finance, fitness) comparing 4 AI configurations vs. human baselines. Heterogeneous-provider plurality shows +14.7% uplift in validated requirements.

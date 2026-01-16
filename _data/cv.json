@@ -1,152 +1,281 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Guangrui Fan (樊光瑞)",
+    "label": "Lecturer | Ph.D. Candidate",
+    "email": "fgr@tyust.edu.cn",
+    "phone": "+86 13387574446",
+    "website": "https://gerryfan0706.github.io",
+    "summary": "Lecturer at Taiyuan University of Science and Technology and Ph.D. candidate in Computer Science at Universiti Malaya. Research interests include Human-Centered AI, AI in Education, AI-Mediated Communication & Trust, and fair spatiotemporal prediction.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Taiyuan",
+      "countryCode": "CN",
+      "region": "Shanxi"
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
         "network": "ORCID",
         "username": "",
-        "url": "http://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0009-0001-8570-1636"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "gerryfan0706",
+        "url": "https://github.com/gerryfan0706"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Taiyuan University of Science and Technology",
+      "position": "Lecturer",
+      "startDate": "2018-06",
+      "endDate": "Present",
+      "summary": "School of Computer Science and Technology, Taiyuan, Shanxi, China",
+      "highlights": []
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Universiti Malaya, Kuala Lumpur, Malaysia",
+      "area": "Ph.D. in Computer Science",
+      "studyType": "Ph.D.",
+      "startDate": "2022-09",
+      "endDate": "2026-03 (Expected)",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "Shanghai Jiao Tong University, Shanghai, China",
+      "area": "M.S. in Software Engineering",
+      "studyType": "M.S.",
+      "startDate": "2014-09",
+      "endDate": "2018-02",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "Huazhong University of Science and Technology, Wuhan, China",
+      "area": "B.S. in Software Engineering",
+      "studyType": "B.S.",
+      "startDate": "2010-09",
+      "endDate": "2014-06",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
+  "skills": [
+    {
+      "name": "Research Areas",
+      "keywords": [
+        "Human-Centered AI",
+        "Human-AI Interaction",
+        "AI in Education",
+        "AI-Mediated Communication & Trust",
+        "Social Computing",
+        "Fairness in ML",
+        "Spatiotemporal Prediction (GNNs)"
+      ]
+    },
+    {
+      "name": "Tools & Programming",
+      "keywords": [
+        "Python",
+        "Java",
+        "JavaScript"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Tennis",
+      "keywords": []
+    }
+  ],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication",
+      "publisher": "CHI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants",
+      "publisher": "CHI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences",
+      "publisher": "CHI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering",
+      "publisher": "FSE 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims",
+      "publisher": "WWW 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities",
+      "publisher": "AAAI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation",
+      "publisher": "IJCAI 2025",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "When Machines Speak with Feeling: Investigating Emotional Prosody, Authenticity, and Trust in AI vs. Human Voices",
+      "publisher": "CogSci 2025",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Co-Constructing Meaning with Large Language Models: A Longitudinal Analysis of Human-AI Dialogues in Emotional Support Contexts",
+      "publisher": "CogSci 2025",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Mapping Override Behavior: Investigating Why and How Artists Reject AI Suggestions in Collaborative Creation",
+      "publisher": "IJCNN 2025",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "DocPINN: A Neural PDE-Based Framework for Document Image Dewarping",
+      "publisher": "ICDAR 2025",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance",
+      "publisher": "International Journal of STEM Education",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education",
+      "publisher": "International Journal of STEM Education (In Press)",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting",
+      "publisher": "Engineering Applications of Artificial Intelligence",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey",
+      "publisher": "Archives of Computational Methods in Engineering",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin",
+      "publisher": "Journal of Rural Studies",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Digital duality: negotiating tradition, modernity, and identity among rural housewife Douyin creators in China",
+      "publisher": "Information, Communication & Society",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading",
+      "publisher": "International Journal of Human--Computer Interaction",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Optimizing Operating Room Scheduling Through Multi-Level Learning and Column Generation",
+      "publisher": "Health Care Management Science",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Training for Improved ICU Length-of-Stay Prediction",
+      "publisher": "IEEE Access",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
     }
   ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
+  "presentations": [],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
+      "course": "Java Web Development",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
       "description": ""
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
+      "course": "Oracle Database Management",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
+      "description": ""
+    },
+    {
+      "course": "Computer Graphics",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
+      "description": ""
+    },
+    {
+      "course": "Computer Animation Principles",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
       "description": ""
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "portfolio": []
 }
