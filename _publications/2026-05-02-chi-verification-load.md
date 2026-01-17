@@ -15,3 +15,4 @@ A mixed-methods study comparing Inline, Chat, and Structured AI coding assistant
 
 **Subcommittee:** Understanding People: Mixed & Alternative Methods; User Experience & Usability
 
+

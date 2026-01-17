@@ -14,15 +14,6 @@ sitemap: false
 
 ## Journals
 
-### Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education
-- **投稿日期：** 2025-07-01
-- **目标期刊/会议：** International Journal of STEM Education
-- **当前状态：** Accepted（In Press）
-- **预计结果时间：** 2025-11（已出结果：Accepted）
-- **备注：** 1区top，已被 International Journal of STEM Education 接收
-
----
-
 ### Performing for the Algorithm: Examining Risk Behaviors, Monetization, and Self-Presentation in Live Streaming
 
 - **投稿日期：** 2025-04-13
@@ -137,54 +128,9 @@ ___
 
 ## Conferences
 
-### CHI 2026 (3 papers - ✅ All Accepted!)
+### WWW 2026 (4 papers - Rejected, looking for new venues)
 
-#### 1. ✅ Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication
-- **投稿日期：** 2025-09-19 (First Round)
-- **目标会议：** CHI 2026 (CCF A)
-- **当前状态：** ✅ Accepted
-- **预计结果时间：** 2026-01-15（已出结果：Accepted）
-- **Subcommittee:** Interaction Beyond the Individual; Understanding People: Statistical & Quantitative Methods
-- **关键词：** Computer Mediated Communication, Emotion/Affective Computing, Intimate Relationships
-- **备注：** Study 1 (N=152) instrumented authoring + Study 2 (N=704) mixed-effects experiment. Shows competence-integrity dissociation in AI-assisted romantic messages.
-
----
-
-#### 2. ✅ When Help Hurts: Verification Load and Fatigue with AI Coding Assistants
-- **投稿日期：** 2025-09-19 (First Round)
-- **目标会议：** CHI 2026 (CCF A)
-- **当前状态：** ✅ Accepted
-- **预计结果时间：** 2026-01-15（已出结果：Accepted）
-- **Subcommittee:** Understanding People: Mixed & Alternative Methods; User Experience & Usability
-- **关键词：** Programming/Development Support, Workplaces, AI Assistance
-- **备注：** Mixed-methods study comparing Inline, Chat, Structured AI modes. Introduces "verification-load" index capturing failures, churn, and context switches.
-
----
-
-#### 3. ✅ Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences
-- **投稿日期：** 2025-09-19 (First Round)
-- **目标会议：** CHI 2026 (CCF A)
-- **当前状态：** ✅ Accepted
-- **预计结果时间：** 2026-01-15（已出结果：Accepted）
-- **Subcommittee:** Critical Computing, Sustainability, & Social Justice; Understanding People: Mixed & Alternative Methods
-- **关键词：** Behavior Change, Personalization, Sustainability, Nudging
-- **备注：** Two field studies with on-device contextual bandit. Introduces Ethical-Efficacy Frontier (EEF) and Energy ROI accounting.
-
----
-
-### WWW 2026 (5 papers submitted - 1 Accepted ✅)
-
-#### 1. ✅ Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims
-- **投稿日期：** 2025-11-30
-- **目标会议：** WWW 2026 - Web4Good Track (CCF A)
-- **当前状态：** ✅ Accepted
-- **预计结果时间：** 2026-01-13（已出结果：Accepted）
-- **作者：** Guangrui Fan, Dandan Liu, Aznul Qalid Md Sabri, Lihu Pan
-- **备注：** Web fairness auditing methodology，CCF A 顶会
-
----
-
-#### 2. From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue
+#### 1. From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026 - Web4Good Track
 - **当前状态：** Rejected（寻找新投稿目标）
@@ -195,7 +141,7 @@ ___
 
 ---
 
-#### 3. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
+#### 2. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026
 - **当前状态：** Rejected（寻找新投稿目标）
@@ -206,7 +152,7 @@ ___
 
 ---
 
-#### 4. Consent Boundaries by Play: CI-Grounded Micro-Games to Elicit Stable, UI-Robust Web Data-Sharing Preferences
+#### 3. Consent Boundaries by Play: CI-Grounded Micro-Games to Elicit Stable, UI-Robust Web Data-Sharing Preferences
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026
 - **当前状态：** Rejected（寻找新投稿目标）
@@ -217,7 +163,7 @@ ___
 
 ---
 
-#### 5. HEAD‑CONVO: LLM‑Assisted Conversation Compression and Continuous‑Time Modeling for Early Depression Detection on Social Media
+#### 4. HEAD‑CONVO: LLM‑Assisted Conversation Compression and Continuous‑Time Modeling for Early Depression Detection on Social Media
 - **投稿日期：** 2025-11-30
 - **目标会议：** WWW 2026 - Web4Good Track
 - **当前状态：** Rejected（寻找新投稿目标）
@@ -225,19 +171,6 @@ ___
 - **作者：** Dandan Liu, Guangrui Fan (Corresponding), Aznul Qalid Md Sabri, Lihu Pan
 - **后续计划：** 修订后改投期刊或其他会议
 - **备注：** LLM-assisted conversation compression and continuous-time modeling for early depression detection on social media
-
----
-
-### FSE 2026 - ✅ Accepted
-
-#### ✅ Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation
-- **投稿日期：** 2025-09-10
-- **目标会议：** FSE 2026 (CCF A)
-- **当前状态：** ✅ Accepted
-- **预计结果时间：** 2026-01（已出结果：Accepted）
-- **作者：** Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang, Qian Guo
-- **Topics:** AI/ML for SE, Requirements Engineering, Human-Computer Interaction, Empirical SE
-- **备注：** Research Papers Track - Multi-domain controlled study (mental-health, finance, fitness) comparing 4 AI configurations vs. human baselines. Heterogeneous-provider plurality shows +14.7% uplift in validated requirements.
 
 ---
 
