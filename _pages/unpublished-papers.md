@@ -234,38 +234,9 @@ ___
 ## ✍️ 写作中（In Progress）
 
 <div style="background-color: #fee2e2; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ef4444; border-radius: 4px;">
-  <strong>⏰ 紧急提醒：</strong> 以下会议截稿日期临近，请优先安排！<br>
+  <strong>⏰ 紧急提醒：</strong> KDD 2026 (Cycle 2) 截稿日期临近，请优先安排！<br>
   <strong>📅 更新日期：</strong> 2026-01-29
 </div>
-
-### ✅ ACL 2026 - 已提交2篇 ✅
-
-已于 2025年12月 提交以下论文至 ACL ARR January：
-1. ✅ **FairSynth**: Fairness-Aware Evaluation and Calibration of Generative AI Surveys against Cross-National Ground Truth
-2. ✅ **Feeling Rules in Language Models**: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity
-
----
-
-### ✅ IJCAI 2026 - 已提交2篇 ✅
-- **摘要截止：** 2026-01-12 ✅
-- **全文截止：** 2026-01-19 ✅
-- **已提交论文：** 2篇
-  1. **NetFair**: Network-Aware Fairness for Spatiotemporal Traffic Forecasting（Main track）
-  2. **#12 - COG-ADAPT**: Learning Cognition‑Aware Interventions for Human‑AI Team Decision‑Making（Human-Centered AI track）
-- **当前状态：** Submitted
-
----
-
-### ✅ ICML 2026 - 已提交3篇 ✅
-- **摘要截止：** 2026-01-23 ✅
-- **全文截止：** 2026-01-28 ✅
-- **已提交论文：** 3篇
-  1. [2671] Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
-  2. [2676] CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
-  3. [22192] Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
-- **当前状态：** Submitted（0 Official Reviews Submitted）
-
----
 
 ### 🔥 KDD 2026 (Cycle 2) - 准备中
 - **摘要：** 2026-02-01
@@ -285,85 +256,13 @@ ___
 
 | 会议 | Track | 地点 & 时间 | 摘要截止 | 论文截止 | Notification | 等级 |
 |:-----|:------|:-----------|:---------|:---------|:-------------|:-----|
-| **ACL 2026** | Main (via ARR) | San Diego, USA · Jul 2–7 | — | **Jan 5, 2026** | Apr 4, 2026 | CCF A |
-| **IJCAI 2026** | Main track | Bremen, Germany · Aug 15–21 | **Jan 12, 2026** | **Jan 19, 2026** | Apr 29, 2026 | CCF A |
-| **ESEC/FSE 2026** | SE Education Track | Montréal, Canada · Jul 5–9 | — | Jan 22, 2026 | Mar 17, 2026 | CCF A |
-| **ICML 2026** | Main | Seoul, Korea · Jul 6–12 | **Jan 23, 2026** | **Jan 28, 2026** | Apr 30, 2026 | CCF A |
 | **ISSTA 2026** | — | Oakland, USA · Oct 3–9 | — | **Jan 29, 2026** | Apr 16, 2026 (initial) | CCF A |
 | **KDD 2026 (Cycle 2)** | — | Aug 2026 | **Feb 1, 2026** | Feb 8, 2026 | May 16, 2026 | CCF A |
 | **ESEC/FSE 2026** | R&R Track | Montréal, Canada · Jul 5–9 | — | Feb 24, 2026 | Mar 24, 2026 | CCF A |
 
 ---
 
-### ✅ ACL 2026 - **已提交** ✅
-- **会议时间：** 2026-07-02 至 2026-07-07
-- **会议地点：** San Diego, California, USA
-- **截稿日期：** 2026-01-05 (via ARR) ✅ 已提交
-- **Reviews Released:** 2026-03-09
-- **Commitment to ACL:** 2026-03-14
-- **Notification:** 2026-04-04
-- **Camera-Ready:** 2026-04-19
-- **会议等级：** CCF A, CORE A*
-- **已提交论文：** 2篇
-  1. ✅ FairSynth: Fairness-Aware Evaluation and Calibration of Generative AI Surveys
-  2. ✅ Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness
-- **备注：** 自然语言处理顶会
-- **官网：** https://2026.aclweb.org/
-
----
-
-### ✅ IJCAI 2026 - 已提交2篇 ✅
-- **会议时间：** 2026-08-15 至 2026-08-21
-- **会议地点：** Bremen, Germany
-- **摘要截止：** 2026-01-12 ✅
-- **全文截止：** 2026-01-19 ✅
-- **Phase I Notification:** 2026-03-04
-- **Author Response:** 2026-04-07 to 2026-04-10
-- **Final Notification:** 2026-04-29
-- **Camera-Ready:** 2026-05-15
-- **会议等级：** CCF A, CORE A*
-- **已提交论文：** 2篇
-  1. **NetFair**: Network-Aware Fairness for Spatiotemporal Traffic Forecasting（Main track）
-  2. **#12 - COG-ADAPT**: Learning Cognition‑Aware Interventions for Human‑AI Team Decision‑Making（Human-Centered AI track）
-- **当前状态：** Submitted
-- **备注：** 等待评审/作者回复阶段（如有）
-- **官网：** https://2026.ijcai.org/
-
----
-
-### ✅ ESEC/FSE 2026 (SE Education Track) - 已提交1篇 ✅
-- **会议时间：** 2026-07-05 至 2026-07-09
-- **会议地点：** Montréal, Canada
-- **截稿日期：** 2026-01-22 ✅ 已提交
-- **Notification:** 2026-03-17
-- **Camera-Ready:** 2026-04-02
-- **会议等级：** CCF A
-- **已提交论文：** 1篇
-  - ✅ Check, Cite, or Trust? Developing and Validating a Verification Literacy Scale for AI‑Assisted Programming
-- **当前状态：** Submitted
-- **研究方向：** AI辅助编程教育、软件工程教育
-- **备注：** 软件工程教育专题
-
----
-
-### ✅ ICML 2026 - 已提交3篇 ✅
-- **会议时间：** 2026-07-06 至 2026-07-12
-- **会议地点：** Seoul, Korea (COEX)
-- **摘要截止：** 2026-01-23 ✅
-- **全文截止：** 2026-01-28 ✅
-- **Notification:** 2026-04-30
-- **会议等级：** CCF A, CORE A*
-- **已提交论文：** 3篇
-  1. [2671] Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
-  2. [2676] CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
-  3. [22192] Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
-- **当前状态：** Submitted（0 Official Reviews Submitted）
-- **备注：** 机器学习顶会
-- **官网：** https://icml.cc/Conferences/2026
-
----
-
-### ISSTA 2026 - **37天后截稿**
+### ISSTA 2026 - 截稿日：2026-01-29
 - **会议时间：** 2026-10-03 至 2026-10-09
 - **会议地点：** Oakland, California, USA
 - **截稿日期：** 2026-01-29
@@ -405,36 +304,21 @@ ___
 
 | 会议 | 截稿倒计时 | 优先级 | 建议行动 |
 |:-----|:----------|:-------|:--------|
-| **ACL 2026** | ✅ 已提交 | ✅ 完成 | 等待审稿结果 (Mar 9) |
-| **IJCAI 2026** | ✅ 已提交2篇 | ✅ 完成 | 等待评审/作者回复（如有） |
-| **FSE 2026 (Edu)** | ✅ 已提交1篇 | ✅ 完成 | 等待通知 (Mar 17) |
-| **ICML 2026** | ✅ 已提交3篇 | ✅ 完成 | 等待通知 (Apr 30) |
-| **ISSTA 2026** | 23天 | 🟢 中 | 评估可行性，决定是否投稿 |
+| **ISSTA 2026** | 今日（论文） | 🟢 中 | 确认是否投稿并按需提交 |
 | **KDD 2026 Cycle 2** | 3天 (摘要) / 10天 (全文) | 🔴 高 | 冲刺摘要与全文定稿 |
-| **FSE 2026 (R&R)** | 49天 | 🔴 高 | 根据审稿意见修改论文 |
+| **FSE 2026 (R&R)** | 26天 | 🔴 高 | 根据审稿意见修改论文 |
 
 ---
 
 ### 💡 时间规划建议
 
-**本周（1月6日-1月12日）：** 🔴🔴 冲刺 IJCAI 摘要
-- ⚡ IJCAI 摘要定稿并提交（1月12日前！）
-- ⚡ IJCAI 全文加速写作
-- ⚡ ICML 论文撰写启动
+**本周（1月29日-2月1日）：** 🔴 冲刺 KDD 摘要
+- ⚡ 两篇 KDD 摘要定稿并提交（2月1日前）
+- ⚡ 同步完成两篇论文大纲、核心贡献点与实验/消融清单（缺口一并补齐）
 
-**第2周（1月13日-1月19日）：** 🔴 IJCAI 全文截止
-- ✅ IJCAI 全文提交（1月19日前！）
-- ✅ ICML 论文撰写
-- ✅ WWW 2026 结果通知（1月13日）
-
-**第3周（1月20日-1月28日）：** 🔴 ICML 截止
-- ✅ ICML 论文定稿并提交（1月28日前）
-- ✅ CHI 2026 结果通知（1月15日）
-- ✅ ISSTA 决定是否投稿
-
-**第4周（1月29日-2月8日）：**
-- ✅ ISSTA 提交（若决定投稿，1月29日前）
-- ✅ KDD Cycle 2 考虑投稿（2月8日前）
+**下周（2月2日-2月8日）：** 🔴 冲刺 KDD 全文
+- ⚡ 两篇全文定稿并提交（2月8日前）
+- ⚡ 统一图表/附录/复现实验设置，补齐关键 baseline 与消融
 
 ---
 
