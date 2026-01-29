@@ -64,3 +64,39 @@ Guangrui Fan, Dandan Liu, Rui Zhang and Lihu Pan	Stable Long‑Run Exposure Fair
 
 Guangrui Fan, Dandan Liu, Lihu Pan, Rui Zhang and Aznul Qalid Md Sabri	Consent Boundaries by Play: CI-Grounded Micro-Games to Elicit Stable, UI-Robust Web Data-Sharing Preferences
 
+
+---
+
+Under Review / Submitted
+
+Social Media + Society
+“Fairness Labels” in Feeds: Process Disclosures, Provenance, and User Choice Among Short‑Video Creators in Mainland China
+投稿日期：2025-10-03
+目标期刊/会议：Social Media + Society
+当前状态：Revision resubmitted (With Journal Administrator)
+预计结果时间：2026-02
+备注：1区TOP
+
+IJCAI (Submitted)
+Main track: NetFair: Network-Aware Fairness for Spatiotemporal Traffic Forecasting
+Human-Centered AI track (#12): COG-ADAPT: Learning Cognition‑Aware Interventions for Human‑AI Team Decision‑Making
+
+ESEC/FSE 2026 (SE Education Track) (Submitted)
+Check, Cite, or Trust? Developing and Validating a Verification Literacy Scale for AI‑Assisted Programming
+
+KDD 2026 (In Preparation)
+Stable Long‑Run Exposure Fairness under Creator–Platform Co‑adaptation
+From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross‑Group Dialogue
+
+ICML 2026 (Submitted)
+2671	Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
+Guangrui Fan, DanDan Liu, Aznul Qalid Md Sabri, Pan Lihu
+0 Official Reviews Submitted
+
+2676	CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
+Guangrui Fan, DanDan Liu, Pan Lihu, Aznul Qalid Md Sabri
+0 Official Reviews Submitted
+
+22192	Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
+Qian Guo, Gaohui Zuo, Bingbing Jiang, Guangrui Fan, Zhihua Cui, Xinyan Liang, Jianjian Ding
+0 Official Reviews Submitted
