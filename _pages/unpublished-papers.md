@@ -37,10 +37,10 @@ ___
 ### "Fairness Labels" in Feeds: Process Disclosures, Provenance, and User Choice Among Short‑Video Creators in Mainland China
 
 - **投稿日期：** 2025-10-03
-- **目标期刊/会议：** Social media + society
-- **当前状态：** With Journal Administrator
+- **目标期刊/会议：** Social Media + Society
+- **当前状态：** Revision resubmitted (With Journal Administrator)
 - **预计结果时间：** 2026-02
-- **备注：** 1区top
+- **备注：** 1区TOP
 
 ### Seeing Is Believing? Do Douyin‑Style AI‑Generated Videos Induce False Episodic Memories for Real‑Person Events? A Two‑Wave Online Experiment
 
@@ -174,11 +174,68 @@ ___
 
 ---
 
+### IJCAI 2026 (2 papers - Submitted)
+
+#### 1. NetFair: Network-Aware Fairness for Spatiotemporal Traffic Forecasting
+- **投稿日期：** 2026-01-19
+- **目标会议：** IJCAI 2026 - Main Track
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-04-29（Final Notification）
+
+---
+
+#### 2. #12 - COG-ADAPT: Learning Cognition‑Aware Interventions for Human‑AI Team Decision‑Making
+- **投稿日期：** 2026-01-19
+- **目标会议：** IJCAI 2026 - Human-Centered AI Track
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-04-29（Final Notification）
+
+---
+
+### ESEC/FSE 2026 (SE Education Track) (1 paper - Submitted)
+
+#### Check, Cite, or Trust? Developing and Validating a Verification Literacy Scale for AI‑Assisted Programming
+- **投稿日期：** 2026-01-22
+- **目标会议：** ESEC/FSE 2026 - SE Education Track
+- **当前状态：** Submitted
+- **预计结果时间：** 2026-03-17（Notification）
+
+---
+
+### ICML 2026 (3 papers - Submitted)
+
+#### 1. [2671] Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
+- **投稿日期：** 2026-01-28
+- **目标会议：** ICML 2026 - Conference Submission
+- **当前状态：** Submitted（0 Official Reviews Submitted）
+- **作者：** Guangrui Fan, DanDan Liu, AZNUL QALID MD SABRI, Pan Lihu
+- **预计结果时间：** 2026-04-30（Notification）
+
+---
+
+#### 2. [2676] CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
+- **投稿日期：** 2026-01-28
+- **目标会议：** ICML 2026 - Conference Submission
+- **当前状态：** Submitted（0 Official Reviews Submitted）
+- **作者：** Guangrui Fan, DanDan Liu, Pan Lihu, AZNUL QALID MD SABRI
+- **预计结果时间：** 2026-04-30（Notification）
+
+---
+
+#### 3. [22192] Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
+- **投稿日期：** 2026-01-28
+- **目标会议：** ICML 2026 - Conference Submission
+- **当前状态：** Submitted（0 Official Reviews Submitted）
+- **作者：** Qian Guo, Gaohui Zuo, Bingbing Jiang, Guangrui Fan, Zhihua Cui, Xinyan Liang, Jianjian Ding
+- **预计结果时间：** 2026-04-30（Notification）
+
+---
+
 ## ✍️ 写作中（In Progress）
 
 <div style="background-color: #fee2e2; padding: 15px; margin-bottom: 20px; border-left: 4px solid #ef4444; border-radius: 4px;">
   <strong>⏰ 紧急提醒：</strong> 以下会议截稿日期临近，请优先安排！<br>
-  <strong>📅 更新日期：</strong> 2026-01-06
+  <strong>📅 更新日期：</strong> 2026-01-29
 </div>
 
 ### ✅ ACL 2026 - 已提交2篇 ✅
@@ -189,43 +246,34 @@ ___
 
 ---
 
-### 🔥 IJCAI 2026 - **6天后摘要截止** (最紧急！)
-- **摘要截止：** 2026-01-12 ⚠️
-- **全文截止：** 2026-01-19
-- **目标论文数：** 3篇
-- **研究方向：**
-  1. **Graph Unlearning** - 图遗忘与隐私保护
-  2. **Traffic Prediction** - 交通流预测与时空GNN
-  3. **TBD** - 待定第三篇
-- **完成进度：** 
-  - [ ] 确定第三篇主题
-  - [ ] 实验完成
-  - [ ] 论文撰写
-  - [ ] 内部审阅
+### ✅ IJCAI 2026 - 已提交2篇 ✅
+- **摘要截止：** 2026-01-12 ✅
+- **全文截止：** 2026-01-19 ✅
+- **已提交论文：** 2篇
+  1. **NetFair**: Network-Aware Fairness for Spatiotemporal Traffic Forecasting（Main track）
+  2. **#12 - COG-ADAPT**: Learning Cognition‑Aware Interventions for Human‑AI Team Decision‑Making（Human-Centered AI track）
+- **当前状态：** Submitted
 
 ---
 
-### 🔥 ICML 2026 - **22天后截稿**
-- **摘要截止：** 2026-01-23
-- **全文截止：** 2026-01-28
-- **目标论文数：** 3篇
-- **研究方向：**
-  - 图神经网络方法创新
-  - 因果推断与公平性
-  - 多模态学习
-- **完成进度：** 
-  - [x] 数据收集
-  - [x] 实验设计
-  - [ ] 数据分析
-  - [ ] 论文撰写
-  - [ ] 内部审阅
+### ✅ ICML 2026 - 已提交3篇 ✅
+- **摘要截止：** 2026-01-23 ✅
+- **全文截止：** 2026-01-28 ✅
+- **已提交论文：** 3篇
+  1. [2671] Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
+  2. [2676] CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
+  3. [22192] Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
+- **当前状态：** Submitted（0 Official Reviews Submitted）
 
 ---
 
-### ISSTA 2026 / KDD 2026 Cycle 2 - **待评估**
-- **ISSTA 截稿：** 2026-01-29
-- **KDD 摘要：** 2026-02-01 | **全文：** 2026-02-08
-- **状态：** 评估可行性中
+### 🔥 KDD 2026 (Cycle 2) - 准备中
+- **摘要：** 2026-02-01
+- **全文：** 2026-02-08
+- **计划投稿：** 2篇
+  1. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
+  2. From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue
+- **当前状态：** In Preparation
 
 ---
 
@@ -242,7 +290,7 @@ ___
 | **ESEC/FSE 2026** | SE Education Track | Montréal, Canada · Jul 5–9 | — | Jan 22, 2026 | Mar 17, 2026 | CCF A |
 | **ICML 2026** | Main | Seoul, Korea · Jul 6–12 | **Jan 23, 2026** | **Jan 28, 2026** | Apr 30, 2026 | CCF A |
 | **ISSTA 2026** | — | Oakland, USA · Oct 3–9 | — | **Jan 29, 2026** | Apr 16, 2026 (initial) | CCF A |
-| **KDD 2026 (Cycle 2)** | — | Aug 2026 | **Feb 1, 2026** | Feb 8, 2026 | TBD | CCF A |
+| **KDD 2026 (Cycle 2)** | — | Aug 2026 | **Feb 1, 2026** | Feb 8, 2026 | May 16, 2026 | CCF A |
 | **ESEC/FSE 2026** | R&R Track | Montréal, Canada · Jul 5–9 | — | Feb 24, 2026 | Mar 24, 2026 | CCF A |
 
 ---
@@ -264,63 +312,53 @@ ___
 
 ---
 
-### 🔥 IJCAI 2026 - **6天后摘要截止** (最紧急！)
+### ✅ IJCAI 2026 - 已提交2篇 ✅
 - **会议时间：** 2026-08-15 至 2026-08-21
 - **会议地点：** Bremen, Germany
-- **摘要截止：** 2026-01-12 ⚠️
-- **全文截止：** 2026-01-19
+- **摘要截止：** 2026-01-12 ✅
+- **全文截止：** 2026-01-19 ✅
 - **Phase I Notification:** 2026-03-04
 - **Author Response:** 2026-04-07 to 2026-04-10
 - **Final Notification:** 2026-04-29
 - **Camera-Ready:** 2026-05-15
 - **会议等级：** CCF A, CORE A*
-- **目标论文数：** 3篇
-- **研究方向：**
-  1. **Graph Unlearning** - 图遗忘与隐私保护
-  2. **Traffic Prediction** - 交通流预测与时空GNN
-  3. **TBD** - 待定第三篇
-- **完成进度：** 
-  - [ ] 确定第三篇主题
-  - [ ] 实验完成
-  - [ ] 论文撰写
-  - [ ] 内部审阅
-- **备注：** AI顶会，竞争激烈，需提前准备摘要
+- **已提交论文：** 2篇
+  1. **NetFair**: Network-Aware Fairness for Spatiotemporal Traffic Forecasting（Main track）
+  2. **#12 - COG-ADAPT**: Learning Cognition‑Aware Interventions for Human‑AI Team Decision‑Making（Human-Centered AI track）
+- **当前状态：** Submitted
+- **备注：** 等待评审/作者回复阶段（如有）
 - **官网：** https://2026.ijcai.org/
 
 ---
 
-### 🔥 ESEC/FSE 2026 (SE Education Track) - **30天后截稿**
+### ✅ ESEC/FSE 2026 (SE Education Track) - 已提交1篇 ✅
 - **会议时间：** 2026-07-05 至 2026-07-09
 - **会议地点：** Montréal, Canada
-- **截稿日期：** 2026-01-22
+- **截稿日期：** 2026-01-22 ✅ 已提交
 - **Notification:** 2026-03-17
 - **Camera-Ready:** 2026-04-02
 - **会议等级：** CCF A
-- **目标论文数：** 1篇（可选）
+- **已提交论文：** 1篇
+  - ✅ Check, Cite, or Trust? Developing and Validating a Verification Literacy Scale for AI‑Assisted Programming
+- **当前状态：** Submitted
 - **研究方向：** AI辅助编程教育、软件工程教育
-- **备注：** 软件工程教育专题，可考虑将教学相关研究投稿
+- **备注：** 软件工程教育专题
 
 ---
 
-### 🔥 ICML 2026 - **36天后截稿**
+### ✅ ICML 2026 - 已提交3篇 ✅
 - **会议时间：** 2026-07-06 至 2026-07-12
 - **会议地点：** Seoul, Korea (COEX)
-- **摘要截止：** 2026-01-23
-- **全文截止：** 2026-01-28
+- **摘要截止：** 2026-01-23 ✅
+- **全文截止：** 2026-01-28 ✅
 - **Notification:** 2026-04-30
 - **会议等级：** CCF A, CORE A*
-- **目标论文数：** 3篇
-- **研究方向：**
-  - 图神经网络方法创新
-  - 因果推断与公平性
-  - 多模态学习
-- **完成进度：** 
-  - [x] 数据收集
-  - [x] 实验设计
-  - [ ] 数据分析
-  - [ ] 论文撰写
-  - [ ] 内部审阅
-- **备注：** 机器学习顶会，录用率相对较高，适合方法论创新
+- **已提交论文：** 3篇
+  1. [2671] Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
+  2. [2676] CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
+  3. [22192] Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
+- **当前状态：** Submitted（0 Official Reviews Submitted）
+- **备注：** 机器学习顶会
 - **官网：** https://icml.cc/Conferences/2026
 
 ---
@@ -347,15 +385,19 @@ ___
 
 ---
 
-### KDD 2026 (Cycle 2) - **40天后摘要截止**
+### 🔥 KDD 2026 (Cycle 2) - 准备中
 - **会议时间：** 2026-08
 - **摘要截止：** 2026-02-01
 - **全文截止：** 2026-02-08
+- **Author Rebuttal Period:** 2026-04-04 to 2026-04-17
+- **Notification:** 2026-05-16
 - **会议等级：** CCF A
 - **领域：** 数据挖掘、知识发现
-- **目标论文数：** TBD
-- **研究方向：** 图神经网络、推荐系统、时空预测
-- **备注：** 数据挖掘顶会，适合图学习和推荐系统相关研究
+- **目标论文数：** 2篇
+- **计划投稿：**
+  1. Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation
+  2. From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue
+- **研究方向：** 推荐系统公平性、社交计算/对话、网络与群体行为
 
 ---
 
@@ -364,11 +406,11 @@ ___
 | 会议 | 截稿倒计时 | 优先级 | 建议行动 |
 |:-----|:----------|:-------|:--------|
 | **ACL 2026** | ✅ 已提交 | ✅ 完成 | 等待审稿结果 (Mar 9) |
-| **IJCAI 2026** | 6天 (摘要) / 13天 (全文) | 🔴🔴 最紧急 | 立即完成摘要提交！ |
-| **FSE 2026 (Edu)** | 16天 | 🟡 高 | 评估可行性，决定是否投稿 |
-| **ICML 2026** | 22天 | 🔴 高 | 加速论文撰写 |
+| **IJCAI 2026** | ✅ 已提交2篇 | ✅ 完成 | 等待评审/作者回复（如有） |
+| **FSE 2026 (Edu)** | ✅ 已提交1篇 | ✅ 完成 | 等待通知 (Mar 17) |
+| **ICML 2026** | ✅ 已提交3篇 | ✅ 完成 | 等待通知 (Apr 30) |
 | **ISSTA 2026** | 23天 | 🟢 中 | 评估可行性，决定是否投稿 |
-| **KDD 2026 Cycle 2** | 26天 (摘要) | 🟢 中 | 整理现有工作，考虑投稿 |
+| **KDD 2026 Cycle 2** | 3天 (摘要) / 10天 (全文) | 🔴 高 | 冲刺摘要与全文定稿 |
 | **FSE 2026 (R&R)** | 49天 | 🔴 高 | 根据审稿意见修改论文 |
 
 ---
@@ -671,4 +713,4 @@ ___
 | **ICML 2026** | Main conference | Seoul, Korea (COEX)<br>Jul 6–12, 2026 | — | **Jan 23, 2026** | **Jan 28, 2026** | — | **Apr 30, 2026** | — |
 | **ESEC/FSE 2026** | Revise & Resubmit | Montréal, Canada<br>Jul 5–9, 2026 | — | — | Feb 24, 2026 | — | Mar 24, 2026 | — |
 | **ISSTA 2026**<br>Software Testing & Analysis (SE) | — | Oakland, USA<br>Oct 3–9, 2026 | Jan 29, 2026 (paper) | — | Jan 29, 2026 | Author response<br>Mar 24–26, 2026 | Initial Apr 16, 2026;<br>final Jun 25, 2026 | Jul 23, 2026 |
-| **KDD 2026 (Cycle 2)**<br>Knowledge Discovery & Data Mining (AI) | — | Aug 2026<br>details on site | Feb 1, 2026 (abstract) | Feb 1, 2026 | Feb 8, 2026 | (Cycle-2)<br>rebuttal/notifications<br>not yet posted on CfP | — | — |
+| **KDD 2026 (Cycle 2)**<br>Knowledge Discovery & Data Mining (AI) | — | Aug 2026<br>details on site | Feb 1, 2026 (abstract) | Feb 1, 2026 | Feb 8, 2026 | Author rebuttal Apr 4–17, 2026 | May 16, 2026 | TBD |
