@@ -267,12 +267,12 @@ layout: single
     </div>
   </div>
 
-  <!-- Resource: 2025 年度总结 -->
+  <!-- Resource: 2025 年度工作总结 -->
   <div class="workshop-card">
     <div class="workshop-header" style="background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);">
       <div class="workshop-icon">📌</div>
-      <h3 class="workshop-title">2025 年度总结</h3>
-      <p class="workshop-subtitle">Year in Review (Research · Teaching · Service)</p>
+      <h3 class="workshop-title">2025 年度工作总结</h3>
+      <p class="workshop-subtitle">Work Summary (Research · Teaching · Service)</p>
     </div>
     <div class="workshop-body">
       <div class="workshop-meta">
@@ -282,7 +282,7 @@ layout: single
         </div>
         <div class="meta-item">
           <span>📄</span>
-          <span>年度复盘</span>
+          <span>工作总结</span>
         </div>
         <div class="meta-item">
           <span>⏱️</span>
@@ -291,11 +291,11 @@ layout: single
       </div>
       
       <div class="workshop-description">
-        记录 2025 年度研究与教学的关键成果、方法与反思：论文与项目进展、AI 辅助教学实践、学术服务与下一年计划，并新增“2025 年总中介”小节作为年度主线提炼。
+        记录 2025 年度工作要点：论文与项目进展、课程建设与 AI 辅助教学实践、学术服务与阶段性复盘。
       </div>
       
       <div class="workshop-tags">
-        <span class="tag">年度总结</span>
+        <span class="tag">工作总结</span>
         <span class="tag">Research</span>
         <span class="tag">Teaching</span>
         <span class="tag">Service</span>

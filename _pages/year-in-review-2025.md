@@ -1,6 +1,6 @@
 ---
 permalink: /workshop/2025-review/
-title: "2025 年度总结"
+title: "2025 年度工作总结"
 author_profile: false
 layout: single
 ---
@@ -232,18 +232,16 @@ layout: single
   <a href="/workshop/" class="back-button">← 返回 Workshops</a>
 
   <div class="review-hero">
-    <h1>📌 2025 年度总结</h1>
-    <p class="subtitle">研究 × 教学 × 学术服务（Year in Review）</p>
+    <h1>📌 2025 年度工作总结</h1>
+    <p class="subtitle">科研 × 教学 × 学术服务（工作总结）</p>
     <div class="meta">更新时间：2026-01-29（可按需继续更新）</div>
   </div>
 
   <div class="nav-pills">
-    <a class="nav-pill" href="#highlights">年度亮点</a>
-    <a class="nav-pill" href="#mediation">2025 年总中介</a>
-    <a class="nav-pill" href="#research">研究产出</a>
-    <a class="nav-pill" href="#teaching">教学与实践</a>
+    <a class="nav-pill" href="#highlights">工作概览</a>
+    <a class="nav-pill" href="#research">论文与科研</a>
+    <a class="nav-pill" href="#teaching">课程与教学</a>
     <a class="nav-pill" href="#service">学术服务</a>
-    <a class="nav-pill" href="#plan">2026 计划</a>
   </div>
 
   <!-- 统计卡片（按已在网站收录的条目做初稿，可自行调整） -->
@@ -267,52 +265,20 @@ layout: single
   </div>
 
   <div class="section" id="highlights">
-    <h2 class="section-title"><span class="section-icon">✨</span>年度亮点（Highlights）</h2>
+    <h2 class="section-title"><span class="section-icon">✨</span>工作概览（2025）</h2>
     <ul style="margin:0; padding-left:18px; color:#334155; line-height:1.9;">
-      <li><strong>高影响成果：</strong>IJSTEM 论文获 ESI 高被引，并进入期刊 Most cited / Most popular（按期刊页面统计）。</li>
-      <li><strong>研究主线形成：</strong>围绕“可信的人本 AI 交互 + 群体行为与资源分配 + 公平性评估”形成可持续的研究组合。</li>
-      <li><strong>跨方向融合：</strong>在 AI 教育、AI 中介沟通与信任、在线社区与公平性等方向持续产出，并逐步统一方法论（实验/日志/因果/建模）。</li>
+      <li><strong>科研：</strong>围绕人本 AI 与行为数据分析持续产出；IJSTEM 论文获 ESI 高被引，并进入期刊 Most cited / Most popular（按期刊页面统计）。</li>
+      <li><strong>教学：</strong>沉淀 AI 辅助教学案例（代码审查、个性化实验设计、PPT 生成等），并整理为 Workshop 页面（见 <a href="/workshop/aiedu/" style="font-weight:800;">AI辅助教学案例</a>）。</li>
+      <li><strong>方法与规范：</strong>加强“实验/调查 + 行为日志/建模 + 可复现材料”的闭环，尽量把结论写成可复用的评估与设计要点。</li>
+      <li><strong>学术服务：</strong>参与会议与期刊评审工作，支持社区同行评审与交流（以主页信息为准）。</li>
     </ul>
     <div class="callout">
       <strong>备注：</strong>本页是“可公开版本”的年度总结初稿；如需更私密的版本（不被搜索引擎收录），我也可以帮你做一个 noindex 页面。
     </div>
   </div>
 
-  <div class="section" id="mediation">
-    <h2 class="section-title"><span class="section-icon">🧩</span>2025 年总中介（年度主线提炼）</h2>
-    <p style="margin:0; color:#334155; line-height:1.9;">
-      我将 2025 年的研究主线概括为一个反复出现的“中介机制”：<strong>当 AI 介入人类活动（学习/沟通/创作/社区互动）时，系统设计会先改变人对 AI 的理解与信任判断方式（认知负担、归因、可验证性），再进一步影响行为决策与群体层面的资源分配结果（效率、公平、体验）</strong>。
-    </p>
-
-    <div class="two-col">
-      <div class="mini-card">
-        <h4>这一“总中介”怎么落地？</h4>
-        <ul>
-          <li>把关键心理/行为变量<strong>显式化</strong>（例如“验证负担”、作者归因、真实性、信任校准）。</li>
-          <li>用<strong>行为日志 + 实验设计</strong>建立因果链条，而不是只做相关。</li>
-          <li>将机制变量转化为<strong>可设计的系统参数</strong>（披露方式、交互形态、约束与反馈通道）。</li>
-        </ul>
-      </div>
-      <div class="mini-card">
-        <h4>2026 年我想把它推进到…</h4>
-        <ul>
-          <li>把“机制”与“算法策略”统一起来：更系统地连接<strong>干预策略—长期行为—公平性</strong>。</li>
-          <li>形成可复用的<strong>评估协议</strong>：机会分母、净影响核算、区间化公平主张等。</li>
-          <li>把跨场景证据串起来：从单任务效果走向<strong>长期与跨场景稳健性</strong>。</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tag-row">
-      <span class="tag">Mediation</span>
-      <span class="tag">Trust Calibration</span>
-      <span class="tag">Verification Load</span>
-      <span class="tag">Long-run Fairness</span>
-    </div>
-  </div>
-
   <div class="section" id="research">
-    <h2 class="section-title"><span class="section-icon">📚</span>研究产出（2025）</h2>
+    <h2 class="section-title"><span class="section-icon">📚</span>论文与科研（2025）</h2>
     <p style="margin:0; color:#334155; line-height:1.9;">
       以下为 2025 年在本网站“Publications”中已收录的代表性产出（按方向归类，后续可继续补充 DOI/链接）。
     </p>
@@ -342,7 +308,7 @@ layout: single
   </div>
 
   <div class="section" id="teaching">
-    <h2 class="section-title"><span class="section-icon">🎓</span>教学与实践</h2>
+    <h2 class="section-title"><span class="section-icon">🎓</span>课程与教学（2025）</h2>
     <p style="margin:0; color:#334155; line-height:1.9;">
       2025 年我把 AI 工具更系统地纳入课程与科研训练流程，形成可复用的教学案例（详见 Workshop：<a href="/workshop/aiedu/" style="font-weight:800;">AI辅助教学案例</a>）。
     </p>
@@ -374,30 +340,6 @@ layout: single
     </ul>
     <div class="callout">
       <strong>提示：</strong>如果你希望这里列出完整的 Reviewer/PC 清单，我可以从你主页 “About” 部分同步抽取并统一格式。
-    </div>
-  </div>
-
-  <div class="section" id="plan">
-    <h2 class="section-title"><span class="section-icon">🗺️</span>2026 计划（面向 KDD 等）</h2>
-    <p style="margin:0; color:#334155; line-height:1.9;">
-      当前最紧迫的目标是 KDD 2026 Cycle 2（摘要 2/1、全文 2/8）。在 2025 的基础上，我会重点把“长期公平 + 平台/创作者协同适应”与“跨群体对话”两条线做成更强的 KDD 叙事与实验闭环。
-    </p>
-    <div class="two-col">
-      <div class="mini-card">
-        <h4>KDD 2026（准备中）</h4>
-        <ul>
-          <li>Stable Long-Run Exposure Fairness under Creator-Platform Co-adaptation</li>
-          <li>From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross-Group Dialogue</li>
-        </ul>
-      </div>
-      <div class="mini-card">
-        <h4>优先补强点（建议）</h4>
-        <ul>
-          <li>更强的 baseline 与消融（尤其是长期/动态环境）</li>
-          <li>明确实验“机会分母”与长期指标（公平 + 效率 + 稳定性）</li>
-          <li>把机制变量（信任/验证/披露）写成可复用评估协议</li>
-        </ul>
-      </div>
     </div>
   </div>
 
