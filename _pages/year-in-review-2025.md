@@ -135,15 +135,6 @@ layout: single
   font-size: 20px;
 }
 
-.callout {
-  background: #f0f9ff;
-  border-left: 4px solid #0ea5e9;
-  padding: 14px 16px;
-  border-radius: 12px;
-  color: #0f172a;
-  margin: 14px 0 0 0;
-}
-
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -234,7 +225,7 @@ layout: single
   <div class="review-hero">
     <h1>📌 2025 年度工作总结</h1>
     <p class="subtitle">科研 × 教学 × 学术服务（工作总结）</p>
-    <div class="meta">更新时间：2026-01-29（可按需继续更新）</div>
+    <div class="meta">更新时间：2026-01-29</div>
   </div>
 
   <div class="nav-pills">
@@ -242,54 +233,53 @@ layout: single
     <a class="nav-pill" href="#research">论文与科研</a>
     <a class="nav-pill" href="#teaching">课程与教学</a>
     <a class="nav-pill" href="#service">学术服务</a>
+    <a class="nav-pill" href="#outlook">展望2026</a>
   </div>
 
-  <!-- 统计卡片（按已在网站收录的条目做初稿，可自行调整） -->
   <div class="stats-grid">
     <div class="stat-card">
-      <span class="stat-number">12</span>
-      <span class="stat-label">2025 年（网站已收录）发表/录用论文</span>
+      <span class="stat-number">20+</span>
+      <span class="stat-label">2025学年 发表/录用论文</span>
     </div>
     <div class="stat-card">
       <span class="stat-number">1</span>
       <span class="stat-label">ESI 高被引论文（IJSTEM）</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">4</span>
-      <span class="stat-label">SCI/SSCI 1区 TOP 期刊论文（2025）</span>
+      <span class="stat-number">7</span>
+      <span class="stat-label">CCF A（含2026年录用）</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">1/3/2</span>
-      <span class="stat-label">CCF A / B / C（2025 会议论文数）</span>
+      <span class="stat-number">6+</span>
+      <span class="stat-label">SCI/SSCI 1区 TOP 期刊</span>
     </div>
   </div>
 
   <div class="section" id="highlights">
-    <h2 class="section-title"><span class="section-icon">✨</span>工作概览（2025）</h2>
+    <h2 class="section-title"><span class="section-icon">✨</span>工作概览（2025学年）</h2>
     <ul style="margin:0; padding-left:18px; color:#334155; line-height:1.9;">
-      <li><strong>科研：</strong>围绕人本 AI 与行为数据分析持续产出；IJSTEM 论文获 ESI 高被引，并进入期刊 Most cited / Most popular（按期刊页面统计）。</li>
+      <li><strong>科研：</strong>围绕人本 AI 与行为数据分析持续产出；IJSTEM 论文获 ESI 高被引，并进入期刊 Most cited / Most popular。</li>
       <li><strong>教学：</strong>沉淀 AI 辅助教学案例（代码审查、个性化实验设计、PPT 生成等），并整理为 Workshop 页面（见 <a href="/workshop/aiedu/" style="font-weight:800;">AI辅助教学案例</a>）。</li>
-      <li><strong>方法与规范：</strong>加强“实验/调查 + 行为日志/建模 + 可复现材料”的闭环，尽量把结论写成可复用的评估与设计要点。</li>
-      <li><strong>学术服务：</strong>参与会议与期刊评审工作，支持社区同行评审与交流（以主页信息为准）。</li>
+      <li><strong>方法与规范：</strong>加强"实验/调查 + 行为日志/建模 + 可复现材料"的闭环，把结论写成可复用的评估与设计要点。</li>
+      <li><strong>学术服务：</strong>参与会议与期刊评审工作，支持社区同行评审与交流。</li>
     </ul>
-    <div class="callout">
-      <strong>备注：</strong>本页是“可公开版本”的年度总结初稿；如需更私密的版本（不被搜索引擎收录），我也可以帮你做一个 noindex 页面。
-    </div>
   </div>
 
   <div class="section" id="research">
-    <h2 class="section-title"><span class="section-icon">📚</span>论文与科研（2025）</h2>
+    <h2 class="section-title"><span class="section-icon">📚</span>论文与科研（2025学年）</h2>
     <p style="margin:0; color:#334155; line-height:1.9;">
-      以下为 2025 年在本网站“Publications”中已收录的代表性产出（按方向归类，后续可继续补充 DOI/链接）。
+      以下为 2025 学年（含 2026 年上半年录用）代表性产出（按方向归类）。
     </p>
 
     <div class="two-col">
       <div class="mini-card">
         <h4>Human-Centered AI / 社会计算</h4>
         <ul>
-          <li>IJCAI 2025：Creative Momentum Transfer（AI 建议时机/标注与创意迭代）</li>
+          <li>CHI 2026 ×3：AI-Mediated Communication、Trust Calibration、Creator Fairness Perception</li>
+          <li>IJCAI 2025：Creative Momentum Transfer（AI 建议时机与创意迭代）</li>
           <li>CogSci 2025 ×2：情感韵律、长期对话中的意义共建</li>
-          <li>IJCNN 2025：Override Behavior（艺术家拒绝 AI 建议的机制）</li>
+          <li>WWW 2026：Audit of Audits（算法审计元研究）</li>
+          <li>AAAI 2026：Emotionally Grounded Dialogue（情感生成与对话）</li>
         </ul>
       </div>
       <div class="mini-card">
@@ -298,19 +288,38 @@ layout: single
           <li>EAAI 2025：DynaKey-GNN（时空交通预测）</li>
           <li>ACME 2025：Traffic Flow Prediction GNN Survey（系统综述）</li>
           <li>IEEE Access 2025：ContrastLOS（医疗图学习）</li>
+          <li>FSE 2026：Code Generation Fairness（代码生成公平性）</li>
         </ul>
       </div>
     </div>
 
-    <div class="callout">
-      <strong>可选增强：</strong>如果你希望这里自动从 `_publications/` 抓取并生成列表，我可以把它做成模板化页面（减少手动维护）。
+    <div class="two-col" style="margin-top:14px;">
+      <div class="mini-card">
+        <h4>期刊（SCI/SSCI 1区 TOP）</h4>
+        <ul>
+          <li>IJSTEM 2025：ESI 高被引（AI in STEM Education）</li>
+          <li>ICASSP 2026：Speech/Audio Processing</li>
+          <li>Social Media + Society（Revision Resubmitted）</li>
+          <li>其他 1 区 TOP 期刊：IEEE TKDE、TOCHI 等在投</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <h4>CCF A 会议（2025-2026）</h4>
+        <ul>
+          <li>CHI 2026 ×3</li>
+          <li>IJCAI 2025 ×1</li>
+          <li>WWW 2026 ×1</li>
+          <li>AAAI 2026 ×1</li>
+          <li>FSE 2026 ×1</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="section" id="teaching">
     <h2 class="section-title"><span class="section-icon">🎓</span>课程与教学（2025）</h2>
     <p style="margin:0; color:#334155; line-height:1.9;">
-      2025 年我把 AI 工具更系统地纳入课程与科研训练流程，形成可复用的教学案例（详见 Workshop：<a href="/workshop/aiedu/" style="font-weight:800;">AI辅助教学案例</a>）。
+      2025 年把 AI 工具更系统地纳入课程与科研训练流程，形成可复用的教学案例（详见 Workshop：<a href="/workshop/aiedu/" style="font-weight:800;">AI辅助教学案例</a>）。
     </p>
     <div class="two-col">
       <div class="mini-card">
@@ -322,10 +331,10 @@ layout: single
         </ul>
       </div>
       <div class="mini-card">
-        <h4>我关注的教学指标</h4>
+        <h4>关注的教学指标</h4>
         <ul>
-          <li>学生是否学会“<strong>验证与解释</strong>”，而不是只追求“生成更快”</li>
-          <li>把 AI 使用从“技巧”提升到“<strong>可迁移能力</strong>”</li>
+          <li>学生是否学会"<strong>验证与解释</strong>"，而不是只追求"生成更快"</li>
+          <li>把 AI 使用从"技巧"提升到"<strong>可迁移能力</strong>"</li>
           <li>用过程日志（IDE/提交）辅助评估学习行为</li>
         </ul>
       </div>
@@ -335,11 +344,35 @@ layout: single
   <div class="section" id="service">
     <h2 class="section-title"><span class="section-icon">🤝</span>学术服务（Service）</h2>
     <ul style="margin:0; padding-left:18px; color:#334155; line-height:1.9;">
-      <li>WWW 2026：Web4Good Special Track（PC/审稿服务，按主页信息为准）</li>
-      <li>CHI 2026 / 多个期刊：评审服务（如 EAAI / IJSTEM / ICS 等）</li>
+      <li>WWW 2026：Web4Good Special Track PC</li>
+      <li>CHI 2026 / 多个期刊：评审服务（EAAI / IJSTEM / ICS 等）</li>
     </ul>
-    <div class="callout">
-      <strong>提示：</strong>如果你希望这里列出完整的 Reviewer/PC 清单，我可以从你主页 “About” 部分同步抽取并统一格式。
+  </div>
+
+  <div class="section" id="outlook">
+    <h2 class="section-title"><span class="section-icon">🔭</span>展望2026</h2>
+    <p style="margin:0; color:#334155; line-height:1.9;">
+      在 2025 学年研究基础上，2026 年重点推进以下方向：
+    </p>
+    <div class="two-col">
+      <div class="mini-card">
+        <h4>科研方向</h4>
+        <ul>
+          <li>长期公平性与平台/创作者协同适应机制</li>
+          <li>跨群体对话与 AI 中介沟通</li>
+          <li>信任校准与验证负担的系统化评估</li>
+          <li>图神经网络在时空/社会网络中的应用</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <h4>目标会议/期刊</h4>
+        <ul>
+          <li>KDD 2026（Cycle 2 准备中）</li>
+          <li>CSCW 2026 / NeurIPS 2026</li>
+          <li>IEEE TKDE / ACM TOCHI</li>
+          <li>持续产出 CCF A 与 1 区 TOP 期刊</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -357,4 +390,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 </script>
-
