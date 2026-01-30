@@ -210,7 +210,7 @@ layout: single
 <div class="stats-section">
   <div class="stats-grid">
     <div class="stat-item">
-      <span class="stat-number">1</span>
+      <span class="stat-number">2</span>
       <span class="stat-label">Available Workshops</span>
     </div>
     <div class="stat-item">
@@ -263,6 +263,46 @@ layout: single
       
       <a href="/workshop/aiedu/" class="workshop-button">
         进入Workshop →
+      </a>
+    </div>
+  </div>
+
+  <!-- Resource: 2025 年度总结 -->
+  <div class="workshop-card">
+    <div class="workshop-header" style="background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);">
+      <div class="workshop-icon">📌</div>
+      <h3 class="workshop-title">2025 年度总结</h3>
+      <p class="workshop-subtitle">Year in Review (Research · Teaching · Service)</p>
+    </div>
+    <div class="workshop-body">
+      <div class="workshop-meta">
+        <div class="meta-item">
+          <span>📅</span>
+          <span>2025</span>
+        </div>
+        <div class="meta-item">
+          <span>📄</span>
+          <span>年度复盘</span>
+        </div>
+        <div class="meta-item">
+          <span>⏱️</span>
+          <span>持续更新</span>
+        </div>
+      </div>
+      
+      <div class="workshop-description">
+        记录 2025 年度研究与教学的关键成果、方法与反思：论文与项目进展、AI 辅助教学实践、学术服务与下一年计划，并新增“2025 年总中介”小节作为年度主线提炼。
+      </div>
+      
+      <div class="workshop-tags">
+        <span class="tag">年度总结</span>
+        <span class="tag">Research</span>
+        <span class="tag">Teaching</span>
+        <span class="tag">Service</span>
+      </div>
+      
+      <a href="/workshop/2025-review/" class="workshop-button" style="background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);">
+        查看总结 →
       </a>
     </div>
   </div>
