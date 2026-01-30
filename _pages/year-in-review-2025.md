@@ -276,10 +276,10 @@ layout: single
         <h4>Human-Centered AI / 社会计算</h4>
         <ul>
           <li>CHI 2026 ×3：AI-Mediated Communication、Trust Calibration、Creator Fairness Perception</li>
-          <li>IJCAI 2025：Creative Momentum Transfer（AI 建议时机与创意迭代）</li>
-          <li>CogSci 2025 ×2：情感韵律、长期对话中的意义共建</li>
+          <li>IJCAI 2025：Creative Momentum Transfer（AI 建议时机）</li>
+          <li>CogSci 2025 ×2：AI 情感对话</li>
           <li>WWW 2026：Audit of Audits（算法审计元研究）</li>
-          <li>AAAI 2026：Mental Health（情感生成与对话）</li>
+          <li>AAAI 2026：Mental Health</li>
         </ul>
       </div>
       <div class="mini-card">
