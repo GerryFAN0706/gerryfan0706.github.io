@@ -279,7 +279,7 @@ layout: single
           <li>IJCAI 2025：Creative Momentum Transfer（AI 建议时机与创意迭代）</li>
           <li>CogSci 2025 ×2：情感韵律、长期对话中的意义共建</li>
           <li>WWW 2026：Audit of Audits（算法审计元研究）</li>
-          <li>AAAI 2026：Emotionally Grounded Dialogue（情感生成与对话）</li>
+          <li>AAAI 2026：Mental Health（情感生成与对话）</li>
         </ul>
       </div>
       <div class="mini-card">
@@ -298,9 +298,9 @@ layout: single
         <h4>期刊（SCI/SSCI 1区 TOP）</h4>
         <ul>
           <li>IJSTEM 2025：ESI 高被引（AI in STEM Education）</li>
-          <li>ICASSP 2026：Speech/Audio Processing</li>
-          <li>Social Media + Society（Revision Resubmitted）</li>
-          <li>其他 1 区 TOP 期刊：IEEE TKDE、TOCHI 等在投</li>
+          <li>EAAI</li>
+          <li>Archives of Computational Methods in Engineering</li>
+
         </ul>
       </div>
       <div class="mini-card">
@@ -358,8 +358,7 @@ layout: single
       <div class="mini-card">
         <h4>科研方向</h4>
         <ul>
-          <li>长期公平性与平台/创作者协同适应机制</li>
-          <li>跨群体对话与 AI 中介沟通</li>
+          <li>AI 如何更好的提供决策 （AI for decision making）</li>
           <li>信任校准与验证负担的系统化评估</li>
           <li>图神经网络在时空/社会网络中的应用</li>
         </ul>
@@ -370,7 +369,6 @@ layout: single
           <li>KDD 2026（Cycle 2 准备中）</li>
           <li>CSCW 2026 / NeurIPS 2026</li>
           <li>IEEE TKDE / ACM TOCHI</li>
-          <li>持续产出 CCF A 与 1 区 TOP 期刊</li>
         </ul>
       </div>
     </div>
