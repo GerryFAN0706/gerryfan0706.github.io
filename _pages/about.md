@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-03]</strong> 🏆 Paper "<strong>When Help Hurts: Verification Load and Fatigue with AI Coding Assistants</strong>" received <strong>Honourable Mention Award</strong> at <strong>ACM CHI 2026</strong>!
+  </div>
+
+  <div class="news-item">
     <strong>[2026-01]</strong> 🎉🎉🎉 <strong>3 papers accepted by CHI 2026</strong> (CCF A): "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication", "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants", and "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences"
   </div>
 
