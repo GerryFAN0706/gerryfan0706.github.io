@@ -88,7 +88,7 @@ ___
 
 - **投稿日期：** 2025-11-09
 - **目标期刊/会议：** ACM Transactions on Information Systems (TOIS)
-- **当前状态：** Submitted
+- **当前状态：** Major Revision (revised and resubmitted)
 - **预计结果时间：** 2026-05
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan
 - **Manuscript ID：** TOIS-2025-0753
@@ -100,7 +100,7 @@ ___
 
 - **投稿日期：** 2025-11-30
 - **目标期刊/会议：** IEEE Transactions on Computational Social Systems (Special Issue on Mental Disorder Detection on Social Media)
-- **当前状态：** Submitted
+- **当前状态：** Major Revision (revised and resubmitted)
 - **预计结果时间：** 2026-02-25
 - **作者：** Dandan Liu, Guangrui Fan (Corresponding), Qian Guo, Rui Zhang, Lihu Pan
 - **重要时间节点：**
