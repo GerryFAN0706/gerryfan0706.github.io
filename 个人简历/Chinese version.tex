@@ -1,0 +1,276 @@
+%------------------------
+% 樊光瑞 个人简历 (中文版)
+% 编译说明：优先使用 XeLaTeX 编译（中文粗体/字体更稳定）
+% Compile with: xelatex CV_Guangrui_Fan_CN.tex
+% 兼容：也可用 pdfLaTeX 编译（中文字体/粗体支持可能受限）
+% Fallback: pdflatex CV_Guangrui_Fan_CN.tex
+%------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+% Packages
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
+  \usepackage{newtxtext}
+  \usepackage{newtxmath}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  % English font (Times-like)
+  \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+  % Chinese font with bold support
+  % Option 1: Use SimSun with AutoFakeBold (simulates bold)
+  % Option 2: Use Microsoft YaHei which has native bold
+  \IfFontExistsTF{Microsoft YaHei}{
+    \setCJKmainfont{Microsoft YaHei}
+    \setCJKsansfont{Microsoft YaHei}
+  }{
+    \IfFontExistsTF{SimSun}{
+      \setCJKmainfont[AutoFakeBold=2.5]{SimSun}
+    }{
+      \setCJKmainfont[AutoFakeBold=2.5]{Noto Sans CJK SC}
+    }
+  }
+\fi
+\usepackage{microtype}
+\usepackage{fontawesome5}
+\usepackage{geometry}
+\geometry{a4paper, margin=0.85in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black,
+    citecolor=blue!70!black
+}
+
+% Formatting
+\setlist{noitemsep}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+\newenvironment{subs}
+  {\adjustwidth{2em}{0pt}}
+  {\endadjustwidth}
+
+% Custom commands
+\newcommand{\pubitem}[1]{\item #1}
+\newcommand{\cvlabel}[1]{\textbf{#1}}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+\ifPDFTeX
+\begin{CJK*}{UTF8}{gbsn}
+\fi
+
+\pagestyle{empty}
+
+% Header
+\begin{center}
+    \textbf{\LARGE 樊光瑞}\\[5pt]
+    \textbf{\large 个人简历}\\[3pt]
+    出生日期：1992年7月6日\\[2pt]
+    \faMapMarker*~山西太原 \quad
+    \faPhone~+86 13387574446 \quad
+    \faEnvelope~\href{mailto:gerryfan2022@gmail.com}{gerryfan2022@gmail.com} \quad
+    \faGlobe~\href{https://gerryfan0706.github.io}{gerryfan0706.github.io}\\[2pt]
+    \faOrcid~\href{https://orcid.org/0009-0001-8570-1636}{0009-0001-8570-1636} \quad
+    \faGithub~\href{https://github.com/gerryfan0706}{github.com/gerryfan0706}
+\end{center}
+
+%------------------------
+\section*{研究方向}
+
+\cvlabel{以人为中心的人工智能 (Human-Centered AI)}，研究方向聚焦：
+\begin{itemize}[leftmargin=*]
+    \item \cvlabel{教育人工智能}：AI辅助编程教育中的认知脚手架与认知卸载。
+    \item \cvlabel{AI介导沟通与信任}：AI辅助内容创作/沟通中的真实性、信任与隐私。
+    \item \cvlabel{智能交通}：基于图神经网络的时空交通流预测与公平性。
+    \item \cvlabel{AI for Social Good}：心理健康支持与算法公平。
+\end{itemize}
+\noindent\cvlabel{关键词：} Human-Centered AI；HCI；LLM；GNN；社会计算；公平性。
+
+%------------------------
+\section*{研究亮点}
+\begin{itemize}[leftmargin=*]
+    \item \cvlabel{代表性论文成果：} CCF A类会议论文 7 篇、中科院1区Top期刊论文 6 篇，均为第一作者或通讯作者；其中 CHI 2026 录用 3 篇，1 篇获 ACM CHI 2026 荣誉提名奖（Honourable Mention Award）。
+    \item \cvlabel{ESI 高被引论文（2025）：} \textit{International Journal of STEM Education}。
+    \item \cvlabel{学术服务：} WWW 2026（Web4Good）程序委员会；CHI 2026 与多本 SCI/SSCI Q1 期刊审稿。
+\end{itemize}
+
+%------------------------
+\section*{教育背景}
+
+\noindent
+\textbf{计算机科学 博士} \hfill 2022年9月 -- 2026年6月（预计）\\
+\textbf{马来亚大学} (Universiti Malaya, QS 58)，马来西亚吉隆坡 \\
+研究方向：以人为中心的人工智能、人机交互、智能交通 \\
+
+\noindent
+\textbf{软件工程 硕士} \hfill 2014年9月 -- 2018年2月 \\
+\textbf{上海交通大学}（软件学院），中国上海 \\
+\textit{（保送，免试推荐入学）} \\
+
+\noindent
+\textbf{数字媒体技术 学士} \hfill 2010年9月 -- 2014年6月 \\
+\textbf{华中科技大学}（软件学院），中国武汉
+
+%------------------------
+\section*{工作经历}
+
+\noindent
+\textbf{讲师} \hfill 2018年6月 -- 至今 \\
+计算机科学与技术学院 \\
+太原科技大学，山西太原
+
+%------------------------
+\section*{学术论文\footnotemark[1]}
+\footnotetext[1]{\(^*\) 第一作者；\(^\dag\) 通讯作者。}
+
+\subsection*{会议论文}
+
+\subsubsection*{CCF A 类}
+
+\begin{enumerate}[label={[C\arabic*]}]
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., et al. (2026). Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication. \textit{CHI 2026}. \textbf{CCF A}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., et al. (2026). When Help Hurts: Verification Load and Fatigue with AI Coding Assistants. \textit{CHI 2026}. \textbf{CCF A}; \textbf{ACM CHI 2026 荣誉提名奖（Honourable Mention Award）}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., et al. (2026). Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences. \textit{CHI 2026}. \textbf{CCF A}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Pan L., et al. (2026). Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering. \textit{FSE 2026}. \textbf{CCF A}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Sabri A.Q.M., Pan L. (2026). Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims. \textit{WWW 2026}. \textbf{CCF A}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Pan L. (2026). Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities. \textit{AAAI 2026}. \textbf{CCF A}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Pan L., Huang Y. (2025). Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation. \textit{IJCAI 2025}. \textbf{CCF A}}
+\end{enumerate}
+
+\subsubsection*{CCF B 类}
+
+\begin{enumerate}[label={[C\arabic*]}, resume]
+    \pubitem{\textbf{Fan, G.}$^*$, Pan L., Zhang M., Zhao M. (2026). LePER: Label-Free Edge Polarity Reweighting for Heterophily. \textit{ICASSP 2026}. \textbf{CCF B}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D. (2025). When Machines Speak with Feeling: Investigating Emotional Prosody, Authenticity, and Trust in AI vs. Human Voices. \textit{CogSci 2025}. \textbf{CCF B}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D. (2025). Co-Constructing Meaning with Large Language Models: A Longitudinal Analysis of Human-AI Dialogues in Emotional Support Contexts. \textit{CogSci 2025}. \textbf{CCF B}}
+\end{enumerate}
+
+\subsubsection*{CCF C 类}
+
+\begin{enumerate}[label={[C\arabic*]}, resume]
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Pan L., Huang Y. (2025). Mapping Override Behavior: Investigating Why and How Artists Reject AI Suggestions in Collaborative Creation. \textit{IJCNN 2025}. \textbf{CCF C}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$ (2025). DocPINN: A Neural PDE-Based Framework for Document Image Dewarping. \textit{ICDAR 2025}. \textbf{CCF C}}
+\end{enumerate}
+
+\subsection*{期刊论文}
+
+\subsubsection*{中科院1区Top期刊}
+
+\begin{enumerate}[label={[J\arabic*]}]
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Zhang R., Pan L. (2025). The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance. \textit{International Journal of STEM Education, 12}(1), 16. \textbf{中科院1区Top, ESI高被引}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., et al. (2026). Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education. \textit{International Journal of STEM Education}. (已接收) \textbf{中科院1区Top}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Sabri A.Q.M., Rahman S.S.A., Pan L. (2025). DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting. \textit{Engineering Applications of Artificial Intelligence, 159}, 111757. \textbf{中科院1区Top}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Sabri A.Q.M., Rahman S.S.A., Pan L., Rahardja S. (2025). Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey. \textit{Archives of Computational Methods in Engineering}, 1--45. \textbf{中科院1区Top}}
+    
+    \pubitem{Liu D., \textbf{Fan, G.}$^\dag$ (2026). Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin. \textit{Journal of Rural Studies}. \textbf{中科院1区Top}}
+    
+    \pubitem{Liu D., \textbf{Fan, G.}$^\dag$ (2025). Digital duality: negotiating tradition, modernity, and identity among rural housewife Douyin creators in China. \textit{Information, Communication \& Society}, 1--18. \textbf{中科院1区Top}}
+\end{enumerate}
+
+\subsubsection*{CCF B / 其他SCI期刊}
+
+\begin{enumerate}[label={[J\arabic*]}, resume]
+    \pubitem{\textbf{Fan, G.}$^*$, Liu D., Huang Y. (2025). Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading. \textit{International Journal of Human--Computer Interaction}, 1--22. \textbf{CCF B}}
+    
+    \pubitem{Zhao R., Quan Y., \textbf{Fan, G.}$^\dag$ (2025). Optimizing Operating Room Scheduling Through Multi-Level Learning and Column Generation. \textit{Health Care Management Science}. \textbf{中科院3区}}
+    
+    \pubitem{\textbf{Fan, G.}$^*$, Liu A., Zhang C. (2025). ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Training for Improved ICU Length-of-Stay Prediction. \textit{IEEE Access}. \textbf{中科院3区}}
+\end{enumerate}
+
+%------------------------
+\section*{荣誉与奖励}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{ACM CHI 2026 荣誉提名奖（Honourable Mention Award）} -- \textit{When Help Hurts: Verification Load and Fatigue with AI Coding Assistants}
+    \item \textbf{ESI 高被引论文} (2025) -- 发表于 \textit{International Journal of STEM Education}
+    \item \textbf{期刊最高被引文章（近两年）} -- \textit{International Journal of STEM Education}
+    \item \textbf{期刊最受欢迎文章（近9个月，排名第1）} -- \textit{International Journal of STEM Education}
+    \item \textbf{一等奖论文 \& 最佳报告奖} (2025年7月) -- 第九届中国计算机实践教育学术会议 (CPEC2025)
+\end{itemize}
+
+%------------------------
+\section*{科研项目}
+
+\begin{itemize}[leftmargin=*, topsep=0.2ex, itemsep=0.2ex]
+    \item \cvlabel{山西省基础研究计划面上项目（参与）}：基于介尺度的大规模复杂系统多智能体并行仿真模型研究。\;\cvlabel{项目编号：}202203021221145
+    \item \cvlabel{山西省高等学校教学改革创新项目（团队成员，2025）}：深化本科教学评价机制改革——AI赋能的课堂质量评价与实践探索。\;\cvlabel{项目编号：}J20250145
+\end{itemize}
+
+%------------------------
+\section*{教学工作}
+
+\noindent
+\textbf{主讲课程：}JAVA Web开发、Oracle数据库管理技术、物联网RFID原理与技术、计算机图形学、计算机动画原理
+
+\noindent
+\textbf{学生指导：}指导人工智能与软件工程方向本科毕业设计
+
+%------------------------
+\section*{学术服务}
+
+\subsection*{程序委员会成员}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{The Web Conference (WWW) 2026} -- Web4Good 特别赛道 (CCF A)
+\end{itemize}
+
+\subsection*{审稿人}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{CHI 2026} -- ACM 人机交互顶会 (CCF A)
+    \item \textbf{Engineering Applications of Artificial Intelligence} (EAAI, 中科院1区Top)
+    \item \textbf{International Journal of STEM Education} (中科院1区Top)
+    \item \textbf{Information, Communication \& Society} (SSCI 1区Top)
+\end{itemize}
+
+%------------------------
+
+%------------------------
+\vfill
+\begin{center}
+    \small 最后更新：2026年3月
+\end{center}
+
+\ifPDFTeX
+\end{CJK*}
+\fi
+\end{document}
+
+%-------------------------------------------------------------------------------
+% 编译说明：
+%-------------------------------------------------------------------------------
+% 1. 使用 pdfLaTeX 编译
+%    pdflatex CV_Guangrui_Fan_CN.tex
+%
+% 2. Overleaf 设置:
+%    Menu -> Compiler -> pdfLaTeX
+%
+% 3. CJK 字体选项:
+%    - gbsn = 宋体
+%    - gkai = 楷体
+%-------------------------------------------------------------------------------
+
