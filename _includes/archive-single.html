@@ -45,6 +45,9 @@
           {% if post.honourable_mention %}
             <p>🏆 <strong>Honourable Mention Award</strong></p>
           {% endif %}
+          {% if post.presentation_type %}
+            <p>🎤 <strong>{{ post.presentation_type }}</strong></p>
+          {% endif %}
           {% if post.esi_highly_cited or post.most_cited_recent or post.most_popular_recent_rank %}
             <p>
               {% if post.esi_highly_cited %}
