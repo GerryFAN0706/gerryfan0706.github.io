@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-04]</strong> 🎉 Paper accepted by <strong>ACL 2026</strong> (CCF A, Main Conference): "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-03]</strong> 🏆 Paper "<strong>When Help Hurts: Verification Load and Fatigue with AI Coding Assistants</strong>" received <strong>Honourable Mention Award</strong> at <strong>ACM CHI 2026</strong>!
   </div>
 
