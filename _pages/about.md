@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-04]</strong> Paper accepted by <strong>ECSCW 2026</strong> (CCF B): "Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-04]</strong> 🎉 Paper accepted by <strong>ACL 2026</strong> (CCF A, Main Conference): "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity"
   </div>
 

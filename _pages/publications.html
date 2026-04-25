@@ -178,21 +178,34 @@ author_profile: true
 <!-- Publications by Category -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
-    {% assign sorted_pubs = site.publications | where: "category", category[0] | sort: "rank" %}
-    {% if sorted_pubs.size > 0 %}
+    {% assign category_pubs = site.publications | where: "category", category[0] %}
+    {% if category_pubs.size > 0 %}
       <div class="category-section"
            id="{% if category[0] == 'manuscripts' %}journal-articles{% elsif category[0] == 'conferences' %}conference-papers{% else %}{{ category[0] }}{% endif %}">
         <h2>{{ category[1].title }}</h2>
         <hr />
-        {% for post in sorted_pubs %}
+        {% for rank_num in (1..5) %}
+          {% assign rank_pubs = category_pubs | where: "rank", rank_num | sort: "date" | reverse %}
+          {% for post in rank_pubs %}
+            {% include archive-single.html %}
+          {% endfor %}
+        {% endfor %}
+        {% assign unranked_pubs = category_pubs | where_exp: "post", "post.rank == nil" | sort: "date" | reverse %}
+        {% for post in unranked_pubs %}
           {% include archive-single.html %}
         {% endfor %}
       </div>
     {% endif %}
   {% endfor %}
 {% else %}
-  {% assign sorted_pubs = site.publications | sort: "rank" %}
-  {% for post in sorted_pubs %}
+  {% for rank_num in (1..5) %}
+    {% assign rank_pubs = site.publications | where: "rank", rank_num | sort: "date" | reverse %}
+    {% for post in rank_pubs %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+  {% assign unranked_pubs = site.publications | where_exp: "post", "post.rank == nil" | sort: "date" | reverse %}
+  {% for post in unranked_pubs %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
