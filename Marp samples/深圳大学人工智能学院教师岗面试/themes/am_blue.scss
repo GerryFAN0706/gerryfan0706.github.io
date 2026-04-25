@@ -143,6 +143,33 @@ strong {
   border: 1px solid rgba(145,168,20,0.42);
 }
 
+.status-pill {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.78em;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.status-pill.revise {
+  color: #7a4a00;
+  background: rgba(255,176,98,0.22);
+  border: 1px solid rgba(255,176,98,0.48);
+}
+
+.status-pill.submit {
+  color: white;
+  background: #4c6fb3;
+}
+
+.status-pill.score {
+  color: var(--dark);
+  background: rgba(44,156,177,0.16);
+  border: 1px solid rgba(44,156,177,0.34);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

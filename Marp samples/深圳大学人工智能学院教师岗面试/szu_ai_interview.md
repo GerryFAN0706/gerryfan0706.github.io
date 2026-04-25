@@ -17,9 +17,9 @@ footer: "樊光瑞 · 2026.04.27"
 <div class="subtitle">Human-Centered AI · 社会智能与可靠AI · AI教育与人机交互</div>
 
 <div class="cover-name">
-马来亚大学计算机科学博士候选人（预计2026年6月毕业）<br>
+马来亚大学计算机科学博士（2026年6月毕业）<br>
 上海交通大学软件工程硕士 · 华中科技大学数字媒体技术学士<br>
-现任太原科技大学讲师<br>
+
 gerrygan2022@gmail.com · gerryfan0706.github.io
 </div>
 
@@ -36,7 +36,7 @@ gerrygan2022@gmail.com · gerryfan0706.github.io
 
 ### 教育与经历
 
-- 马来亚大学，计算机科学博士候选人，预计2026年6月毕业
+- 马来亚大学，计算机科学博士，2026年6月毕业
 - 上海交通大学，软件工程硕士，推免
 - 华中科技大学，数字媒体技术学士
 - 太原科技大学，计算机科学与技术学院讲师
@@ -78,7 +78,7 @@ gerrygan2022@gmail.com · gerryfan0706.github.io
 </div>
 <div class="map-item">
   <div class="map-title">能做科研</div>
-  <div class="map-text">以人为中心的AI研究，结合实验、问卷、系统构建与机器学习模型，适合AI学院交叉方向。</div>
+  <div class="map-text">以人为中心的AI研究，结合实验、系统构建与机器学习模型，适合AI学院交叉方向。</div>
   <span class="tag blue">HCI</span><span class="tag blue">LLMs</span><span class="tag blue">GNN</span>
 </div>
 <div class="map-item">
@@ -88,7 +88,7 @@ gerrygan2022@gmail.com · gerryfan0706.github.io
 </div>
 </div>
 
-<div class="quote-line">我的核心定位：把人工智能做成“可理解、可信任、可教学、可服务真实需求”的系统。</div>
+<div class="quote-line">我的核心定位：把人工智能做成 可理解、可信任、可教学、可服务真实需求。</div>
 
 ---
 
@@ -141,7 +141,7 @@ gerrygan2022@gmail.com · gerryfan0706.github.io
 </div>
 <div class="map-item">
   <div class="map-title">AI介导沟通与隐私</div>
-  <div class="map-text">研究AI写作、情感表达、真实性归因、用户同意边界与隐私选择中的信任机制。</div>
+  <div class="map-text">研究AI写作、情感表达、用户同意边界与隐私选择中的信任机制。</div>
   <span class="tag blue">HCI</span><span class="tag blue">Privacy</span>
 </div>
 </div>
@@ -254,8 +254,32 @@ gerrygan2022@gmail.com · gerryfan0706.github.io
 | <span class="rank-a">CCF A</span>会议 | 8篇 | CHI 2026 ×3、WWW 2026、ACL 2026、FSE 2026、AAAI 2026、IJCAI 2025 |
 | CCF B/C会议 | 6篇 | ECSCW 2026、ICASSP 2026、CogSci 2025 ×2、IJCNN 2025、ICDAR 2025 |
 | <span class="rank-q1">中科院一区 TOP</span> | 6篇 | International Journal of STEM Education ×2、Engineering Applications of Artificial Intelligence、Archives of Computational Methods in Engineering等 |
-| 高影响成果 | 4项 | CHI Honourable Mention、ESI高被引、期刊近两年高被引、近9个月最受欢迎Rank 1 |
+| 高影响成果 | 2项 | CHI Honourable Mention；IJ STEM Education 高影响论文（ESI高被引、近两年高被引、近9个月最受欢迎Rank 1） |
+| 返修/在投 | 4篇 | TOIS、IEEE TCSS 第二轮修回；ICML 2026 <span class="rank-a">CCF A</span> 在投 ×2 |
 
+</div>
+
+---
+
+## 代表性成果：返修/在投论文
+
+<div class="cols">
+<div>
+
+### 返修论文
+
+<div class="paper"><b>Conformal@K</b> · ACM TOIS · <span class="rank-a">CCF A</span> · <span class="status-pill revise">第二轮修回</span><br><small>Distribution-free Top-K miss-risk control for recommendation.</small></div>
+<div class="paper"><b>Textless, Tiny, and Private</b> · IEEE TCSS · CCF C · <span class="status-pill revise">第二轮修回</span><br><small>Privacy-preserving mental-health screening with LLM-teacher distillation.</small></div>
+
+</div>
+<div>
+
+### 在投论文
+
+<div class="paper"><b>Graph-Preference Learning</b> · ICML 2026 · <span class="rank-a">CCF A</span> · <span class="status-pill submit">Submitted</span> · <span class="status-pill score">审稿均分 4.0</span><br><small>Debiasing network-sampled human feedback for target welfare estimation.</small></div>
+<div class="paper"><b>Incomplete Multi-View Clustering<br>via Neighborhood-Conditioned Diffusion</b> · ICML 2026 · <span class="rank-a">CCF A</span> · <span class="status-pill submit">Submitted</span> · <span class="status-pill score">审稿均分 4.0</span><br><small>Incomplete multi-view learning with neighborhood-conditioned diffusion.</small></div>
+
+</div>
 </div>
 
 ---
@@ -282,9 +306,7 @@ gerrygan2022@gmail.com · gerryfan0706.github.io
 <ul class="compact">
 <li>ACM CHI 2026 Honourable Mention Award：When Help Hurts</li>
 <li>ESI高被引论文：International Journal of STEM Education</li>
-<li>International Journal of STEM Education：近两年高被引、近9个月最受欢迎Rank 1</li>
 <li>The Web Conference 2026 Web4Good Program Committee</li>
-<li>CHI 2026 审稿人</li>
 </ul>
 
 </div>
