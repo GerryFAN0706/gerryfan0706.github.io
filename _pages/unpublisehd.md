@@ -88,15 +88,15 @@ KDD 2026 (In Preparation)
 Stable Long‑Run Exposure Fairness under Creator–Platform Co‑adaptation
 From Solo Post to Shared Space: Evidence that Public LLM Replies Increase Cross‑Group Dialogue
 
-ICML 2026 (Submitted)
+ICML 2026
 2671	Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
 Guangrui Fan, DanDan Liu, Aznul Qalid Md Sabri, Pan Lihu
-0 Official Reviews Submitted
+Accepted
 
 2676	CoreCover: Risk-Aware Coreness Maximization in Uncertain Graphs via Probabilistic Promotion Coverage
 Guangrui Fan, DanDan Liu, Pan Lihu, Aznul Qalid Md Sabri
-0 Official Reviews Submitted
+Submitted
 
 22192	Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
 Qian Guo, Gaohui Zuo, Bingbing Jiang, Guangrui Fan, Zhihua Cui, Xinyan Liang, Jianjian Ding
-0 Official Reviews Submitted
+Accepted

@@ -106,6 +106,20 @@
   "references": [],
   "publications": [
     {
+      "name": "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation",
+      "publisher": "ICML 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "First-author paper"
+    },
+    {
+      "name": "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion",
+      "publisher": "ICML 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Coauthored paper"
+    },
+    {
       "name": "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity",
       "publisher": "ACL 2026",
       "releaseDate": "2026",

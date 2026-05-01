@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-05]</strong> Two papers accepted by <strong>ICML 2026</strong> (CCF A): first-author paper "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation" and coauthored paper "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-04]</strong> Paper accepted by <strong>ECSCW 2026</strong> (CCF B): "Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent"
   </div>
 

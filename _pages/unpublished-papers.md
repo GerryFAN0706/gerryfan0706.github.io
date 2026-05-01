@@ -202,14 +202,14 @@ ___
 
 ---
 
-### ICML 2026 (3 papers - Submitted)
+### ICML 2026 (2 accepted, 1 submitted)
 
 #### 1. [2671] Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation
 - **投稿日期：** 2026-01-28
 - **目标会议：** ICML 2026 - Conference Submission
-- **当前状态：** Submitted（0 Official Reviews Submitted）
+- **当前状态：** Accepted
 - **作者：** Guangrui Fan, DanDan Liu, AZNUL QALID MD SABRI, Pan Lihu
-- **预计结果时间：** 2026-04-30（Notification）
+- **结果时间：** 2026-04-30（Accepted）
 
 ---
 
@@ -225,9 +225,9 @@ ___
 #### 3. [22192] Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion
 - **投稿日期：** 2026-01-28
 - **目标会议：** ICML 2026 - Conference Submission
-- **当前状态：** Submitted（0 Official Reviews Submitted）
+- **当前状态：** Accepted
 - **作者：** Qian Guo, Gaohui Zuo, Bingbing Jiang, Guangrui Fan, Zhihua Cui, Xinyan Liang, Jianjian Ding
-- **预计结果时间：** 2026-04-30（Notification）
+- **结果时间：** 2026-04-30（Accepted）
 
 ---
 

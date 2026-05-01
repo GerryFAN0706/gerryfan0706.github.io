@@ -238,7 +238,7 @@ layout: single
 
   <div class="stats-grid">
     <div class="stat-card">
-      <span class="stat-number">17</span>
+      <span class="stat-number">19</span>
       <span class="stat-label">CV保留论文（含在修）</span>
     </div>
     <div class="stat-card">
@@ -246,7 +246,7 @@ layout: single
       <span class="stat-label">ESI 高被引论文（IJSTEM）</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">8</span>
+      <span class="stat-number">10</span>
       <span class="stat-label">CCF A（含2026年录用）</span>
     </div>
     <div class="stat-card">
@@ -288,6 +288,7 @@ layout: single
         <ul>
           <li>EAAI 2025：DynaKey-GNN（时空交通预测）</li>
           <li>ACME 2025：Traffic Flow Prediction GNN Survey（系统综述）</li>
+          <li>ICML 2026 ×2：Graph-Preference Learning、Incomplete Multi-View Clustering</li>
           <li>ICASSP 2026：LePER（异配图学习）</li>
           <li>TOIS / IEEE TCSS：在修论文</li>
         </ul>
@@ -309,6 +310,7 @@ layout: single
         <h4>CCF A 会议（2025-2026）</h4>
         <ul>
           <li>CHI 2026 ×3</li>
+          <li>ICML 2026 ×2</li>
           <li>ACL 2026 ×1</li>
           <li>IJCAI 2025 ×1</li>
           <li>WWW 2026 ×1</li>
