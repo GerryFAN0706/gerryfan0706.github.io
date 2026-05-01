@@ -106,6 +106,13 @@
   "references": [],
   "publications": [
     {
+      "name": "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity",
+      "publisher": "ACL 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
       "name": "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication",
       "publisher": "CHI 2026",
       "releaseDate": "2026",
@@ -117,7 +124,7 @@
       "publisher": "CHI 2026",
       "releaseDate": "2026",
       "website": "",
-      "summary": ""
+      "summary": "ACM CHI 2026 Honourable Mention Award"
     },
     {
       "name": "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences",
@@ -127,7 +134,7 @@
       "summary": ""
     },
     {
-      "name": "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering",
+      "name": "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation",
       "publisher": "FSE 2026",
       "releaseDate": "2026",
       "website": "",
@@ -155,43 +162,29 @@
       "summary": ""
     },
     {
-      "name": "When Machines Speak with Feeling: Investigating Emotional Prosody, Authenticity, and Trust in AI vs. Human Voices",
-      "publisher": "CogSci 2025",
-      "releaseDate": "2025",
+      "name": "LePER: Label-Free Edge Polarity Reweighting for Heterophily",
+      "publisher": "ICASSP 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Oral presentation"
+    },
+    {
+      "name": "Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent",
+      "publisher": "ECSCW 2026",
+      "releaseDate": "2026",
       "website": "",
       "summary": ""
     },
     {
-      "name": "Co-Constructing Meaning with Large Language Models: A Longitudinal Analysis of Human-AI Dialogues in Emotional Support Contexts",
-      "publisher": "CogSci 2025",
-      "releaseDate": "2025",
-      "website": "",
-      "summary": ""
-    },
-    {
-      "name": "Mapping Override Behavior: Investigating Why and How Artists Reject AI Suggestions in Collaborative Creation",
-      "publisher": "IJCNN 2025",
-      "releaseDate": "2025",
-      "website": "",
-      "summary": ""
-    },
-    {
-      "name": "DocPINN: A Neural PDE-Based Framework for Document Image Dewarping",
-      "publisher": "ICDAR 2025",
-      "releaseDate": "2025",
-      "website": "",
-      "summary": ""
-    },
-    {
-      "name": "The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance",
+      "name": "The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance: a comparative study with traditional pair programming and individual approaches",
       "publisher": "International Journal of STEM Education",
       "releaseDate": "2025",
       "website": "",
-      "summary": ""
+      "summary": "ESI Highly Cited Paper"
     },
     {
-      "name": "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education",
-      "publisher": "International Journal of STEM Education (In Press)",
+      "name": "Tool, tutor, or crutch?: A grounded theory of cognitive scaffolding and offloading in AI-assisted programming education",
+      "publisher": "International Journal of STEM Education",
       "releaseDate": "2026",
       "website": "",
       "summary": ""
@@ -211,20 +204,6 @@
       "summary": ""
     },
     {
-      "name": "Governing Modesty: Platformed Urban Gaze and Rural Chinese Housewives on Douyin",
-      "publisher": "Journal of Rural Studies",
-      "releaseDate": "2026",
-      "website": "",
-      "summary": ""
-    },
-    {
-      "name": "Digital duality: negotiating tradition, modernity, and identity among rural housewife Douyin creators in China",
-      "publisher": "Information, Communication & Society",
-      "releaseDate": "2025",
-      "website": "",
-      "summary": ""
-    },
-    {
       "name": "Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading",
       "publisher": "International Journal of Human--Computer Interaction",
       "releaseDate": "2025",
@@ -232,18 +211,18 @@
       "summary": ""
     },
     {
-      "name": "Optimizing Operating Room Scheduling Through Multi-Level Learning and Column Generation",
-      "publisher": "Health Care Management Science",
-      "releaseDate": "2025",
+      "name": "Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees",
+      "publisher": "ACM Transactions on Information Systems",
+      "releaseDate": "2026",
       "website": "",
-      "summary": ""
+      "summary": "Second-round revision"
     },
     {
-      "name": "ContrastLOS: A Graph-Based Deep Learning Model With Contrastive Pre-Training for Improved ICU Length-of-Stay Prediction",
-      "publisher": "IEEE Access",
-      "releaseDate": "2025",
+      "name": "Textless, Tiny, and Private: Hashed n-grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media",
+      "publisher": "IEEE Transactions on Computational Social Systems",
+      "releaseDate": "2026",
       "website": "",
-      "summary": ""
+      "summary": "Second-round revision"
     }
   ],
   "presentations": [],

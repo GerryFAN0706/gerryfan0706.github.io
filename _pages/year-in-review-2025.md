@@ -238,19 +238,19 @@ layout: single
 
   <div class="stats-grid">
     <div class="stat-card">
-      <span class="stat-number">20+</span>
-      <span class="stat-label">2025学年 发表/录用论文</span>
+      <span class="stat-number">17</span>
+      <span class="stat-label">CV保留论文（含在修）</span>
     </div>
     <div class="stat-card">
       <span class="stat-number">1</span>
       <span class="stat-label">ESI 高被引论文（IJSTEM）</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">7</span>
+      <span class="stat-number">8</span>
       <span class="stat-label">CCF A（含2026年录用）</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">6+</span>
+      <span class="stat-number">4</span>
       <span class="stat-label">SCI/SSCI 1区 TOP 期刊</span>
     </div>
   </div>
@@ -276,10 +276,11 @@ layout: single
         <h4>Human-Centered AI / 社会计算</h4>
         <ul>
           <li>CHI 2026 ×3：AI-Mediated Communication、Trust Calibration、Creator Fairness Perception</li>
+          <li>ACL 2026：Feeling Rules in Language Models</li>
           <li>IJCAI 2025：Creative Momentum Transfer（AI 建议时机）</li>
-          <li>CogSci 2025 ×2：AI 情感对话</li>
           <li>WWW 2026：Audit of Audits（算法审计元研究）</li>
           <li>AAAI 2026：Mental Health</li>
+          <li>ECSCW 2026：Consent Boundaries by Play</li>
         </ul>
       </div>
       <div class="mini-card">
@@ -287,8 +288,8 @@ layout: single
         <ul>
           <li>EAAI 2025：DynaKey-GNN（时空交通预测）</li>
           <li>ACME 2025：Traffic Flow Prediction GNN Survey（系统综述）</li>
-          <li>IEEE Access 2025：ContrastLOS（医疗图学习）</li>
-          <li>FSE 2026：Code Generation Fairness（代码生成公平性）</li>
+          <li>ICASSP 2026：LePER（异配图学习）</li>
+          <li>TOIS / IEEE TCSS：在修论文</li>
         </ul>
       </div>
     </div>
@@ -298,6 +299,7 @@ layout: single
         <h4>期刊（SCI/SSCI 1区 TOP）</h4>
         <ul>
           <li>IJSTEM 2025：ESI 高被引（AI in STEM Education）</li>
+          <li>IJSTEM 2026：Tool, Tutor, or Crutch?</li>
           <li>EAAI</li>
           <li>Archives of Computational Methods in Engineering</li>
 
@@ -307,6 +309,7 @@ layout: single
         <h4>CCF A 会议（2025-2026）</h4>
         <ul>
           <li>CHI 2026 ×3</li>
+          <li>ACL 2026 ×1</li>
           <li>IJCAI 2025 ×1</li>
           <li>WWW 2026 ×1</li>
           <li>AAAI 2026 ×1</li>
