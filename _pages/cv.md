@@ -13,4 +13,4 @@ A Chinese version of my CV is available as a PDF. It summarizes my education, re
 
 [Download Chinese CV (PDF)]({{ base_path }}/files/guangrui-fan-cv-cn.pdf){: .btn .btn--primary}
 
-Last updated: April 2026.
+Last updated: May 2026.
