@@ -11,6 +11,6 @@ redirect_from:
 
 A Chinese version of my CV is available as a PDF. It summarizes my education, research interests, selected publications, projects, teaching, and academic service.
 
-[Download Chinese CV (PDF)]({{ base_path }}/files/guangrui-fan-cv-cn-2026-05.pdf){: .btn .btn--primary}
+[Download Chinese CV (PDF)]({{ base_path }}/files/guangrui-fan-cv-cn-2026-05-v2.pdf){: .btn .btn--primary}
 
 Last updated: May 2026.
