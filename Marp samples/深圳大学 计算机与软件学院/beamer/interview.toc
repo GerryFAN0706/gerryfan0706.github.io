@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{背景}{2}{0}{1}
+\beamer@sectionintoc {2}{研究主线}{7}{0}{2}
+\beamer@sectionintoc {3}{代表性研究}{10}{0}{3}
+\beamer@sectionintoc {4}{计划与总结}{19}{0}{4}

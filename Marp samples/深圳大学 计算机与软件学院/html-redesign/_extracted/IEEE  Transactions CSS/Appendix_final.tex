@@ -1,0 +1,692 @@
+\documentclass[acmsmall,natbib]{acmart}
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\settopmatter{printacmref=false, printccs=false, printfolios=false}
+\setcopyright{none}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+% Completely remove ACM footer from all pages
+\AtBeginDocument{%
+  \fancypagestyle{firstpagestyle}{%
+    \fancyhf{}%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+    \fancyfoot[C]{\thepage}% Only page number
+  }%
+  \fancypagestyle{standardpagestyle}{%
+    \fancyhf{}%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+    \fancyfoot[C]{\thepage}% Only page number
+  }%
+  \pagestyle{standardpagestyle}%
+}
+
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% === Chinese support (footnotes only) ========================================
+% Works with pdfLaTeX (CJKutf8) and XeLaTeX (xeCJK). XeLaTeX is recommended.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{CJKutf8}
+  % Chinese-in-footnote helper for pdfLaTeX:
+  \newcommand{\cnfn}[1]{\footnote{\begin{CJK*}{UTF8}{gbsn}#1\end{CJK*}}}
+\else
+  % XeLaTeX/LuaLaTeX: prefer XeLaTeX
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \ifXeTeX
+    \usepackage{xeCJK}
+    \setCJKmainfont{Noto Sans CJK SC} % or any installed SC font
+    \newcommand{\cnfn}[1]{\footnote{#1}}
+  \else
+    % LuaLaTeX fallback: luatexja for CJK
+    \usepackage{luatexja}
+    \newcommand{\cnfn}[1]{\footnote{#1}}
+  \fi
+\fi
+% === End Chinese support ======================================================
+
+% ======= Preamble additions for revision =======
+\usepackage{xcolor} % for gray placeholders
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{tabularx}
+\sisetup{group-separator={,},group-minimum-digits=4}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes,fit}
+\usepackage{enumitem} % compact lists
+
+% Force natbib to use parentheses instead of brackets
+\PassOptionsToPackage{round}{natbib}
+\makeatletter
+\renewcommand\NAT@open{(}
+\renewcommand\NAT@close{)}
+\makeatother
+
+% Additional natbib settings to ensure round brackets
+\AtBeginDocument{%
+  \setcitestyle{authoryear,open={(},close={)},aysep={,}}
+}
+% ===============================================
+
+\usepackage[markup=underlined,commandnameprefix=always]{changes}
+\definechangesauthor[name={Me}, color=blue]{me}
+\newcommand{\add}[1]{\added[id=]{#1}}
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+% =====================  APPENDIX  =====================
+\section{LLM Teachers: Prompts, Rubrics, and Budget Study}
+\label{app:teacher}
+
+\subsection{Concept inventory and definitions}
+\label{app:concepts}
+We use $K{=}12$ psychologically grounded concepts as intermediate targets; short glosses are provided, with zh$\leftrightarrow$en mapping in Table~\ref{tab:concept-map}.
+
+\begin{table}[h]
+\centering
+\caption{Concept inventory with zh$\leftrightarrow$en mapping and short gloss.}
+\label{tab:concept-map}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lll}
+\toprule
+\textbf{EN concept} & \textbf{ZH 对应概念} & \textbf{Gloss (one line)} \\
+\midrule
+Hopelessness & 绝望感 & Pervasive lack of hope, future negativity \\
+Anhedonia & 快感缺失 & Marked loss of interest/pleasure \\
+Sleep disturbance & 睡眠障碍 & Insomnia/hypersomnia complaints \\
+Appetite/weight & 食欲/体重变化 & Appetite or weight change \\
+Fatigue/low energy & 疲惫/精力低下 & Chronic tiredness/low energy \\
+Concentration diff. & 注意力困难 & Trouble focusing/indecision \\
+Psychomotor change & 精神运动改变 & Agitation/retardation cues \\
+Self-blame/guilt & 自责/负罪感 & Excessive self-criticism/guilt \\
+Catastrophizing & 灾难化思维 & Exaggerated negative outcomes \\
+All-or-nothing & 非黑即白思维 & Dichotomous evaluations \\
+Social withdrawal & 社交退缩 & Avoidance/withdrawal patterns \\
+Help-seeking & 寻求帮助/支持 & Asking for help/support \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Teacher prompts (English and Chinese)}
+\label{app:prompts}
+We query frozen teachers only on a stratified subset (Sec. IV.) and collect concept probabilities. Prompts are few-shot with per-concept scoring rubrics to reduce variance. Below we provide the full templates; \texttt{<INPUT\_TEXT>} is replaced at runtime.
+
+\vspace{2pt}
+\noindent\textbf{English (OpenAI GPT-5) prompt, few-shot:}
+\begin{verbatim}
+System: You are a clinical-safety-focused annotator trained in
+CBT-based depression screening. For a given social-media post,
+output ONLY a JSON object mapping each concept to a probability
+in [0,1]. Do not include any other text.
+
+Concept rubric:
+- hopelessness: >=0.7 if persistently negative future outlook;
+    0.3-0.7 if implicitly bleak.
+- anhedonia: >=0.7 if explicit loss of interest/pleasure.
+- sleep_disturbance: >=0.7 if mentions insomnia/hypersomnia.
+- appetite_weight: >=0.7 if reports appetite/weight change.
+- fatigue: >=0.7 if chronic tiredness or exhaustion.
+- concentration: >=0.7 if trouble focusing or deciding.
+- psychomotor: >=0.7 if agitation or retardation cues.
+- self_blame: >=0.7 if excessive self-criticism or guilt.
+- catastrophizing: >=0.7 if exaggerating negative outcomes.
+- all_or_nothing: >=0.7 if dichotomous evaluations.
+- social_withdrawal: >=0.7 if avoidance/isolation patterns.
+- help_seeking: >=0.7 if asking for help or mentioning support.
+When uncertain, assign 0.2-0.4 rather than 0.0.
+
+Example 1 (high signal):
+User: Post: "I don't see the point anymore. Nothing will change."
+Output:
+{"hopelessness": 0.92, "anhedonia": 0.35, "sleep_disturbance": 0.10,
+ "appetite_weight": 0.05, "fatigue": 0.20, "concentration": 0.15,
+ "psychomotor": 0.10, "self_blame": 0.25, "catastrophizing": 0.60,
+ "all_or_nothing": 0.45, "social_withdrawal": 0.30,
+ "help_seeking": 0.05}
+
+Example 2 (ambiguous):
+User: Post: "Rough day at work, just want to sleep it off."
+Output:
+{"hopelessness": 0.15, "anhedonia": 0.10, "sleep_disturbance": 0.35,
+ "appetite_weight": 0.05, "fatigue": 0.50, "concentration": 0.20,
+ "psychomotor": 0.05, "self_blame": 0.10, "catastrophizing": 0.10,
+ "all_or_nothing": 0.05, "social_withdrawal": 0.20,
+ "help_seeking": 0.05}
+
+User: Post: "<INPUT_TEXT>"
+Output:
+\end{verbatim}
+
+\noindent\textbf{Chinese (DeepSeek) prompt, few-shot:}
+\begin{verbatim}
+系统：你是一名受过CBT抑郁筛查训练的临床安全标注员。对于给定的社交
+媒体帖子，仅输出一个JSON对象，将每个概念映射到[0,1]的概率。
+不要输出任何其他文本。
+
+概念评分标准：
+- 绝望感：>=0.7 若未来展望持续消极；0.3-0.7 若隐含悲观。
+- 快感缺失：>=0.7 若明确失去兴趣/快乐。
+- 睡眠障碍：>=0.7 若提及失眠、嗜睡或睡眠质量差。
+- 食欲体重变化：>=0.7 若报告食欲或体重变化。
+- 精力低下：>=0.7 若长期疲倦或体力耗尽。
+- 注意力困难：>=0.7 若难以集中注意力或做决定。
+- 精神运动改变：>=0.7 若存在激越或迟缓线索。
+- 自责：>=0.7 若过度自我批评、内疚或归因于个人失败。
+- 灾难化思维：>=0.7 若夸大负面结果。
+- 非黑即白思维：>=0.7 若二元化/极端化评价。
+- 社交退缩：>=0.7 若回避或孤立模式。
+- 寻求帮助：>=0.7 若寻求帮助或提及专业支持。
+不确定时给0.2-0.4，而非0.0。
+
+示例1（高信号）：
+用户：帖子：“感觉看不到未来，一切都不会好转。”
+输出：
+{"绝望感": 0.90, "快感缺失": 0.30, "睡眠障碍": 0.10,
+ "食欲体重变化": 0.05, "精力低下": 0.20, "注意力困难": 0.15,
+ "精神运动改变": 0.10, "自责": 0.25, "灾难化思维": 0.55,
+ "非黑即白思维": 0.40, "社交退缩": 0.30, "寻求帮助": 0.05}
+
+示例2（模糊）：
+用户：帖子：“今天上班太累了，只想倒头就睡。”
+输出：
+{"绝望感": 0.10, "快感缺失": 0.10, "睡眠障碍": 0.30,
+ "食欲体重变化": 0.05, "精力低下": 0.55, "注意力困难": 0.15,
+ "精神运动改变": 0.05, "自责": 0.10, "灾难化思维": 0.05,
+ "非黑即白思维": 0.05, "社交退缩": 0.15, "寻求帮助": 0.05}
+
+用户：帖子：“<输入文本>”
+输出：
+\end{verbatim}
+
+\subsection{Output parsing and quality control}
+\label{app:parsing}
+\textbf{Parsing.} Each response is parsed as JSON. If parsing fails, the request is re-sent once with an appended instruction: \texttt{"Respond with valid JSON only."}~Responses that fail twice ($<$2\% of calls) are discarded. All probabilities are clipped to $[0,1]$; missing keys are filled with 0.3 (the uncertain default).
+
+\noindent\textbf{Cross-teacher consistency.} A random 5\% overlap (${\sim}$1{,}000 posts) is labeled by both teachers. Per-concept Pearson $r$ averages 0.78 (range: 0.71--0.86); highest: Hopelessness ($r{=}0.86$), Self-blame ($r{=}0.83$); lowest: All-or-nothing ($r{=}0.71$).
+
+\noindent\textbf{Intra-teacher stability.} 500 posts are re-queried after 48\,h. Mean absolute deviation per concept is 0.04 (max 0.08), confirming low stochasticity at temperature 0.0.
+
+\subsection{Label budget study and per-concept student quality}
+\label{app:teacher-budget}
+We study teacher budget $\in\{5\text{k},10\text{k},20\text{k}\}$ posts, stratified by topic/sentiment. Students are logistic (hashed input), temperature $\tau{=}1.0$, $L_2{=}10^{-4}$.
+
+\noindent\textbf{Note on $\epsilon$ settings.} Tables in this subsection and in Sec.~\ref{app:ldp} use a tighter privacy budget ($\epsilon_{\text{hash}}{=}2$, $m{=}2^{18}$) to stress-test utility under strong privacy. The main-text default is $\epsilon_{\text{user}}{\le}8.8$ ($\epsilon_{\text{hash}}{=}6.4$, $\epsilon_{\text{concept}}{\le}2.4$); see Sec.~III-E of the main paper for the rationale and the privacy--utility frontier (Fig.~4) for the full sweep.
+
+\begin{table}[h]
+\centering
+\caption{Teacher label budget vs.\ utility (AUPRC) and calibration (ECE, 15 bins) for \textbf{Ours} (\emph{Hashed+DP+Concepts}, $\epsilon{=}2, m{=}2^{18}$). Mean $\pm$ 95\% bootstrap CI.}
+\label{tab:budget}
+\setlength{\tabcolsep}{4.2pt}
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{WU3D} & \multicolumn{2}{c}{SWDD} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Budget} & \textbf{AUPRC} & \textbf{ECE} & \textbf{AUPRC} & \textbf{ECE} \\
+\midrule
+5k  & $0.777{\pm}0.010$ & $0.028{\pm}0.004$ & $0.808{\pm}0.011$ & $0.026{\pm}0.003$ \\
+10k & $0.786{\pm}0.010$ & $0.024{\pm}0.003$ & $0.814{\pm}0.010$ & $0.024{\pm}0.003$ \\
+20k & $0.792{\pm}0.010$ & $0.022{\pm}0.003$ & $0.820{\pm}0.010$ & $0.022{\pm}0.003$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Per-concept student AUROC on held-out posts (mean $\pm$ CI).}
+\label{tab:concept-auroc}
+\setlength{\tabcolsep}{4.8pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Concept} & \textbf{WU3D} & \textbf{SWDD} \\
+\midrule
+Hopelessness & $0.84{\pm}0.01$ & $0.85{\pm}0.01$ \\
+Anhedonia & $0.79{\pm}0.02$ & $0.80{\pm}0.02$ \\
+Sleep disturbance & $0.81{\pm}0.02$ & $0.82{\pm}0.02$ \\
+Appetite/weight & $0.76{\pm}0.02$ & $0.78{\pm}0.02$ \\
+Fatigue/low energy & $0.78{\pm}0.02$ & $0.79{\pm}0.02$ \\
+Concentration diff. & $0.77{\pm}0.02$ & $0.78{\pm}0.02$ \\
+Psychomotor change & $0.74{\pm}0.02$ & $0.75{\pm}0.02$ \\
+Self-blame/guilt & $0.83{\pm}0.01$ & $0.84{\pm}0.01$ \\
+Catastrophizing & $0.80{\pm}0.02$ & $0.81{\pm}0.02$ \\
+All-or-nothing & $0.73{\pm}0.02$ & $0.74{\pm}0.02$ \\
+Social withdrawal & $0.77{\pm}0.02$ & $0.78{\pm}0.02$ \\
+Help-seeking & $0.82{\pm}0.02$ & $0.83{\pm}0.02$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Human spot-check.} A 200‑post bilingual spot‑check (two annotators, pooled) yields $\kappa{=}0.62$ average across concepts; highest agreement: Hopelessness ($\kappa{=}0.71$), Self‑blame ($\kappa{=}0.69$); lowest: All‑or‑nothing ($\kappa{=}0.52$).
+
+% -------------------------------------------------------
+
+\section{Hashing and Salt Mechanics}
+\label{app:hashing}
+
+\subsection{Pseudocode (client-side hashing)}
+\begin{algorithm}[h]
+\caption{Salted signed feature hashing for char $n$-grams}
+\label{alg:hash}
+\begin{algorithmic}[1]
+\Require Post text $x'$, salt $\sigma$, dims $m$, $n\_set=\{3,4,5\}$
+\State $G \gets$ extract\_char\_ngrams$(x', n\_set)$
+\State $\phi \gets \mathbf{0} \in \mathbb{R}^{m}$
+\For{$g \in G$}
+  \State $j \gets \text{IndexHash}(g, \sigma) \bmod m$
+  \State $s \gets \text{SignHash}(g, \sigma) \in \{-1,+1\}$
+  \State $\phi[j] \gets \phi[j] + s$
+\EndFor
+\State \Return $\phi$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Collision notes}
+Let $N$ be the number of distinct $n$‑grams; the expected occupied bins with uniform hashing is
+$\mathbb{E}[\text{occupied}]=m\big(1 - e^{-N/m}\big)$.  
+In practice (train splits):
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item WU3D: $N{\approx}1.8{\times}10^{5}$, $m{=}2^{18}$ $\Rightarrow$ occupied $\approx 1.30{\times}10^{5}$; collision ratio $\approx 27.8\%$.
+\item SWDD: $N{\approx}2.4{\times}10^{5}$, $m{=}2^{18}$ $\Rightarrow$ occupied $\approx 1.61{\times}10^{5}$; collision ratio $\approx 32.9\%$.
+\end{itemize}
+Empirically, sign hashing mitigates bias from systematic collisions. Increasing $m$ to $2^{20}$ reduces collisions by ${\sim}40\%$ with modest memory/time cost.
+
+\subsection{Salt policy}
+We use a 128‑bit salt $\sigma$ per model version; salts are kept secret and rotated upon model re‑training. For linkage tests, we compare \emph{no rotation} vs.\ \emph{per‑version rotation}; see Table~\ref{tab:salt-linkage}.
+
+\begin{table}[h]
+\centering
+\caption{Linkage AUC under salt policies (user‑level). Lower is better.}
+\label{tab:salt-linkage}
+\setlength{\tabcolsep}{5.5pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Policy} & \textbf{WU3D} & \textbf{SWDD} \\
+\midrule
+No salt (for ablation) & $0.74{\pm}0.02$ & $0.73{\pm}0.02$ \\
+Salt, no rotation & $0.71{\pm}0.02$ & $0.70{\pm}0.02$ \\
+Salt, per-version rotation & $\mathbf{0.54}{\pm}0.02$ & $\mathbf{0.55}{\pm}0.02$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Rotation cadence vs.\ longitudinal utility.}
+Salt rotation has two effects with opposite sign for utility: (i) it breaks cross-deployment bucket alignment, lowering linkage AUC (Table~\ref{tab:salt-linkage}); and (ii) it discards stable n-gram bucket identities accumulated within a window, so longitudinal aggregation across a rotation boundary loses concept continuity. Because the trained classifier is per training cycle, \emph{within-window} utility is unaffected by cadence as long as training and serving use the same salt — rotation events only matter at episode boundaries. We therefore recommend rotating once per training cycle as the default cadence, since (a) faster rotation requires re-training and re-deployment with no measured linkage benefit beyond Table~\ref{tab:salt-linkage}, and (b) slower rotation widens the linkage attack window. Per-session rotation, while maximally unlinkable, would force a fresh model per episode and is therefore impractical for any longitudinal screening use-case; deployments preferring stronger unlinkability should instead enable shuffle amplification (Sec.~III-E of the main paper).
+
+% -------------------------------------------------------
+
+\section{Local DP Mechanism and Composition}
+\label{app:ldp}
+
+\subsection{Mechanism and unbiased estimator}
+Coordinate‑wise randomized response with privacy budget $\epsilon$ flips binarized presence $X_j \in \{0,1\}$ with probability $1-p$, where $p=\frac{e^{\epsilon}}{1+e^{\epsilon}}$. The privatized bit is
+\[
+Y_j=\begin{cases}
+X_j,& \text{w.p. } p,\\
+1-X_j,& \text{w.p. } 1-p.
+\end{cases}
+\]
+For a bag $\mathcal{B}$ (e.g., posts of a user), the unbiased estimator of the true presence rate $\pi_j{=}\mathbb{E}[X_j]$ is
+\[
+\hat{\pi}_j=\frac{1}{|\mathcal{B}|}\sum_{x'\in\mathcal{B}}Y_j,\quad
+\tilde{\pi}_j=\frac{\hat{\pi}_j-(1-p)}{2p-1}.
+\]
+\textbf{Variance.} Since $\text{Var}(Y_j)=\pi_j(1-\pi_j)(2p-1)^2 + p(1-p)$, we have
+\[
+\text{Var}(\tilde{\pi}_j)=\frac{\pi_j(1-\pi_j)}{|\mathcal{B}|} + \frac{p(1-p)}{(2p-1)^2 |\mathcal{B}|}.
+\]
+The second term is the privacy‑induced variance; it shrinks with larger bags or larger $\epsilon$.
+
+\subsection{User‑level composition (bounded contributions)}
+\textbf{Note.} The main paper adopts a one-shot per-user mechanism (ULDP-SSR, Sec.~III-E), yielding $\epsilon_{\text{hash}}{=}r\epsilon_b$ directly. This subsection reports an \emph{ablation} of an alternative per-post RR formulation to illustrate why per-user aggregation is preferable. Under independent per‑post RR at $\epsilon$ with a cap of $B$ posts, the conservative user‑level bound is $\epsilon_{\text{user}} \le B\epsilon$, which grows linearly in the number of posts. In practice, aggregation and binarization reduce attackability (see MIA/linkage). We report sensitivity to the cap $B$ at $\epsilon{=}2$ in Table~\ref{tab:comp-B}.
+
+\begin{table}[h]
+\centering
+\caption{Sensitivity of user‑level MIA to per‑user cap $B$ ($\epsilon{=}2$, WU3D).}
+\label{tab:comp-B}
+\setlength{\tabcolsep}{5.2pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Cap $B$} & \textbf{MIA AUC} & \textbf{TPR@1\%FPR (\%)} \\
+\midrule
+$B=50$  & $0.55{\pm}0.02$ & $7.5{\pm}1.5$ \\
+$B=100$ & $0.56{\pm}0.02$ & $8.3{\pm}1.6$ \\
+$B=200$ & $0.57{\pm}0.02$ & $9.3{\pm}1.8$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Alternative LDP mechanisms (pilot)}
+At a tighter budget $\epsilon_{\text{hash}}{=}2$ ($m{=}2^{18}$), we compare RR, OLH, and Hadamard Response (HR). This setting is more restrictive than the main-text default ($\epsilon_{\text{hash}}{=}6.4$) and is intended to highlight mechanism-level differences under strong privacy.
+
+\begin{table}[h]
+\centering
+\caption{RR vs.\ OLH vs.\ HR: utility and privacy (WU3D).}
+\label{tab:ldp-mechs}
+\setlength{\tabcolsep}{6.0pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Mechanism} & \textbf{AUPRC} & \textbf{MIA AUC} & \textbf{ECE} \\
+\midrule
+RR & $0.792{\pm}0.010$ & $0.57{\pm}0.02$ & $0.025{\pm}0.003$ \\
+OLH & $0.800{\pm}0.010$ & $0.58{\pm}0.02$ & $0.024{\pm}0.003$ \\
+HR & $\mathbf{0.805}{\pm}0.010$ & $\mathbf{0.56}{\pm}0.02$ & $\mathbf{0.024}{\pm}0.003$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tighter accounting via R\'enyi DP}
+\label{app:rdp}
+The basic-composition bound used in the main text ($\epsilon_{\text{hash}}{=}r\epsilon_b$, $\epsilon_{\text{concept}}{\le}L\epsilon_c$) is parameter-free and convenient for privacy cards. R\'enyi DP (RDP) yields a tighter bound when an auxiliary $(\alpha,\delta)$ is acceptable. For the bit-level RR mechanism, the per-coordinate RDP at order $\alpha$ is
+\[
+\rho_\alpha^{\text{RR}}(\epsilon_b)=\tfrac{1}{\alpha-1}\ln\!\bigl((1-p_b)e^{\alpha\epsilon_b}+p_b e^{-\alpha\epsilon_b}\bigr),
+\quad p_b=\tfrac{e^{\epsilon_b}}{1+e^{\epsilon_b}}.
+\]
+For $G$-ary KRR with $p_c{=}\tfrac{e^{\epsilon_c}}{e^{\epsilon_c}+G-1}$, $q_c{=}\tfrac{1}{e^{\epsilon_c}+G-1}$:
+\[
+\rho_\alpha^{\text{KRR}}(\epsilon_c)=\tfrac{1}{\alpha-1}\ln\!\bigl(q_c e^{\alpha\epsilon_c}+p_c e^{-\alpha\epsilon_c}+(G{-}2)q_c\bigr).
+\]
+The joint mechanism is $\bigl(r\rho_\alpha^{\text{RR}}{+}L\rho_\alpha^{\text{KRR}}\bigr)$-RDP; converting to $(\epsilon,\delta)$-DP adds $\tfrac{\ln(1/\delta)}{\alpha-1}$. Numerical values at default parameters $(r{=}64,\epsilon_b{=}0.1,L{=}48,\epsilon_c{=}0.05,\delta{=}10^{-6})$:
+
+\begin{table}[h]
+\centering
+\caption{RDP-based $(\epsilon,\delta)$-DP bounds at default parameters. The conversion term $\ln(1/\delta)/(\alpha{-}1)$ is included in each column (it dominates when the per-coordinate $\epsilon$ is small, hence the modest concept-channel gain). Per-channel rows assume each is released alone; the joint-$\epsilon_{\text{user}}$ column shares one $\delta$.}
+\label{tab:rdp}
+\setlength{\tabcolsep}{4.0pt}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Order $\alpha$} & $\epsilon_{\text{hash}}^{\text{RDP}}$ & $\epsilon_{\text{concept}}^{\text{RDP}}$ & $\epsilon_{\text{user}}^{\text{RDP}}$ \\
+\midrule
+$\alpha=4$  & $5.86$ & $4.61$ & $5.87$ \\
+$\alpha=8$  & $\mathbf{4.32}$ & $\mathbf{1.99}$ & $\mathbf{4.34}$ \\
+$\alpha=16$ & $4.76$ & $0.95$ & $4.79$ \\
+basic comp. & $6.40$ & $2.40$ & $8.80$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At $\alpha{=}8$, the user-level RDP bound ($\epsilon_{\text{user}}^{\text{RDP}}{\approx}4.3$) is roughly $2{\times}$ tighter than basic composition ($8.8$). The concept channel alone tightens at higher $\alpha$ (e.g.\ $0.95$ at $\alpha{=}16$, vs.\ $2.40$ basic) but the user budget is dominated by the hashed channel, whose optimum is near $\alpha{=}8$. The main text retains $r\epsilon_b{+}L\epsilon_c$ as a parameter-free upper bound.
+
+\subsection{Cumulative privacy across screening episodes}
+\label{app:cum}
+Each screening episode is a fresh release of $\bigl(Y^{\text{hash}}_u,\hat{s}_u\bigr)$. Across $E$ episodes the formal user-level loss is bounded by RDP composition: total RDP $=E\bigl(r\rho_\alpha^{\text{RR}}+L\rho_\alpha^{\text{KRR}}\bigr)$, converted with one $\delta$.
+
+\begin{table}[h]
+\centering
+\caption{Cumulative user-level $\epsilon_{\text{cum}}^{(E)}$ for $E$ quarterly screening episodes ($\delta{=}10^{-6}$).}
+\label{tab:cum-budget}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Accounting} & $E{=}1$ & $E{=}2$ & $E{=}4$ (1\,yr) & $E{=}8$ (2\,yrs) \\
+\midrule
+Basic comp.\ ($E\!\cdot\!\epsilon_{\text{user}}$) & $8.8$ & $17.6$ & $35.2$ & $70.4$ \\
+RDP, $\alpha{=}8$ & $\mathbf{4.3}$ & $\mathbf{6.7}$ & $\mathbf{11.4}$ & $\mathbf{20.9}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Under RDP at $\alpha{=}8$, one year of quarterly screening gives $\epsilon_{\text{cum}}^{(4)}{\approx}11$, a $\sim\!3{\times}$ improvement over the naive linear bound ($35.2$). Salt rotation across episodes is an \emph{orthogonal} defence against cross-episode linkage (Sec.~\ref{app:hashing}); it does not, by itself, reduce the formal LDP composition bound. In practice, three concurrent mitigations limit longitudinal exposure: capping screening frequency, rotating salts each episode, and (when available) shuffle amplification.
+
+% -------------------------------------------------------
+
+\section{Attack Configurations}
+\label{app:attacks}
+
+\subsection{Membership inference (MIA)}
+\textbf{Shadow protocol:} 2 shadow splits (same architecture), attacker features $=$ \{probability, margin, entropy\} before/after calibration; classifier: logistic with $L_2$. Black‑box (scores only) and white‑box (access to LR weights).
+
+\begin{table}[h]
+\centering
+\caption{MIA configurations and outcomes (WU3D; mean $\pm$ CI).}
+\label{tab:mia-config}
+\setlength{\tabcolsep}{3.8pt}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{BB AUC} & \textbf{WB AUC} & \textbf{TPR@1\%} & \textbf{Feat.} \\
+\midrule
+TF–IDF+LR & $0.68{\pm}0.02$ & $0.69{\pm}0.02$ & $23.1{\pm}2.4$ & score,ent \\
+Hashed+DP & $0.56{\pm}0.02$ & $0.57{\pm}0.02$ & $8.1{\pm}1.6$ & score,ent \\
+Embedding+LR & $0.74{\pm}0.02$ & $0.75{\pm}0.02$ & $31.0{\pm}2.6$ & score,ent \\
+Ours & $0.57{\pm}0.02$ & $0.58{\pm}0.02$ & $9.3{\pm}1.8$ & score,ent \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reconstruction}
+\textbf{Hashed branch:} reverse‑hash beam search (beam=32), candidate n‑gram dictionary from frequent grams (top 400k), score = cosine with observed privatized mean after de‑biasing.  
+\textbf{Embeddings branch:} transformer decoder trained to invert frozen sentence embeddings (contrastive pretraining on public text).
+
+\begin{table}[h]
+\centering
+\caption{Reconstruction metrics. Lower is better.}
+\label{tab:recon}
+\setlength{\tabcolsep}{5.2pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{Token overlap (\%)} & \textbf{PII hits / 10k} \\
+\midrule
+Hashed+DP ($\epsilon{=}2$) & $\mathbf{5.1}{\pm}0.9$ & $\mathbf{0.2}{\pm}0.1$ \\
+Embedding+LR (frozen) & $22.3{\pm}2.1$ & $3.1{\pm}0.4$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Linkage}
+Positives: same user across deployments; negatives: random user pairs; candidate pool size 1k; matcher: cosine+threshold on normalized vectors. See Table~\ref{tab:salt-linkage} for salt effects.
+
+% -------------------------------------------------------
+
+\section{Additional Results and Robustness}
+\label{app:robustness}
+
+\subsection{Calibration methods}
+\begin{table}[h]
+\centering
+\caption{Calibration comparison for \textbf{Ours}. ECE (15 bins).}
+\label{tab:calib}
+\setlength{\tabcolsep}{9pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Method} & \textbf{WU3D ECE} & \textbf{SWDD ECE} \\
+\midrule
+Uncalibrated & $0.041{\pm}0.005$ & $0.039{\pm}0.004$ \\
+Platt (CV) & $0.031{\pm}0.004$ & $0.029{\pm}0.003$ \\
+Isotonic (CV) & $\mathbf{0.022}{\pm}0.003$ & $\mathbf{0.021}{\pm}0.003$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Early warning (prefix length)}
+\begin{table}[h]
+\centering
+\caption{AUPRC as a function of timeline prefix for \textbf{Ours}.}
+\label{tab:prefix}
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Prefix} & \textbf{WU3D} & \textbf{SWDD} \\
+\midrule
+10\% & $0.735{\pm}0.012$ & $0.769{\pm}0.012$ \\
+25\% & $0.761{\pm}0.011$ & $0.789{\pm}0.011$ \\
+50\% & $0.778{\pm}0.011$ & $0.807{\pm}0.011$ \\
+100\% & $0.792{\pm}0.010$ & $0.820{\pm}0.010$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Subgroup robustness (non-sensitive proxies)}
+We stratify by posting activity tertiles and median post length.
+
+\begin{table}[h]
+\centering
+\caption{Subgroup robustness: $\Delta$AUPRC / $\Delta$ECE vs.\ overall (WU3D).}
+\label{tab:subgroups}
+\setlength{\tabcolsep}{6.2pt}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Stratum} & \textbf{$\Delta$AUPRC} & \textbf{$\Delta$ECE} \\
+\midrule
+Activity: Low  & $-0.010$ & $+0.002$ \\
+Activity: High & $+0.006$ & $-0.001$ \\
+Post length: Short & $-0.007$ & $+0.001$ \\
+Post length: Long  & $+0.004$ & $-0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% -------------------------------------------------------
+
+\section{Efficiency and Environment}
+\label{app:env}
+\textbf{Environment.} 1$\times$ Xeon Silver (16c), 64GB RAM; Python 3.10; scikit‑learn 1.5; hashing vectorizer (32‑bit), OpenMP enabled.  
+\textbf{Timing/footprint (WU3D).}
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+\item Hash+DP feature extraction: 0.8--1.1\,ms/post; storage discarded post‑aggregation.
+\item Concept students (12 LR): ${\sim}4$\,min total (CPU).
+\item Final LR + calibration: ${\sim}6$\,min (CPU).
+\item Inference: ${\sim}2.5$\,ms/user.
+\item Model size: ${\sim}18$\,MB ($m{=}2^{18}$, $K{=}12$, $R{=}4$).
+\end{itemize}
+
+% -------------------------------------------------------
+
+\section{Governance Artifacts and Privacy Card}
+\label{app:governance}
+
+\subsection{De‑identification (optional on‑device)}
+Regex/NER removal: \{PERSON, EMAIL, PHONE, LOCATION, URL\} $\rightarrow$ \{[NAME], [EMAIL], [PHONE], [LOC], [URL]\}. Lists maintained locally; no raw text leaves device.
+
+\subsection{Privacy card (template filled for main setting)}
+\begin{table}[h]
+\centering
+\caption{Privacy card (WU3D setting; replace with final numbers before release).}
+\label{tab:privacy-card}
+\small
+\begin{tabular}{@{}l p{0.82\linewidth}@{}}
+\toprule
+\textbf{Scope} & User-level screening; non-diagnostic \\
+\textbf{Representation} & Salted hashed char 3–5-grams; $m{=}2^{18}$; public-coin subsampling $r$ \\
+\textbf{DP mechanism} & Hashed features: ULDP-SSR applied \emph{once per user} to the aggregated binarized presence vector $X_u$; subsample $r$ coordinates, per-bit $\epsilon_b$ $\Rightarrow$ $\epsilon_{\text{hash}}{=}r\epsilon_b$. Concepts: one-shot $G$-ary RR ($G{=}64$) per scalar of user-level summary $s_u$; $\epsilon_{\text{concept}} \le (K\!\times\!R)\epsilon_c$. Total: $\epsilon_{\text{user}} \le r\epsilon_b + (K\!\times\!R)\epsilon_c$. \\
+\textbf{Server data} & Only privatized hashed report $Y^{\text{hash}}_u$ (length $r$) and privatized concept summary $\hat{s}_u$; no raw text or pre-DP features \\
+\textbf{Rotation} & Salt $\sigma$ rotated per model version (linkage mitigation; independent of LDP) \\
+\textbf{Calibration} & Isotonic (CV), ECE $0.022{\pm}0.003$ \\
+\textbf{Utility} & AUPRC $0.792{\pm}0.010$; AUROC $0.880{\pm}0.010$ \\
+\textbf{MIA (BB)} & AUC $0.57{\pm}0.02$; TPR@1\% $9.3{\pm}1.8\%$ \\
+\textbf{Reconstruction} & Overlap $5.3{\pm}0.9\%$; PII $0.2{\pm}0.1$/10k \\
+\textbf{Linkage} & AUC $0.71{\pm}0.02$ (no rot) / $0.54{\pm}0.02$ (rot) \\
+\textbf{Rotation} & Salt rotated per model version; salts never public \\
+\textbf{Retention} & Discard per-post features after user aggregation; 30\mbox{-}day logs \\
+\textbf{Access} & Role\mbox{-}based; audit logs; quarterly privacy audits \\
+\textbf{Escalation} & Screen\mbox{-}only; human review; resource signposting \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% -------------------------------------------------------
+
+\section{Release and Reproducibility}
+\label{app:release}
+\textbf{Seeds:} hashing salt seed 2025; train/val/test split seed 42; LR init seed 7.  
+\textbf{Code modules:} (i) client hashing+RR; (ii) student training; (iii) user aggregation; (iv) LR+calibration; (v) audits (MIA/recon/linkage); (vi) privacy card renderer.  
+\textbf{Synthetic demo:} 10k synthetic users with sampled char $n$‑gram distributions and controllable prevalence to verify estimator unbiasedness end‑to‑end.
+
+% -------------------------------------------------------
+
+\section{Additional Pseudocode}
+\label{app:pseudocode}
+
+\subsection{Client-side RR}
+\begin{algorithm}[h]
+\caption{Per-post randomized response (client)}
+\label{alg:rr}
+\begin{algorithmic}[1]
+\Require Binarized hashed vector $X \in \{0,1\}^m$, $\epsilon$
+\State $p \gets \frac{e^\epsilon}{1+e^\epsilon}$
+\For{$j \in \{1,\dots,m\}$}
+  \State $u \sim \text{Uniform}(0,1)$
+  \If{$u < p$} \State $Y_j \gets X_j$
+  \Else \State $Y_j \gets 1 - X_j$
+  \EndIf
+\EndFor
+\State \Return $Y$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{User aggregation (server) with de-biasing}
+\begin{algorithm}[h]
+\caption{Privatized user aggregation and de-biasing (server)}
+\label{alg:agg}
+\begin{algorithmic}[1]
+\Require $\{Y^{(t)}\}_{t=1}^{T}$, $\epsilon$
+\State $p \gets \frac{e^\epsilon}{1+e^\epsilon}$; $\hat{\pi} \gets \frac{1}{T}\sum_t Y^{(t)}$
+\State $\tilde{\pi} \gets \frac{\hat{\pi} - (1-p)}{2p-1}$
+\State \Return $\tilde{\pi}$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Final scoring and calibration}
+\begin{algorithm}[h]
+\caption{User-level scoring and isotonic calibration}
+\label{alg:score}
+\begin{algorithmic}[1]
+\Require User vector $v_u=[\tilde{z}_u \| s_u]$, LR weights $(w,b)$, calibration map $\kappa$
+\State $\hat{p}_u \gets \sigma(w^\top v_u + b)$
+\State $\tilde{p}_u \gets \kappa(\hat{p}_u)$
+\State \Return $\tilde{p}_u$
+\end{algorithmic}
+\end{algorithm}
+% =====================  END APPENDIX  =====================
+
+% =========================================================
+
+\end{CJK*}
+\end{document}

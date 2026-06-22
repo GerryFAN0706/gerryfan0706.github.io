@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cat _talks/*.md)"
+      "Bash(cat _talks/*.md)",
+      "Bash(npx marp *)",
+      "Bash(npx -y -p @marp-team/marp-cli marp --version)",
+      "Bash(npx -y -p @marp-team/marp-cli marp szu_ai_interview.md --pdf --allow-local-files --theme-set themes -o exports/szu_ai_interview.pdf)",
+      "Bash(npx -y -p @marp-team/marp-cli marp szu_ai_interview.md --pdf --allow-local-files --theme-set themes/am_blue.scss themes/szu_ai.scss themes/szu_clean.scss -o exports/szu_ai_interview.pdf)",
+      "Bash(npx -y -p @marp-team/marp-cli marp szu_ai_interview.md --pptx --allow-local-files --theme-set themes/am_blue.scss themes/szu_ai.scss themes/szu_clean.scss -o exports/szu_ai_interview.pptx)"
     ]
   }
 }

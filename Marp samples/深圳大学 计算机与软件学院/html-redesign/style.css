@@ -1,0 +1,1364 @@
+/* ==========================================================================
+   SZU Interview Slides — v5 · Unified minimalist system
+   1920×1080 · pure white · sans-serif only · teal single accent
+   Two modes: concise (Keynote) and rich (info-dense) — same atoms
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --ink:        #0a0a0a;
+  --ink-soft:   #262626;
+  --ink-deep:   #000000;
+  --paper:      #ffffff;
+  --paper-soft: #fafafa;
+  --paper-tint: #f4f4f5;
+  --muted:      #71717a;
+  --muted-soft: #a1a1aa;
+  --muted-deep: #52525b;
+  --hairline:   #e5e5e5;
+  --hairline-soft: #f0f0f0;
+  --accent:     #0d9488;   /* deep teal */
+  --accent-soft:#14b8a6;
+  --accent-bg:  #f0fdfa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #1a1a1a;
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.slide {
+  width: 1920px;
+  height: 1080px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.tight   { letter-spacing: -0.04em; }
+.tighter { letter-spacing: -0.06em; }
+.normal  { letter-spacing: 0; }
+.wide    { letter-spacing: 0.04em; }
+
+/* ─── Shared chrome (top mark, page number, run mark) ────── */
+
+.slide .top-mark {
+  position: absolute;
+  top: 56px;
+  left: 96px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slide .top-mark .accent-dot,
+.slide .meta-top .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+.slide .top-mark .cn { color: var(--muted-soft); }
+
+.slide .top-right {
+  position: absolute;
+  top: 56px;
+  right: 96px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-soft);
+  letter-spacing: 0.02em;
+  z-index: 4;
+}
+
+.slide .page-number {
+  position: absolute;
+  bottom: 56px;
+  right: 96px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-soft);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  z-index: 4;
+}
+.slide .page-number .of { color: var(--muted-soft); opacity: 0.5; }
+
+.slide .runmark {
+  position: absolute;
+  bottom: 56px;
+  left: 96px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  z-index: 4;
+}
+.slide .runmark strong { color: var(--ink); font-weight: 600; }
+
+/* ═════════════════════════════════════════════════════════
+   COVER (concise)
+   ═════════════════════════════════════════════════════════ */
+
+.slide.cover .meta-top {
+  position: absolute;
+  top: 56px;
+  left: 96px;
+  right: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.slide.cover .meta-top .left { display: flex; align-items: center; gap: 14px; }
+
+.slide.cover .body {
+  position: absolute;
+  inset: 0;
+  padding: 220px 120px 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.cover .name {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 320px;
+  line-height: 0.88;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 56px;
+}
+.slide.cover .role {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 1300px;
+}
+.slide.cover .role strong { color: var(--accent); font-weight: 700; }
+.slide.cover .role .sub {
+  display: block;
+  margin-top: 16px;
+  font-size: 24px;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.slide.cover .meta-bottom {
+  position: absolute;
+  bottom: 96px;
+  left: 120px;
+  right: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.slide.cover .meta-bottom .talk {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  max-width: 720px;
+}
+.slide.cover .meta-bottom .talk strong { color: var(--ink); font-weight: 600; }
+.slide.cover .meta-bottom .contact {
+  text-align: right;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-weight: 500;
+}
+.slide.cover .meta-bottom .contact .email {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* ═════════════════════════════════════════════════════════
+   CONCISE CONTENT — direction intro / thesis-only / closing
+   ═════════════════════════════════════════════════════════ */
+
+.slide.content .body {
+  position: absolute;
+  inset: 0;
+  padding: 170px 120px 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide.content .chapter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.slide.content .chapter .num {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+.slide.content .chapter .pipe {
+  width: 32px; height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+.slide.content .chapter .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.slide.content .title {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 0.96;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 28px;
+}
+.slide.content .title.smaller { font-size: 96px; }
+.slide.content .title.smallest { font-size: 76px; }
+
+.slide.content .subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  max-width: 1500px;
+  margin-bottom: 72px;
+}
+
+.slide.content .thesis {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.4;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  max-width: 1500px;
+  margin-bottom: 64px;
+}
+.slide.content .thesis strong { font-weight: 700; color: var(--accent); }
+
+/* Bottom 4-col paper strip */
+.slide.content .papers {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-top: 36px;
+  border-top: 1px solid var(--hairline);
+}
+.slide.content .paper { display: flex; flex-direction: column; gap: 8px; }
+.slide.content .paper .venue {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.slide.content .paper .venue.b { color: var(--muted); }
+.slide.content .paper .ptitle {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.34;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.slide.content .paper .pgloss {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+/* ═════════════════════════════════════════════════════════
+   RICH CONTENT — info-dense slides
+   ═════════════════════════════════════════════════════════ */
+
+.slide.rich .body {
+  position: absolute;
+  inset: 0;
+  padding: 138px 96px 116px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header for rich slides: chapter line + title + subtitle */
+.slide.rich .head {
+  margin-bottom: 40px;
+}
+.slide.rich .head .chapter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.slide.rich .head .chapter .num {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+.slide.rich .head .chapter .pipe {
+  width: 24px; height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+.slide.rich .head .chapter .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.slide.rich .head .title {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.slide.rich .head .title.smaller { font-size: 52px; }
+.slide.rich .head .subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  max-width: 1500px;
+}
+
+/* ── Metric row — 4-col big stats ─────────────────────── */
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px;
+  padding: 32px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.metric .num {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.9;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.metric .num small {
+  font-size: 36px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 2px;
+  vertical-align: 30px;
+}
+.metric .num.text {
+  font-size: 56px;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  padding-top: 18px;
+}
+.metric .label {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  margin-top: 6px;
+}
+.metric .label strong { color: var(--ink); font-weight: 700; }
+
+/* ── Two-col / three-col / four-col rich layouts ────── */
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
+.cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.cols-58 { display: grid; grid-template-columns: 0.55fr 0.45fr; gap: 64px; }
+.cols-7030 { display: grid; grid-template-columns: 0.7fr 0.3fr; gap: 56px; }
+
+/* ── Section label (eyebrow style, unified) ─────────── */
+.slbl {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  border-bottom: 1.5px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.slbl .aux {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--muted);
+}
+.slbl.gold { color: var(--accent); }
+.slbl.muted { color: var(--muted); border-bottom-color: var(--muted); }
+
+/* ── Vertical timeline (academic trajectory) ───────── */
+.vtime { list-style: none; display: flex; flex-direction: column; gap: 28px; }
+.vtime li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.vtime li:last-child { border-bottom: none; }
+.vtime .yr {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+.vtime .yr.cur { color: var(--ink); }
+.vtime .yr.cur::after { content: " ▸"; color: var(--accent); }
+.vtime .it .role-line {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.vtime .it .org {
+  margin-top: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+.vtime .it .desc {
+  margin-top: 8px;
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--muted-deep);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* ── Keyword pills (unified) ──────────────────────── */
+.kw-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.kw {
+  font-family: "Inter", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.2;
+  display: inline-block;
+}
+.kw.fill { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.kw.accent { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.kw.soft { background: var(--paper-tint); border-color: var(--hairline); color: var(--ink); }
+.kw.tiny { font-size: 12px; padding: 4px 10px; }
+
+/* ── Direction cards (4-card or 3-card minimalist) ── */
+.dir-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.dir-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.dir {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0 0;
+  border-top: 3px solid var(--ink);
+}
+.dir .dn {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.dir .dt {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.dir .dd {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.dir .ven {
+  margin-top: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Tabular paper list (rich style — overview tables) ── */
+.ptable { display: flex; flex-direction: column; }
+.prow {
+  display: grid;
+  grid-template-columns: 60px 1fr 160px 100px;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline-soft);
+  align-items: baseline;
+}
+.prow:last-child { border-bottom: none; }
+.prow.head {
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 10px;
+}
+.prow.head > * {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.prow .pnum {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--muted-soft);
+  font-variant-numeric: tabular-nums;
+}
+.prow .pbody .pt {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.prow .pbody .pgl {
+  margin-top: 4px;
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.45;
+}
+.prow .pven {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.prow .pven small {
+  display: block;
+  margin-top: 2px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.prow .ptier {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--accent);
+}
+.prow .ptier.b { color: var(--muted); }
+
+/* ── Course/teaching chips ─────────────────────────── */
+.course-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.course {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid var(--ink);
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.course .yr {
+  display: inline-block;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid var(--hairline);
+  color: var(--muted);
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Award/honor list with year + tier ────────────── */
+.honors { display: flex; flex-direction: column; gap: 14px; }
+.honor-item {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline-soft);
+  align-items: baseline;
+}
+.honor-item:last-child { border-bottom: none; }
+.honor-item .yr {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.honor-item .ht {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+.honor-item .ht small {
+  display: block;
+  margin-top: 2px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.honor-item .tag {
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Deep-dive boxes: problem / method / contribution ── */
+.deep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.deep {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 0 0;
+  border-top: 3px solid var(--ink);
+}
+.deep.accent { border-top-color: var(--accent); }
+.deep .dn {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.deep .dt {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.deep .dd {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 16.5px;
+  color: var(--muted-deep);
+  line-height: 1.6;
+  font-weight: 400;
+}
+.deep .dd strong { color: var(--ink); font-weight: 700; }
+.deep ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.deep li {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 15px;
+  color: var(--muted-deep);
+  font-weight: 500;
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.deep li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.65em;
+  width: 6px; height: 1px;
+  background: var(--accent);
+}
+
+/* ── Figure placeholder (clean, minimal) ──────────── */
+.fig {
+  height: 320px;
+  border: 1px dashed var(--hairline);
+  display: grid;
+  place-items: center;
+  background: var(--paper-soft);
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.fig.tall { height: 460px; }
+.fig.short { height: 220px; }
+
+/* ── Plan blocks (three-year plan style) ──────────── */
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; }
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.plan .pn {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.plan .pt {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+}
+.plan .pd {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--muted-deep);
+  line-height: 1.6;
+  font-weight: 400;
+}
+.plan ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.plan li {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+.plan li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.7em;
+  width: 10px; height: 2px;
+  background: var(--accent);
+}
+
+/* ── Big takeaway quote (used at bottom of rich pages) ── */
+.takeaway {
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid var(--hairline);
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  max-width: 1500px;
+}
+.takeaway strong { color: var(--accent); font-weight: 700; }
+
+/* ═════════════════════════════════════════════════════════
+   PAPER DETAIL — figure-first layout for individual papers
+   ═════════════════════════════════════════════════════════ */
+
+.slide.paper .body {
+  position: absolute;
+  inset: 138px 96px 116px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide.paper .phead { margin-bottom: 28px; }
+.slide.paper .phead .chapter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.slide.paper .phead .chapter .num {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+.slide.paper .phead .chapter .pipe {
+  width: 24px; height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+.slide.paper .phead .chapter .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.slide.paper .phead .ptitle {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 1.12;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  max-width: 1700px;
+  margin-bottom: 12px;
+}
+.slide.paper .phead .pmeta {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: -0.005em;
+}
+.slide.paper .phead .pmeta .star {
+  color: var(--accent);
+  font-weight: 800;
+  margin-right: 6px;
+}
+.slide.paper .phead .pmeta .ven {
+  color: var(--ink);
+  font-weight: 700;
+}
+.slide.paper .phead .pmeta .tier {
+  margin-left: 10px;
+  padding: 3px 9px;
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  vertical-align: 2px;
+}
+.slide.paper .phead .pmeta .tier.b { background: var(--muted); }
+.slide.paper .phead .pmeta .honor {
+  margin-left: 10px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.slide.paper .figbox {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 56px;
+  align-items: stretch;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+}
+
+.slide.paper .img-ph {
+  width: 100%;
+  border: 1.5px dashed var(--hairline);
+  background: var(--paper-soft);
+  display: grid;
+  place-items: center;
+  position: relative;
+  min-height: 460px;
+}
+.slide.paper .img-ph .corner {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.slide.paper .img-ph .corner-r {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.slide.paper .img-ph .ico {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--muted-soft);
+  text-transform: uppercase;
+  text-align: center;
+}
+.slide.paper .img-ph .ico em {
+  display: block;
+  font-style: normal;
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--muted-soft);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.slide.paper .facts {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.slide.paper .fact {
+  padding: 0 0 18px 0;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.slide.paper .fact:last-child { border-bottom: none; padding-bottom: 0; }
+.slide.paper .fact .fn {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slide.paper .fact .fn .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.slide.paper .fact .ft {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+.slide.paper .fact .fd {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 15px;
+  color: var(--muted-deep);
+  line-height: 1.55;
+  font-weight: 400;
+}
+.slide.paper .fact .fd strong { color: var(--accent); font-weight: 700; }
+
+/* ── DUAL paper layout (2 papers per slide, stacked rows) ── */
+.slide.paper.dual .body {
+  inset: 92px 96px 80px;
+}
+.slide.paper.dual .dual-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1.5px solid var(--ink);
+}
+.slide.paper.dual .dual-head .left .chapter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.slide.paper.dual .dual-head .left .chapter .pipe {
+  width: 24px; height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+.slide.paper.dual .dual-head .left .chapter .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.slide.paper.dual .dual-head .left .dtitle {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+}
+.slide.paper.dual .dual-head .right {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 4px;
+}
+.slide.paper.dual .dual-head .right strong {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  margin-right: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.slide.paper.dual .paper-block {
+  display: grid;
+  grid-template-columns: 0.62fr 0.62fr 0.86fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.slide.paper.dual .paper-block:last-child {
+  border-bottom: none;
+}
+
+.slide.paper.dual .paper-block .pic {
+  position: relative;
+  border: 1px solid var(--hairline);
+  background: var(--paper);
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  overflow: hidden;
+}
+.slide.paper.dual .paper-block .pic.ph {
+  border: 1.5px dashed var(--hairline);
+  background: var(--paper-soft);
+}
+.slide.paper.dual .paper-block .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 8px;
+}
+.slide.paper.dual .paper-block .pic .label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--paper);
+  padding: 2px 6px 3px;
+  z-index: 2;
+  border: none;
+  display: inline-block;
+}
+.slide.paper.dual .paper-block .pic .label.muted { color: var(--muted-soft); }
+.slide.paper.dual .paper-block .pic .corner {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.slide.paper.dual .paper-block .pic .corner-r {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.slide.paper.dual .paper-block .pic .ico {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--muted-soft);
+  text-transform: uppercase;
+  text-align: center;
+}
+.slide.paper.dual .paper-block .pic .ico em {
+  display: block;
+  font-style: normal;
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-size: 13px;
+  color: var(--muted-soft);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-weight: 500;
+  margin-top: 6px;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.slide.paper.dual .paper-block .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.slide.paper.dual .paper-block .meta .num-line {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slide.paper.dual .paper-block .meta .num-line .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.slide.paper.dual .paper-block .meta .ptitle {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.18;
+  color: var(--ink);
+  letter-spacing: -0.018em;
+}
+.slide.paper.dual .paper-block .meta .vline {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: -0.005em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.slide.paper.dual .paper-block .meta .vline .star {
+  color: var(--accent);
+  font-weight: 800;
+  margin-right: 2px;
+}
+.slide.paper.dual .paper-block .meta .vline .ven {
+  color: var(--ink);
+  font-weight: 700;
+}
+.slide.paper.dual .paper-block .meta .vline .tier {
+  padding: 2px 8px 3px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+}
+.slide.paper.dual .paper-block .meta .vline .tier.b { background: var(--muted); }
+.slide.paper.dual .paper-block .meta .vline .honor {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.slide.paper.dual .paper-block .meta .ffacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 22px;
+  margin-top: 6px;
+}
+.slide.paper.dual .paper-block .meta .ffacts.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.slide.paper.dual .paper-block .meta .ff {
+  padding-top: 10px;
+  border-top: 1px solid var(--hairline);
+}
+.slide.paper.dual .paper-block .meta .ff .fk {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.slide.paper.dual .paper-block .meta .ff .fk .cn {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.slide.paper.dual .paper-block .meta .ff .fv {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.slide.paper.dual .paper-block .meta .ff .fv strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ═════════════════════════════════════════════════════════
+   CLOSING — Big thank-you
+   ═════════════════════════════════════════════════════════ */
+.slide.closing .body {
+  position: absolute;
+  inset: 0;
+  padding: 200px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.closing .thanks {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 240px;
+  line-height: 0.9;
+  color: var(--ink);
+  letter-spacing: -0.05em;
+  margin-bottom: 44px;
+}
+.slide.closing .thanks .accent { color: var(--accent); }
+.slide.closing .closing-sub {
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  max-width: 1400px;
+}
+.slide.closing .closing-contact {
+  margin-top: 80px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.slide.closing .closing-contact .left {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.slide.closing .closing-contact .left .lbl {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.slide.closing .closing-contact .right {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  color: var(--muted);
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.5;
+}

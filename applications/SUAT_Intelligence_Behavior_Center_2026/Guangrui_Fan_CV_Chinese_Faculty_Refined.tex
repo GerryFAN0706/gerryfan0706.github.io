@@ -1,0 +1,260 @@
+%------------------------
+% 樊光瑞 个人简历（高校教职岗位优化版）
+% Compile with: xelatex Guangrui_Fan_CV_Chinese_Faculty_Refined.tex
+%------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+% Font and language
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Liberation Serif}}
+  \IfFontExistsTF{Microsoft YaHei}{
+    \setCJKmainfont{Microsoft YaHei}
+    \setCJKsansfont{Microsoft YaHei}
+  }{
+    \IfFontExistsTF{Noto Sans CJK SC}{
+      \setCJKmainfont[AutoFakeBold=2.5]{Noto Sans CJK SC}
+      \setCJKsansfont[AutoFakeBold=2.5]{Noto Sans CJK SC}
+    }{
+      \setCJKmainfont[AutoFakeBold=2.5]{SimSun}
+    }
+  }
+\fi
+
+% Packages
+\usepackage[a4paper,top=0.62in,bottom=0.66in,left=0.70in,right=0.70in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{needspace}
+
+% Hyperlink setup
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  citecolor=blue!55!black,
+  pdfauthor={Guangrui Fan},
+  pdftitle={Guangrui Fan CV Chinese Faculty Refined}
+}
+
+% Global formatting
+\definecolor{cvblue}{HTML}{1F4E79}
+\definecolor{cvgray}{HTML}{555555}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.12em}
+\linespread{1.02}
+\sloppy
+
+\titleformat{\section}{\large\bfseries\color{cvblue}}{}{0em}{}[\vspace{-0.25em}\titlerule]
+\titlespacing*{\section}{0pt}{0.85\baselineskip}{0.45\baselineskip}
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.45\baselineskip}{0.15\baselineskip}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{cvgray}}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.35\baselineskip}{0.1\baselineskip}
+
+\setlist[itemize]{leftmargin=*,topsep=0.15em,itemsep=0.12em,parsep=0em}
+\setlist[enumerate]{leftmargin=*,topsep=0.15em,itemsep=0.20em,parsep=0em}
+
+% Header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\cfoot{\small\color{cvgray} 樊光瑞 · 个人简历 · 第 \thepage\ 页 / 共 \pageref{LastPage} 页}
+
+% Custom commands
+\newcommand{\cvlabel}[1]{\textbf{#1}}
+\newcommand{\role}[1]{\textcolor{cvgray}{\footnotesize\textsf{#1}}}
+\newcommand{\papertag}[1]{\textcolor{cvgray}{\footnotesize\textsf{[#1]}}}
+\newcommand{\pubitem}[1]{\item #1}
+\newcommand{\entry}[4]{\textbf{#1}\hfill #2\\#3\\\textcolor{cvgray}{#4}\vspace{0.15em}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+\ifPDFTeX
+\begin{CJK*}{UTF8}{gbsn}
+\fi
+
+% Header
+\begin{center}
+  {\LARGE\bfseries 樊光瑞}\\[0.05em]
+ % {\large\bfseries 个人简历}\\[0.35em]
+  出生年月：1992年7月 \quad 所在地：山西太原 \quad 手机：+86 13387574446\\[0.15em]
+  邮箱：\href{mailto:gerryfan2022@gmail.com}{gerryfan2022@gmail.com} \quad
+  主页：\href{https://gerryfan0706.github.io}{gerryfan0706.github.io}\\[0.15em]
+  ORCID：\href{https://orcid.org/0009-0001-8570-1636}{0009-0001-8570-1636} \quad
+  GitHub：\href{https://github.com/gerryfan0706}{github.com/gerryfan0706}\\[0.15em]
+  \href{https://scholar.google.com.hk/citations?user=GB4mzYsAAAAJ&hl=en}{Google学术主页}
+\end{center}
+
+%------------------------
+\section*{研究方向}
+
+\cvlabel{面向学习、沟通与社会福祉的人本可信 AI 系统研究。}
+本人关注大模型与智能系统进入真实教育、沟通和社会服务场景后，如何影响人的学习、信任、隐私、情感表达、认知负担与公平感知。结合 HCI 实证研究、混合方法、因果/统计评估与机器学习建模，形成“用户机制发现 - 模型构建 - 系统干预 - 真实场景评估”的研究闭环。
+
+\begin{itemize}
+\item \cvlabel{面向社会福祉的可靠与公平智能系统：}面向心理健康社区、推荐系统公平性、城市交通与社会计算场景，研究可解释预测、偏差校正、福利估计、隐私保护与公平审计方法，推动 AI 系统从“性能优化”走向“社会价值对齐”。
+  \item \cvlabel{AI 辅助学习与人机协同编程：}研究 AI 编程助手、智能助教与 AI pair programming 如何影响学生动机、编程焦虑、认知脚手架、认知卸载与验证负担，服务计算机教育、软件工程教育与智能教学系统设计。
+  \item \cvlabel{AI 介导沟通中的信任、真实性与隐私：}研究 LLM 参与写作、情感表达、亲密沟通、内容摘要与用户同意决策时，用户如何判断作者身份、真实性、情感适宜性和隐私边界，并提出可解释、可控、尊重用户价值的交互机制。
+  
+\end{itemize}
+\cvlabel{关键词：}Human-Centered AI；HCI；Human-AI Interaction；LLMs；GNN；AI 教育；社会计算；算法公平；隐私与信任。
+
+%------------------------
+\section*{研究亮点}
+\begin{itemize}
+  \item \cvlabel{研究成果：}截至 2026 年 5 月，已第一作者、通讯作者身份，发表/录用会议与期刊论文 20余篇；成果包括 \underline{CCF A 类会议论文 9 篇}、\underline{中科院 1 区 Top 期刊论文 4 篇}。3 篇论文被 CHI 2026 录用，其中 1 篇获 \underline{ACM CHI 2026 Honourable Mention Award}。
+  \item \cvlabel{教学科研结合：}围绕 AI 辅助编程教育形成连续研究线，发表于 \textit{International Journal of STEM Education} 的一作论文获 \underline{ESI 高被引}，并入选该刊近两年高被引文章与近 9 个月热门文章。
+  \item \cvlabel{交叉研究：}在 HCI 用户实验、问卷/访谈、混合方法研究之外，结合 LLM、GNN、生存分析、因果推断、离线策略评估等方法，支撑人本 AI 系统的机制解释与技术构建。
+  \item \cvlabel{学术服务：}担任 The Web Conference (WWW) 2026 Web4Good 特别赛道程序委员会成员，并为 CHI、ICML 及多本 SCI/SSCI Q1 期刊担任审稿人。
+\end{itemize}
+
+%------------------------
+\section*{教育背景}
+
+\entry{计算机科学博士}{2022年9月 -- 2026年6月}{马来亚大学 (Universiti Malaya, QS 58)，马来西亚吉隆坡}{研究方向：Human-Centered AI、人机交互、AI 教育与情感计算}
+
+\entry{软件工程硕士}{2014年9月 -- 2018年2月}{上海交通大学（软件学院），中国上海}{保送，免试推荐入学}
+
+\entry{数字媒体技术学士}{2010年9月 -- 2014年6月}{华中科技大学（软件学院），中国武汉}{}
+
+%------------------------
+\section*{工作经历}
+
+\entry{讲师}{2018年6月 -- 至今}{太原科技大学，计算机科学与技术学院，山西太原}{主讲本科课程并开展人本 AI、AI 教育、社会计算与机器学习方向研究}
+
+%------------------------
+\section*{代表性研究成果}
+\begin{enumerate}[label=\textbf{[S\arabic*]}]
+  \Needspace{5\baselineskip}\item \cvlabel{AI 编程助手的验证负担与疲劳机制。}\textit{CHI 2026，ACM CHI Honourable Mention Award。}提出 verification-load 指标，用失败、返工与上下文切换刻画 AI 辅助带来的验证成本；通过混合方法比较 Inline、Chat、Structured 三类助手交互模式，解释“AI 帮助何时转化为额外负担”。
+
+  \Needspace{5\baselineskip}\item \cvlabel{AI 辅助结对编程的学习机制与教学成效。}\textit{International Journal of STEM Education, 2025，ESI 高被引。}基于 Java Web 课程中 234 名本科生的两年准实验，比较 AI-assisted pair programming、人类结对和个体编程；结果显示 AI 组提升动机、降低编程焦虑并改善任务表现，同时指出其尚不能完全替代人类结对的社会临场感。
+
+  \Needspace{5\baselineskip}\item \cvlabel{AI 介导沟通中的作者身份、真实性与情感规范。}以 CHI 2026 和 ACL 2026 两项工作为核心，研究 LLM 参与浪漫沟通、情感表达与角色/机构语境时，用户和模型如何判断“谁在表达”、何种情绪表达适宜，以及信任与真实性如何被重构。
+
+  \Needspace{5\baselineskip}\item \cvlabel{图偏好学习与人类反馈偏差校正。}\textit{ICML 2026。}提出 Graph-Preference Learning 框架，面向 network-sampled human feedback 造成的样本选择偏差，进行 target welfare estimation，为基于人类反馈的系统评估提供更可靠的估计方法。
+
+  \Needspace{5\baselineskip}\item \cvlabel{在线心理健康社区中的及时支持预测与干预。}\textit{AAAI 2026。}围绕心理健康社区 reply gap 问题，结合生存分析、因果推断和离线策略评估，识别高风险未回应帖子并路由更有效的情感支持，展示了人本 AI 在社会福祉场景中的可干预路径。
+\end{enumerate}
+
+%------------------------
+\section*{学术论文}
+{\small\color{cvgray} 说明：\(^*\) 第一作者/共同第一作者；\(^\dagger\) 通讯作者/共同通讯作者；本人姓名加粗。}
+
+\subsection*{会议论文}
+\subsubsection*{CCF A 类}
+\begin{enumerate}[label=\textbf{[C\arabic*]}]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Sabri A.Q.M., Zhang R., Pan L. (2026). Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity. \textit{ACL 2026}. \textbf{CCF A}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Sabri A.Q.M., Pan L. (2026). Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation. \textit{ICML 2026}. \textbf{CCF A}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., et al. (2026). Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication. \textit{CHI 2026}. \textbf{CCF A}. \papertag{AI 介导沟通 / 真实性}}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., et al. (2026). When Help Hurts: Verification Load and Fatigue with AI Coding Assistants. \textit{CHI 2026}. \textbf{CCF A}; \textbf{ACM CHI 2026 Honourable Mention Award}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., et al. (2026). Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences. \textit{CHI 2026}. \textbf{CCF A}. \papertag{隐私保护 / 个性化干预}}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L., Zhang R., Guo Q. (2026). Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation. \textit{FSE 2026}. \textbf{CCF A}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Sabri A.Q.M., Pan L. (2026). Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims. \textit{WWW 2026}. \textbf{CCF A}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L. (2026). Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities. \textit{AAAI 2026}. \textbf{CCF A}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L., Huang Y. (2025). Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation. \textit{IJCAI 2025}. \textbf{CCF A}. }
+\end{enumerate}
+
+\subsubsection*{CCF B 类}
+\begin{enumerate}[label=\textbf{[C\arabic*]},resume]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Pan L., Zhang M., Zhao M. (2026). LePER: Label-Free Edge Polarity Reweighting for Heterophily. \textit{ICASSP 2026}. \textbf{CCF B；口头报告}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L., Zhang R., Sabri A.Q.M. (2026). Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent. \textit{ECSCW 2026}. \textbf{CCF B}. }
+\end{enumerate}
+
+\subsection*{期刊论文}
+\subsubsection*{中科院 1 区 Top 期刊}
+\begin{enumerate}[label=\textbf{[J\arabic*]}]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Zhang R., Pan L. (2025). The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance: a comparative study with traditional pair programming and individual approaches. \textit{International Journal of STEM Education, 12}(1), 16. \href{https://doi.org/10.1186/s40594-025-00537-3}{DOI}. \textbf{中科院 1 区 Top；ESI 高被引}. }
+
+  \pubitem{Liu D., \textbf{Fan, G.}$^{\dagger}$, Pan L. (2026). Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education. \textit{International Journal of STEM Education, 13}, 10. \textbf{中科院 1 区 Top}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Sabri A.Q.M.$^{\dagger}$, Rahman S.S.A., Pan L. (2025). DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting. \textit{Engineering Applications of Artificial Intelligence, 159}, 111757. \href{https://doi.org/10.1016/j.engappai.2025.111757}{DOI}. \textbf{中科院 1 区 Top}. \papertag{交通预测 / GNN}}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Sabri A.Q.M.$^{\dagger}$, Rahman S.S.A., Pan L., Rahardja S. (2025). Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey. \textit{Archives of Computational Methods in Engineering}, 1--45. \textbf{中科院 1 区 Top}. }
+\end{enumerate}
+
+\subsubsection*{CCF B / 其他 SCI 期刊}
+\begin{enumerate}[label=\textbf{[J\arabic*]},resume]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Huang Y. (2025). Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading. \textit{International Journal of Human--Computer Interaction}, 1--22. \href{https://doi.org/10.1080/10447318.2025.2574513}{DOI}. \textbf{CCF B}. }
+\end{enumerate}
+
+\subsection*{一作在修论文}
+\begin{enumerate}[label=\textbf{[R\arabic*]}]
+  \pubitem{\textbf{Fan, G.}$^{*}$, et al. (2026). \textit{Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees}. \textit{ACM Transactions on Information Systems}. \textbf{第一作者；CCF A；第二轮修回}. }
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, et al. (2026). \textit{Textless, Tiny, and Private: Hashed n-grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media}. \textit{IEEE Transactions on Computational Social Systems}. \textbf{第一作者；CCF C；第二轮修回}. }
+\end{enumerate}
+
+%------------------------
+\section*{荣誉与奖励}
+\begin{itemize}
+  \item \textbf{ACM CHI 2026 Honourable Mention Award} - \textit{When Help Hurts: Verification Load and Fatigue with AI Coding Assistants}。
+  \item \textbf{ESI 高被引论文} (2025) - 发表于 \textit{International Journal of STEM Education}。
+  \item \textbf{期刊高影响文章} - \textit{International Journal of STEM Education} 近两年高被引文章。
+  \item \textbf{一等奖论文与最佳报告奖} (2025年7月) - 第九届中国计算机实践教育学术会议 (CPEC2025)。
+\end{itemize}
+
+%------------------------
+\section*{科研项目}
+\begin{itemize}
+  \item \cvlabel{山西省基础研究计划面上项目（参与）：}基于介尺度的大规模复杂系统多智能体并行仿真模型研究。\cvlabel{项目编号：}202203021221145。
+  \item \cvlabel{山西省高等学校教学改革创新项目（参与）：}深化本科教学评价机制改革 - AI 赋能的课堂质量评价与实践探索。\cvlabel{项目编号：}J20250145。
+\end{itemize}
+
+%------------------------
+\section*{教学工作}
+\begin{itemize}
+  \item \cvlabel{主讲本科课程：}Java Web 开发、Oracle 数据库管理技术、物联网 RFID 原理与技术、计算机图形学、计算机动画原理。
+  \item \cvlabel{教学改革与 AI 辅助教学实践：}围绕智能代码审查、个性化实验设计、AI 驱动课程材料制作开展教学案例建设。
+  \item \cvlabel{教学获奖：}太原科技大学高校教师教学创新大赛一等奖；山西省高校教师教学创新大赛三等奖。
+\end{itemize}
+
+%------------------------
+\section*{学术服务}
+\subsection*{程序委员会成员}
+\begin{itemize}
+  \item \textbf{The Web Conference (WWW) 2026} - Web4Good 特别赛道 (CCF A)
+\end{itemize}
+
+\subsection*{审稿人}
+\begin{itemize}
+  \item \textbf{CHI 2026} - ACM Conference on Human Factors in Computing Systems (CCF A)
+  \item \textbf{ICML 2026} - International Conference on Machine Learning (CCF A)
+  \item \textbf{Engineering Applications of Artificial Intelligence} (EAAI, 中科院 1 区 Top)
+  \item \textbf{International Journal of STEM Education} (中科院 1 区 Top)
+  \item \textbf{Information, Communication \& Society} (SSCI 1 区 Top)
+\end{itemize}
+
+\vfill
+\begin{center}
+  \small\color{cvgray} 最后更新：2026 年 5 月
+\end{center}
+
+\ifPDFTeX
+\end{CJK*}
+\fi
+\end{document}

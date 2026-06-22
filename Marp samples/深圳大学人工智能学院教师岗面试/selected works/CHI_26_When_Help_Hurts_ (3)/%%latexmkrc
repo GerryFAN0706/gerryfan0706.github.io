@@ -1,0 +1,1 @@
+$pdflatex = "latexdiff CHIrevise0902.tex Update1113.tex > main-d.tex; pdflatex %O  main-d"

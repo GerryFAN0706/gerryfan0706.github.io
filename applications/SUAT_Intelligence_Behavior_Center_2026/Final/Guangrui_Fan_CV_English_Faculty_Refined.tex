@@ -1,0 +1,239 @@
+%------------------------
+% Guangrui Fan CV (English faculty refined version)
+% Compile with: xelatex Guangrui_Fan_CV_English_Faculty_Refined.tex
+%------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+% Font and language
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+\else
+  \usepackage{fontspec}
+  \IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Liberation Serif}}
+\fi
+
+% Packages
+\usepackage[a4paper,top=0.62in,bottom=0.66in,left=0.70in,right=0.70in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{needspace}
+
+% Hyperlink setup
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!55!black,
+  citecolor=blue!55!black,
+  pdfauthor={Guangrui Fan},
+  pdftitle={Guangrui Fan CV English Faculty Refined}
+}
+
+% Global formatting
+\definecolor{cvblue}{HTML}{1F4E79}
+\definecolor{cvgray}{HTML}{555555}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.12em}
+\linespread{1.02}
+\sloppy
+
+\titleformat{\section}{\large\bfseries\color{cvblue}}{}{0em}{}[\vspace{-0.25em}\titlerule]
+\titlespacing*{\section}{0pt}{0.85\baselineskip}{0.45\baselineskip}
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.45\baselineskip}{0.15\baselineskip}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{cvgray}}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.35\baselineskip}{0.1\baselineskip}
+
+\setlist[itemize]{leftmargin=*,topsep=0.15em,itemsep=0.12em,parsep=0em}
+\setlist[enumerate]{leftmargin=*,topsep=0.15em,itemsep=0.20em,parsep=0em}
+
+% Header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\cfoot{\small\color{cvgray} Guangrui Fan -- Curriculum Vitae -- Page \thepage\ of \pageref{LastPage}}
+
+% Custom commands
+\newcommand{\cvlabel}[1]{\textbf{#1}}
+\newcommand{\role}[1]{\textcolor{cvgray}{\footnotesize\textsf{#1}}}
+\newcommand{\papertag}[1]{\textcolor{cvgray}{\footnotesize\textsf{[#1]}}}
+\newcommand{\pubitem}[1]{\item #1}
+\newcommand{\entry}[4]{\textbf{#1}\hfill #2\\#3\\\textcolor{cvgray}{#4}\vspace{0.15em}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Header
+\begin{center}
+  {\LARGE\bfseries Guangrui Fan}\\[0.05em]
+  Date of Birth: July 1992 \quad Location: Taiyuan, Shanxi, China \quad Mobile: +86 13387574446\\[0.15em]
+  Email: \href{mailto:gerryfan2022@gmail.com}{gerryfan2022@gmail.com} \quad
+  Homepage: \href{https://gerryfan0706.github.io}{gerryfan0706.github.io}\\[0.15em]
+  ORCID: \href{https://orcid.org/0009-0001-8570-1636}{0009-0001-8570-1636} \quad
+  GitHub: \href{https://github.com/gerryfan0706}{github.com/gerryfan0706}\\[0.15em]
+  \href{https://scholar.google.com.hk/citations?user=GB4mzYsAAAAJ&hl=en}{Google Scholar Profile}
+\end{center}
+
+%------------------------
+\section*{Research Interests}
+
+\cvlabel{Human-centered trustworthy AI systems for learning, communication, and social good.}
+My research examines how large language models and intelligent systems affect learning, trust, privacy, emotional expression, cognitive load, and perceived fairness when they enter real educational, communicative, and social-service settings. I combine HCI empirical research, mixed methods, causal/statistical evaluation, and machine learning to build a closed-loop research process: user mechanism discovery, model construction, system intervention, and real-world evaluation.
+
+\begin{itemize}
+  \item \cvlabel{Reliable and fair intelligent systems for social good:} I study interpretable prediction, bias correction, welfare estimation, privacy protection, and fairness auditing for mental-health communities, recommender systems, urban mobility, and social-computing scenarios, moving AI systems from performance optimization toward social-value alignment.
+  \item \cvlabel{AI-assisted learning and human-AI collaborative programming:} I investigate how AI coding assistants, intelligent tutors, and AI pair programming affect student motivation, programming anxiety, cognitive scaffolding, cognitive offloading, and verification load, with implications for computing education, software engineering education, and intelligent learning systems.
+  \item \cvlabel{Trust, authenticity, and privacy in AI-mediated communication:} I study how users judge authorship, authenticity, emotional appropriateness, and privacy boundaries when LLMs participate in writing, emotional expression, intimate communication, content summarization, and consent decisions, and I design explainable, controllable, user-value-respecting interaction mechanisms.
+\end{itemize}
+\cvlabel{Keywords:} Human-Centered AI; HCI; Human-AI Interaction; LLMs; GNNs; AI Education; Social Computing; Algorithmic Fairness; Privacy and Trust.
+
+%------------------------
+\section*{Research Highlights}
+\begin{itemize}
+  \item \cvlabel{Research output:} As of May 2026, I have published or had accepted 20+ conference and journal papers as first author or corresponding author. My work includes \underline{9 CCF-A conference papers} and \underline{4 CAS Zone 1 Top journal papers}. Three papers were accepted by CHI 2026, including one \underline{ACM CHI 2026 Honourable Mention Award}.
+  \item \cvlabel{Teaching-research integration:} I have developed a sustained research line on AI-assisted programming education. My first-author paper in \textit{International Journal of STEM Education} was recognized as an \underline{ESI Highly Cited Paper} and selected among the journal's high-impact recent articles.
+  \item \cvlabel{Interdisciplinary methods:} In addition to HCI user experiments, surveys/interviews, and mixed methods, I use LLMs, GNNs, survival analysis, causal inference, and offline policy evaluation to support mechanism explanation and technical development for human-centered AI systems.
+  \item \cvlabel{Academic service:} I serve as a Program Committee member for The Web Conference (WWW) 2026 Web4Good track and as a reviewer for CHI, ICML, and several SCI/SSCI Q1 journals.
+\end{itemize}
+
+%------------------------
+\section*{Education}
+
+\entry{Ph.D. in Computer Science}{Sept. 2022 -- June 2026}{Universiti Malaya (QS 58), Kuala Lumpur, Malaysia}{Research areas: Human-Centered AI, Human-Computer Interaction, AI Education, Affective Computing}
+
+\entry{M.S. in Software Engineering}{Sept. 2014 -- Feb. 2018}{School of Software, Shanghai Jiao Tong University, Shanghai, China}{Recommended admission without entrance examination}
+
+\entry{B.S. in Digital Media Technology}{Sept. 2010 -- June 2014}{School of Software, Huazhong University of Science and Technology, Wuhan, China}{}
+
+%------------------------
+\section*{Professional Experience}
+
+\entry{Lecturer}{June 2018 -- Present}{School of Computer Science and Technology, Taiyuan University of Science and Technology, Taiyuan, China}{Undergraduate teaching and research in human-centered AI, AI education, social computing, and machine learning}
+
+%------------------------
+\section*{Selected Research Contributions}
+\begin{enumerate}[label=\textbf{[S\arabic*]}]
+  \Needspace{5\baselineskip}\item \cvlabel{Verification load and fatigue with AI coding assistants.} \textit{CHI 2026, ACM CHI Honourable Mention Award.} I proposed the concept of verification load, using failures, rework, and context switching to characterize the hidden verification cost introduced by AI assistance. Through mixed-method comparisons of Inline, Chat, and Structured assistant modes, this work explains when AI assistance becomes additional burden.
+
+  \Needspace{5\baselineskip}\item \cvlabel{Learning mechanisms and educational effects of AI-assisted pair programming.} \textit{International Journal of STEM Education, 2025, ESI Highly Cited.} Based on a two-year quasi-experiment with 234 undergraduate students in a Java Web course, this work compared AI-assisted pair programming, human pair programming, and individual programming. It showed that the AI-assisted condition improved motivation, reduced programming anxiety, and enhanced task performance, while also showing that AI cannot fully replace the social presence of human pair programming.
+
+  \Needspace{5\baselineskip}\item \cvlabel{Authorship, authenticity, and emotional norms in AI-mediated communication.} Building on CHI 2026 and ACL 2026 papers, this line of work studies how users and models judge who is speaking, whether an expression is authentic, and what emotions are considered appropriate when LLMs participate in romantic communication, emotional expression, and role/institution-specific contexts.
+
+  \Needspace{5\baselineskip}\item \cvlabel{Graph preference learning and bias correction in human feedback.} \textit{ICML 2026.} I proposed a Graph-Preference Learning framework for correcting selection bias in network-sampled human feedback and estimating target welfare, providing a more reliable foundation for evaluating systems from human feedback.
+
+  \Needspace{5\baselineskip}\item \cvlabel{Timely support prediction and intervention in online mental-health communities.} \textit{AAAI 2026.} This work addresses reply gaps in online mental-health communities by combining survival analysis, causal inference, and offline policy evaluation to identify high-risk unanswered posts and route more effective emotional support, demonstrating an intervention path for human-centered AI in social-good scenarios.
+\end{enumerate}
+
+%------------------------
+\section*{Publications}
+{\small\color{cvgray} Note: \(^*\) first author / co-first author; \(^\dagger\) corresponding author / co-corresponding author; my name is bolded.}
+
+\subsection*{Conference Papers}
+\subsubsection*{CCF-A Conferences}
+\begin{enumerate}[label=\textbf{[C\arabic*]}]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Sabri A.Q.M., Zhang R., Pan L. (2026). Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity. \textit{ACL 2026}. \textbf{CCF A}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Sabri A.Q.M., Pan L. (2026). Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation. \textit{ICML 2026}. \textbf{CCF A}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., et al. (2026). Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication. \textit{CHI 2026}. \textbf{CCF A}. \papertag{AI-mediated communication / authenticity}}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., et al. (2026). When Help Hurts: Verification Load and Fatigue with AI Coding Assistants. \textit{CHI 2026}. \textbf{CCF A}; \textbf{ACM CHI 2026 Honourable Mention Award}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., et al. (2026). Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences. \textit{CHI 2026}. \textbf{CCF A}. \papertag{privacy-preserving personalization}}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L., Zhang R., Guo Q. (2026). Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation. \textit{FSE 2026}. \textbf{CCF A}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Sabri A.Q.M., Pan L. (2026). Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims. \textit{WWW 2026}. \textbf{CCF A}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L. (2026). Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities. \textit{AAAI 2026}. \textbf{CCF A}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L., Huang Y. (2025). Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation. \textit{IJCAI 2025}. \textbf{CCF A}.}
+\end{enumerate}
+
+\subsubsection*{CCF-B Conferences}
+\begin{enumerate}[label=\textbf{[C\arabic*]},resume]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Pan L., Zhang M., Zhao M. (2026). LePER: Label-Free Edge Polarity Reweighting for Heterophily. \textit{ICASSP 2026}. \textbf{CCF B; Oral Presentation}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Pan L., Zhang R., Sabri A.Q.M. (2026). Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent. \textit{ECSCW 2026}. \textbf{CCF B}.}
+\end{enumerate}
+
+\subsection*{Journal Papers}
+\subsubsection*{CAS Zone 1 Top Journals}
+\begin{enumerate}[label=\textbf{[J\arabic*]}]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Zhang R., Pan L. (2025). The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance: a comparative study with traditional pair programming and individual approaches. \textit{International Journal of STEM Education, 12}(1), 16. \href{https://doi.org/10.1186/s40594-025-00537-3}{DOI}. \textbf{CAS Zone 1 Top; ESI Highly Cited}.}
+
+  \pubitem{Liu D., \textbf{Fan, G.}$^{\dagger}$, Pan L. (2026). Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education. \textit{International Journal of STEM Education, 13}, 10. \textbf{CAS Zone 1 Top}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Sabri A.Q.M.$^{\dagger}$, Rahman S.S.A., Pan L. (2025). DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting. \textit{Engineering Applications of Artificial Intelligence, 159}, 111757. \href{https://doi.org/10.1016/j.engappai.2025.111757}{DOI}. \textbf{CAS Zone 1 Top}. \papertag{traffic forecasting / GNN}}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, Sabri A.Q.M.$^{\dagger}$, Rahman S.S.A., Pan L., Rahardja S. (2025). Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey. \textit{Archives of Computational Methods in Engineering}, 1--45. \textbf{CAS Zone 1 Top}.}
+\end{enumerate}
+
+\subsubsection*{CCF-B / Other SCI Journals}
+\begin{enumerate}[label=\textbf{[J\arabic*]},resume]
+  \pubitem{\textbf{Fan, G.}$^{*}$, Liu D., Huang Y. (2025). Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading. \textit{International Journal of Human--Computer Interaction}, 1--22. \href{https://doi.org/10.1080/10447318.2025.2574513}{DOI}. \textbf{CCF B}.}
+\end{enumerate}
+
+\subsection*{First-Author Manuscripts Under Revision}
+\begin{enumerate}[label=\textbf{[R\arabic*]}]
+  \pubitem{\textbf{Fan, G.}$^{*}$, et al. (2026). \textit{Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees}. \textit{ACM Transactions on Information Systems}. \textbf{First author; CCF A; second-round revision}.}
+
+  \pubitem{\textbf{Fan, G.}$^{*}$, et al. (2026). \textit{Textless, Tiny, and Private: Hashed n-grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media}. \textit{IEEE Transactions on Computational Social Systems}. \textbf{First author; CCF C; second-round revision}.}
+\end{enumerate}
+
+%------------------------
+\section*{Honors and Awards}
+\begin{itemize}
+  \item \textbf{ACM CHI 2026 Honourable Mention Award} -- \textit{When Help Hurts: Verification Load and Fatigue with AI Coding Assistants}.
+  \item \textbf{ESI Highly Cited Paper} (2025) -- published in \textit{International Journal of STEM Education}.
+  \item \textbf{High-impact recent article} -- \textit{International Journal of STEM Education}.
+  \item \textbf{First Prize Paper and Best Presentation Award} (July 2025) -- 9th China Computer Practice Education Academic Conference (CPEC 2025).
+\end{itemize}
+
+%------------------------
+\section*{Research Projects}
+\begin{itemize}
+  \item \cvlabel{Participant, Shanxi Provincial Basic Research Program (General Program):} Meso-scale based massively parallel multi-agent simulation models for large-scale complex systems. \cvlabel{Grant No.:} 202203021221145.
+  \item \cvlabel{Participant, Shanxi Higher Education Teaching Reform and Innovation Project:} Deepening undergraduate teaching evaluation reform: AI-enabled classroom quality evaluation and practice. \cvlabel{Grant No.:} J20250145.
+\end{itemize}
+
+%------------------------
+\section*{Teaching}
+\begin{itemize}
+  \item \cvlabel{Undergraduate courses taught:} Java Web Development, Oracle Database Management Technology, RFID Principles and Technologies for the Internet of Things, Computer Graphics, Principles of Computer Animation.
+  \item \cvlabel{Teaching reform and AI-assisted teaching practice:} Developed teaching cases around intelligent code review, personalized lab design, and AI-driven course-material creation.
+  \item \cvlabel{Teaching awards:} First Prize, Teaching Innovation Competition, Taiyuan University of Science and Technology; Third Prize, Shanxi Provincial Teaching Innovation Competition.
+\end{itemize}
+
+%------------------------
+\section*{Academic Service}
+\subsection*{Program Committee}
+\begin{itemize}
+  \item \textbf{The Web Conference (WWW) 2026} -- Web4Good Special Track (CCF A)
+\end{itemize}
+
+\subsection*{Reviewer}
+\begin{itemize}
+  \item \textbf{CHI 2026} -- ACM Conference on Human Factors in Computing Systems (CCF A)
+  \item \textbf{ICML 2026} -- International Conference on Machine Learning (CCF A)
+  \item \textbf{Engineering Applications of Artificial Intelligence} (EAAI, CAS Zone 1 Top)
+  \item \textbf{International Journal of STEM Education} (CAS Zone 1 Top)
+  \item \textbf{Information, Communication \& Society} (SSCI Q1 Top)
+\end{itemize}
+
+\vfill
+\begin{center}
+  \small\color{cvgray} Last updated: May 2026
+\end{center}
+
+\end{document}

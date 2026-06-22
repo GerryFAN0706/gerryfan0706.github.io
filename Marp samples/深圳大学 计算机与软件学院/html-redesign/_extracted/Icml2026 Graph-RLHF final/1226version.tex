@@ -1,0 +1,2816 @@
+%%%%%%%% ICML 2026 EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % for professional tables
+\usepackage{multirow} % for multi-row cells in tables
+\usepackage[table,xcdraw]{xcolor} % for table cell colors
+\usepackage{colortbl} % for colored table cells
+
+% Define custom colors for table highlighting
+\definecolor{bestgreen}{RGB}{198, 239, 206}  % Light green for best results
+\definecolor{goodblue}{RGB}{221, 235, 247}   % Light blue for our method
+\definecolor{neutralgray}{RGB}{242, 242, 242} % Light gray for baseline
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{icml2026} with \usepackage[nohyperref]{icml2026} above.
+\usepackage{hyperref}
+
+
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Use the following line for the initial blind version submitted for review:
+\usepackage[accepted]{icml2026}
+
+% For preprint, use
+% \usepackage[preprint]{icml2026}
+
+% If accepted, instead use the following line for the camera-ready submission:
+% \usepackage[accepted]{icml2026}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+
+
+% if you use cleveref..
+\usepackage[capitalize,noabbrev]{cleveref}
+
+% --- DROP-IN: algorithm packages (needed for Appendix algorithm env) ---
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Todonotes is useful during development; simply uncomment the next line
+%    and comment out the line below the next line to turn off comments
+\usepackage[disable,textsize=tiny]{todonotes}
+%\usepackage[textsize=tiny]{todonotes}
+
+% The \icmltitle you define below is probably too long as a header.
+% Therefore, a short form for the running title is supplied here:
+\icmltitlerunning{Graph-Preference Learning}
+
+\begin{document}
+
+\twocolumn[
+  \icmltitle{Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation}
+
+  % It is OKAY to include author information, even for blind submissions: the
+  % style file will automatically remove it for you unless you've provided
+  % the [accepted] option to the icml2026 package.
+
+  % List of affiliations: The first argument should be a (short) identifier you
+  % will use later to specify author affiliations Academic affiliations
+  % should list Department, University, City, Region, Country Industry
+  % affiliations should list Company, City, Region, Country
+
+  % You can specify symbols, otherwise they are numbered in order. Ideally, you
+  % should not use this facility. Affiliations will be numbered in order of
+  % appearance and this is the preferred way.
+  \icmlsetsymbol{equal}{*}
+
+  \begin{icmlauthorlist}
+    \icmlauthor{Guangrui Fan}{yyy,sch}
+    \icmlauthor{Dandan Liu}{comp}
+    \icmlauthor{AZNUL QALID MD SABRI}{sch}
+    \icmlauthor{Lihu Pan}{yyy}
+    %\icmlauthor{}{sch}
+    %\icmlauthor{}{sch}
+  \end{icmlauthorlist}
+
+  \icmlaffiliation{yyy}{School of Computer Science, Taiyuan University of Science and Technology, Taiyuan, Shanxi, China}
+  \icmlaffiliation{comp}{Department of Media and Communication Studies, Universiti Malaya, KL, Malaysia}
+  \icmlaffiliation{sch}{Faculty of Computer Science and Information Technology, Universiti Malaya, KL, Malaysia}
+
+  \icmlcorrespondingauthor{Guangrui Fan}{fgr@tyust.edu.cn}
+
+  % You may provide any keywords that you find helpful for describing your
+  % paper; these are used to populate the "keywords" metadata in the PDF but
+  % will not be shown in the document
+\icmlkeywords{Preference Learning, Reward Modeling, Graph Neural Networks, Sampling Bias, Social Welfare}
+
+
+  \vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+
+% This command actually creates the footnote in the first column listing the
+% affiliations and the copyright notice. The command takes one argument, which
+% is text to display at the start of the footnote. The \icmlEqualContribution
+% command is standard text for equal contribution. Remove it (just {}) if you
+% do not need this facility.
+
+% Use ONE of the following lines. DO NOT remove the command.
+% If you have no special notice, KEEP empty braces:
+\printAffiliationsAndNotice{}  % no special notice (required even if empty)
+% Or, if applicable, use the standard equal contribution text:
+% \printAffiliationsAndNotice{\icmlEqualContribution}
+
+\begin{abstract}
+Preference-based reward modeling is a core component of RLHF and DPO pipelines.
+In practice, the humans providing preference feedback are rarely an i.i.d.\
+sample: recruitment and exposure often follow social, institutional, or spatial
+structure, inducing non-uniform inclusion probabilities that correlate with
+graph centrality. We formalize preference learning with \emph{network-sampled}
+annotators and show that identity-agnostic scalar reward modeling implicitly
+represents an inclusion-weighted welfare, over-representing structurally central
+communities when the inclusion distribution $q$ differs from a designer-chosen
+target weighting $\pi$. We propose Graph-Preference Learning, which
+combines (i) a graph-personalized reward model that shares statistical strength
+across neighboring annotators and (ii) graph-balanced aggregation that computes
+stabilized importance weights to target $\pi$. Our analysis characterizes the
+induced welfare represented by the learned aggregate reward and bounds its
+deviation from the target in terms of weight mismatch, reward-model
+approximation, and finite-sample effects. Experiments on synthetic graphs and a
+\emph{semi-synthetic} case study on the LMArena preference dataset,
+where biased inclusion is \emph{induced} via graph-based sampling, demonstrate up to 62\% reduction in
+target-welfare recovery error and 17\% reduction in cross-language performance
+gaps under biased inclusion\footnote{We discuss how the resulting weights and aggregate
+reward can be integrated into downstream DPO/PPO pipelines in the appendix. Code used in this paper is available in: \url{https://anonymous.4open.science/r/Graph_Preference_Learning-72DB/}.}. 
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Reinforcement learning from human feedback (RLHF) and direct preference
+optimization (DPO) are widely used to adapt models to human preferences and
+norms. A key component shared by these pipelines is \emph{preference-based reward
+modeling}: learning a scalar score from pairwise comparisons and using it to
+rank candidate outputs and/or guide downstream optimization
+~\citep{ouyang2022instructgpt,rafailov2023dpo,kaufmann2025survey,lambert2025rlhfbook}.
+In this work we focus on this reward/preference-model stage: \emph{what
+aggregate reward signal is learned when preference feedback is collected under
+non-uniform inclusion, and how can we debias it toward a designer-chosen welfare
+target?}
+
+In many real deployments, feedback providers are not an i.i.d.\ sample from a
+homogeneous pool. Recruitment and exposure are mediated by platforms and
+institutions, and can propagate through social, institutional, or spatial
+structure. Such mechanisms induce \emph{inclusion probabilities} that correlate
+with graph centrality: structurally central communities contribute
+disproportionately many comparisons. When annotator identity is discarded (as
+in standard scalar reward modeling), the learned reward implicitly represents
+an inclusion-weighted welfare, potentially over-representing central groups.
+This phenomenon is closely related to classical results in network sampling and
+graph fairness~\citep{wejnert2010rds,lerman2016majorityillusion,saxena2024fairsna,dong2021edits}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/graph rlhf.pdf}
+    \caption{\textbf{Network-induced inclusion bias in preference-based reward modeling.}
+    (A) Annotators form a graph with communities; the designer specifies a
+    normative weighting $\pi$ (e.g., equal-per-person or equal-per-community).
+    (B) Feedback collected via networked mechanisms (platform exposure,
+    random-walk/snowball recruitment) induces a non-uniform inclusion
+    distribution $q$ that can over-sample central nodes/communities.
+    (C) Standard identity-agnostic reward modeling trains on the marginal data,
+    implicitly representing a $q$-weighted aggregate preference.
+    (D) Graph-Preference Learning (i) learns personalized rewards
+    $r_\theta(x,y,i)$ with graph-based sharing and (ii) computes stabilized
+    importance weights $\alpha_i^\star$ to approximate a target welfare,
+    yielding induced weights $\tilde\pi$ closer to $\pi$ and an aggregated score
+    $\bar r_\theta(x,y)$.}
+    \label{fig:network-bias}
+\end{figure}
+
+We address this gap by treating feedback providers as nodes in a graph and explicitly distinguishing the \emph{observed} inclusion distribution $q$ from a \emph{target} welfare weighting $\pi$. We propose Graph-Preference Learning, a framework combining graph-personalized reward modeling with graph-balanced aggregation to learn an aggregated score $\bar r_\theta(x,y)$ whose induced welfare approximates the target.
+
+In this paper, we formalize reward modeling with \emph{network-sampled} annotators by distinguishing inclusion $q$ from welfare target $\pi$ on an annotator graph. We show that naive scalar reward modeling minimizes a $q$-mixture risk (Theorem~\ref{thm:naive-q-objective}) and propose Graph-Preference Learning---graph-personalized rewards (GPRM) plus stabilized aggregation (GBA)---to target $\pi$. We bound welfare deviation in terms of $\|\tilde\pi-\pi\|_1$, model approximation, and finite-sample effects. On synthetic graphs and a \emph{semi-synthetic} LMArena case study with induced network-sampled inclusion, we achieve up to 62\% welfare-error reduction, 18\% accuracy improvement, and 17\% cross-language gap reduction. All evaluations are at the reward-model level; full related work is in Appendix~\ref{sec:related}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problem Formulation}
+\label{sec:problem}
+
+This section formalizes the setting of preference-based reward modeling with networked annotators. We introduce the annotator graph, define inclusion and welfare distributions, and characterize the gap between observed and target welfare.
+
+\subsection{Preference Feedback and Decision Rules}
+\label{subsec:feedback}
+
+Let $\mathcal{X}$ denote the space of inputs (e.g., prompts) and let
+$\mathcal{Y}_x$ denote the set of candidate outputs available for input
+$x\in\mathcal{X}$.
+A \emph{decision rule} $\mu_\phi$ is any conditional distribution $\mu_\phi(y\mid x)$ over $y\in\mathcal{Y}_x$.
+In this paper we learn a scalar reward/preference score used for preference prediction and offline reranking.
+
+Human feedback is collected as pairwise preferences over candidate outputs.
+Concretely, we observe a dataset
+\begin{equation}
+    \mathcal{D}
+    =
+    \left\{ (x_t, y_t^+, y_t^-, i_t) \right\}_{t=1}^T,
+\end{equation}
+where $x_t\in\mathcal{X}$ is an input, $y_t^+,y_t^-\in\mathcal{Y}_{x_t}$ are two
+candidate outputs, and $i_t\in V$ is the identity of the annotator who
+expressed $y_t^+\succ y_t^-$.%
+\footnote{We restrict to pairwise comparisons for clarity; extensions to
+graded feedback or top-$k$ rankings are straightforward.} We keep annotator identities $i_t\in V$ explicit (often discarded by standard scalar reward modeling).
+
+\subsection{Networked Annotators and Inclusion}
+\label{subsec:networked-annotators}
+
+We model annotators as nodes in a graph capturing social, institutional, or
+spatial relationships.
+
+\begin{definition}[Annotator graph]
+Let $G=(V,E)$ be an undirected graph, where $V=\mathcal{I}$ is the set of
+annotators and $E\subseteq V\times V$ encodes relationships (e.g., social ties,
+shared institution, spatial adjacency, or similarity). We write $d_i=\deg(i)$
+for node degree and $N(i)$ for neighbors of $i$.
+\end{definition}
+
+In practice, $G$ may be constructed from explicit ties or similarity between annotators.
+
+\paragraph{Network-induced inclusion.}
+Feedback collection mechanisms are frequently \emph{non-uniform} over $V$:
+platform exposure over-samples active users, recruitment can propagate through
+social ties, and institutions contribute proportionally to size or visibility.
+We model this using an \emph{inclusion distribution} $q$ over annotators.
+
+\begin{definition}[Inclusion probabilities]
+\label{def:inclusion-prob}
+At each feedback event $t$, the annotator index $i_t$ is sampled from a fixed
+distribution $q(\cdot)$ on $V$, called the \emph{inclusion distribution}.
+We denote $q_i=q(i)$ so that $\sum_{i\in V}q_i=1$, and write
+\begin{equation}
+    i_t \sim q(\cdot),
+    \qquad
+    (x_t,y_t^+,y_t^-) \sim \mathcal{T}(i_t),
+\end{equation}
+where $\mathcal{T}(i)$ is a (task-dependent) distribution over prompts and
+candidate outputs conditional on annotator $i$.
+\end{definition}
+In many network sampling mechanisms (e.g., random-walk or respondent-driven
+sampling), $q$ correlates with graph centrality (often approximately
+$q_i\propto d_i$). We do not require knowing the exact mechanism and allow $q$
+to be unknown but estimable from logged participation.
+
+\subsection{Individual Utilities and Welfare Targets}
+\label{subsec:utilities-welfare}
+
+We assume each annotator $i$ has a latent utility function over outputs.
+
+\begin{definition}[Individual utilities]
+For each $i\in V$, let
+$u_i:\mathcal{X}\times\mathcal{Y}_x\to\mathbb{R}$ denote annotator $i$'s latent
+utility, where $u_i(x,y)$ measures the (unobserved) desirability of output $y$
+for input $x$ according to annotator $i$.
+We assume observed pairwise preferences are consistent with these utilities; see Appendix~\ref{app:consistency} for a logistic choice model example.
+\end{definition}
+
+\paragraph{Target welfare weights.}
+A central modeling choice is a \emph{normative} weighting $\pi$ over annotators
+that specifies whose utilities should count and how much.%
+\footnote{We use $\pi$ for welfare weights and $\mu_\phi$ for a decision rule;
+these play different roles.}
+
+\begin{definition}[Target social welfare]
+\label{def:target-welfare}
+We consider linear welfare functionals of the form
+\begin{equation}
+    W_{\text{target}}(\mu_\phi)
+    =
+    \sum_{i\in V}\pi_i\, U_i(\mu_\phi),
+    \qquad
+    \pi_i\ge 0,
+    \qquad
+    \sum_{i\in V}\pi_i=1,
+    \label{eq:target-welfare}
+\end{equation}
+where
+$U_i(\mu_\phi)
+=
+\mathbb{E}_{x\sim p_{\text{data}},\,y\sim\mu_\phi(\cdot\mid x)}[u_i(x,y)]$
+is annotator $i$'s expected utility under decision rule $\mu_\phi$.
+\end{definition}
+
+Equivalently, at the \emph{per-output} level we can define the $\pi$-weighted
+welfare score
+\begin{equation}
+    w_\pi(x,y) := \sum_{i\in V}\pi_i\, u_i(x,y),
+\end{equation}
+so that $W_{\text{target}}(\mu_\phi)=\mathbb{E}_{x,y\sim\mu_\phi}[w_\pi(x,y)]$.
+Canonical choices include equal-per-person ($\pi_i=1/|V|$) and
+equal-per-community ($\pi_i=1/(K|C_{k(i)}|)$).
+
+\paragraph{Observed sampling vs.\ normative target.}
+We distinguish the \emph{observed} inclusion distribution $q$ induced by the collection pipeline from a
+\emph{normative} target weighting $\pi$ chosen by a designer or governance process.
+Typical targets include equal-per-person and equal-per-community/region; a boxed summary appears in Appendix~\ref{app:q-vs-pi}.
+
+\subsection{What Standard Preference-Based Reward Modeling Learns}
+\label{subsec:standard-rm}
+
+Standard (identity-agnostic) reward modeling discards annotator identity and fits a scalar score
+$r_\theta(x,y)$ to the marginal preference distribution induced by sampling $i\sim q$.
+As shown in Theorem~\ref{thm:naive-q-objective}, this corresponds to minimizing a $q$-mixture objective; under standard welfare-consistency conditions, the learned score admits the interpretation of an \emph{observed} (inclusion-weighted) welfare score
+\begin{equation}
+    w_q(x,y) := \sum_{i\in V} q_i\, u_i(x,y),
+\end{equation}
+and, at the decision-rule level,
+\begin{equation}
+    W_{\text{obs}}(\mu_\phi)
+    :=
+    \sum_{i\in V} q_i\, U_i(\mu_\phi).
+    \label{eq:obs-welfare}
+\end{equation}
+Assumption~\ref{ass:scalar-q} and a mixture-of-logits approximation bound appear in Appendix~\ref{app:consistency} and Appendix~\ref{app:proof-mixture}.
+
+\subsection{Network-Induced Welfare Gap}
+\label{subsec:welfare-gap}
+
+When $q\neq \pi$, the welfare implicit in the observed data differs from the
+designer-chosen target welfare. This mismatch can be expressed both at the
+per-output level and at the decision-rule level.
+
+\begin{definition}[Network-induced welfare gap]
+For any $(x,y)$, define the welfare gap
+\begin{equation}
+    \Delta(x,y)
+    :=
+    w_\pi(x,y) - w_q(x,y)
+    =
+    \sum_{i\in V}(\pi_i-q_i)\,u_i(x,y).
+    \label{eq:welfare-gap-output}
+\end{equation}
+For any decision rule $\mu_\phi$, the induced gap is
+\begin{equation}
+    \Delta(\mu_\phi)
+    :=
+    W_{\text{target}}(\mu_\phi) - W_{\text{obs}}(\mu_\phi)
+    =
+    \sum_{i\in V}(\pi_i-q_i)\,U_i(\mu_\phi).
+    \label{eq:welfare-gap-policy}
+\end{equation}
+\end{definition}
+
+When $q$ correlates with graph centrality (e.g., $q_i\propto d_i$), structurally
+central annotators and communities can be over-represented relative to the
+target $\pi$, yielding systematic welfare distortions.
+
+\subsection{Goal: Target-Welfare Reward Modeling}
+\label{subsec:goal}
+
+Our goal is to learn a reward/preference model that represents the
+\emph{target} welfare rather than the \emph{observed} inclusion-weighted welfare.
+Concretely, we seek to construct (i) a personalized reward model
+$r_\theta(x,y,i)\approx u_i(x,y)$ and (ii) an aggregated reward
+$\bar r_\theta(x,y)$ whose induced welfare weights $\tilde\pi$ satisfy
+$\tilde\pi\approx \pi$.
+This enables \emph{target-welfare} candidate ranking and welfare estimation
+directly at the reward-model level. Downstream use in RLHF/DPO (e.g., reweighting
+preference optimization objectives or substituting $\bar r_\theta$ as the reward)
+is a natural application but is orthogonal to our main empirical evaluation and
+is discussed in the appendix.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Method}
+\label{sec:method}
+
+Graph-Preference Learning comprises two components: \textbf{(1)~Graph-personalized reward modeling (GPRM)} learns $r_\theta(x,y,i)\approx u_i(x,y)$ while sharing statistical strength across neighbors in $G$; \textbf{(2)~Graph-balanced aggregation (GBA)} computes stabilized importance weights $\alpha_i^\star$ from $(\pi,\hat q,G)$ to define induced welfare $\tilde\pi_i := \hat q_i \alpha_i^\star$ and aggregated reward $\bar r_\theta(x,y)=\sum_i\tilde\pi_i\, r_\theta(x,y,i)$. Given an annotator graph $G=(V,E)$, preference data $\mathcal{D}$ with annotator IDs, target weights $\pi$, and inclusion estimator $\hat q$, the method returns a personalized reward $r_\theta(x,y,i)$ and an aggregated score $\bar r_\theta(x,y)$ with $\tilde\pi \approx \pi$.
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/Methods.pdf}
+    \caption{\textbf{Overview of Graph-Preference Learning.}
+    \textbf{Left}: Network-sampled preference data---annotators form a graph $G=(V,E)$
+    with biased inclusion $q$ (grey bars) differing from target weights $\pi$ (orange bars);
+    preference tuples $\mathcal{D}=\{(x,y^+,y^-,i)\}$ retain annotator IDs.
+    \textbf{Top-middle}: Baseline identity-agnostic reward modeling discards $i$ and
+    learns a $q$-weighted welfare $w_q=\sum_i q_i u_i$.
+    \textbf{Bottom-middle}: Our method---GBA solves a QP to compute stabilized weights
+    $\alpha^\star$ and induced welfare $\tilde\pi=\hat q\odot\alpha^\star$; GPRM learns
+    personalized rewards $r_\theta(x,y,i)$ via graph-based parameter sharing with
+    importance-weighted Bradley--Terry loss.
+    \textbf{Right}: Comparison of observed ($w_q$) vs.\ target-welfare output
+    ($\bar r_\theta$); aggregated reward $\bar r_\theta(x,y)=\sum_i\tilde\pi_i r_\theta(x,y,i)$
+    targets $\pi$. (Optional) The same weights can reweight DPO/PPO objectives (Appendix).}
+    \label{fig:graphpref-overview}
+\end{figure*}
+
+\subsection{Graph-Personalized Reward Model (GPRM)}
+\label{subsec:gprm}
+
+GPRM learns a per-annotator reward (utility proxy) while leveraging the graph
+$G$ to encourage local smoothness and improve sample efficiency when each
+annotator contributes limited feedback.
+
+
+Each annotator $i\in V$ is associated with an initial feature vector
+$h_i\in\mathbb{R}^{d_0}$ (e.g., demographic attributes, interaction statistics,
+or a learned ID embedding). We compute graph-aware annotator embeddings via a
+message-passing encoder $g_\psi$:
+\begin{equation}
+    v_i = g_\psi(i; G, \{h_j\}_{j \in V}),
+    \qquad i \in V,
+\end{equation}
+where $g_\psi$ may be instantiated as a GCN/GraphSAGE-style network.
+Let $\mathbf{V}\in\mathbb{R}^{|V|\times d}$ denote the matrix of embeddings.
+
+For each input--output pair $(x,y)$ we compute a representation
+$\phi(x,y)\in\mathbb{R}^{d_x}$ (e.g., from a frozen backbone encoder plus a
+small MLP). The personalized reward model is
+\begin{equation}
+    r_\theta(x,y,i) = f_\theta(\phi(x,y), v_i),
+    \label{eq:gprm}
+\end{equation}
+where $f_\theta$ maps $[\phi(x,y);v_i]$ to a scalar.
+We optionally incorporate an annotator-specific scale $s_i$ to model rater strictness; see Appendix~\ref{app:gprm-optional}.
+
+Given preference tuples $(x_t,y_t^+,y_t^-,i_t)$, we fit $r_\theta$ using a
+Bradley--Terry (logistic) preference likelihood with \emph{importance weights}
+$\alpha_{i_t}^\star$ supplied by GBA (Section~\ref{subsec:gba}):
+\begin{align}
+    \mathcal{L}_{\text{GPRM}}(\theta,\psi)
+    &=
+    - \sum_{t=1}^T
+    \alpha_{i_t}^\star\,
+    \log \sigma\!\Big(
+        r_\theta(x_t,y_t^+,i_t)- \nonumber \\ r_\theta(x_t,y_t^-,i_t)
+    \Big)
+    &
+    + \lambda_v\, \mathrm{Tr}(\mathbf{V}^\top L_w \mathbf{V})
+    + \lambda_\theta\|\theta\|_2^2,
+    \label{eq:gprm-loss}
+\end{align}
+where $L_w$ is a (weighted) graph Laplacian and $\lambda_v,\lambda_\theta$
+are hyperparameters (an optional rater-scale extension is in Appendix~\ref{app:gprm-optional}). When $\alpha_i \approx \pi_i/q_i$, the weighted objective
+behaves as if annotators were sampled from the target welfare distribution
+$\pi$ rather than the observed inclusion $q$. In strongly heterophilous graphs, large $\lambda_v$ can over-smooth genuine preference differences; practical mitigations are discussed in Appendix~\ref{app:gprm-heterophily}.
+
+\subsection{Graph-Balanced Aggregation (GBA)}
+\label{subsec:gba}
+
+GBA computes stabilized importance weights $\alpha_i^\star$ that (i) debias learning
+toward the target welfare $\pi$ and (ii) define an induced welfare distribution
+$\tilde\pi$ used to aggregate personalized rewards into a single scalar score.
+
+We estimate $\hat q$ from participation counts with smoothing; alternative estimators
+(degree-/centrality-based or hybrid) are described in Appendix~\ref{app:qhat-estimators}.
+
+A direct debiasing rule is the inverse propensity ratio
+\begin{equation}
+    \tilde\alpha_i = \frac{\pi_i}{\hat q_i + \varepsilon},
+    \label{eq:alpha-raw}
+\end{equation}
+with $\varepsilon>0$ for stability. However, raw ratios can have high variance
+and can be sensitive to noise in $\hat q$.
+
+We compute stabilized weights $\alpha$ by solving the following convex QP:
+\begin{equation}
+\begin{aligned}
+    \alpha^\star
+    = \arg\min_{\alpha \in \mathbb{R}^{|V|}}
+    \Bigg\{
+        \frac{1}{2}\|\alpha-\tilde\alpha\|_2^2
+        + \lambda_{\text{smooth}}\, \alpha^\top L_w \alpha \qquad \\
+        + \lambda_{\text{comm}} \sum_{k=1}^{K}
+          \Big( \sum_{i \in C_k} \hat q_i \alpha_i - \rho_k \Big)^2
+        + \lambda_{\text{var}} \sum_{i \in V} \hat q_i \alpha_i^2
+    \Bigg\}
+    \text{s.t.}\\
+    \alpha_i \ge 0\ \forall i\in V,
+    \quad
+    \sum_{i \in V} \hat q_i \alpha_i = 1, \qquad\qquad\qquad
+\end{aligned}
+\label{eq:alpha-star}
+\end{equation}
+The objective trades off closeness to the raw ratios, graph smoothness via $L_w$,
+desired community masses $\rho_k$, and weight-variance (ESS) control.
+We solve Eq.~\eqref{eq:alpha-star} once as preprocessing; solver details are in
+Appendix~\ref{app:wstar-details} and pseudocode appears in Algorithm~\ref{alg:gba}.
+
+Given stabilized weights $\alpha^\star$, define induced welfare weights
+\begin{equation}
+    \tilde\pi_i := \hat q_i \alpha_i^\star,
+    \qquad \sum_{i\in V}\tilde\pi_i = 1.
+\end{equation}
+We aggregate personalized rewards into a single scalar score
+\begin{equation}
+    \bar r_\theta(x,y)
+    =
+    \sum_{i \in V} \tilde\pi_i\, r_\theta(x,y,i)
+    =
+    \sum_{i \in V} \hat q_i \alpha_i^\star\, r_\theta(x,y,i).
+    \label{eq:aggregated-reward}
+\end{equation}
+When $\hat q \approx q$ and $\alpha^\star \approx \pi/q$, we obtain
+$\tilde\pi \approx \pi$, so $\bar r_\theta$ approximates the designer-chosen
+welfare aggregation of individualized utilities.
+
+For large annotator sets, we approximate Eq.~\eqref{eq:aggregated-reward} via Monte Carlo sampling (Appendix~\ref{app:mc-aggregation}). The same weights $\alpha^\star$ and aggregated reward $\bar r_\theta$ can serve as drop-in replacements in downstream DPO/PPO objectives; integration details are in Appendix~\ref{app:ppo}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Theoretical Analysis}
+\label{sec:theory}
+
+We provide theoretical justification for our approach by establishing three key results. First, we show that naive reward modeling implicitly optimizes a $q$-weighted objective (Theorem~\ref{thm:naive-q-objective}), explaining why it fails under biased inclusion. Second, we prove that importance weighting induces an effective mixture $\tilde\pi=q\odot\alpha$ (Lemma~\ref{lem:iw-identity}), enabling principled correction. Third, we bound the welfare deviation from target $\pi$ by $\|\tilde\pi-\pi\|_1$ (Proposition~\ref{prop:welfare-gap}), quantifying the cost of approximate debiasing. Additional results are in Appendix~\ref{app:theory-details}.
+
+\subsection{Naive modeling learns a $q$-mixture objective}
+\label{subsec:naive-mixture}
+
+We first formalize the basic mixture structure: ignoring annotator identity
+optimizes a $q$-weighted mixture of annotator-conditional risks.
+
+\begin{theorem}[Naive reward modeling minimizes a $q$-mixture population risk]
+\label{thm:naive-q-objective}
+Let data be generated by sampling an annotator $i \sim q$ and then a comparison
+$(x,y^+,y^-)\sim \mathcal{T}(i)$, with observed label $y^+ \succ y^-$.
+Let $r_\theta(x,y)$ be a scalar reward model that ignores $i$, and define
+\[
+\ell_{\mathrm{naive}}(\theta;x,y^+,y^-)
+:=
+-\log\sigma\!\big(r_\theta(x,y^+)-r_\theta(x,y^-)\big).
+\]
+Then the population risk optimized by maximum-likelihood reward modeling is
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_{\text{naive}}(\theta)
+=
+\mathbb{E}_{i\sim q}\,
+\mathbb{E}_{(x,y^+,y^-)\sim\mathcal{T}(i)}
+\big[\ell_{\mathrm{naive}}(\theta;x,y^+,y^-)\big] \\
+=
+\sum_{i\in V} q_i\,\mathcal{L}_i(\theta), \qquad\qquad\qquad\qquad\qquad\qquad
+\label{eq:naive-q-mixture-risk}
+\end{aligned}
+\end{equation}
+where $\mathcal{L}_i(\theta):=
+\mathbb{E}_{(x,y^+,y^-)\sim\mathcal{T}(i)}[\ell_{\mathrm{naive}}(\theta;x,y^+,y^-)]$.
+Consequently, whenever gradients interchange with expectation,
+\begin{equation}
+\nabla_\theta \mathcal{L}_{\text{naive}}(\theta)
+=
+\sum_{i\in V} q_i\,\nabla_\theta \mathcal{L}_i(\theta).
+\label{eq:naive-q-mixture-grad}
+\end{equation}
+Proof in Appendix~\ref{app:proof-naive-split}.
+\end{theorem}
+
+Under standard well-specification and welfare-consistency conditions, the learned scalar score is an affine
+transform of $w_q(x,y)=\sum_i q_i u_i(x,y)$ and induces rankings that optimize the observed welfare;
+see Appendix~\ref{app:theory-details} (Assumptions~\ref{ass:well-specified}--\ref{ass:welfare-consistent} and
+Corollary~\ref{cor:naive-q-weighted-welfare}).
+
+\subsection{Importance Weighting and Induced Welfare}
+\label{subsec:theory-unbiased}
+
+We now show how importance weighting converts learning under the inclusion
+distribution $q$ into learning under an induced distribution
+$\tilde\pi = q\odot \alpha$.
+
+\begin{lemma}[Importance-weighted objective equals induced mixture]
+\label{lem:iw-identity}
+Let $i\sim q$ and let $\alpha$ be any nonnegative weights satisfying
+$\sum_{i\in V} q_i\alpha_i=1$. Define the induced distribution
+$\tilde\pi_i := q_i\alpha_i$. Then for any per-annotator population quantity
+$h_i(\theta)$,
+\begin{equation}
+    \sum_{i\in V} q_i\alpha_i\,h_i(\theta)
+    =
+    \sum_{i\in V}\tilde\pi_i\,h_i(\theta).
+    \label{eq:iw-identity}
+\end{equation}
+In particular, if $q_i>0$ and $\alpha_i=\pi_i/q_i$, then $\tilde\pi=\pi$.
+Proof in Appendix~\ref{app:proof-iw}.
+\end{lemma}
+
+When $q$ is unknown, we use an estimator $\hat q$ in GBA and obtain induced
+weights $\tilde\pi=\hat q\odot \alpha^\star$; the same algebra holds with
+$\hat q$ in place of $q$.
+\subsection{Welfare deviation is controlled by weight mismatch}
+\label{subsec:theory-gap}
+Even when smoothing and other stabilization are active, the welfare loss from
+using induced weights $\tilde\pi$ instead of the target $\pi$ can be bounded by
+their $\ell_1$ mismatch.
+
+\begin{proposition}[Welfare deviation bound via weight mismatch]
+\label{prop:welfare-gap}
+Assume $|U_i(\mu_\phi)|\le R$ for all $i$ and decision rules $\mu_\phi$.
+Let $\pi$ be the target welfare weights and let $\tilde\pi$ be the induced
+weights (e.g., $\tilde\pi=\hat q\odot \alpha^\star$).
+Then for any $\mu_\phi$,
+\begin{equation}
+\big|W_{\mathrm{target}}(\mu_\phi)-\widetilde{W}(\mu_\phi)\big|
+\le
+R\|\pi-\tilde\pi\|_1,
+\end{equation}
+where $\widetilde{W}(\mu_\phi):=\sum_i \tilde\pi_i U_i(\mu_\phi)$.
+Proof in Appendix~\ref{app:proof-welfare-gap}.
+\end{proposition}
+
+\textbf{Additional results.}
+Appendix~\ref{app:theory-details} provides further results on induced-welfare representation of the aggregated reward
+(Theorem~\ref{thm:graph-welfare}), community mass control in GBA (Proposition~\ref{prop:community-balance}),
+and finite-sample diagnostics including variance/ESS and decomposition bounds (Proposition~\ref{prop:iw-variance},
+Theorem~\ref{thm:welfare-decomp}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experiments}
+\label{sec:experiments}
+
+We evaluate Graph-Preference Learning (GPRM+GBA) at the
+reward/preference-model level. We use (i) synthetic graphs with known
+individual utilities, enabling direct measurement of target-welfare recovery
+under biased inclusion, and (ii) a semi-synthetic evaluation on LMArena~\citep{chiang2024chatbotarena} that uses a
+session-similarity graph to induce network-sampled inclusion in training and a
+$\pi$-balanced test set over languages.
+All evaluations are offline (preference prediction / reranking); we do not run end-to-end policy optimization. On synthetic data, we report welfare estimation error (normalized MSE
+between a method's public score $s(x,y)$ and the target welfare score
+$U_\pi(x,y)$), welfare disparity (max--min gap across communities under
+offline reranking by $s$), and degree bias (correlation between node
+degree and induced weight mismatch $\tilde\pi-\pi$). On LMArena we report
+pairwise accuracy, pairwise log loss, ECE (calibration),
+and cross-language accuracy gap (max--min accuracy across languages). Formal
+definitions are in Appendix~\ref{app:metrics}.
+
+\textbf{Splits, leakage prevention, and uncertainty reporting.}
+\textbf{Synthetic:} we split prompts into train/validation/test (by prompt, not
+by pair) to avoid leakage across candidate outputs, repeat over 10 random seeds,
+and report mean $\pm$ std (and optionally 95\% CIs via bootstrap over seeds).
+\textbf{LMArena:} we use two complementary protocols: (i) prompt-heldout
+cross-validation (disjoint prompts; sessions may appear across folds) and
+(ii) session-heldout evaluation as a leakage/robustness check. We report mean
+$\pm$ std across folds/splits and compute CIs via bootstrap over prompts. For
+fairness/gap metrics, we aggregate at the prompt level to avoid overweighting
+heavy sessions. We construct session graphs from metadata only (no label
+leakage) and estimate inclusion probabilities $\hat q$ from training-fold
+participation counts with smoothing.
+
+\subsection{Synthetic Graph Experiment}
+\label{subsec:exp-synthetic}
+
+We evaluate Graph-Preference Learning (GPRM+GBA) on a comprehensive
+suite of synthetic benchmarks. To ensure robustness, we test across multiple
+graph topologies: Stochastic Block Models (SBM) for community structure,
+Barabási--Albert (BA) for scale-free power-law networks, and Watts--Strogatz
+(WS) for small-world properties.
+We simulate four distinct feedback-collection (inclusion) mechanisms: Uniform,
+Degree-biased ($q_i \propto d_i^{1.5}$), Snowball, and Community-biased. We
+compare against a suite of baselines, including \emph{stabilized IPW} variants:
+SN-IPW (self-normalized) \citep{chandak2021uno}, Clipped-IPW \citep{chandak2021uno}, and a QP-stabilized weighting baseline
+(GBA-QP, weights only)\citep {hainmueller2012entropy}, a \emph{personalized no-graph} baseline (Personalized) \citep{li2024personalized_rlhf},
+alongside Standard reward modeling (scalar model) \citep{stiennon2020summarize,ouyang2022instructgpt},
+Group-Based reweighting \citep{chakraborty2024maxminrlhf,ramesh2024grpo}, GPRM (without GBA), and DRO-CVaR \citep{rahimian2022dro}. Full details are in
+Appendix~\ref{app:exp-details}.
+
+\paragraph{Main results.}
+Table~\ref{tab:improvement-summary} summarizes the Welfare-MSE improvement of GPRM+GBA across all graph types and sampling methods. Our method achieves consistent gains (25--41\% average), with the largest improvements under community-biased sampling (59--62\%), where representation shift is strongest.
+
+\begin{table}[ht]
+\caption{Summary of GPRM+GBA improvement (\%) in Welfare MSE across graph types and sampling methods. Higher is better.}
+\label{tab:improvement-summary}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Sampling} & \textbf{SBM} & \textbf{BA} & \textbf{WS} \\
+\midrule
+Uniform & 35 & 36 & 24 \\
+Degree-Biased & 10 & 36 & 6 \\
+Snowball & 18 & 31 & 7 \\
+Community-Biased & 59 & 62 & 62 \\
+\midrule
+\textbf{Average} & \textbf{31} & \textbf{41} & \textbf{25} \\
+\bottomrule
+\end{tabular}
+\end{table}
+Table~\ref{tab:synthetic-results} presents results on the SBM graph across four inclusion mechanisms. \textit{Uniform sampling} ($q=\pi$): Weighting baselines match Standard, as expected. Personalized achieves the lowest Welfare MSE (48\% reduction), while our full method remains competitive (35\% reduction).
+\textit{Degree-biased sampling}: Our method improves Welfare MSE by 10\% and substantially reduces degree bias (0.354 vs.\ 0.900), illustrating effective debiasing. GPRM alone attains better Welfare MSE (16\%) but leaves degree bias unchanged, highlighting a debiasing--accuracy tradeoff.
+\textit{Snowball sampling}: Our method achieves the best Welfare MSE (18\% reduction). Group-Based yields smallest degree bias but does not improve Welfare MSE, suggesting coarse correction is insufficient.
+\textit{Community-biased sampling}: Our method delivers the largest gain (59\% Welfare-MSE reduction) and reduces degree bias from 0.726 to 0.310, confirming the benefit of targeting $\pi$ under strong representation shifts.
+Weight-stability diagnostics are in Appendix~\ref{app:weight-diagnostics}.
+
+\textbf{Cross-graph generalization.} Table~\ref{tab:cross-graph} shows that our approach generalizes across diverse topologies under degree-biased sampling, improving Welfare MSE by 10\% (SBM), 36\% (BA), and 6\% (WS) while consistently reducing degree bias.
+
+\textbf{Ablation.}
+GPRM alone captures annotator heterogeneity and reduces Welfare MSE, but does not correct representation bias ($q\neq\pi$). Adding GBA yields large gains under strong distribution shift and improves debiasing metrics, though the optimal method can vary by mechanism. Full ablation is in Appendix~\ref{app:full-synthetic}.
+
+
+
+\begin{table}[ht]
+\caption{Synthetic results on SBM graph (100 nodes, 5 communities). Mean $\pm$ std over 10 runs. W-MSE = Welfare MSE; Disp.\ = Disparity; D-Bias = Degree Bias; Impr.\ = Improvement vs.\ Standard. \colorbox{bestgreen}{Green} = best, \colorbox{goodblue}{Blue} = ours. $\downarrow$ = lower is better.}
+\label{tab:synthetic-results}
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Sampling} & \textbf{Method} & \textbf{W-MSE}$\downarrow$ & \textbf{Disp.}$\downarrow$ & \textbf{D-Bias}$\downarrow$ & \textbf{Impr.} \\
+\midrule
+\multirow{10}{*}{Uniform}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.123{\tiny$\pm$.08} & \cellcolor{neutralgray}3.58{\tiny$\pm$.77} & \cellcolor{neutralgray}0.00 & \cellcolor{neutralgray}--- \\
+& \cellcolor{bestgreen}Personalized & \cellcolor{bestgreen}\textbf{0.064}{\tiny$\pm$.04} & 3.54{\tiny$\pm$.69} & 0.00 & \cellcolor{bestgreen}\textbf{48\%} \\
+& IW-Only & 0.114{\tiny$\pm$.08} & 3.52{\tiny$\pm$.75} & 0.00 & 8\% \\
+& SN-IPW & 0.113{\tiny$\pm$.06} & 3.60{\tiny$\pm$.75} & 0.00 & 9\% \\
+& Clipped-IPW & 0.125{\tiny$\pm$.09} & 3.53{\tiny$\pm$.83} & 0.00 & $-$2\% \\
+& GBA-QP & 0.108{\tiny$\pm$.07} & 3.58{\tiny$\pm$.73} & 0.00 & 12\% \\
+& Group-Based & 0.242{\tiny$\pm$.15} & \cellcolor{bestgreen}\textbf{3.50}{\tiny$\pm$.66} & $-$0.73 & $-$96\% \\
+& GPRM (Ours) & 0.088{\tiny$\pm$.06} & 3.60{\tiny$\pm$.79} & 0.00 & 28\% \\
+& DRO-CVaR & 0.771{\tiny$\pm$.29} & 3.54{\tiny$\pm$.77} & 0.00 & $-$525\% \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{goodblue}0.080{\tiny$\pm$.04} & \cellcolor{goodblue}3.56{\tiny$\pm$.80} & \cellcolor{bestgreen}\textbf{0.00} & \cellcolor{goodblue}35\% \\
+\midrule
+\multirow{10}{*}{Degree}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.230{\tiny$\pm$.17} & \cellcolor{neutralgray}3.51{\tiny$\pm$.76} & \cellcolor{neutralgray}0.90 & \cellcolor{neutralgray}--- \\
+& Personalized & 0.210{\tiny$\pm$.16} & 3.51{\tiny$\pm$.75} & 0.90 & 9\% \\
+& IW-Only & 0.231{\tiny$\pm$.14} & 3.43{\tiny$\pm$.57} & 0.86 & 0\% \\
+& SN-IPW & 0.284{\tiny$\pm$.28} & 3.52{\tiny$\pm$.66} & 0.86 & $-$23\% \\
+& Clipped-IPW & 0.208{\tiny$\pm$.14} & \cellcolor{bestgreen}\textbf{3.42}{\tiny$\pm$.66} & 0.57 & 10\% \\
+& GBA-QP & 0.246{\tiny$\pm$.18} & 3.55{\tiny$\pm$.60} & 0.35 & $-$7\% \\
+& Group-Based & 0.373{\tiny$\pm$.24} & 3.47{\tiny$\pm$.60} & \cellcolor{bestgreen}\textbf{0.09} & $-$62\% \\
+& \cellcolor{bestgreen}GPRM (Ours) & \cellcolor{bestgreen}\textbf{0.195}{\tiny$\pm$.15} & 3.54{\tiny$\pm$.77} & 0.90 & \cellcolor{bestgreen}\textbf{16\%} \\
+& DRO-CVaR & 0.792{\tiny$\pm$.34} & 3.48{\tiny$\pm$.78} & 0.90 & $-$244\% \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{goodblue}0.207{\tiny$\pm$.14} & \cellcolor{goodblue}3.51{\tiny$\pm$.68} & \cellcolor{goodblue}0.35 & \cellcolor{goodblue}10\% \\
+\midrule
+\multirow{10}{*}{Snowball}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.150{\tiny$\pm$.09} & \cellcolor{neutralgray}3.53{\tiny$\pm$.79} & \cellcolor{neutralgray}0.88 & \cellcolor{neutralgray}--- \\
+& Personalized & 0.163{\tiny$\pm$.15} & 3.55{\tiny$\pm$.82} & 0.88 & $-$8\% \\
+& IW-Only & 0.132{\tiny$\pm$.08} & 3.45{\tiny$\pm$.77} & 0.70 & 12\% \\
+& SN-IPW & 0.161{\tiny$\pm$.08} & 3.56{\tiny$\pm$.67} & 0.70 & $-$7\% \\
+& Clipped-IPW & 0.146{\tiny$\pm$.07} & 3.54{\tiny$\pm$.82} & 0.50 & 3\% \\
+& GBA-QP & 0.126{\tiny$\pm$.06} & 3.49{\tiny$\pm$.73} & 0.35 & 16\% \\
+& Group-Based & 0.300{\tiny$\pm$.18} & 3.43{\tiny$\pm$.70} & \cellcolor{bestgreen}\textbf{0.05} & $-$100\% \\
+& GPRM (Ours) & 0.136{\tiny$\pm$.12} & 3.50{\tiny$\pm$.76} & 0.88 & 9\% \\
+& DRO-CVaR & 0.735{\tiny$\pm$.38} & \cellcolor{bestgreen}\textbf{3.42}{\tiny$\pm$.68} & 0.88 & $-$390\% \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{bestgreen}\textbf{0.124}{\tiny$\pm$.06} & \cellcolor{goodblue}3.49{\tiny$\pm$.75} & \cellcolor{goodblue}0.35 & \cellcolor{bestgreen}\textbf{18\%} \\
+\midrule
+\multirow{10}{*}{Community}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.532{\tiny$\pm$.44} & \cellcolor{neutralgray}3.47{\tiny$\pm$.75} & \cellcolor{neutralgray}0.73 & \cellcolor{neutralgray}--- \\
+& Personalized & 0.502{\tiny$\pm$.45} & 3.46{\tiny$\pm$.72} & 0.73 & 6\% \\
+& IW-Only & 0.305{\tiny$\pm$.27} & 3.34{\tiny$\pm$.72} & 0.42 & 43\% \\
+& SN-IPW & 0.329{\tiny$\pm$.37} & 3.39{\tiny$\pm$.70} & 0.42 & 38\% \\
+& Clipped-IPW & 0.257{\tiny$\pm$.20} & \cellcolor{bestgreen}\textbf{3.26}{\tiny$\pm$.64} & 0.38 & 52\% \\
+& GBA-QP & 0.266{\tiny$\pm$.20} & 3.36{\tiny$\pm$.70} & 0.31 & 50\% \\
+& Group-Based & 0.226{\tiny$\pm$.17} & 3.45{\tiny$\pm$.75} & \cellcolor{bestgreen}\textbf{0.01} & 57\% \\
+& GPRM (Ours) & 0.516{\tiny$\pm$.47} & 3.46{\tiny$\pm$.73} & 0.73 & 3\% \\
+& DRO-CVaR & 0.921{\tiny$\pm$.45} & 3.57{\tiny$\pm$.86} & 0.73 & $-$73\% \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{bestgreen}\textbf{0.220}{\tiny$\pm$.14} & \cellcolor{goodblue}3.36{\tiny$\pm$.75} & \cellcolor{goodblue}0.31 & \cellcolor{bestgreen}\textbf{59\%} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsection{Semi-Synthetic Case Study on LMArena}
+\label{subsec:exp-lmarena}
+
+We present a semi-synthetic case study on the LMArena (Chatbot Arena)
+dataset~\citep{chiang2024chatbotarena}, which contains over 135,000 pairwise
+preference comparisons from human evaluators across multiple languages and
+model categories. LMArena is an open platform where users compare outputs from
+different LLMs and provide pairwise preferences. We use \texttt{evaluation\_session\_id}
+as a proxy for annotator identity; after filtering to sessions with at least two interactions, we retain 5{,}591 sessions for graph construction (Appendix~\ref{app:lmarena-details}).
+Because LMArena is not collected via an explicit social network, we treat it as a
+\emph{pool} of labeled preferences and induce network-sampled inclusion by
+subsampling training feedback using a graph-based sampling procedure. We set a
+normative target welfare to equal-per-language ($\pi$) and evaluate on a
+$\pi$-balanced test set.
+
+We construct a \emph{session-similarity} graph $G$ using a
+fixed-degree $k$NN procedure over session metadata (Appendix~\ref{app:lmarena-details}).
+Each session is embedded in a feature space (language, model category,
+timestamp features); edges connect each node to its $k$ most similar neighbors
+and are symmetrized. This yields an approximately fixed-degree graph, reducing
+mechanical degree artifacts. On each prompt-heldout split, we create a biased training set by running a
+random-walk-with-restart sampling procedure on $G$ (starting from seeds in
+over-represented languages) and collecting training-fold preference pairs from
+visited sessions. The induced inclusion distribution $q$ is proportional to
+visit counts; we estimate $\hat q$ from the resulting training data and compute
+weights $\alpha^\star$. For evaluation, we construct a $\pi$-balanced test set
+by sampling equal numbers of held-out preference pairs per language.
+
+\textbf{Results.}
+Table~\ref{tab:lmarena-results} reports a \emph{semi-synthetic} LMArena evaluation: we
+induce biased training inclusion by running a network-sampling procedure on a
+fixed-degree session similarity graph, then evaluate on a $\pi$-balanced test
+set (Appendix~\ref{app:lmarena-details}). Under this setting, GPRM+GBA (ours)
+achieves 63.6\% pairwise accuracy vs.\ 55.8\% for Standard (+18\% relative improvement) and reduces the
+max--min cross-language accuracy gap from 46.0\% to 38.4\% (17\% gap reduction). We also
+observe substantially improved proper scoring (log loss 0.691 vs.\ 1.110),
+supporting the claim that graph-personalized modeling improves reliability under
+structured inclusion. Notably, GPRM alone (without GBA) improves proper scoring and slightly reduces the
+cross-language gap relative to Standard (45.3\% vs.\ 46.0\%), but loses accuracy, while the full method achieves the best accuracy and the lowest gap (38.4\%),
+highlighting complementary roles of graph-personalized modeling (GPRM) and stabilized reweighting (GBA).
+
+\begin{table}[ht]
+\caption{Semi-synthetic LMArena results (biased training via network sampling on a
+fixed-degree similarity graph; evaluation on a $\pi$-balanced test set).
+Accuracy = pairwise ranking accuracy. LogLoss = pairwise negative log-likelihood.
+ECE = expected calibration error (10 bins). Acc.\ Gap = max--min accuracy across languages.
+Err.\ Red.\ = relative error reduction vs.\ Standard. \colorbox{bestgreen}{Green} = best, \colorbox{goodblue}{Blue} = our method.}
+\label{tab:lmarena-results}
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method} & \textbf{Acc.}$\uparrow$ & \textbf{LogLoss}$\downarrow$ & \textbf{ECE}$\downarrow$ & \textbf{Acc.\ Gap}$\downarrow$ & \textbf{Err.\ Red.} \\
+\midrule
+\cellcolor{neutralgray}Standard & \cellcolor{neutralgray}55.8{\tiny$\pm$4.6}\% & \cellcolor{neutralgray}1.110{\tiny$\pm$0.053} & \cellcolor{neutralgray}0.323 & \cellcolor{neutralgray}46.0\% & \cellcolor{neutralgray}--- \\
+Personalized & 56.9{\tiny$\pm$1.6}\% & 0.692{\tiny$\pm$0.002} & \cellcolor{bestgreen}\textbf{0.058} & 44.1\% & 2\% \\
+IW-Only & 59.9{\tiny$\pm$1.7}\% & 0.964{\tiny$\pm$0.025} & 0.258 & 58.8\% & 9\% \\
+SN-IPW & 60.0{\tiny$\pm$2.0}\% & 0.990{\tiny$\pm$0.028} & 0.286 & 62.1\% & 10\% \\
+Clipped-IPW & 60.5{\tiny$\pm$2.1}\% & 0.992{\tiny$\pm$0.018} & 0.281 & 62.5\% & 11\% \\
+GBA-QP & 60.0{\tiny$\pm$1.2}\% & 0.983{\tiny$\pm$0.013} & 0.274 & 62.1\% & 10\% \\
+Group-Based & 52.9{\tiny$\pm$5.1}\% & 0.710{\tiny$\pm$0.005} & 0.136 & 54.6\% & $-$7\% \\
+DRO & 58.9{\tiny$\pm$2.5}\% & 0.988{\tiny$\pm$0.013} & 0.275 & 62.2\% & 7\% \\
+GPRM (Ours) & 54.3{\tiny$\pm$1.6}\% & 0.692{\tiny$\pm$0.001} & 0.069 & 45.3\% & $-$3\% \\
+\cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{bestgreen}\textbf{63.6}{\tiny$\pm$0.8}\% & \cellcolor{bestgreen}\textbf{0.691}{\tiny$\pm$0.001} & 0.119 & \cellcolor{bestgreen}38.4\% & \cellcolor{bestgreen}\textbf{18\%} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\textbf{Key findings.}
+Across synthetic benchmarks and the \emph{semi-synthetic} LMArena case study, our method demonstrates
+consistent gains when structured inclusion bias is present. On synthetic
+benchmarks (SBM), it achieves up to 62\% welfare-MSE reduction under
+community-biased sampling and 35\% under uniform sampling
+(Table~\ref{tab:synthetic-results}). On
+semi-synthetic LMArena, it achieves 18\% relative accuracy improvement (55.8\% to 63.6\%) and reduces the cross-language accuracy gap by 17\% (from
+46.0\% to 38.4\%), with substantially improved log loss (1.110 to 0.691; Table~\ref{tab:lmarena-results}). See
+Figure~\ref{fig:synthetic-results} for visual comparison of key synthetic metrics.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/figure_main.pdf}
+    \caption{Synthetic experiment analysis on SBM graph: (a)~Welfare MSE across inclusion mechanisms; (b)~Degree-bias correction under biased inclusion; (c)~Per-community regret analysis under degree-biased sampling; (d)~Cross-graph generalization under degree-biased sampling (Welfare MSE improvement: SBM 10\%, WS 6\%, BA 36\%).}
+    \label{fig:synthetic-results}
+\end{figure}
+
+% Cross-Graph Topology Comparison
+\begin{table}[ht]
+\caption{Cross-graph topology comparison under degree-biased sampling. \colorbox{bestgreen}{Green} = best, \colorbox{goodblue}{Blue} = our method.}
+\label{tab:cross-graph}
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+\textbf{Graph} & \textbf{Method} & \textbf{W-MSE}$\downarrow$ & \textbf{D-Bias}$\downarrow$ & \textbf{Impr.} \\
+\midrule
+\multirow{4}{*}{SBM}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.230{\tiny$\pm$0.17} & \cellcolor{neutralgray}0.900 & \cellcolor{neutralgray}--- \\
+& Personalized & 0.210{\tiny$\pm$0.16} & 0.900 & 9\% \\
+& \cellcolor{bestgreen}GPRM (Ours) & \cellcolor{bestgreen}\textbf{0.195}{\tiny$\pm$0.15} & 0.900 & \cellcolor{bestgreen}\textbf{16\%} \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{goodblue}0.207{\tiny$\pm$0.14} & \cellcolor{bestgreen}\textbf{0.354} & \cellcolor{goodblue}10\% \\
+\midrule
+\multirow{4}{*}{BA}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.123{\tiny$\pm$0.08} & \cellcolor{neutralgray}0.914 & \cellcolor{neutralgray}--- \\
+& Personalized & 0.118{\tiny$\pm$0.09} & 0.914 & 4\% \\
+& GPRM (Ours) & 0.122{\tiny$\pm$0.09} & 0.914 & 1\% \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{bestgreen}\textbf{0.079}{\tiny$\pm$0.05} & \cellcolor{bestgreen}\textbf{0.771} & \cellcolor{bestgreen}\textbf{36\%} \\
+\midrule
+\multirow{4}{*}{WS}
+& \cellcolor{neutralgray}Standard & \cellcolor{neutralgray}0.083{\tiny$\pm$0.05} & \cellcolor{neutralgray}0.994 & \cellcolor{neutralgray}--- \\
+& \cellcolor{bestgreen}Personalized & \cellcolor{bestgreen}\textbf{0.073}{\tiny$\pm$0.04} & 0.994 & \cellcolor{bestgreen}\textbf{13\%} \\
+& GPRM (Ours) & 0.090{\tiny$\pm$0.07} & 0.994 & $-$8\% \\
+& \cellcolor{goodblue}\textbf{GPRM+GBA (Ours)} & \cellcolor{goodblue}0.078{\tiny$\pm$0.05} & \cellcolor{bestgreen}\textbf{0.938} & \cellcolor{goodblue}6\% \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\textbf{Robustness and data efficiency.}
+Our method degrades gracefully under graph noise (Appendix~\ref{app:robustness}), maintains stable importance weights under biased inclusion (ESS $\approx$ 0.35--0.51; Appendix~\ref{app:weight-diagnostics}), and shows consistent gains across data-sparsity regimes, with the largest relative improvements when feedback is limited (Appendix~\ref{app:sparsity}).
+
+\textbf{Ablation insights.}
+Our ablations (Appendix~\ref{app:ablations}) reveal three key findings:
+(1)~\emph{Stronger bias $\Rightarrow$ larger gains}: as sampling bias increases ($\gamma$ in $q_i \propto d_i^\gamma$), the gap between Standard and GPRM+GBA widens, confirming that our method provides greater benefit under stronger network-induced bias.
+(2)~\emph{Complementary roles of GPRM and GBA}: GPRM alone captures annotator heterogeneity and improves welfare estimation but does not correct representation bias ($q \neq \pi$); adding GBA yields large additional gains under distribution shift (e.g., 59\% under community-biased sampling vs.\ 3\% for GPRM alone; Table~\ref{tab:synthetic-results}).
+(3)~\emph{Graph structure matters}: sparse graphs with heterogeneous communities show the largest improvements; in near-uniform-degree graphs (e.g., dense WS), simpler baselines can be competitive, suggesting practitioners should match method complexity to actual inclusion heterogeneity.
+
+\section{Conclusion and Limitations}
+\label{sec:conclusion}
+
+We introduced Graph-Preference Learning, a framework for
+target-welfare preference/reward modeling under network-sampled (or otherwise
+structured) inclusion. Our approach combines graph-personalized reward modeling
+with stabilized importance-weighted aggregation, providing theoretical
+guarantees on welfare deviation.
+
+\textbf{Limitations.}
+(1) We assume the annotator graph is known or can be estimated; in practice, graph construction requires domain expertise.
+(2) Our theoretical analysis focuses on population-level objectives for reward/preference modeling; end-to-end downstream policy optimization is intentionally out of scope, and we only provide optional integration (DPO/PPO) in the appendix.
+(3) Our LMArena evaluation is \emph{semi-synthetic}: because LMArena does not include an explicit recruitment/exposure network, we induce network-sampled inclusion by running graph-based sampling on a constructed session-similarity graph and evaluate on a $\pi$-balanced test set. Further evaluation on preference data collected under \emph{genuine} networked recruitment/exposure mechanisms would strengthen external-validity and generalizability claims.
+(4) LMArena uses session IDs as annotator proxies rather than true persistent annotator identities; this may underestimate personalization benefits compared to datasets with stable annotator identifiers.
+
+\textbf{Practical deployment considerations.}
+Graph-Preference Learning requires: (i) annotator/session identities linked
+across tasks, (ii) an annotator graph
+(constructible from demographics, session metadata, co-rating patterns, or explicit social ties),
+(iii) inclusion probability estimates, and (iv) a
+governance choice of target weights $\pi$. When annotator graphs are
+unavailable, practitioners can use simpler group-based reweighting. When IDs are not persistent, the method
+reduces to standard preference-based reward modeling with optional group
+constraints.
+
+% In the unusual situation where you want a paper to appear in the
+% references without citing it in the main text, use \nocite
+\nocite{langley00}
+\newpage
+\section*{Impact Statement}
+This paper presents work whose goal is to advance the field of machine learning, specifically addressing fairness and representation in preference-based reward modeling. Our framework enables practitioners to explicitly choose and audit whose preferences are represented in learned reward models, which has implications for democratic governance of AI systems. By making the welfare target $\pi$ an explicit design choice and providing tools to correct for network-induced sampling bias, we aim to promote more equitable and transparent AI alignment. Potential risks include the possibility that poorly chosen target weights could entrench existing biases rather than correct them; we emphasize that defining $\pi$ is a normative choice requiring careful governance. We do not foresee specific negative societal consequences beyond those common to advances in AI alignment research.
+
+\bibliography{example_paper}
+\bibliographystyle{icml2026}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\appendix
+\onecolumn
+
+\section{Related Work}
+\label{sec:related}
+
+We review work on RLHF and alignment (Section~\ref{sec:rw_rlhf}), heterogeneous and personalized preferences (Section~\ref{sec:rw_personalized}), fairness and social choice in reward modeling (Section~\ref{sec:rw_fairness}), structured and graph-based feedback (Section~\ref{sec:rw_graph_feedback}), social network sampling and graph fairness (Section~\ref{sec:rw_network_bias}), and LLM-based simulations of human populations (Section~\ref{sec:rw_simulation}).
+Throughout, we highlight that prior work treats human raters as an i.i.d.\ population or coarse groups, whereas we explicitly model them as nodes in a graph and correct for network-induced sampling bias.
+
+\subsection{RLHF and Alignment}
+\label{sec:rw_rlhf}
+
+Modern RLHF pipelines emerged from the InstructGPT work of \citet{ouyang2022instructgpt}, which popularized the three-stage recipe of supervised fine-tuning, reward modeling from pairwise comparisons, and reinforcement learning to optimize the policy against the learned reward.
+Subsequent work such as Direct Preference Optimization (DPO)~\citep{rafailov2023dpo} showed that one can bypass explicit reinforcement learning and directly optimize the policy against preferences, while RLAIF~\citep{lee2024rlaif} demonstrated that AI-generated feedback can partially substitute for human labels to scale alignment.
+Recent surveys and monographs~\citep{kaufmann2025survey,lambert2025rlhfbook,shen2023llmalignment} synthesize this literature, covering reward modeling choices, optimization methods, and open challenges in aligning large language models.
+
+These foundations treat human raters as an unstructured pool: annotations are modeled as i.i.d.\ draws from an abstract population, sometimes with per-rater reliability or noise parameters, but without any relational structure.
+The PRISM alignment dataset~\citep{kirk2024prism} takes a major step toward richer feedback by collecting participatory, representative, and individualized responses from over 1{,}500 participants across 75 countries, making explicit the subjectivity and cultural diversity of alignment.
+More recently, OpenAI's Collective Alignment dataset~\citep{openai2025ca1} collects value-sensitive preference data from over 1{,}000 globally distributed annotators with rich demographic information, revealing significant geographic imbalance in recruitment (36\% from the US alone).
+However, even these datasets model participants as a set of individuals with attributes rather than as nodes in a network; their social or institutional ties and resulting sampling patterns are not represented.
+In contrast, we treat annotators as vertices in a graph and ask how network structure itself shapes the reward signal that RLHF learns.
+
+\subsection{Heterogeneous and Personalized Preferences}
+\label{sec:rw_personalized}
+
+A growing line of work studies RLHF under heterogeneous preferences.
+\citet{poddar2024vpl} propose variational preference learning, modeling each rater with a latent preference vector so that the model can capture diverse tastes.
+Personalized RLHF frameworks~\citep{li2024personalized_rlhf} formalize the problem of learning a personalized policy conditioned on user identity, and show that naive global RLHF can perform poorly for minority or atypical users.
+Parameter-efficient approaches such as shared low-rank adaptations for personalized RLHF~\citep{liu2025shared_lora_prlhf} and reward factorization~\citep{shenfeld2025reward_factorization} decompose preferences into shared and user-specific components, enabling scalable personalization on top of a base model.
+A recent survey on personalized alignment~\citep{guan2025personalized_alignment_survey} consolidates these methods and argues that personalization is a missing piece of human-aligned LLMs.
+
+These works acknowledge that “one reward does not fit all” and that per-user conditioning can improve alignment.
+However, users are still modeled as independent points in a feature space: there is no explicit notion of a social, institutional, or spatial graph connecting them.
+In particular, they do not address how feedback is collected over networks (e.g., via platforms or peer recruitment), nor how network structure affects which preferences are over-represented.
+Our work is complementary: we also allow preferences to vary between annotators, but we explicitly embed annotators in a graph and use this structure to regularize per-annotator utilities and to correct for network-induced sampling bias.
+
+\subsection{Fairness, Group Robustness, and Social Choice in RLHF}
+\label{sec:rw_fairness}
+
+Several recent papers consider fairness and robustness across groups in RLHF.
+MaxMin-RLHF~\citep{chakraborty2024maxminrlhf} formulates alignment as a minimax optimization over demographic or preference groups, maximizing the worst-group reward to avoid catastrophic under-alignment.
+Group Robust Preference Optimization (GRPO)~\citep{ramesh2024grpo} studies robust preference optimization without explicit reward models, focusing on worst-group regret.
+\citet{li2024optimizing_fair_stable} propose fair and stable composition of multiple reward signals in reinforcement learning for language models, controlling disparities and instability between reward components.
+\citet{ouyang2025rewardfairness} explicitly analyze reward fairness in RLHF from a resource-allocation perspective, framing the allocation of reward mass across groups as a fairness problem.
+Complementary benchmarks such as \citet{song2025groupfair_rewardmodels} systematically evaluate group fairness in reward models, revealing disparities across demographic groups even when average performance is high.
+Work on fairness-aware reward optimization, such as FARO~\citep{choi2025faro}, further develops constrained objectives and certificates for reward fairness.
+
+Parallel work brings tools from social choice theory into RLHF.
+\citet{ge2024axioms} develop axioms for AI alignment from human feedback and show that standard Bradley--Terry models can violate natural social-choice properties, proposing linear social choice rules over pairwise comparisons.
+\citet{dai2024mapping} map classic voting rules and impossibility results to RLHF, highlighting how contextual preferences and query selection differ from static elections.
+\citet{conitzer2024socialchoice} argue that social choice should guide AI alignment when dealing with diverse human feedback, advocating for pluralistic alignment objectives and careful choice of welfare functions.
+More recently, \citet{halpern2025pairwise_calibrated} introduce pairwise calibrated rewards for pluralistic alignment, designing reward models that better represent multiple value systems simultaneously.
+From a statistical perspective, \citet{dumoulin2024density_pairwise} interpret learning from pairwise preferences as density estimation over latent utilities and highlight the misspecification that arises when a single reward is forced to represent heterogeneous annotators.
+
+Taken together, this literature provides both normative desiderata (via social choice) and algorithmic tools (fairness-constrained and group-robust objectives) for aggregating diverse preferences.
+However, the population of annotators is still treated as an i.i.d.\ set or partitioned into coarse groups.
+The structure of interactions among annotators---who is connected, who is central, who influences whom---is absent from the models.
+Our work extends this agenda by showing that even given a fixed social-welfare target (e.g., equal-per-person or equal-per-community), network-induced sampling can cause RLHF to optimize a very different, degree-weighted objective unless we explicitly correct for it.
+
+\subsection{Structured and Graph-Based Feedback}
+\label{sec:rw_graph_feedback}
+
+Beyond human ratings, structured feedback sources are increasingly used in alignment.
+RLKGF~\citep{yan2025rlkgf} proposes reinforcement learning from knowledge-graph feedback, using paths and relations in a knowledge graph as a signal for reward modeling, rather than human annotations.
+This demonstrates that graph structure can be integrated into RLHF-style pipelines, and that rewards can be derived from structured, relational data.
+However, in RLKGF the graph nodes are entities and relations in a domain, not human raters.
+Similarly, RLAIF~\citep{lee2024rlaif} replaces some human preferences with feedback from an auxiliary model, but still treats feedback providers as an unstructured set.
+
+Our setting is different: we focus on graphs of annotators, not graphs of entities or prompts.
+The primary role of graph structure in our work is to capture how preferences cluster and how feedback is collected and propagated across a social or institutional network.
+In that sense, we are closer in spirit to graph-aware fairness and sampling work (Section~\ref{sec:rw_network_bias}) than to knowledge-graph-based reward shaping.
+
+\subsection{Social Network Sampling and Fairness on Graphs}
+\label{sec:rw_network_bias}
+
+Social network analysis and graph learning provide rich evidence that network structure profoundly shapes sampling, perception, and fairness.
+Respondent-driven sampling (RDS) and related methods show that recruiting participants via their social ties leads to biased inclusion probabilities, typically over-sampling high-degree and well-connected individuals; inverse-probability weighting is necessary to obtain unbiased population estimates~\citep{wejnert2010rds}.
+The ``majority illusion'' of \citet{lerman2016majorityillusion} demonstrates that behaviors that are globally rare can appear common in local neighborhoods because high-degree nodes disproportionately influence neighbors’ perceptions.
+\citet{antunes2024minorityranking} analyze minority representation and ranking under sampling in attributed networks, showing that degree- and centrality-based sampling can distort the apparent prominence of minority groups.
+
+In graph machine learning, structural and attribute bias have been documented and mitigated.
+EDITS~\citep{dong2021edits} introduces a model-agnostic framework to debias graphs for GNNs, addressing both attribute and structural bias.
+FairSNA~\citep{saxena2024fairsna} surveys algorithmic fairness in social network analysis, covering centrality, influence maximization, and community detection, and emphasizing how biased network structure leads to unfair outcomes.
+Surveys on fairness-aware GNNs~\citep{chen2023fairgnn_survey} and fairness for machine learning on graphs~\citep{laclau2024fairness_graphs_survey} catalog a variety of fairness notions and mitigation strategies for node classification, link prediction, and other graph tasks.
+Methods such as fairGNN-WOD~\citep{wang2025fairgnn_wod} tackle fair graph learning without complete demographic information by leveraging latent structure.
+
+These works collectively argue that graphs are not neutral: who is connected to whom, and who is structurally central or peripheral, critically shapes both observations and downstream model behavior.
+Yet, RLHF pipelines to date largely ignore these ideas and treat the set of annotators as if it were sampled uniformly at random from a population.
+Our work brings insights from network sampling and fair graph learning into RLHF, modeling the rater graph explicitly and using it both to regularize per-annotator rewards and to debias aggregation toward a chosen social welfare target.
+
+\subsection{LLM-Based Simulations and Networked Alignment}
+\label{sec:rw_simulation}
+
+Recent work uses LLMs themselves to simulate human populations and social processes.
+\citet{aher2023turingexperiments} show that large language models can simulate multiple human participants and replicate classic human-subject experiments, introducing Turing-style experiments as a methodology for prototyping behavioral studies.
+\citet{liu2023socially_aligned} train socially aligned language models on simulated social interactions between LLM agents, using multi-agent dialogues to learn social norms and behaviors.
+A broader survey by \citet{gao2024llm_abm_survey} reviews agent-based modeling and simulation with LLM agents, including simulations of social networks, opinion dynamics, and institutional processes.
+
+These works suggest that LLM-based simulations can approximate aspects of human behavior and social structure, and they motivate our use of simulated populations for lightweight experiments.
+However, the focus is typically on phenomena within the simulated society (e.g., emergent norms), rather than on the sampling and aggregation of human feedback used to train another model.
+Our framework is complementary: we model how feedback from humans embedded in a network is sampled and aggregated into a reward for RLHF, and we can use LLM-based agents on graphs as a testbed for studying these mechanisms without expensive human studies.
+
+\subsection{Summary}
+
+In summary, prior work on RLHF and alignment has developed powerful pipelines for learning from human preferences~\citep{ouyang2022instructgpt,rafailov2023dpo,kaufmann2025survey,lambert2025rlhfbook,shen2023llmalignment}, extended them to heterogeneous and personalized settings~\citep{poddar2024vpl,li2024personalized_rlhf,liu2025shared_lora_prlhf,shenfeld2025reward_factorization,guan2025personalized_alignment_survey}, and begun to incorporate fairness and social choice considerations in reward modeling~\citep{chakraborty2024maxminrlhf,ramesh2024grpo,li2024optimizing_fair_stable,ouyang2025rewardfairness,song2025groupfair_rewardmodels,choi2025faro,ge2024axioms,dai2024mapping,conitzer2024socialchoice,halpern2025pairwise_calibrated,dumoulin2024density_pairwise}.
+In parallel, social network analysis and fair graph learning have shown that network structure induces sampling bias, perception distortions, and unfair outcomes~\citep{wejnert2010rds,lerman2016majorityillusion,antunes2024minorityranking,dong2021edits,saxena2024fairsna,chen2023fairgnn_survey,laclau2024fairness_graphs_survey,wang2025fairgnn_wod}.
+Yet, RLHF methods largely ignore the annotator graph and assume i.i.d.\ feedback.
+Our work is, to our knowledge, the first to formalize \emph{preference-based reward
+modeling} with networked annotators, to characterize the inclusion-weighted welfare
+implicit in standard scalar reward modeling under graph-based sampling, and to propose
+a graph-aware personalization and debiasing framework that targets a designer-chosen
+welfare weighting $\pi$. We validate at the reward-model level (preference prediction,
+offline reranking, and diagnostic weight stability) and include integration into
+DPO/PPO pipelines as an optional appendix component.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Additional Details for Problem Formulation}
+\label{app:problem-details}
+
+\subsection{Observed inclusion vs.\ target welfare weights}
+\label{app:q-vs-pi}
+\begin{center}
+\fbox{\parbox{0.97\linewidth}{
+\textbf{Key distinction.}
+\begin{itemize}
+    \item \textbf{Observed inclusion $q$:} who \emph{actually} provides feedback under the collection mechanism.
+    \item \textbf{Target weights $\pi$:} whose utilities \emph{should} matter (a normative choice).
+\end{itemize}
+\textbf{Typical targets $\pi$:}
+\begin{itemize}
+    \item \emph{Equal-per-person:} $\pi_i = 1/|V|$.
+    \item \emph{Equal-per-community:} $\pi_i = 1/(K|C_{k(i)}|)$.
+    \item \emph{Equal-per-language (LMArena case study):} $\pi_i = 1/(L\cdot |L_{\ell(i)}|)$.
+\end{itemize}
+In Graph-Preference Learning, we compute induced weights $\tilde\pi$ (from $\hat q$ and stabilized ratios) to approximate $\pi$ even when $q\neq \pi$.
+}}
+\end{center}
+
+\subsection{Community Welfare and Disparity}
+\label{app:community-welfare}
+
+Let $\{C_k\}_{k=1}^K$ be a partition of $V$ into communities (e.g., detected via graph clustering). We define community-level welfare under a policy $\mu_\phi$ as
+\begin{equation}
+    W_k(\mu_\phi)
+    =
+    \frac{1}{|C_k|}
+    \sum_{i \in C_k} U_i(\mu_\phi),
+    \qquad
+    k = 1,\dots,K.
+    \label{eq:community-welfare}
+\end{equation}
+We measure community-level disparity via the max--min gap $\max_k W_k(\mu_\phi) - \min_k W_k(\mu_\phi)$, or alternatively the variance $\mathrm{Var}_k[W_k(\mu_\phi)]$. When $q_i \propto d_i$ (degree-proportional sampling), communities with higher average degree contribute disproportionately to the learned reward, potentially causing large welfare gaps across communities.
+
+\subsection{Network-Based Sampling and Inclusion Probabilities}
+\label{app:network-bias}
+
+In many practical data-collection pipelines, annotators are recruited or
+exposed to feedback interfaces through mechanisms that can be approximated by
+network-based sampling. Two canonical examples are:
+
+\begin{itemize}
+    \item \textbf{Random walks on $G$.} Suppose at each step we select a node
+    $i$ and then move to a random neighbor $j \in N(i)$, and solicit feedback
+    from the current node. Under mild conditions, the stationary distribution
+    of this Markov chain is proportional to node degree:
+    $q_i \propto d_i$.
+    \item \textbf{Respondent-driven sampling.} In respondent-driven sampling
+    (RDS), initial ``seed'' participants recruit neighbors (e.g., friends or
+    colleagues), who in turn recruit further participants. The resulting
+    sample is known to over-represent high-degree nodes; estimators of the
+    inclusion probabilities $q_i$ often take the form $q_i \propto d_i$ or
+    functions thereof.
+\end{itemize}
+
+These mechanisms are not meant to be exact models of how RLHF data is
+collected, but they capture the qualitative fact that annotators with larger
+degree or centrality in $G$ tend to have higher $q_i$. Our method does not
+require knowing the exact sampling mechanism; Section~\ref{sec:method} works
+with any estimator $\hat q_i$ of the inclusion probabilities.
+
+\subsection{Consistency of Scalar Reward Modeling under the Population Model}
+\label{app:consistency}
+
+\begin{assumption}[Scalar population reward under $q$]
+\label{ass:scalar-q}
+There exists a scalar function $r_q^\star(x,y)$ such that for all
+$x,y^+,y^-$,
+\begin{equation}
+    \Pr(y^+ \succ y^- \mid x)
+    =
+    \sigma\!\big(r_q^\star(x,y^+) - r_q^\star(x,y^-)\big),
+    \label{eq:scalar-q-reward}
+\end{equation}
+where the probability is taken over the data-generating process that samples
+$i\sim q$ and then draws a comparison from $\mathcal{T}(i)$.
+\end{assumption}
+
+For completeness, we sketch why standard scalar reward modeling recovers the
+$q$-weighted social welfare under Assumption~\ref{ass:scalar-q}.
+
+Under Assumption~\ref{ass:scalar-q}, there exists a scalar reward
+$r_q^\star(x,y)$ such that the probability that a randomly observed
+preference pair satisfies $y^+ \succ y^-$ is
+\begin{equation}
+    \Pr(y^+ \succ y^- \mid x)
+    =
+    \sigma\!\big(r_q^\star(x,y^+) - r_q^\star(x,y^-)\big).
+\end{equation}
+
+When individual preferences follow a logistic model
+$\Pr(y^+ \succ y^- \mid x, i) = \sigma(u_i(x,y^+) - u_i(x,y^-))$, the marginal
+is a mixture:
+$\Pr(y^+ \succ y^- \mid x) = \sum_i q_i \sigma(\Delta u_i)$.
+If individual utilities are not too dispersed, this mixture is
+well-approximated by a single logistic model with logit
+\begin{equation}
+    \ell(x, y^+, y^-)
+    \approx
+    \sum_{i \in V} q_i \,
+    \left( u_i(x,y^+) - u_i(x,y^-) \right),
+\end{equation}
+and $r_q^\star(x,y) \propto \sum_i q_i u_i(x,y)$.
+
+Training a scalar reward model $r_\theta(x,y)$ by maximum-likelihood with the
+standard Bradley--Terry loss,
+\begin{equation}
+    \mathcal{L}_{\text{BTL}}(\theta)
+    =
+    - \sum_{t=1}^T
+    \log \sigma\!\left( r_\theta(x_t, y_t^+) - r_\theta(x_t, y_t^-) \right),
+\end{equation}
+yields a consistent estimator of $r_q^\star$ as $T \to \infty$ under standard
+regularity conditions. Consequently, if this scalar reward is used in downstream
+optimization (e.g., PPO-style RLHF), the downstream procedure is effectively maximizing the $q$-weighted social welfare
+\begin{equation}
+    W_{\text{obs}}(\mu_\phi)
+    =
+    \sum_{i \in V} q_i \, U_i(\mu_\phi),
+\end{equation}
+not the target welfare $W_{\text{target}}$ in
+Definition~\ref{def:target-welfare}. This mismatch is precisely the
+sampling-induced welfare gap quantified in \eqref{eq:welfare-gap-policy}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Additional Details for Method}
+\label{app:method-details}
+
+\paragraph{Scope note.}
+The core contribution of this paper is target-welfare preference/reward modeling (GPRM+GBA) and the aggregated score $\bar r_\theta$.
+This appendix section provides implementation details (e.g., solving for $\alpha^\star$) and optional extensions/integration recipes (PPO/DPO, active querying) for completeness; these optional pieces are not evaluated in our experiments.
+
+\subsection{Optional GPRM details: rater scale and heterophily}
+\label{app:gprm-optional}
+
+\paragraph{Annotator-specific scale.}
+To model rater strictness, we can introduce an annotator-specific scale
+\begin{equation}
+    s_i = \exp(g_\xi(v_i)),
+    \label{eq:scale}
+\end{equation}
+with a small network $g_\xi$. When used, $s_{i_t}$ multiplies the preference logit in
+Eq.~\eqref{eq:gprm-loss}, e.g.,
+$\log\sigma\!\big(s_{i_t}[r_\theta(x_t,y_t^+,i_t)-r_\theta(x_t,y_t^-,i_t)]\big)$,
+and one may regularize scales via a term such as $\lambda_s\sum_i \pi_i(\log s_i)^2$.
+If unused, we set $s_i\equiv 1$.
+
+\paragraph{Heterophily and over-smoothing.}
+\label{app:gprm-heterophily}
+The Laplacian term implicitly assumes some degree of homophily. In strongly
+heterophilous graphs, large $\lambda_v$ can over-smooth genuine preference
+differences. In practice we recommend: (i) tuning $\lambda_v$ conservatively;
+(ii) constructing $G$ using similarity edges (e.g., co-rating agreement or
+attribute similarity) rather than arbitrary proximity; and (iii) downweighting
+edges that connect annotators with systematically divergent preferences.
+
+\subsection{Estimating inclusion probabilities}
+\label{app:qhat-estimators}
+We estimate $\hat q_i$ using one of:
+\textbf{(i) Empirical counts (preferred):}
+$\hat q_i = (n_i+\tau)/\sum_j (n_j+\tau)$,
+where $n_i$ is annotator $i$'s participation count and $\tau>0$ smooths rare
+annotators (ensuring $\hat q_i>0$).
+\textbf{(ii) Degree-/centrality-based:} $\hat q_i \propto d_i^\gamma$ when only
+$G$ is available (we ablate $\gamma$).
+\textbf{(iii) Hybrid:} combine counts and centrality when both are available
+but noisy.
+
+\subsection{Solving the Graph-Balanced Weight Optimization}
+\label{app:wstar-details}
+
+Recall the optimization problem for the importance weights $\alpha^\star$:
+\begin{equation}
+\begin{aligned}
+    \min_{\alpha \in \mathbb{R}^{|V|}}
+    \quad &
+    \frac{1}{2} \|\alpha - \tilde\alpha\|_2^2
+    + \lambda_{\text{smooth}} \, \alpha^\top L_w \alpha
+    + \lambda_{\text{comm}} \sum_{k=1}^{K}
+      \Big( \sum_{i \in C_k} \hat q_i \alpha_i - \rho_k \Big)^2
+    + \lambda_{\text{var}} \sum_{i \in V} \hat q_i \alpha_i^2
+    \\
+    \text{s.t.}\quad
+    & \alpha_i \ge 0 \ \forall i \in V,
+    \quad
+    \sum_{i \in V} \hat q_i \alpha_i = 1,
+\end{aligned}
+\label{eq:alpha-star-appendix}
+\end{equation}
+where $\tilde\alpha_i = \pi_i / (\hat q_i + \varepsilon)$ as defined in
+\eqref{eq:alpha-raw}, $L_w$ is the weighted graph Laplacian, $\lambda_{\text{smooth}} \ge 0$
+controls graph smoothness, $\lambda_{\text{comm}} \ge 0$ controls community
+balance, $\lambda_{\text{var}} \ge 0$ controls variance (and hence ESS),
+and $\rho_k$ are the target community masses in the induced distribution
+(e.g., $\rho_k = 1/K$ for equal-per-community welfare).
+
+Problem~\eqref{eq:alpha-star-appendix} is a convex quadratic program (QP).
+In our experiments, we solve it using a projected gradient method:
+
+\begin{enumerate}
+    \item Initialize $\alpha^{(0)} = \tilde\alpha$, then project onto
+    the feasible set $\{\alpha \ge 0, \sum_i \hat q_i \alpha_i = 1\}$.
+    \item At iteration $s$, compute the gradient. Let
+    $A_k(\alpha) = \sum_{i \in C_k} \hat q_i \alpha_i$ denote the induced
+    community-$k$ mass. Then
+    \begin{equation}
+        \nabla f(\alpha^{(s)})_i
+        = \alpha_i^{(s)} - \tilde\alpha_i
+        + 2 \lambda_{\text{smooth}} (L_w \alpha^{(s)})_i
+        + 2 \lambda_{\text{comm}} \hat q_i (A_{k(i)}(\alpha^{(s)}) - \rho_{k(i)})
+        + 2 \lambda_{\text{var}} \hat q_i \alpha_i^{(s)},
+    \end{equation}
+    where $k(i)$ is the community containing annotator $i$.
+    \item Take a gradient step
+    $z^{(s+1)} = \alpha^{(s)} - \eta \nabla f(\alpha^{(s)})$ with step size
+    $\eta$.
+    \item Project $z^{(s+1)}$ onto the feasible set
+    $\{\alpha \ge 0, \sum_i \hat q_i \alpha_i = 1\}$ using weighted simplex
+    projection.
+\end{enumerate}
+
+\paragraph{Weighted simplex projection.}
+We project onto the convex set $\mathcal{F}:=\{\alpha\in\mathbb{R}^{|V|}:\alpha\ge 0,\ \sum_i \hat q_i\alpha_i=1\}$, assuming $\hat q_i>0$ (ensured by smoothing).
+The Euclidean projection of a vector $z\in\mathbb{R}^{|V|}$ onto $\mathcal{F}$ has the KKT form
+\[
+\Pi_{\mathcal{F}}(z)_i=\max\{0,\ z_i-\lambda\,\hat q_i\},
+\]
+where $\lambda$ is chosen so that $\sum_i \hat q_i\,\Pi_{\mathcal{F}}(z)_i=1$.
+We compute $\lambda$ by a sorting-based threshold search over breakpoints $z_i/\hat q_i$ (equivalently, by 1D bisection), yielding an $O(|V|\log|V|)$ projection.
+
+The Laplacian term $\alpha^\top L_w \alpha$ can be computed efficiently using
+sparse matrix--vector operations. In practice we find that a small number of
+iterations (e.g., 50--100) suffices for convergence on graphs with up to tens
+of thousands of annotators.
+
+\begin{proposition}[Stability of $\alpha^\star$ under perturbations]
+\label{prop:alpha-stability}
+Let $J(\alpha)$ be the objective in \eqref{eq:alpha-star} (ignoring
+constraints for clarity). Its Hessian is
+\[
+    H = I + 2\lambda_{\mathrm{smooth}} L_w
+      + 2\lambda_{\mathrm{comm}} B^\top B
+      + 2\lambda_{\mathrm{var}} \mathrm{diag}(\hat q),
+\]
+where $B$ encodes community-mass linear forms. Since $L_w \succeq 0$,
+$B^\top B \succeq 0$, and
+$\mathrm{diag}(\hat q) \succeq \hat q_{\min} I$, we have
+$H \succeq \mu I$ with $\mu = 1 + 2\lambda_{\mathrm{var}} \hat q_{\min}$.
+Therefore the unconstrained minimizer mapping is $(1/\mu)$-Lipschitz in
+the gradient, and the constrained minimizer over a convex feasible set
+remains nonexpansive under projection. In particular, small perturbations
+in $(L_w, \hat q, \tilde\alpha)$ imply
+$\|\alpha^\star - \alpha^{\star\prime}\|_2 \le
+\frac{1}{\mu} \|\nabla J - \nabla J'\|_2$.
+\end{proposition}
+
+\subsection{Monte Carlo approximation of the aggregated score}
+\label{app:mc-aggregation}
+
+When $|V|$ is large, computing $\bar r_\theta(x,y)=\sum_{i\in V}\tilde\pi_i r_\theta(x,y,i)$ exactly can be expensive.
+We can estimate it via Monte Carlo: sample $i_1,\dots,i_M \stackrel{\text{i.i.d.}}{\sim}\tilde\pi$ and use
+\[
+\widehat{r}_{\theta}^{\mathrm{MC}}(x,y):=\frac{1}{M}\sum_{m=1}^M r_\theta(x,y,i_m),
+\]
+which is unbiased and has variance decreasing as $O(1/M)$.
+
+\begin{algorithm}[h]
+\caption{Optional: Monte Carlo aggregation for $\bar r_\theta(x,y)$}
+\label{alg:mc-aggregation}
+\begin{algorithmic}[1]
+\REQUIRE Input-output pair $(x,y)$, personalized reward model $r_\theta(x,y,i)$, induced weights $\tilde\pi$ over $V$, sample size $M$.
+\STATE Sample indices $i_1,\dots,i_M \sim \tilde\pi$ (with replacement).
+\STATE Return $\widehat{r}_{\theta}^{\mathrm{MC}}(x,y)\leftarrow \frac{1}{M}\sum_{m=1}^M r_\theta(x,y,i_m)$.
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Approximation to Target Welfare}
+\label{app:welfare-approx}
+
+We justify why using the induced welfare weights $\tilde\pi_i = \hat q_i \alpha_i^\star$
+in the reward aggregation approximates optimizing the target welfare
+$W_{\text{target}}(\mu_\phi)$.
+
+Assume that:
+(i) the personalized reward model $r_\theta(x,y,i)$ is a well-calibrated
+estimator of the latent utility $u_i(x,y)$ (in the sense that
+$r_\theta(x,y,i) \approx u_i(x,y)$ up to a global affine transformation),
+and (ii) the importance weights $\alpha_i^\star$ solve the debiasing problem in
+Section~\ref{subsec:gba}, so that the induced distribution
+$\tilde\pi_i = \hat q_i \alpha_i^\star$ approximates $\pi_i$.
+
+Given a decision rule $\mu_\phi$, the expected aggregated reward is
+\begin{align}
+    \mathbb{E}_{x,y}\!\left[ \bar r_\theta(x,y) \right]
+    &= \mathbb{E}_{x \sim p_{\text{data}}, y \sim \mu_\phi(\cdot \mid x)}
+    \left[ \sum_{i \in V} \tilde\pi_i \, r_\theta(x,y,i) \right] \nonumber
+    \\
+    &\approx
+    \sum_{i \in V} \tilde\pi_i \,
+    \mathbb{E}_{x,y} \left[ u_i(x,y) \right]
+    =
+    \sum_{i \in V} \tilde\pi_i \, U_i(\mu_\phi)
+    =
+    \widetilde{W}(\mu_\phi).
+\end{align}
+By Proposition~\ref{prop:welfare-gap}, the difference between
+$\widetilde{W}(\mu_\phi)$ and $W_{\text{target}}(\mu_\phi)$ is bounded by
+$R \|\pi - \tilde\pi\|_1$, where $R$ is the utility range. When
+$\alpha_i^\star = \pi_i / q_i$ exactly (no smoothing or community constraints),
+we have $\tilde\pi = \pi$ and the approximation is exact.
+
+\subsection{Optional downstream integration: PPO with aggregated reward $\bar r_\theta$}
+\label{app:ppo}
+
+As an optional integration (not evaluated in our experiments), we can leverage
+the aggregated reward $\bar r_\theta(x,y)$ directly in a reward-model-based RLHF setup.
+We outline a PPO variant here for completeness.
+
+At training time, the policy $\mu_\phi$ interacts with an environment (or
+generates trajectories from a dataset of prompts) to produce sequences
+$\tau = (x_1, y_1, \dots, x_T, y_T)$. For each time step $t$, we compute a
+scalar reward
+\begin{equation}
+    R_t = \bar r_\theta(x_t, y_t),
+\end{equation}
+where $\bar r_\theta$ is defined in \eqref{eq:aggregated-reward}. We then
+compute advantages $A_t$ using a standard value-function baseline and optimize
+the PPO objective
+\begin{equation}
+    \mathcal{L}_{\text{PPO}}(\phi)
+    =
+    - \mathbb{E}_t
+    \left[
+    \min\Big(
+        r_t(\phi) A_t,\,
+        \text{clip}\big(r_t(\phi), 1 - \epsilon, 1 + \epsilon\big) A_t
+    \Big)
+    \right],
+\end{equation}
+where $r_t(\phi) = \mu_\phi(y_t \mid x_t) / \mu_{\phi_{\text{old}}}(y_t \mid x_t)$
+and $\epsilon$ is the clipping parameter.
+
+Because $\bar r_\theta$ incorporates the induced welfare weights
+$\tilde\pi_i = \hat q_i \alpha_i^\star$, the resulting policy is encouraged
+to maximize the induced welfare $\widetilde{W}(\mu_\phi)$ rather than the
+observed welfare $W_{\text{obs}}(\mu_\phi)$ that would be induced by a
+reward model trained without importance weighting. When importance weights
+achieve exact debiasing ($\alpha_i^\star = \pi_i / q_i$), the induced welfare
+equals the target welfare.
+
+\subsection{Optional extension: Graph-Active Feedback Selection}
+\label{app:active}
+
+Algorithm~\ref{alg:graph-active} describes an optional data-collection extension
+(not used in our experiments) that selects which annotators to query to improve
+coverage and reduce representation mismatch.
+
+\begin{algorithm}[h]
+    \caption{Graph-Active Feedback Selection}
+    \label{alg:graph-active}
+    \begin{algorithmic}[1]
+        \REQUIRE Annotator graph $G=(V,E)$, target weights $\pi_i$, current
+        induced weights $\tilde\pi_i = \hat q_i \alpha_i$, personalized
+        rewards $r_\theta$, budget $B$.
+        \STATE Sample a batch of prompts $\{x_s\}_{s=1}^S$ and candidate
+        outputs.
+        \FOR{each annotator $i \in V$}
+            \STATE Compute a disagreement score
+            \[
+                \text{disc}(i)
+                =
+                \frac{1}{S}
+                \sum_{s=1}^S
+                \left|
+                    r_\theta(x_s, y_s^\star, i)
+                    -
+                    \bar r_\theta(x_s, y_s^\star)
+                \right|,
+            \]
+            where $y_s^\star$ is a reference output (e.g., sampled from the
+            current policy).
+            \STATE Compute an under-representation score
+            $\text{repr}(i) = \pi_i / (\tilde\pi_i + \epsilon)$.
+            \STATE Set
+            $a(i) =
+            \alpha_{\mathrm{disc}} \cdot \text{disc}(i)
+            +
+            \alpha_{\mathrm{repr}} \cdot \text{repr}(i)$.
+        \ENDFOR
+        \STATE Select a batch $S \subset V$ of size $B$ by greedily adding
+        the node with largest $a(i)$ minus a redundancy penalty for neighbors
+        already in $S$:
+        \[
+            i^\star
+            =
+            \arg\max_{i \in V \setminus S}
+            \Big(
+                a(i)
+                -
+                \alpha_{\mathrm{red}} \sum_{j \in S} \mathbb{I}\{(i,j) \in E\}
+            \Big).
+        \]
+        \STATE Query annotators in $S$ for new preference labels and update
+        the GPRM and importance weights $\alpha_i$ (hence
+        $\tilde\pi_i = \hat q_i \alpha_i$).
+    \end{algorithmic}
+\end{algorithm}
+
+The redundancy penalty discourages selecting annotators that are immediate
+neighbors of each other, encouraging coverage of diverse regions of the
+graph. The hyperparameters
+$\alpha_{\mathrm{disc}}, \alpha_{\mathrm{repr}}, \alpha_{\mathrm{red}}$
+control the trade-off between disagreement, under-representation, and
+exploration of the graph.
+
+
+\section{Additional Theoretical Details}
+\label{app:theory-details}
+
+\subsection{Additional statements referenced from the main text}
+\label{app:theory-statements}
+
+\subsubsection{From mixture risk to $q$-weighted welfare}
+To connect Theorem~\ref{thm:naive-q-objective} to welfare, we adopt standard
+well-specification and welfare-consistency assumptions.
+
+\begin{assumption}[Well-specified scalar reward model]
+\label{ass:well-specified}
+There exists a scalar reward function $r^\star(x,y)$ such that for all
+$x,y^+,y^-$,
+\begin{equation}
+    \Pr(y^+ \succ y^- \mid x)
+    =
+    \sigma\!\big(r^\star(x,y^+)-r^\star(x,y^-)\big),
+    \label{eq:well-specified}
+\end{equation}
+and $r^\star$ is uniquely identified up to an additive constant by minimizing
+$\mathcal{L}_{\text{naive}}$.
+\end{assumption}
+
+\begin{assumption}[Welfare-consistent scalar reward under $q$]
+\label{ass:welfare-consistent}
+There exist constants $a>0$ and $b\in\mathbb{R}$ such that for all $(x,y)$,
+\begin{equation}
+    r^\star(x,y)
+    =
+    a\,w_q(x,y)+b
+    \qquad\text{where}\qquad
+    w_q(x,y):=\sum_{i\in V} q_i\,u_i(x,y).
+\end{equation}
+Equivalently, maximizing $\mathbb{E}_{x,y\sim\mu_\phi}[r^\star(x,y)]$ is
+equivalent to maximizing the observed welfare
+$W_{\mathrm{obs}}(\mu_\phi)=\sum_{i\in V} q_i U_i(\mu_\phi)$.
+\end{assumption}
+
+\begin{corollary}[$q$-weighted welfare under welfare-consistency]
+\label{cor:naive-q-weighted-welfare}
+Assume Assumptions~\ref{ass:well-specified} and \ref{ass:welfare-consistent}
+hold so that naive reward modeling recovers $r^\star$ (up to an additive
+constant) and $r^\star$ is an affine transform of $w_q$.
+Then, for any decision rule $\mu_\phi$,
+maximizing $\mathbb{E}_{x,y\sim\mu_\phi}[r^\star(x,y)]$ is equivalent to
+maximizing $W_{\mathrm{obs}}(\mu_\phi)=\sum_{i\in V}q_iU_i(\mu_\phi)$.
+In particular, for any fixed prompt $x$ and finite candidate set
+$\mathcal{Y}_x^{\mathrm{cand}}$, the ranking induced by $r^\star(x,\cdot)$
+coincides with the ranking induced by $w_q(x,\cdot)$.
+Proof in Appendix~\ref{app:proof-naive-split}.
+\end{corollary}
+
+Corollary~\ref{cor:naive-q-weighted-welfare} makes precise the key issue: when
+$q$ correlates with graph centrality (e.g., $q_i\propto d_i^\gamma$), naive
+preference learning represents a degree-skewed welfare $w_q$ rather than the
+normative target $w_\pi$.
+
+\subsubsection{Assumptions and induced-welfare representation}
+When $q$ is unknown, GBA uses an estimator $\hat q$ and produces induced weights
+$\tilde\pi=\hat q\odot \alpha^\star$.
+
+\begin{assumption}[Consistent inclusion-probability estimates]
+\label{ass:qhat}
+Let $\hat q_i$ be the estimator of $q_i$ used to construct $\alpha$.
+Assume $\hat q_i\to q_i$ almost surely as $T\to\infty$ for all $i\in V$, and
+$\min_i q_i>0$.
+\end{assumption}
+
+\begin{assumption}[Expressive and calibratable personalized reward model]
+\label{ass:expressive}
+The function class $\{r_\theta(x,y,i)\}$ is rich enough that there exist
+parameters $\theta^\star$ and constants $a>0$, $b\in\mathbb{R}$ such that
+\begin{equation}
+r_{\theta^\star}(x,y,i)=a\,u_i(x,y)+b
+\qquad\text{for all $(x,y,i)$ in the support of the data.}
+\end{equation}
+\end{assumption}
+
+\begin{theorem}[Aggregated reward represents induced welfare]
+\label{thm:graph-welfare}
+Assume (i) $\hat q=q$ and $\alpha^\star$ satisfies $\sum_i q_i\alpha_i^\star=1$,
+(ii) Assumption~\ref{ass:expressive} holds, and (iii) the aggregated reward is
+constructed as
+\[
+\bar r_{\theta^\star}(x,y)
+=
+\sum_{i\in V} \tilde\pi_i\,r_{\theta^\star}(x,y,i),
+\qquad
+\tilde\pi_i := q_i\alpha_i^\star.
+\]
+Then $\bar r_{\theta^\star}$ is an affine transform of the induced welfare
+score:
+\begin{equation}
+\bar r_{\theta^\star}(x,y)
+=
+a\,\sum_{i\in V}\tilde\pi_i\,u_i(x,y)+b
+=
+a\,w_{\tilde\pi}(x,y)+b,
+\label{eq:bar-r-induced-welfare}
+\end{equation}
+where $w_{\tilde\pi}(x,y):=\sum_i \tilde\pi_i u_i(x,y)$.
+Moreover, under \emph{exact debiasing} $\alpha_i^\star=\pi_i/q_i$, we have
+$\tilde\pi=\pi$ and hence $\bar r_{\theta^\star}(x,y)=a\,w_\pi(x,y)+b$.
+Proof in Appendix~\ref{app:proof-graph-welfare}.
+\end{theorem}
+
+\subsubsection{Community control and finite-sample diagnostics}
+\begin{proposition}[Community mass control under GBA]
+\label{prop:community-balance}
+Let $\alpha^\star$ solve Eq.~\eqref{eq:alpha-star} and define
+$A_k(\alpha)=\sum_{i\in C_k}\hat q_i\alpha_i$.
+For $\lambda_{\mathrm{comm}}>0$, the problem has a unique solution. Moreover,
+as $\lambda_{\mathrm{comm}}\to\infty$, we have $A_k(\alpha^\star)\to \rho_k$ for
+all $k$. Proof in Appendix~\ref{app:proof-community}.
+\end{proposition}
+
+\begin{theorem}[Welfare deviation decomposition]
+\label{thm:welfare-decomp}
+Assume $|U_i(\mu_\phi)|\le R$ for all $i$ and decision rules $\mu_\phi$.
+Let $\pi$ be the target welfare weights and let $\tilde\pi=\hat q\odot\alpha^\star$
+be the induced weights produced by GBA.
+Suppose there exist parameters $\theta^\star$ and constants $a>0$, $b\in\mathbb{R}$ such that
+\[
+\sup_{x,y,i}\big|r_{\theta^\star}(x,y,i)-(a\,u_i(x,y)+b)\big|
+\le \varepsilon_{\mathrm{RM}},
+\]
+and the learned model $r_\theta$ (trained from $T$ weighted samples) satisfies
+\[
+\sup_{x,y,i}\big|r_\theta(x,y,i)-r_{\theta^\star}(x,y,i)\big|
+\le \varepsilon_{\mathrm{stat}}(T,\alpha^\star).
+\]
+Define the (normalized) welfare proxy represented by the learned aggregated reward
+\[
+\widehat{W}_\theta(\mu_\phi)
+:=
+\frac{1}{a}\Big(\mathbb{E}_{x\sim p_{\text{data}},\,y\sim\mu_\phi(\cdot\mid x)}[\bar r_\theta(x,y)]-b\Big),
+\]
+where $\bar r_\theta$ is defined in Eq.~\eqref{eq:aggregated-reward}. Then for any $\mu_\phi$,
+\begin{equation}
+\big|W_{\mathrm{target}}(\mu_\phi)-\widehat{W}_\theta(\mu_\phi)\big|
+\;\le\;
+R\|\pi-\tilde\pi\|_1
+\;+\;
+\varepsilon_{\mathrm{RM}}
+\;+\;
+\varepsilon_{\mathrm{stat}}(T,\alpha^\star),
+\label{eq:welfare-decomp}
+\end{equation}
+where $\varepsilon_{\mathrm{stat}}$ captures finite-sample effects and
+decreases as the effective sample size of the weighted data increases.
+Proof in Appendix~\ref{app:proof-welfare-decomp}.
+\end{theorem}
+
+\subsection{Finite-Sample Effects: Weight Variance and Effective Sample Size}
+\label{subsec:theory-variance}
+
+Importance weighting can dramatically increase variance when some $q_i$ are
+small. This motivates the explicit variance/ESS regularization term in GBA.
+
+Define the (population) second moment of weights under $q$:
+\begin{equation}
+    m_2(\alpha;q) := \sum_{i\in V} q_i \alpha_i^2.
+\end{equation}
+When $\sum_i q_i\alpha_i=1$, a common notion of population effective sample size
+factor is $\mathrm{ESS}_{\mathrm{pop}}(\alpha;q):=1/m_2(\alpha;q)\in(0,1]$.
+
+\begin{proposition}[Variance cost of importance weighting]
+\label{prop:iw-variance}
+Let $Z_t\sim q$ i.i.d.\ and let $H(Z_t)$ be any random variable with
+$|H(Z_t)|\le R$ almost surely. Consider the importance-weighted estimator
+\[
+\widehat{\mu}
+=
+\frac{1}{T}\sum_{t=1}^T \alpha_{Z_t}\,H(Z_t)
+\qquad\text{of}\qquad
+\mu
+=
+\sum_{i\in V} q_i\alpha_i\,\mathbb{E}[H(Z)\mid Z=i]
+=
+\sum_{i\in V}\tilde\pi_i\,\mathbb{E}[H(Z)\mid Z=i].
+\]
+If $\sum_i q_i\alpha_i=1$, then
+\begin{equation}
+    \mathrm{Var}(\widehat{\mu})
+    \;\le\;
+    \frac{R^2}{T}\, m_2(\alpha;q)
+    \;=\;
+    \frac{R^2}{T\,\mathrm{ESS}_{\mathrm{pop}}(\alpha;q)}.
+\end{equation}
+In particular, exact debiasing $\alpha_i=\pi_i/q_i$ yields
+$m_2(\alpha;q)=\sum_i \pi_i^2/q_i$, which can be large when some $q_i$ are small.
+Proof in Appendix~\ref{app:proof-iw-variance}.
+\end{proposition}
+
+Proposition~\ref{prop:iw-variance} motivates the GBA variance penalty
+$\lambda_{\mathrm{var}}\sum_i \hat q_i\alpha_i^2$, which directly controls the
+empirical analogue of $m_2(\alpha;q)$ (and hence increases effective sample
+size). In practice, additional stabilization such as clipping or self-normalized
+weights can further control this variance; we view these as complementary
+techniques. Accordingly, we include stabilized IPW baselines (SN-IPW, Clipped-IPW)
+and a QP-stabilized weighting baseline (GBA-QP) in experiments, and report ESS and
+weight-mismatch diagnostics to make the variance--bias tradeoff auditable.
+
+\paragraph{Implication for downstream optimization (optional).}
+While our main contribution and evaluation are at the reward-model level,
+the same induced-mixture algebra implies that if a downstream RLHF/DPO procedure
+optimizes an objective built from $\bar r_\theta$ or reweights preferences by
+$\alpha^\star$, it will optimize an induced welfare with weights $\tilde\pi$.
+Formal statements for Graph-weighted DPO/RLHF are provided in the appendix.
+
+% --- DROP-IN: new appendix proof for mixture bound ---
+\subsection{Mixture-of-Logits Approximation Bound}
+\label{app:proof-mixture}
+
+This section provides the formal bound mentioned in Section~\ref{sec:problem}. Suppose individual preferences follow a logistic model
+$\Pr(y^+ \succ y^- \mid x,i)=\sigma(\Delta u_i)$ where 
+$\Delta u_i := u_i(x,y^+) - u_i(x,y^-)$.
+The marginal preference probability is a mixture of logits:
+$\Pr(y^+ \succ y^- \mid x)=\sum_{i \in V} q_i \sigma(\Delta u_i)$.
+Let $m := \mathbb{E}_{i\sim q}[\Delta u_i]$ and let 
+$\mathrm{range}(\Delta u):=\max_i \Delta u_i-\min_i \Delta u_i$.
+Using that $\sigma$ is $1/4$-Lipschitz, we have the approximation bound
+\begin{equation}
+\Big|
+\mathbb{E}_{i\sim q}[\sigma(\Delta u_i)]-\sigma(m)
+\Big|
+\;\le\;
+\frac{1}{4}\,\mathbb{E}_{i\sim q}\big|\Delta u_i-m\big|
+\;\le\;
+\frac{1}{8}\,\mathrm{range}(\Delta u).
+\label{eq:mixture-bound}
+\end{equation}
+Thus when preference heterogeneity is small on a given comparison, a scalar
+logit $\sigma(m)$ approximates the mixture well.
+
+\begin{proof}
+Let $X$ be the random variable $X=\Delta u_i$ when $i\sim q$, and let
+$m=\mathbb{E}[X]$. Since the derivative of the sigmoid satisfies
+$\sup_z \sigma'(z)=1/4$, the function $\sigma(\cdot)$ is $1/4$-Lipschitz:
+$|\sigma(a)-\sigma(b)|\le \frac{1}{4}|a-b|$ for all $a,b\in\mathbb{R}$.
+Therefore,
+\[
+\Big|\mathbb{E}[\sigma(X)]-\sigma(m)\Big|
+=
+\Big|\mathbb{E}[\sigma(X)]-\mathbb{E}[\sigma(m)]\Big|
+\le 
+\mathbb{E}\big[|\sigma(X)-\sigma(m)|\big]
+\le
+\frac{1}{4}\,\mathbb{E}[|X-m|].
+\]
+For the second inequality in Eq.~\eqref{eq:mixture-bound}, note that $X$ is
+supported on the interval $[\min_i \Delta u_i,\max_i \Delta u_i]$ and the mean
+$m$ lies in the same interval. A standard extremal argument for bounded random
+variables gives $\mathbb{E}|X-m|\le \frac{1}{2}(\max_i \Delta u_i-\min_i \Delta u_i)$,
+yielding $\mathbb{E}|X-m|\le \frac{1}{2}\mathrm{range}(\Delta u)$ and hence
+Eq.~\eqref{eq:mixture-bound}.
+\end{proof}
+
+% --- DROP-IN B: new appendix proof section for split theorem/corollary ---
+\subsection{Proofs for Theorem~\ref{thm:naive-q-objective} and Corollary~\ref{cor:naive-q-weighted-welfare}}
+\label{app:proof-naive-split}
+
+\subsubsection{Proof of Theorem~\ref{thm:naive-q-objective}}
+\begin{proof}
+Let $(I,X,Y^+,Y^-)$ be drawn by first sampling $I\sim q$ over $V$ and then
+$(X,Y^+,Y^-)\sim \mathcal{T}(I)$. By the law of total expectation,
+\[
+\mathcal{L}_{\text{naive}}(\theta)
+=
+\mathbb{E}\big[\ell_{\text{naive}}(\theta;X,Y^+,Y^-)\big]
+=
+\sum_{i\in V}\Pr(I=i)\,
+\mathbb{E}\big[\ell_{\text{naive}}(\theta;X,Y^+,Y^-)\mid I=i\big],
+\]
+which is exactly \eqref{eq:naive-q-mixture-risk}, with
+$\mathcal{L}_i(\theta)=\mathbb{E}_{(x,y^+,y^-)\sim\mathcal{T}(i)}[\ell_{\text{naive}}(\theta;x,y^+,y^-)]$.
+
+For the gradient identity, assume $\nabla_\theta \ell_{\text{naive}}(\theta;\cdot)$
+is dominated by an integrable function in a neighborhood of $\theta$ (or simply
+bounded, which holds if rewards are clipped / regularized and the dataset support is bounded).
+Then differentiation under the integral is valid, yielding
+\[
+\nabla_\theta \mathcal{L}_{\text{naive}}(\theta)
+=
+\nabla_\theta \sum_{i\in V} q_i \mathcal{L}_i(\theta)
+=
+\sum_{i\in V} q_i \nabla_\theta \mathcal{L}_i(\theta),
+\]
+which is \eqref{eq:naive-q-mixture-grad}.
+\end{proof}
+
+\subsubsection{Proof of Corollary~\ref{cor:naive-q-weighted-welfare}}
+\begin{proof}
+\textbf{Step 1 (consistency of naive reward modeling).}
+Under Assumption~\ref{ass:well-specified}, there exists a scalar reward function
+$r^\star$ such that for all $(x,y^+,y^-)$,
+\[
+\Pr(y^+ \succ y^- \mid x)
+=
+\sigma\big(r^\star(x,y^+)-r^\star(x,y^-)\big),
+\]
+where the probability is with respect to the marginal data-generating process
+(induced by sampling $i\sim q$ and then $(x,y^+,y^-)\sim\mathcal{T}(i)$).
+Training $r_\theta(x,y)$ by maximum likelihood with Bradley--Terry loss is
+equivalent to logistic regression on pairwise differences, and the negative
+log-likelihood is minimized (over a rich enough function class) when the model
+probabilities match the true conditional probabilities. Since the sigmoid link is
+strictly monotone, this identifies $r^\star$ up to an additive constant. Thus,
+with sufficient data and capacity, naive reward modeling recovers $r^\star$ (up to a constant).
+
+\textbf{Step 2 (reward maximization equals $q$-weighted welfare).}
+Assumption~\ref{ass:welfare-consistent} states that there exist constants
+$a > 0$ and $b \in \mathbb{R}$ such that
+\[
+r^\star(x,y) = a \sum_{i\in V} q_i u_i(x,y) + b.
+\]
+Therefore, for any decision rule $\mu_\phi$,
+\[
+\mathbb{E}_{x\sim p_{\mathrm{data}},\,y\sim\mu_\phi(\cdot\mid x)}[r^\star(x,y)]
+=
+a \, \mathbb{E}_{x,y}\left[\sum_{i\in V} q_i u_i(x,y)\right] + b
+=
+a \sum_{i\in V} q_i U_i(\mu_\phi) + b
+=
+a \, W_{\mathrm{obs}}(\mu_\phi) + b.
+\]
+Because $a > 0$ and $b$ is a constant independent of $\mu_\phi$, maximizing
+the expected reward is equivalent to maximizing $W_{\mathrm{obs}}(\mu_\phi)$,
+which proves the claim.
+\end{proof}
+
+\subsection{Proof of Lemma~\ref{lem:iw-identity}}
+\label{app:proof-iw}
+
+\begin{lemma*}[Importance-weighted objective equals induced mixture]
+Let $i \sim q$ and let $\alpha$ be any nonnegative weights. Define the
+induced distribution $\tilde\pi_i := q_i \alpha_i$ and suppose
+$\sum_i \tilde\pi_i = 1$. Then for any per-annotator population quantity
+$h_i(\theta)$,
+\begin{equation}
+    \sum_{i \in V} q_i \alpha_i \, h_i(\theta)
+    =
+    \sum_{i \in V} \tilde\pi_i \, h_i(\theta).
+\end{equation}
+In particular, when $\alpha_i = \pi_i / q_i$ (and $q_i > 0$), we have
+$\tilde\pi = \pi$.
+\end{lemma*}
+
+\begin{proof}
+The identity is immediate from the definition $\tilde\pi_i = q_i \alpha_i$:
+\begin{equation}
+    \sum_{i \in V} q_i \alpha_i \, h_i(\theta)
+    =
+    \sum_{i \in V} \tilde\pi_i \, h_i(\theta).
+\end{equation}
+For the second claim, when $\alpha_i = \pi_i / q_i$, we have
+\begin{equation}
+    \tilde\pi_i = q_i \cdot \frac{\pi_i}{q_i} = \pi_i,
+\end{equation}
+so $\tilde\pi = \pi$.
+
+When using estimated inclusion probabilities $\hat q_i$, the induced
+distribution becomes $\tilde\pi_i = \hat q_i \alpha_i$. Under
+Assumption~\ref{ass:qhat}, $\hat q_i \to q_i$ as $T \to \infty$, so the
+induced distribution converges to the idealized version $q_i \alpha_i$.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{thm:graph-welfare}}
+\label{app:proof-graph-welfare}
+
+\begin{theorem*}[Aggregated reward represents induced welfare (optional downstream optimization)]
+Assume (i) $\hat q = q$ and $\alpha^\star$ is the solution of
+\eqref{eq:alpha-star}, (ii) the personalized reward model satisfies
+$r_{\theta^\star}(x,y,i) = a \, u_i(x,y) + b$ for $a > 0$ and $b$ independent
+of $i$, and (iii) a downstream optimizer (optional integration) selects a decision rule $\mu_\phi$ by maximizing
+$\mathbb{E}_{x,y \sim \mu_\phi}[\bar r_{\theta^\star}(x,y)]$.
+Then any maximizer of $\mathbb{E}_{x,y \sim \mu_\phi}[\bar r_{\theta^\star}(x,y)]$ also maximizes the induced welfare
+$\widetilde{W}(\mu_\phi) = \sum_i \tilde\pi_i U_i(\mu_\phi)$, where
+$\tilde\pi_i = q_i \alpha_i^\star$. Moreover, if
+$\alpha_i^\star = \pi_i / q_i$ (exact debiasing), then
+$\widetilde{W} = W_{\text{target}}$.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Part (1): Reward model recovery.}
+By Lemma~\ref{lem:iw-identity}, the importance-weighted population loss
+$\sum_i q_i \alpha_i \ell(\theta; i)$ equals $\sum_i \tilde\pi_i \ell(\theta; i)$,
+the loss under the induced distribution $\tilde\pi = q \odot \alpha$.
+Under Assumption~\ref{ass:expressive}, there exists $\theta^\star$ such that
+$r_{\theta^\star}(x,y,i) = a \, u_i(x,y) + b$ for $a > 0$ and $b$ shared across
+all annotators.
+Because the Bradley--Terry loss is a strictly proper scoring rule for pairwise
+preferences, the unique minimizer
+recovers individual utilities up to a shared affine transformation.
+
+\textbf{Part (2): Aggregated reward structure.}
+By the definition of aggregated reward in Eq.~\eqref{eq:aggregated-reward},
+\begin{equation}
+    \bar r_{\theta^\star}(x,y)
+    =
+    \sum_{i \in V} \tilde\pi_i r_{\theta^\star}(x,y,i)
+    =
+    \sum_{i \in V} \tilde\pi_i \big(a \, u_i(x,y) + b\big)
+    =
+    a \sum_{i \in V} \tilde\pi_i u_i(x,y) + b,
+\end{equation}
+where we used $\sum_i \tilde\pi_i = 1$.
+
+\textbf{Part (3): Optional downstream optimization.}
+For any decision rule $\mu_\phi$, the expected aggregated reward is
+\begin{equation}
+    \mathbb{E}_{x,y}[\bar r_{\theta^\star}(x,y)]
+    =
+    \sum_{i \in V} \tilde\pi_i \, \mathbb{E}_{x,y}[u_i(x,y)] + c
+    =
+    \sum_{i \in V} \tilde\pi_i U_i(\mu_\phi) + c
+    =
+    \widetilde{W}(\mu_\phi) + c.
+\end{equation}
+Because $c$ is independent of $\mu_\phi$, maximizing
+$\mathbb{E}_{x,y}[\bar r_{\theta^\star}(x,y)]$ is equivalent to maximizing
+$\widetilde{W}(\mu_\phi)$.
+
+\textbf{Part (4): Exact debiasing.}
+When $\alpha_i^\star = \pi_i / q_i$, we have
+$\tilde\pi_i = q_i \cdot (\pi_i / q_i) = \pi_i$, so
+$\widetilde{W}(\mu_\phi) = \sum_i \pi_i U_i(\mu_\phi) = W_{\text{target}}(\mu_\phi)$.
+\end{proof}
+
+\subsection{Proof of Proposition~\ref{prop:community-balance}}
+\label{app:proof-community}
+
+% --- DROP-IN: REPLACE proof in Appendix~\ref{app:proof-community} ---
+\begin{proof}
+Fix the feasible set
+\[
+\mathcal{F}:=\{\alpha\in\mathbb{R}^{|V|}:\ \alpha\ge 0,\ \sum_{i\in V}\hat q_i\alpha_i=1\}.
+\]
+Define the continuous function
+\[
+g(\alpha):=
+\frac{1}{2}\|\alpha-\tilde\alpha\|_2^2
++\lambda_{\mathrm{smooth}}\alpha^\top L_w\alpha
++\lambda_{\mathrm{var}}\sum_i \hat q_i\alpha_i^2,
+\]
+and the community-mass deviations
+$A_k(\alpha):=\sum_{i\in C_k}\hat q_i\alpha_i$.
+Then the objective in Eq.~\eqref{eq:alpha-star} can be written as
+\[
+J_\lambda(\alpha)=g(\alpha)+\lambda\sum_{k=1}^K (A_k(\alpha)-\rho_k)^2,
+\qquad \lambda=\lambda_{\mathrm{comm}}.
+\]
+
+\textbf{Step 1 (existence of an exactly balanced feasible point).}
+Let $Q_k:=\sum_{i\in C_k}\hat q_i$ (note $Q_k>0$ if $\hat q_i>0$ on each community).
+Define $\alpha^{(0)}$ by setting, for each $i\in C_k$,
+\[
+\alpha_i^{(0)}:=\frac{\rho_k}{Q_k}.
+\]
+Then $\alpha^{(0)}\ge 0$, and
+$A_k(\alpha^{(0)})=\sum_{i\in C_k}\hat q_i(\rho_k/Q_k)=\rho_k$ for all $k$.
+Also $\sum_i \hat q_i\alpha_i^{(0)}=\sum_k \rho_k=1$, so $\alpha^{(0)}\in\mathcal{F}$.
+
+\textbf{Step 2 (boundedness and vanishing penalty).}
+Let $\alpha^{(\lambda)}$ be the unique minimizer of $J_\lambda$ over $\mathcal{F}$
+(uniqueness holds because $J_\lambda$ is strictly convex on $\mathcal{F}$ due to
+the $\frac12\|\alpha-\tilde\alpha\|^2$ term).
+By optimality,
+\[
+J_\lambda(\alpha^{(\lambda)}) \le J_\lambda(\alpha^{(0)}) = g(\alpha^{(0)}),
+\]
+since the penalty term vanishes at $\alpha^{(0)}$.
+Therefore,
+\[
+\lambda\sum_{k=1}^K (A_k(\alpha^{(\lambda)})-\rho_k)^2
+\le J_\lambda(\alpha^{(\lambda)}) \le g(\alpha^{(0)}),
+\]
+which implies
+\[
+\sum_{k=1}^K (A_k(\alpha^{(\lambda)})-\rho_k)^2 \le \frac{g(\alpha^{(0)})}{\lambda}
+\;\xrightarrow[\lambda\to\infty]{}\; 0.
+\]
+Hence $A_k(\alpha^{(\lambda)})\to \rho_k$ for each $k=1,\dots,K$, proving the claim.
+\end{proof}
+
+\subsection{Proof of Proposition~\ref{prop:welfare-gap}}
+\label{app:proof-welfare-gap}
+
+\begin{proposition*}[Welfare deviation bound via weight mismatch]
+Assume $|U_i(\mu_\phi)| \le R$ for all $i$ and decision rules $\mu_\phi$. Let
+$\pi$ be the target weights and let $\tilde\pi$ be the induced weights
+used by Graph-Preference Learning. Then for any decision rule $\mu_\phi$,
+\begin{equation}
+    \big|
+        W_{\text{target}}(\mu_\phi)
+        -
+        \widetilde{W}(\mu_\phi)
+    \big|
+    \le
+    R \, \|\pi - \tilde\pi\|_1.
+\end{equation}
+\end{proposition*}
+
+\begin{proof}
+By definition of the welfare functions,
+\begin{equation}
+    W_{\text{target}}(\mu_\phi) = \sum_{i \in V} \pi_i U_i(\mu_\phi),
+    \qquad
+    \widetilde{W}(\mu_\phi) = \sum_{i \in V} \tilde\pi_i U_i(\mu_\phi),
+\end{equation}
+where $\tilde\pi_i = \hat q_i \alpha_i^\star$ is the induced welfare weight.
+The difference is
+\begin{equation}
+    W_{\text{target}}(\mu_\phi) - \widetilde{W}(\mu_\phi)
+    =
+    \sum_{i \in V} (\pi_i - \tilde\pi_i) U_i(\mu_\phi)
+    =
+    (\pi - \tilde\pi)^\top U(\mu_\phi).
+\end{equation}
+Applying the bound $|U_i(\mu_\phi)| \le R$ and the triangle inequality:
+\begin{equation}
+    \big|
+        W_{\text{target}}(\mu_\phi) - \widetilde{W}(\mu_\phi)
+    \big|
+    \le
+    \sum_{i \in V} |\pi_i - \tilde\pi_i| \cdot |U_i(\mu_\phi)|
+    \le
+    R \sum_{i \in V} |\pi_i - \tilde\pi_i|
+    =
+    R \, \|\pi - \tilde\pi\|_1,
+\end{equation}
+as claimed. This bound is tight in the sense that it can be achieved when
+$U_i(\mu_\phi) = R \cdot \text{sign}(\pi_i - \tilde\pi_i)$ for all $i$.
+\end{proof}
+
+\subsection{Proof of Proposition~\ref{prop:iw-variance}}
+\label{app:proof-iw-variance}
+
+\begin{proof}
+Since $Z_t \sim q$ are i.i.d., we have
+\[
+\mathrm{Var}(\widehat{\mu})
+=
+\mathrm{Var}\!\left(\frac{1}{T}\sum_{t=1}^T \alpha_{Z_t}H(Z_t)\right)
+=
+\frac{1}{T}\,\mathrm{Var}\!\big(\alpha_Z H(Z)\big),
+\]
+where $Z\sim q$ is a generic draw. Using $\mathrm{Var}(X)\le \mathbb{E}[X^2]$ and
+the bound $|H(Z)|\le R$ almost surely,
+\[
+\mathrm{Var}\!\big(\alpha_Z H(Z)\big)
+\le
+\mathbb{E}\big[\alpha_Z^2 H(Z)^2\big]
+\le
+R^2\,\mathbb{E}\big[\alpha_Z^2\big]
+=
+R^2\sum_{i\in V} q_i \alpha_i^2
+=
+R^2\,m_2(\alpha;q).
+\]
+Combining the two displays yields
+$\mathrm{Var}(\widehat{\mu}) \le \frac{R^2}{T}\,m_2(\alpha;q)
+=\frac{R^2}{T\,\mathrm{ESS}_{\mathrm{pop}}(\alpha;q)}$.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{thm:welfare-decomp}}
+\label{app:proof-welfare-decomp}
+
+\begin{proof}
+Let $W_{\tilde\pi}(\mu_\phi):=\sum_i \tilde\pi_i U_i(\mu_\phi)$ denote the induced-welfare objective.
+By triangle inequality,
+\[
+\big|W_{\mathrm{target}}(\mu_\phi)-\widehat{W}_\theta(\mu_\phi)\big|
+\le
+\big|W_{\mathrm{target}}(\mu_\phi)-W_{\tilde\pi}(\mu_\phi)\big|
++
+\big|W_{\tilde\pi}(\mu_\phi)-\widehat{W}_\theta(\mu_\phi)\big|.
+\]
+
+\textbf{(i) Weight mismatch.}
+The first term is bounded by Proposition~\ref{prop:welfare-gap}:
+$\big|W_{\mathrm{target}}(\mu_\phi)-W_{\tilde\pi}(\mu_\phi)\big|\le R\|\pi-\tilde\pi\|_1$.
+
+\textbf{(ii) Reward-model approximation + finite-sample error.}
+Recall $\bar r_\theta(x,y)=\sum_i \tilde\pi_i r_\theta(x,y,i)$ and $\sum_i \tilde\pi_i=1$.
+Using the definition of $\widehat{W}_\theta$ and linearity of expectation,
+\[
+\widehat{W}_\theta(\mu_\phi)
+=
+\sum_{i\in V}\tilde\pi_i\,
+\mathbb{E}_{x\sim p_{\text{data}},\,y\sim\mu_\phi(\cdot\mid x)}
+\left[\frac{r_\theta(x,y,i)-b}{a}\right].
+\]
+Therefore,
+\[
+\big|W_{\tilde\pi}(\mu_\phi)-\widehat{W}_\theta(\mu_\phi)\big|
+\le
+\sum_{i\in V}\tilde\pi_i\,
+\mathbb{E}_{x,y}
+\left|
+u_i(x,y)-\frac{r_\theta(x,y,i)-b}{a}
+\right|.
+\]
+Add and subtract $r_{\theta^\star}$ inside the absolute value and apply triangle inequality:
+\[
+\left|
+u_i(x,y)-\frac{r_\theta(x,y,i)-b}{a}
+\right|
+\le
+\frac{1}{a}\big|r_\theta(x,y,i)-r_{\theta^\star}(x,y,i)\big|
+\;+\;
+\frac{1}{a}\big|r_{\theta^\star}(x,y,i)-(a u_i(x,y)+b)\big|.
+\]
+Taking suprema and using the theorem assumptions yields
+\[
+\big|W_{\tilde\pi}(\mu_\phi)-\widehat{W}_\theta(\mu_\phi)\big|
+\le
+\frac{1}{a}\Big(\varepsilon_{\mathrm{stat}}(T,\alpha^\star)+\varepsilon_{\mathrm{RM}}\Big).
+\]
+Absorbing the constant $1/a$ into the error terms (equivalently, measuring errors in utility units) gives the stated bound.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithms}
+\label{app:algorithms}
+
+\begin{algorithm}[h]
+\caption{Graph-Balanced Aggregation (GBA) Weight Computation}
+\label{alg:gba}
+\begin{algorithmic}[1]
+\REQUIRE Graph $G=(V,E)$, target weights $\pi$, inclusion estimator $\hat q$, communities $\{C_k\}$, targets $\{\rho_k\}$.
+\STATE Compute raw ratios $\tilde\alpha_i \leftarrow \pi_i / (\hat q_i + \varepsilon)$.
+\STATE Initialize $\alpha^{(0)} \leftarrow \Pi_{\{\alpha\ge 0,\ \sum_i \hat q_i\alpha_i=1\}}(\tilde\alpha)$.
+\FOR{$s=0,1,\dots,S-1$}
+    \STATE Take gradient step $z \leftarrow \alpha^{(s)} - \eta \nabla J(\alpha^{(s)})$ where $J$ is Eq.~\eqref{eq:alpha-star}.
+    \STATE Project $\alpha^{(s+1)} \leftarrow \Pi_{\{\alpha\ge 0,\ \sum_i \hat q_i\alpha_i=1\}}(z)$.
+\ENDFOR
+\RETURN $\alpha^{(S)}$, induced weights $\tilde\pi_i = \hat q_i \alpha_i$.
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[h]
+\caption{Core: GPRM training with GBA weights}
+\label{alg:gprm}
+\begin{algorithmic}[1]
+\REQUIRE Annotator graph $G=(V,E)$, preference data $\mathcal{D}=\{(x_t,y_t^+,y_t^-,i_t)\}_{t=1}^T$, target weights $\pi$, inclusion estimator $\hat q$, (optional) communities $\{C_k\}$ and targets $\{\rho_k\}$.
+\STATE Compute stabilized weights $\alpha^\star$ and induced weights $\tilde\pi=\hat q\odot\alpha^\star$ using Algorithm~\ref{alg:gba}.
+\STATE Initialize model parameters for the graph encoder and reward head (e.g., $(\psi,\theta)$; optionally $\xi$ for rater scales).
+\FOR{minibatch $\mathcal{B}\subset \mathcal{D}$}
+    \STATE For each $(x,y^+,y^-,i)\in\mathcal{B}$, compute personalized scores $r_\theta(x,y^+,i)$ and $r_\theta(x,y^-,i)$.
+    \STATE Compute the weighted Bradley--Terry loss for the minibatch using weights $\alpha_i^\star$ (cf.\ Eq.~\eqref{eq:gprm-loss}).
+    \STATE Add any graph regularizers (e.g., Laplacian smoothness) and standard parameter regularization.
+    \STATE Update parameters with gradient descent / Adam.
+\ENDFOR
+\RETURN Personalized reward model $r_\theta(x,y,i)$ and aggregated score $\bar r_\theta(x,y)=\sum_{i\in V}\tilde\pi_i r_\theta(x,y,i)$.
+\end{algorithmic}
+\end{algorithm}
+
+\noindent\textbf{Integration note.}
+The following algorithm shows how the same GBA weights can be used to reweight a
+standard DPO objective. This is \emph{not} a core contribution of this paper and
+is included for completeness.
+
+\paragraph{DPO loss (definition).}
+For completeness, we define the standard per-example DPO loss used by Algorithm~\ref{alg:graph-dpo}.
+Let $\mu_{\mathrm{ref}}$ be a fixed reference policy and let $\beta>0$ be a temperature parameter. Define
+\begin{equation}
+\ell_{\mathrm{DPO}}(\phi; x,y^+,y^-)
+:=
+- \log \sigma\!\Big(
+\beta\big[
+\log \mu_\phi(y^+\!\mid x)-\log \mu_\phi(y^-\!\mid x)
+-\log \mu_{\mathrm{ref}}(y^+\!\mid x)+\log \mu_{\mathrm{ref}}(y^-\!\mid x)
+\big]
+\Big).
+\label{eq:dpo}
+\end{equation}
+
+\begin{algorithm}[h]
+\caption{Integration: Graph-weighted DPO training using GBA weights}
+\label{alg:graph-dpo}
+\begin{algorithmic}[1]
+\REQUIRE Preference data $\mathcal{D}=\{(x_t,y_t^+,y_t^-,i_t)\}$, GBA weights $\alpha_i^\star$, reference policy $\mu_{\mathrm{ref}}$.
+\FOR{minibatch $\mathcal{B}\subset \mathcal{D}$}
+    \STATE Compute per-example DPO losses $\ell_{\mathrm{DPO}}(\phi;x,y^+,y^-)$ (Eq.~\eqref{eq:dpo}).
+    \STATE Weight losses by annotator: $\mathcal{L}(\phi)\leftarrow \sum_{(x,y^+,y^-,i)\in\mathcal{B}} \alpha_i^\star\,\ell_{\mathrm{DPO}}(\phi;x,y^+,y^-)$.
+    \STATE Update $\phi$ using gradient descent on $\mathcal{L}(\phi)$.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Metric Definitions and Experimental Setup}
+\label{app:metrics}
+
+\subsection{Metric Definitions}
+
+Let $\mathcal{X}_{\text{test}}$ be the set of test prompts and let
+$\mathcal{Y}^{\mathrm{cand}}_x$ denote the (finite) candidate set for each
+prompt $x$. Let $s(x,y)$ be the scalar \emph{public score} used for preference
+prediction and offline reranking. For Graph-Preference Learning,
+$s(x,y)=\bar r_\theta(x,y)=\sum_{i\in V}\tilde\pi_i\,r_\theta(x,y,i)$, whereas
+for scalar baselines $s(x,y)=r_\theta(x,y)$. On synthetic data we also have
+access to individual utilities $u_i(x,y)$ and define the target welfare score
+$U_\pi(x,y)=\sum_{i\in V}\pi_i\,u_i(x,y)$. Let $z(\cdot)$ denote standardization
+to zero mean and unit variance computed over the candidate-level test set
+$\mathcal{D}^{\mathrm{cand}}_{\text{test}}:=\{(x,y):x\in\mathcal{X}_{\text{test}},\,y\in\mathcal{Y}^{\mathrm{cand}}_x\}$.
+
+\paragraph{Welfare MSE ($\downarrow$).}
+We measure the normalized mean squared error between a method's public score
+and the target welfare score:
+\begin{equation}
+\mathrm{WelfareMSE}
+:=
+\frac{1}{|\mathcal{D}^{\mathrm{cand}}_{\text{test}}|}
+\sum_{(x,y)\in\mathcal{D}^{\mathrm{cand}}_{\text{test}}}
+\big(z(s(x,y)) - z(U_\pi(x,y))\big)^2.
+\end{equation}
+
+\paragraph{Disparity ($\downarrow$).}
+Let $\{C_k\}_{k=1}^K$ be communities. For each prompt $x$, let
+$y^{\text{chosen}}(x)=\arg\max_{y\in \mathcal{Y}^{\mathrm{cand}}_x} s(x,y)$ be
+the offline-reranked output. Define the per-community welfare on $x$ as
+$W_k(x)=\frac{1}{|C_k|}\sum_{i\in C_k} u_i(x,y^{\text{chosen}}(x))$. We report:
+\begin{equation}
+\mathrm{Disparity}
+:=
+\frac{1}{|\mathcal{X}_{\text{test}}|}
+\sum_{x\in\mathcal{X}_{\text{test}}}
+\Big(\max_k W_k(x) - \min_k W_k(x)\Big).
+\end{equation}
+This measures the welfare gap between the best-served and worst-served
+communities under the reranking decision rule. Values can exceed 1 as they are
+on the utility scale, not probability scale.
+
+\paragraph{Degree bias ($\downarrow$).}
+\begin{equation}
+\mathrm{DegBias} := \mathrm{Corr}\Big(\log(d_i+1),\ \tilde\pi_i - \pi_i\Big),
+\end{equation}
+where $\tilde\pi$ is the induced welfare distribution (for Standard reward
+modeling without reweighting, $\tilde\pi=q$). The ideal value is $0$.
+
+\paragraph{Empirical ESS factor ($\uparrow$).}
+For any nonnegative weights $\alpha$ normalized to satisfy
+$\sum_i \hat q_i \alpha_i = 1$, we define the empirical effective sample size
+(ESS) factor as:
+\begin{equation}
+\mathrm{ESS}_{\mathrm{emp}}(\alpha;\hat q) := \frac{1}{\sum_i \hat q_i \alpha_i^2}\in (0,1].
+\end{equation}
+It equals $1$ for uniform weights and decreases as weights become more
+concentrated (heavy tails). We report ESS and weight-distribution diagnostics
+for stabilized IPW baselines in Table~\ref{tab:weight-diagnostics}.
+
+\paragraph{Induced-weight mismatch ($\downarrow$).}
+We also report the induced-weight mismatch
+\begin{equation}
+\|\tilde\pi-\pi\|_1 := \sum_{i\in V}\big|\tilde\pi_i-\pi_i\big|,
+\end{equation}
+where $\tilde\pi=\hat q\odot\alpha$ is the induced welfare distribution
+(or its region/community-aggregated analogue when only coarse $\pi$ is defined).
+
+\paragraph{Pairwise accuracy ($\uparrow$).}
+Let $\mathcal{D}^{\mathrm{pair}}_{\text{test}}:=\{(x_t,y_t^+,y_t^-,i_t)\}_{t=1}^{T_{\text{test}}}$
+be held-out preference pairs with label $y_t^+\succ y_t^-$. Define the predicted
+pairwise probability
+\begin{equation}
+\hat p_t := \sigma\!\big(s(x_t,y_t^+) - s(x_t,y_t^-)\big).
+\end{equation}
+We report $\mathrm{Acc}:=\frac{1}{T_{\text{test}}}\sum_{t=1}^{T_{\text{test}}}\mathbb{I}\{\hat p_t\ge 0.5\}$.
+
+\paragraph{Pairwise log loss ($\downarrow$).}
+We report the negative log-likelihood
+\begin{equation}
+\mathrm{LogLoss} := -\frac{1}{T_{\text{test}}}\sum_{t=1}^{T_{\text{test}}}\log(\hat p_t).
+\end{equation}
+
+\paragraph{Calibration (ECE, $\downarrow$).}
+We compute expected calibration error (ECE) on pairwise predictions using $B=10$
+confidence bins. Let $\mathcal{B}_b:=\{t:\hat p_t\in I_b\}$ be indices in bin $b$.
+Define $\mathrm{conf}(\mathcal{B}_b):=\frac{1}{|\mathcal{B}_b|}\sum_{t\in\mathcal{B}_b}\hat p_t$
+and $\mathrm{acc}(\mathcal{B}_b):=\frac{1}{|\mathcal{B}_b|}\sum_{t\in\mathcal{B}_b}\mathbb{I}\{\hat p_t\ge 0.5\}$.
+Then
+\begin{equation}
+\mathrm{ECE}:=\sum_{b=1}^B \frac{|\mathcal{B}_b|}{T_{\text{test}}}\,\big|\mathrm{acc}(\mathcal{B}_b)-\mathrm{conf}(\mathcal{B}_b)\big|.
+\end{equation}
+
+\paragraph{Cross-language accuracy gap ($\downarrow$).}
+Partition test pairs by language $\ell(i_t)\in\{1,\dots,L\}$ and compute
+per-language accuracies $\mathrm{Acc}_\ell$. We report $\mathrm{AccGap}:=\max_\ell \mathrm{Acc}_\ell-\min_\ell \mathrm{Acc}_\ell$.
+
+\subsection{Experimental Setup}
+
+\begin{table}[h]
+\caption{Summary of experimental targets and sampling for each condition.}
+\label{tab:exp-setup}
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+\textbf{Condition} & \textbf{Collection $q$} & \textbf{Target $\pi$} & \textbf{Estimator $\hat q$} \\
+\midrule
+Uniform & $q_i = 1/|V|$ & $\pi_i = 1/|V|$ & $\hat q_i = n_i/\sum_j n_j$ \\
+Degree-biased & $q_i \propto d_i^\gamma$ & $\pi_i = 1/|V|$ & $\hat q_i \propto d_i^\gamma$ \\
+Snowball & empirical visit freq. & $\pi_i = 1/|V|$ & $\hat q_i = n_i/\sum_j n_j$ \\
+Community-biased & $q(C_k)$ skewed & equal-per-community & $\hat q_i = n_i/\sum_j n_j$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Splits, leakage prevention, and uncertainty reporting (details).}
+\textbf{Synthetic:} we split by \emph{prompt} $x$ (not by pair) into
+train/validation/test so that all candidate outputs for a prompt are contained
+within a single split, preventing reranking leakage. We repeat each condition
+over 10 random seeds (graph generation, sampling, and model initialization) and
+report mean $\pm$ std across seeds; 95\% CIs can be computed via bootstrap over
+seeds. The inclusion distribution $\hat q$ and any community assignments are
+computed from the training split only. \textbf{LMArena:} we use prompt-level
+cross-validation; sessions may appear in multiple folds, but prompts are
+disjoint, so no test prompt or its candidates appear in training. We compute
+$\hat q$ from training-fold participation counts (with Laplace smoothing) and
+build the session graph from metadata only (no preference-label leakage).
+We report mean $\pm$ std across folds and compute CIs via bootstrap over prompts.
+For gap metrics, we aggregate at the prompt level to avoid overweighting heavy
+sessions.
+\textbf{Session-heldout check:} in addition, we create a session-level split
+(80/20) where held-out sessions contribute no training labels. We still
+keep their nodes (and metadata features) in the graph to allow inductive
+inference via message passing, but exclude their preference pairs from the loss.
+We evaluate on held-out session labels and report the same mean $\pm$ std and
+bootstrap CIs. This serves as a leakage/robustness check for personalization.
+
+\paragraph{Sanity check: when reweighting should be neutral.}
+In the special case where the collection distribution matches the target
+($q=\pi$, i.e., uniform sampling with equal-per-person target), importance
+weights satisfy $\alpha_i=\pi_i/q_i=1$ for all $i$. Therefore IW-Only should
+match Standard reward modeling up to optimization noise. In
+Table~\ref{tab:synthetic-results} (Uniform), we observe that IW-Only and
+Standard perform similarly, validating our implementation.
+
+\paragraph{Stabilized weighting and ESS.}
+When $q$ deviates from $\pi$, raw ratios $\alpha_i=\pi_i/\hat q_i$ may be heavy
+tailed (small $\hat q_i$) and lead to unstable training. We therefore include
+stabilized IPW baselines (self-normalization and clipping) and report an ESS
+diagnostic that summarizes weight concentration; see
+Table~\ref{tab:weight-diagnostics}.
+
+\subsection{Weight-Stability Diagnostics}
+\label{app:weight-diagnostics}
+
+Table~\ref{tab:weight-diagnostics} reports weight-stability metrics across sampling mechanisms.
+ESS (empirical effective sample size factor) measures weight concentration, while Mismatch
+quantifies the $\ell_1$ distance between induced and target welfare weights. These diagnostics
+confirm that all stabilized weighting methods (including ours) achieve similar ESS and Mismatch
+values; the key performance differences arise from the combination with graph-personalized
+reward modeling (GPRM), as shown in the main results.
+
+\begin{table}[h]
+\caption{Weight-stability diagnostics. ESS = empirical effective sample size factor ($1/\sum_i \hat q_i \alpha_i^2$, higher is better); Mismatch = induced-weight mismatch $\|\tilde\pi-\pi\|_1$ (lower is better). SN = SN-IPW; Clip = Clipped-IPW; QP = GBA-QP.}
+\label{tab:weight-diagnostics}
+\centering
+\small
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Setting} & \textbf{Metric} & \textbf{IW} & \textbf{SN} & \textbf{Clip} & \textbf{QP} & \textbf{Ours} \\
+\midrule
+\multirow{2}{*}{Uniform}
+& ESS$\uparrow$ & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+& Mismatch$\downarrow$ & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\midrule
+\multirow{2}{*}{Degree}
+& ESS$\uparrow$ & 0.44 & 0.44 & 0.48 & 0.45 & 0.45 \\
+& Mismatch$\downarrow$ & 0.00 & 0.00 & 0.02 & 0.04 & 0.04 \\
+\midrule
+\multirow{2}{*}{Snowball}
+& ESS$\uparrow$ & 0.38 & 0.38 & 0.51 & 0.39 & 0.39 \\
+& Mismatch$\downarrow$ & 0.00 & 0.00 & 0.06 & 0.03 & 0.03 \\
+\midrule
+\multirow{2}{*}{Community}
+& ESS$\uparrow$ & 0.35 & 0.35 & 0.35 & 0.36 & 0.36 \\
+& Mismatch$\downarrow$ & 0.00 & 0.00 & 0.00 & 0.06 & 0.06 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Robustness Ablations}
+\label{app:robustness}
+
+We test robustness to graph misspecification by injecting graph noise and
+varying homophily. We report mean$\pm$std over multiple runs under degree-biased
+sampling. For consistency with the main tables, we refer to the reported
+\texttt{alignment\_error} as \textbf{WelfareMSE}. 
+
+\begin{table}[h]
+\caption{Robustness to graph noise (SBM, degree-biased sampling).}
+\label{tab:robustness}
+\centering
+\small
+\begin{tabular}{llccc}
+\toprule
+\textbf{Noise scale} & \textbf{Method} & \textbf{WelfareMSE}$\downarrow$ & \textbf{Disparity}$\downarrow$ & \textbf{DegBias}$\downarrow$ \\
+\midrule
+\multirow{3}{*}{0.1}
+& Standard & 0.235{\tiny$\pm$0.17} & 3.510{\tiny$\pm$0.76} & 0.900 \\
+& GPRM+GBA (Simple) & 0.185{\tiny$\pm$0.10} & 3.490{\tiny$\pm$0.75} & 0.550 \\
+& \textbf{Ours} & \textbf{0.165}{\tiny$\pm$0.07} & 3.480{\tiny$\pm$0.74} & \textbf{0.400} \\
+\midrule
+\multirow{3}{*}{0.3}
+& Standard & 0.250{\tiny$\pm$0.18} & 3.520{\tiny$\pm$0.77} & 0.900 \\
+& GPRM+GBA (Simple) & 0.205{\tiny$\pm$0.12} & 3.500{\tiny$\pm$0.76} & 0.600 \\
+& \textbf{Ours} & \textbf{0.185}{\tiny$\pm$0.10} & 3.490{\tiny$\pm$0.75} & \textbf{0.450} \\
+\midrule
+\multirow{3}{*}{0.5}
+& Standard & 0.275{\tiny$\pm$0.19} & 3.530{\tiny$\pm$0.78} & 0.900 \\
+& GPRM+GBA (Simple) & 0.235{\tiny$\pm$0.14} & 3.510{\tiny$\pm$0.77} & 0.650 \\
+& \textbf{Ours} & \textbf{0.230}{\tiny$\pm$0.14} & 3.500{\tiny$\pm$0.76} & \textbf{0.550} \\
+\midrule
+\multirow{3}{*}{0.8}
+& Standard & 0.310{\tiny$\pm$0.20} & 3.540{\tiny$\pm$0.80} & 0.900 \\
+& GPRM+GBA (Simple) & \textbf{0.285}{\tiny$\pm$0.18} & \textbf{3.520}{\tiny$\pm$0.79} & 0.750 \\
+& \textbf{Ours} & 0.300{\tiny$\pm$0.22} & 3.520{\tiny$\pm$0.79} & \textbf{0.700} \\
+\midrule
+\multirow{3}{*}{1.0}
+& Standard & 0.330{\tiny$\pm$0.21} & 3.550{\tiny$\pm$0.81} & 0.900 \\
+& GPRM+GBA (Simple) & \textbf{0.320}{\tiny$\pm$0.21} & \textbf{3.540}{\tiny$\pm$0.80} & 0.820 \\
+& \textbf{Ours} & 0.325{\tiny$\pm$0.23} & 3.540{\tiny$\pm$0.80} & \textbf{0.800} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Additional Experimental Details}
+\label{app:exp-details}
+
+\subsection{Synthetic Experiment Implementation}
+\label{app:synthetic-impl}
+
+\paragraph{Graph topologies.}
+To ensure robustness across network structures, we generate three types of graphs. For main results (Table~\ref{tab:synthetic-results}), we use $N=100$ nodes; for scalability analysis, we test up to $N=500$:
+\begin{itemize}
+    \item \textbf{Stochastic Block Model (SBM):} $K=5$ communities with a hub-and-spoke structure. The hub community (40\% of nodes) has dense internal connections ($p=0.15$), while spoke communities (15\% each) are sparser ($p=0.08$). Inter-community probability is $p=0.01$.
+    \item \textbf{Barabási-Albert (BA):} A scale-free network generated via preferential attachment with $m=5$ edges per new node. This models networks with extreme degree distributions (power-law).
+    \item \textbf{Watts-Strogatz (WS):} A small-world network with $k=10$ nearest neighbors and rewiring probability $p=0.1$, exhibiting high clustering coefficients.
+\end{itemize}
+
+\paragraph{Utility functions and Heterophily.}
+We model utilities as $u_i(x,y) = w_i^\top \phi(x,y)$, where $\phi(x,y) \in \mathbb{R}^{10}$. The weight vectors $w_i$ are generated with a hierarchical structure:
+$w_i = w_{\text{shared}} + w_{c(i)}^{\text{comm}} + \epsilon_i$, where $\epsilon_i \sim \mathcal{N}(0, \sigma^2 I)$.
+To test robustness against **heterophily**, we introduce a \texttt{heterophily\_ratio} parameter $\rho_h$. We randomly select $\rho_h \cdot N$ nodes and ``flip'' their community preference component ($w_{c(i)}^{\text{comm}} \leftarrow -w_{c(i)}^{\text{comm}}$), simulating adversarial users who disagree with their local community.
+
+\paragraph{Sampling Mechanisms.}
+We simulate four distinct feedback collection processes:
+\begin{itemize}
+    \item \textbf{Uniform:} $q_i = 1/N$.
+    \item \textbf{Degree-Biased:} $q_i \propto \text{deg}(i)^\gamma$ (default $\gamma=1.5$).
+    \item \textbf{Snowball:} A multi-wave neighbor-expansion (referral) process
+    starting from $S$ seed nodes. At each wave, newly included nodes recruit a
+    subset of their neighbors; nodes can be revisited, yielding an empirical
+    inclusion distribution $q$ proportional to visit counts. This bias tends to
+    be local/seed-dependent and need not be purely degree-proportional.
+    \item \textbf{Community-Biased:} Biased towards specific communities (e.g., Hub community has $5\times$ inclusion probability), simulating platform demographic bias.
+\end{itemize}
+
+\paragraph{Baselines.}
+We compare our full method (GPRM+GBA) against a comprehensive suite of baselines:
+\begin{itemize}
+    \item \textbf{Standard:} Naive scalar reward model trained on all data \citep{stiennon2020summarize,ouyang2022instructgpt}.
+    \item \textbf{Personalized:} A personalized reward model that
+    conditions on annotator identity (learned embedding or demographics) but
+    \emph{does not} use message passing or Laplacian regularization. Concretely,
+    we replace the graph encoder $g_\psi$ with a per-annotator embedding lookup
+    and train $r_\theta(x,y,i)=f_\theta(\phi(x,y),v_i)$ with the same preference
+    loss \citep{li2024personalized_rlhf}.
+    \item \textbf{IW-Only:} Standard model trained with raw IPW weights
+    $\alpha_i^{\mathrm{IPW}}=\pi_i/\hat q_i$, normalized so
+    $\sum_i \hat q_i \alpha_i^{\mathrm{IPW}}=1$, without any stabilization and
+    without graph personalization \citep{chandak2021uno}.
+    \item \textbf{SN-IPW:} Self-normalized IPW with
+    $\alpha_i^{\mathrm{SN}}=\alpha_i^{\mathrm{IPW}}/\sum_j \hat q_j\alpha_j^{\mathrm{IPW}}$ \citep{chandak2021uno}.
+    \item \textbf{Clipped-IPW:} Clipped IPW with
+    $\tilde\alpha_i=\min(\alpha_i^{\mathrm{IPW}},\tau)$ followed by
+    normalization $\alpha_i^{\mathrm{clip}}=\tilde\alpha_i/\sum_j \hat q_j\tilde\alpha_j$
+    (we use $\tau=10$ unless stated otherwise) \citep{chandak2021uno}.
+    \item \textbf{GBA-QP:} Use the same QP solver and
+    hyperparameters as GBA to compute stabilized weights $\alpha^\star$, but
+    train a \emph{scalar} reward model (no graph personalization). This isolates
+    the benefit of QP-stabilized weighting alone \citep{hainmueller2012entropy}.
+    \item \textbf{Group-Based:} A coarse group-level reweighting baseline that
+    uses communities $\{C_k\}$ (from the graph) and assigns each sample a weight
+    inversely proportional to its community frequency (normalized). This
+    approximates an equal-per-community target and is often strong under
+    community-driven inclusion (e.g., snowball) \citep{chakraborty2024maxminrlhf,ramesh2024grpo}.
+    \item \textbf{DRO-CVaR:} Distributionally Robust Optimization minimizing
+    the loss on the worst $\alpha$-percentile of samples \citep{rahimian2022dro}.
+    \item \textbf{GPRM:} Graph-personalized reward model trained without
+    importance weights (ablation for graph structure).
+\end{itemize}
+
+\paragraph{Model architecture.}
+The GPRM uses a 2-layer GCN with hidden dimension 32 for annotator embeddings. These are concatenated with prompt/candidate features and passed through a 3-layer MLP (512 hidden units) to produce scalar rewards. We train with Adam (lr=$10^{-3}$) for 100 epochs with early stopping.
+
+\paragraph{GBA parameters.}
+For our full method (GPRM+GBA), we solve the QP with $\lambda_{\text{smooth}} = 0.01$, $\lambda_{\text{comm}} = 0.1$, and $\lambda_{\text{var}} = 0.01$.
+
+\subsection{LMArena Case Study Details}
+\label{app:lmarena-details}
+
+\paragraph{Dataset overview.}
+The LMArena (Chatbot Arena) dataset~\citep{chiang2024chatbotarena} is an open platform
+for evaluating LLMs by human preference, containing over 135,000 pairwise preference
+comparisons. Users interact with two anonymous models and select which response they
+prefer. Each comparison includes: (1)~the conversation/prompt, (2)~two model responses,
+(3)~the user's preference, and (4)~session metadata including language and model category.
+We use \texttt{evaluation\_session\_id} as a proxy for annotator identity. After filtering
+to sessions with at least 2 interactions, we retain 5{,}591 sessions.
+
+\paragraph{Language distribution.}
+The filtered dataset exhibits significant language imbalance reflecting real-world usage patterns:
+\begin{itemize}
+    \item \textbf{Over-represented}: English ($\sim$65\%), Chinese ($\sim$12\%)
+    \item \textbf{Under-represented}: Russian, Japanese, Korean, German, French, Spanish, and others ($<$5\% each)
+\end{itemize}
+This participation imbalance provides a natural testbed for evaluating
+target-welfare reweighting under a normative choice of $\pi$.
+
+\paragraph{Graph construction (fixed-degree $k$NN).}
+We construct a \emph{session-similarity} graph $G=(V,E)$ with
+$|V|=5{,}591$ nodes (sessions) and approximately $56{,}000$ edges using a fixed-degree $k$NN procedure. Each session is
+represented by a feature vector built from metadata attributes
+(language one-hot encoding, model category hash, timestamp features).
+We connect each node to its $k=10$ most similar neighbors under cosine similarity and
+symmetrize edges; edge weights are set to the similarity score.
+This choice produces an approximately fixed-degree graph and mitigates mechanical degree
+artifacts.
+
+\paragraph{Target weights and inclusion estimation.}
+We set the target welfare to equal-per-language:
+$\pi_i = 1 / (L \cdot |L_i|)$ where $L_i$ is the set of sessions with the same language
+as session $i$, and $L$ is the total number of languages. In the semi-synthetic protocol,
+the inclusion distribution $q$ is induced by the graph sampling mechanism; we estimate
+$\hat q$ from training-fold visit/participation counts with smoothing.
+
+\paragraph{Semi-synthetic sampling protocol (biased train, $\pi$-balanced test).}
+Because LMArena does not include an explicit recruitment network, we induce biased
+training inclusion by subsampling feedback using network sampling on $G$.
+Concretely, on each prompt-heldout split we (i) run a random-walk-with-restart
+procedure on $G$ (seeded in over-represented languages like English) to generate visit counts
+$n_i$, (ii) construct a biased training set by including training-fold
+preference pairs from visited sessions up to a fixed label budget, and (iii)
+evaluate on a $\pi$-balanced test set built from held-out prompts by sampling
+equal numbers of preference pairs per language. This makes the mechanism
+$q\neq\pi$ explicit and auditable.
+In our implementation we use $k=10$, restart probability $p_{\mathrm{restart}}=0.02$,
+$S=50$ walk seeds, and a walk length of 500{,}000 steps per fold, with a
+training budget of 15{,}000 pairs per fold.
+
+\paragraph{Inclusion--centrality correlation.}
+As a descriptive diagnostic, we compute correlations between induced inclusion
+($\hat q_i$ or visit counts) and graph centrality (e.g., PageRank).
+The random-walk procedure successfully induces non-uniform inclusion across sessions,
+with higher-degree nodes in over-represented language communities receiving
+disproportionately more visits.
+
+\paragraph{Evaluation metrics.}
+We evaluate the reward model on:
+\begin{itemize}
+    \item \textbf{Pairwise accuracy}: Fraction of held-out preference pairs correctly predicted by the reward model.
+    \item \textbf{Pairwise log loss}: Negative log-likelihood of held-out pairwise labels under predicted probabilities.
+    \item \textbf{ECE}: Expected calibration error (10 bins) on pairwise predictions.
+    \item \textbf{Cross-language accuracy gap}: Max--min accuracy across language groups.
+\end{itemize}
+We use 2-fold \emph{prompt-level} cross-validation with 2 random seeds (4 runs total),
+with folds constructed to maintain language coverage.
+
+\paragraph{Implementation details.}
+For GPRM, we use a 2-layer GCN with embedding dimension 64 for session embeddings. The reward head is an MLP (256 hidden units) that takes concatenated [prompt embedding; response embedding; session embedding] as input. Prompt and response embeddings are obtained from a frozen Sentence-BERT model (\texttt{all-MiniLM-L6-v2}, 384-dimensional). We train with Adam (lr=$1 \times 10^{-3}$, weight decay $10^{-4}$) for up to 150 epochs with early stopping (patience=20) based on validation accuracy.
+
+\paragraph{Extended results.}
+Table~\ref{tab:lmarena-extended} shows per-language accuracy breakdown for a representative run.
+GPRM+GBA (ours) achieves the best overall accuracy while maintaining competitive performance
+across language groups. The strong performance on high-resource languages (English, Chinese)
+transfers to improved overall metrics, while GBA reweighting helps maintain
+reasonable accuracy on under-represented languages.
+
+\begin{table}[h]
+\caption{Semi-synthetic LMArena: per-language pairwise accuracy under biased training
+and $\pi$-balanced evaluation (representative run). Languages ordered by dataset frequency.}
+\label{tab:lmarena-extended}
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method} & \textbf{EN} & \textbf{ZH} & \textbf{RU} & \textbf{JA} & \textbf{Other} \\
+\midrule
+Standard & 58.2\% & 52.1\% & 48.3\% & 45.7\% & 42.6\% \\
+Personalized & 61.4\% & 55.8\% & 52.3\% & 49.1\% & 46.2\% \\
+IW-Only & 59.8\% & 54.2\% & 51.7\% & 48.4\% & 44.8\% \\
+GBA-QP & 60.2\% & 55.1\% & 52.8\% & 49.7\% & 45.6\% \\
+Group-Based & 54.5\% & 51.4\% & 49.2\% & 46.8\% & 43.1\% \\
+GPRM (Ours) & 62.8\% & 57.3\% & 54.1\% & 51.2\% & 47.5\% \\
+\textbf{GPRM+GBA (Ours)} & \textbf{65.2\%} & \textbf{59.4\%} & \textbf{56.7\%} & \textbf{53.8\%} & \textbf{49.3\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Analysis: Session-based vs.\ true annotator identity.}
+An important caveat for the LMArena evaluation is that we use session IDs rather than
+true persistent annotator identities. This may underestimate the benefits of personalization
+since the same user may have multiple sessions. Nevertheless, the strong performance of
+GPRM+GBA suggests that even session-level personalization combined with graph-based
+debiasing provides substantial improvements in cross-language fairness.
+
+\subsection{Ablation Studies}
+\label{app:ablations}
+
+\paragraph{Effect of $\lambda_v$ (Laplacian regularization).}
+Increasing $\lambda_v$ from 0 to 0.1 smooths annotator embeddings but can
+reduce the model's ability to capture fine-grained preference differences.
+We find $\lambda_v \in [0.001, 0.01]$ provides a good trade-off.
+
+\paragraph{Effect of sampling bias strength ($\gamma$).}
+We vary $\gamma \in \{0.5, 1.0, 1.5, 2.0\}$ in the degree-biased sampling
+$q_i \propto d_i^\gamma$. As $\gamma$ increases, the gap between Standard and
+GPRM+GBA widens, confirming that our method provides greater benefit under
+stronger network-induced bias.
+
+\paragraph{Effect of graph density.}
+Denser graphs (higher $p_{\text{within}}$) lead to more homogeneous degree
+distributions, reducing the effectiveness of degree-based sampling bias. In
+sparse graphs with heterogeneous communities, our full method shows the largest
+improvements.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Additional Experiment Results}
+\label{app:full-synthetic}
+
+This section provides additional experimental results across all graph topologies and sampling methods.
+
+We report full synthetic results for additional graph topologies in
+Tables~\ref{tab:ba-full-results} (BA) and \ref{tab:ws-full-results} (WS).
+
+% Full results: Barabási--Albert (BA)
+\begin{table*}[h]
+\caption{Full synthetic experiment results on Barabási--Albert (BA) graph.}
+\label{tab:ba-full-results}
+\centering\small
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Sampling} & \textbf{Method} & \textbf{Welfare MSE}$\downarrow$ & \textbf{Disparity}$\downarrow$ & \textbf{Deg.\ Bias}$\downarrow$ & \textbf{Improv.} \\
+\midrule
+\multirow{10}{*}{Uniform}
+& Standard & 0.087{\tiny$\pm$0.04} & 2.883{\tiny$\pm$0.53} & 0.000 & --- \\
+& Personalized & \textbf{0.053}{\tiny$\pm$0.02} & 2.905{\tiny$\pm$0.56} & 0.000 & 39\% \\
+& IW-Only & 0.069{\tiny$\pm$0.05} & \textbf{2.877}{\tiny$\pm$0.54} & 0.000 & 21\% \\
+& SN-IPW & 0.077{\tiny$\pm$0.02} & 2.902{\tiny$\pm$0.51} & 0.000 & 11\% \\
+& Clipped-IPW & 0.084{\tiny$\pm$0.03} & 2.891{\tiny$\pm$0.53} & 0.000 & 3\% \\
+& GBA-QP & 0.063{\tiny$\pm$0.03} & 2.920{\tiny$\pm$0.54} & 0.000 & 27\% \\
+& Group-Based & 0.065{\tiny$\pm$0.03} & 2.935{\tiny$\pm$0.52} & $-$0.030 & 25\% \\
+& GPRM (Ours) & 0.057{\tiny$\pm$0.03} & 2.878{\tiny$\pm$0.53} & 0.000 & 34\% \\
+& DRO-CVaR & 0.777{\tiny$\pm$0.43} & 2.945{\tiny$\pm$0.54} & 0.000 & -795\% \\
+& GPRM+GBA (Ours) & 0.055{\tiny$\pm$0.02} & \textbf{2.876}{\tiny$\pm$0.53} & 0.000 & 36\% \\
+\midrule
+\multirow{10}{*}{Degree-Biased}
+& Standard & 0.123{\tiny$\pm$0.08} & 2.945{\tiny$\pm$0.56} & 0.914 & --- \\
+& Personalized & 0.118{\tiny$\pm$0.09} & 2.922{\tiny$\pm$0.57} & 0.914 & 4\% \\
+& IW-Only & 0.118{\tiny$\pm$0.06} & \textbf{2.859}{\tiny$\pm$0.47} & 0.923 & 4\% \\
+& SN-IPW & 0.135{\tiny$\pm$0.08} & 2.973{\tiny$\pm$0.53} & 0.923 & -10\% \\
+& Clipped-IPW & 0.121{\tiny$\pm$0.08} & 2.913{\tiny$\pm$0.54} & 0.877 & 1\% \\
+& GBA-QP & 0.123{\tiny$\pm$0.10} & 2.909{\tiny$\pm$0.52} & 0.771 & -0\% \\
+& Group-Based & 0.123{\tiny$\pm$0.13} & 2.953{\tiny$\pm$0.51} & 0.883 & -0\% \\
+& GPRM (Ours) & 0.122{\tiny$\pm$0.09} & 2.932{\tiny$\pm$0.53} & 0.914 & 1\% \\
+& DRO-CVaR & 0.754{\tiny$\pm$0.44} & 2.939{\tiny$\pm$0.59} & 0.914 & -514\% \\
+& GPRM+GBA (Ours) & \textbf{0.079}{\tiny$\pm$0.05} & 2.959{\tiny$\pm$0.54} & 0.771 & 36\% \\
+\midrule
+\multirow{10}{*}{Snowball}
+& Standard & 0.108{\tiny$\pm$0.08} & 2.940{\tiny$\pm$0.57} & 0.911 & --- \\
+& Personalized & 0.082{\tiny$\pm$0.04} & 2.962{\tiny$\pm$0.54} & 0.911 & 24\% \\
+& IW-Only & 0.097{\tiny$\pm$0.04} & \textbf{2.884}{\tiny$\pm$0.56} & 0.708 & 10\% \\
+& SN-IPW & 0.114{\tiny$\pm$0.06} & 2.954{\tiny$\pm$0.55} & 0.708 & -6\% \\
+& Clipped-IPW & 0.116{\tiny$\pm$0.07} & 2.902{\tiny$\pm$0.57} & 0.708 & -8\% \\
+& GBA-QP & 0.091{\tiny$\pm$0.04} & 2.937{\tiny$\pm$0.57} & 0.799 & 16\% \\
+& Group-Based & 0.101{\tiny$\pm$0.08} & 2.969{\tiny$\pm$0.59} & 0.851 & 6\% \\
+& GPRM (Ours) & 0.083{\tiny$\pm$0.04} & 2.937{\tiny$\pm$0.57} & 0.911 & 23\% \\
+& DRO-CVaR & 0.630{\tiny$\pm$0.31} & 2.902{\tiny$\pm$0.57} & 0.911 & -486\% \\
+& GPRM+GBA (Ours) & \textbf{0.075}{\tiny$\pm$0.05} & 2.886{\tiny$\pm$0.55} & 0.799 & 31\% \\
+\midrule
+\multirow{10}{*}{Community-Biased}
+& Standard & 0.292{\tiny$\pm$0.22} & 3.020{\tiny$\pm$0.54} & 0.048 & --- \\
+& Personalized & 0.281{\tiny$\pm$0.21} & 3.010{\tiny$\pm$0.53} & 0.048 & 4\% \\
+& IW-Only & 0.112{\tiny$\pm$0.05} & \textbf{2.882}{\tiny$\pm$0.54} & 0.015 & 62\% \\
+& SN-IPW & 0.121{\tiny$\pm$0.07} & 3.024{\tiny$\pm$0.57} & 0.015 & 59\% \\
+& Clipped-IPW & 0.119{\tiny$\pm$0.05} & 2.999{\tiny$\pm$0.57} & 0.017 & 59\% \\
+& GBA-QP & \textbf{0.107}{\tiny$\pm$0.05} & 2.949{\tiny$\pm$0.56} & 0.381 & 63\% \\
+& Group-Based & 0.126{\tiny$\pm$0.07} & 2.897{\tiny$\pm$0.50} & $-$0.036 & 57\% \\
+& GPRM (Ours) & 0.276{\tiny$\pm$0.19} & 2.999{\tiny$\pm$0.50} & 0.048 & 5\% \\
+& DRO-CVaR & 0.786{\tiny$\pm$0.39} & 2.932{\tiny$\pm$0.58} & 0.048 & -170\% \\
+& GPRM+GBA (Ours) & 0.111{\tiny$\pm$0.07} & 2.977{\tiny$\pm$0.58} & 0.381 & 62\% \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+% Full results: Watts--Strogatz (WS)
+\begin{table*}[h]
+\caption{Full synthetic experiment results on Watts--Strogatz (WS) graph.}
+\label{tab:ws-full-results}
+\centering\small
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Sampling} & \textbf{Method} & \textbf{Welfare MSE}$\downarrow$ & \textbf{Disparity}$\downarrow$ & \textbf{Deg.\ Bias}$\downarrow$ & \textbf{Improv.} \\
+\midrule
+\multirow{10}{*}{Uniform}
+& Standard & 0.080{\tiny$\pm$0.05} & 2.963{\tiny$\pm$0.55} & 0.000 & --- \\
+& Personalized & 0.058{\tiny$\pm$0.03} & 2.947{\tiny$\pm$0.52} & 0.000 & 28\% \\
+& IW-Only & 0.062{\tiny$\pm$0.04} & 2.914{\tiny$\pm$0.57} & 0.000 & 22\% \\
+& SN-IPW & 0.079{\tiny$\pm$0.05} & 2.987{\tiny$\pm$0.52} & 0.000 & 1\% \\
+& Clipped-IPW & 0.076{\tiny$\pm$0.04} & \textbf{2.891}{\tiny$\pm$0.54} & 0.000 & 4\% \\
+& GBA-QP & 0.063{\tiny$\pm$0.03} & 2.979{\tiny$\pm$0.57} & 0.000 & 21\% \\
+& Group-Based & 0.073{\tiny$\pm$0.05} & 2.955{\tiny$\pm$0.54} & 0.000 & 9\% \\
+& GPRM (Ours) & \textbf{0.056}{\tiny$\pm$0.03} & 2.939{\tiny$\pm$0.51} & 0.000 & 30\% \\
+& DRO-CVaR & 0.672{\tiny$\pm$0.40} & 2.928{\tiny$\pm$0.50} & 0.000 & -743\% \\
+& GPRM+GBA (Ours) & 0.060{\tiny$\pm$0.05} & 2.932{\tiny$\pm$0.51} & 0.000 & 24\% \\
+\midrule
+\multirow{10}{*}{Degree-Biased}
+& Standard & 0.083{\tiny$\pm$0.05} & 3.042{\tiny$\pm$0.58} & 0.994 & --- \\
+& Personalized & \textbf{0.073}{\tiny$\pm$0.04} & 2.984{\tiny$\pm$0.54} & 0.994 & 13\% \\
+& IW-Only & 0.085{\tiny$\pm$0.06} & 2.968{\tiny$\pm$0.58} & 0.994 & -2\% \\
+& SN-IPW & 0.106{\tiny$\pm$0.06} & 3.061{\tiny$\pm$0.53} & 0.994 & -27\% \\
+& Clipped-IPW & 0.095{\tiny$\pm$0.05} & \textbf{2.942}{\tiny$\pm$0.60} & 0.994 & -13\% \\
+& GBA-QP & 0.086{\tiny$\pm$0.06} & 2.998{\tiny$\pm$0.57} & 0.938 & -3\% \\
+& Group-Based & 0.091{\tiny$\pm$0.07} & 3.040{\tiny$\pm$0.56} & 0.983 & -9\% \\
+& GPRM (Ours) & 0.090{\tiny$\pm$0.07} & 3.054{\tiny$\pm$0.58} & 0.994 & -8\% \\
+& DRO-CVaR & 0.748{\tiny$\pm$0.42} & 2.959{\tiny$\pm$0.51} & 0.994 & -795\% \\
+& GPRM+GBA (Ours) & 0.078{\tiny$\pm$0.05} & 2.990{\tiny$\pm$0.55} & 0.938 & 6\% \\
+\midrule
+\multirow{10}{*}{Snowball}
+& Standard & 0.102{\tiny$\pm$0.05} & 2.958{\tiny$\pm$0.51} & 0.273 & --- \\
+& Personalized & \textbf{0.085}{\tiny$\pm$0.05} & 2.990{\tiny$\pm$0.55} & 0.273 & 17\% \\
+& IW-Only & 0.101{\tiny$\pm$0.05} & \textbf{2.886}{\tiny$\pm$0.52} & 0.278 & 2\% \\
+& SN-IPW & 0.117{\tiny$\pm$0.05} & 2.960{\tiny$\pm$0.47} & 0.278 & -15\% \\
+& Clipped-IPW & 0.105{\tiny$\pm$0.05} & 2.928{\tiny$\pm$0.55} & 0.278 & -3\% \\
+& GBA-QP & 0.111{\tiny$\pm$0.05} & 2.992{\tiny$\pm$0.54} & 0.446 & -9\% \\
+& Group-Based & 0.092{\tiny$\pm$0.05} & 2.922{\tiny$\pm$0.48} & 0.328 & 10\% \\
+& GPRM (Ours) & 0.101{\tiny$\pm$0.07} & 2.894{\tiny$\pm$0.50} & 0.273 & 1\% \\
+& DRO-CVaR & 0.652{\tiny$\pm$0.37} & 2.914{\tiny$\pm$0.52} & 0.273 & -537\% \\
+& GPRM+GBA (Ours) & 0.095{\tiny$\pm$0.06} & 2.937{\tiny$\pm$0.54} & 0.446 & 7\% \\
+\midrule
+\multirow{10}{*}{Community-Biased}
+& Standard & 0.263{\tiny$\pm$0.20} & 2.966{\tiny$\pm$0.57} & $-$0.035 & --- \\
+& Personalized & 0.284{\tiny$\pm$0.19} & 2.956{\tiny$\pm$0.56} & $-$0.035 & -8\% \\
+& IW-Only & 0.117{\tiny$\pm$0.06} & 3.081{\tiny$\pm$0.58} & $-$0.031 & 56\% \\
+& SN-IPW & 0.143{\tiny$\pm$0.07} & 3.140{\tiny$\pm$0.54} & $-$0.031 & 46\% \\
+& Clipped-IPW & 0.126{\tiny$\pm$0.05} & 2.971{\tiny$\pm$0.59} & $-$0.031 & 52\% \\
+& GBA-QP & 0.126{\tiny$\pm$0.06} & 3.101{\tiny$\pm$0.57} & 0.098 & 52\% \\
+& Group-Based & 0.129{\tiny$\pm$0.07} & 3.085{\tiny$\pm$0.51} & 0.007 & 51\% \\
+& GPRM (Ours) & 0.257{\tiny$\pm$0.18} & \textbf{2.928}{\tiny$\pm$0.56} & $-$0.035 & 2\% \\
+& DRO-CVaR & 0.802{\tiny$\pm$0.34} & 3.016{\tiny$\pm$0.58} & $-$0.035 & -206\% \\
+& GPRM+GBA (Ours) & \textbf{0.100}{\tiny$\pm$0.03} & 3.088{\tiny$\pm$0.57} & 0.098 & 62\% \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+% Table moved to main text as Table~\ref{tab:improvement-summary}
+
+\subsection{Per-Community Regret Analysis}
+\label{app:community-regret}
+
+Table~\ref{tab:community-regret} shows the per-community regret under
+degree-biased sampling for the SBM graph. Different methods perform best on
+different communities; our method achieves the lowest regret on one community
+and remains competitive elsewhere.
+
+
+\begin{table}[h]
+\caption{Per-community regret on SBM graph under degree-biased sampling. Lower
+values indicate better alignment with each community's preferences. Best in
+\textbf{bold}.}
+\label{tab:community-regret}
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method} & \textbf{C1} & \textbf{C2} & \textbf{C3} & \textbf{C4} & \textbf{C5} \\
+\midrule
+Standard & 0.051 & 0.314 & 0.470 & 0.394 & 0.536 \\
+Personalized & \textbf{0.041} & 0.304 & 0.514 & 0.394 & 0.575 \\
+IW-Only & 0.242 & 0.299 & 0.474 & 0.361 & 0.448 \\
+SN-IPW & 0.189 & 0.299 & 0.494 & 0.379 & 0.491 \\
+Clipped-IPW & 0.189 & 0.254 & 0.495 & 0.352 & 0.474 \\
+GBA-QP & 0.207 & 0.309 & 0.491 & 0.396 & 0.491 \\
+Group-Based & 0.349 & \textbf{0.211} & 0.462 & 0.366 & \textbf{0.394} \\
+GPRM (Ours) & 0.052 & 0.283 & \textbf{0.455} & 0.389 & 0.569 \\
+DRO-CVaR & 0.398 & 0.582 & 0.768 & 0.564 & 0.692 \\
+\textbf{GPRM+GBA (Ours)} & 0.159 & 0.228 & 0.461 & \textbf{0.345} & 0.515 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data Sparsity Analysis}
+\label{app:sparsity}
+
+We analyze the effect of data sparsity by varying the number of observed feedback
+samples. Table~\ref{tab:sparsity-ablation} reports mean$\pm$std WelfareMSE under
+degree-biased sampling on SBM.
+
+\begin{table*}[h]
+\caption{Effect of data sparsity on WelfareMSE (SBM, degree-biased sampling). Best in \textbf{bold}.}
+\label{tab:sparsity-ablation}
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method} & \textbf{20} & \textbf{50} & \textbf{100} & \textbf{200} & \textbf{500} \\
+\midrule
+Standard & 0.410{\tiny$\pm$0.25} & 0.330{\tiny$\pm$0.20} & 0.280{\tiny$\pm$0.19} & 0.250{\tiny$\pm$0.18} & 0.230{\tiny$\pm$0.17} \\
+Personalized & 0.430{\tiny$\pm$0.27} & 0.340{\tiny$\pm$0.21} & 0.265{\tiny$\pm$0.18} & 0.235{\tiny$\pm$0.17} & 0.212{\tiny$\pm$0.16} \\
+GPRM (Ours) & 0.360{\tiny$\pm$0.23} & 0.300{\tiny$\pm$0.19} & 0.235{\tiny$\pm$0.17} & 0.210{\tiny$\pm$0.16} & 0.195{\tiny$\pm$0.15} \\
+\textbf{GPRM+GBA (Ours)} & \textbf{0.290}{\tiny$\pm$0.15} & \textbf{0.250}{\tiny$\pm$0.12} & \textbf{0.195}{\tiny$\pm$0.10} & \textbf{0.175}{\tiny$\pm$0.08} & \textbf{0.158}{\tiny$\pm$0.06} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+\end{document}

@@ -1,0 +1,1263 @@
+%%
+%% This is file `sample-sigconf-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[sigconf]{acmart}
+%%\documentclass[manuscript,review,anonymous]{acmart}
+%%
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelfont=bf,textfont=normalfont}
+
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{multirow}
+\theoremstyle{plain}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\usepackage{tabularx,booktabs}
+\usepackage{float}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\usepackage{booktabs}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, frame=single, breaklines=true}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\copyrightyear{2026}
+\acmYear{2026}
+\setcopyright{cc}
+\setcctype{by}
+\acmConference[WWW '26] {Proceedings of the ACM Web Conference 2026}{April 13--17, 2026}{Dubai, United Arab Emirates.}
+\acmBooktitle{Proceedings of the ACM Web Conference 2026 (WWW '26), April 13--17, 2026, Dubai, United Arab Emirates}
+\acmISBN{979-8-4007-2307-0/2026/04}
+\acmDOI{10.1145/3774904.3792974} 
+%%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+%% \acmISBN{978-1-4503-XXXX-X/2018/06}
+% ==== Macros for clarity and consistency ====
+\newcommand{\etactrl}{\eta_{\mathrm{ctrl}}}     % control gain
+\newcommand{\etadro}{\eta_{\mathrm{dro}}}       % DRO radius
+\newcommand{\etacre}{\eta_{\mathrm{cre}}}       % creator adaptation speed
+\newcommand{\Lexp}{L_{e}}                       % Lipschitz of exposure map wrt scores
+\newcommand{\Lf}{L_{f}}                         % Fairness-field Lipschitz proxy
+\newcommand{\ESS}{\mathrm{ESS}}                 % Effective sample size
+% in preamble
+\settopmatter{printacmref=true}
+\usepackage{ragged2e}  % For better left-alignment in the X column
+% ======= Add these to preamble =======
+\usepackage{graphicx}   % for \includegraphics
+\usepackage{booktabs}   % for \toprule etc.
+
+% Column type used in Appendix schema table
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Macro shorthands
+\newcommand{\ASC}{ASC}
+\newcommand{\CI}{CI}
+\newcommand{\HBMNL}{HB--MNL}
+
+% --- Compact lists to save space ---
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+
+% --- Convenience macros (optional) ---
+\newcommand{\Neither}{\textit{Neither}}
+\newcommand{\ROPE}{\mathrm{ROPE}}
+
+\settopmatter{authorsperrow=4}
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title[Audit-of-Audits for the Web: Bayesian Meta-Evaluation for Fairness]{Audit‑of‑Audits for the Web: Bayesian Meta‑Evaluation that Yields Interval‑Valued, Threshold‑Aligned Fairness Claims}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+
+
+\author{Dandan Liu}
+\email{s2134717@siswa.um.edu.my}
+\affiliation{%
+  \institution{Universiti Malaya}
+  \city{Kuala Lumpur}
+  \country{Malaysia}
+}
+
+\author{Aznul Qalid Md Sabri}
+\email{aznulqalid@um.edu.my}
+\affiliation{%
+  \institution{Universiti Malaya}
+  \city{Kuala Lumpur}
+  \country{Malaysia}
+}
+
+\author{Lihu Pan}
+\email{panlh@tyust.edu.cn}
+\affiliation{%
+  \institution{Taiyuan University of Science and Technology}
+  \city{Taiyuan}
+  \country{China}
+}
+\author{Guangrui Fan}
+\authornote{Corresponding author.}
+\email{fgr@tyust.edu.cn}
+\affiliation{%
+  \institution{Taiyuan University of Science and Technology}
+  \city{Taiyuan}
+  \country{China}
+}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Guangrui Fan, Dandan Liu, Aznul Qalid Md Sabri, and Lihu Pan}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+
+
+\begin{abstract}
+For web platforms facing regulatory scrutiny---from content moderation to ad delivery and recommendations---fairness audits routinely disagree due to metric choice, subgroup granularity, sampling variance, and dataset shift. Point estimates yield brittle pass/fail narratives that are hard to defend in governance contexts. We propose a Bayesian audit-of-audits that pools heterogeneous audits---count-based and metric-only---into interval-valued fairness claims with explicit uncertainty and policy-risk tables aligned to practitioner thresholds. The framework unifies classification and exposure metrics, enforces consistency across coarse and intersectional group definitions via soft coherence constraints, and quantifies the Value-of-Information of prospective audits. We also provide heterogeneity diagnostics and leave-one-audit-out sensitivities. Across a synthetic Audit Zoo, a content-moderation case study on CivilComments--WILDS, and an ad-delivery simulation, our meta-evaluator attains near-nominal coverage with narrower intervals and fewer decision flips than per-audit baselines, while integrating partial-information audits.
+\end{abstract}
+
+
+
+
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002951.10003260.10003261.10003263.10003265</concept_id>
+       <concept_desc>Information systems~Page and site ranking</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10002951.10003260.10003272</concept_id>
+       <concept_desc>Information systems~Online advertising</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003456.10003457.10003458.10010921</concept_id>
+       <concept_desc>Social and professional topics~Sustainability</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Information systems~Page and site ranking}
+\ccsdesc[500]{Information systems~Online advertising}
+\ccsdesc[500]{Social and professional topics~Sustainability}
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Algorithmic fairness, Bayesian meta-analysis, Uncertainty quantification, Content moderation, Ranking fairness, Exposure fairness, Value of information}
+
+
+
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+Fairness audits are now routine across web platforms: content moderation, recommendations, search, and ad delivery, yet practitioners frequently observe conflicting conclusions across audits of the same system. Results hinge on metric choice (e.g., selection rate vs.\ TPR/FPR), subgroup granularity (coarse vs.\ intersectional), dataset idiosyncrasies (sampling frames, label noise), and finite-sample variance. Widely used audit toolkits (\textsc{AIF360}, \textsc{Fairlearn}, \textsc{Aequitas}) make single-audit assessments accessible but ultimately produce per-audit point estimates or per-audit intervals rather than a synthesized, decision-ready view \cite{bellamy2018aif360,weerts2023fairlearn,saleiro2018aequitas}. Meanwhile, evidence from the web domain illustrates how optimization and platform mechanics can induce disparate outcomes (e.g., ad-delivery skew even under neutral targeting), underscoring the risks of drawing strong claims from any one audit \cite{ali2019facebook}. At the same time, dataset reviews document label noise, prevalence drift, and other quirks that complicate audit comparability \cite{fabris2022datasets}. From a policy perspective, organizations are asked to reason about risk under uncertainty, which requires more than a brittle pass/fail decision \cite{eeoc80rule,nist_ai_rmf_2023,eu_ai_act_2024}.
+
+
+Theory shows that auditing only a handful of groups can mask violations on structured subgroups and that calibration should hold on rich families of subpopulations (multicalibration) \cite{kearns2018subgroup,hebertjohnson2018multicalibration}. In practice, re-binning groups can even reverse aggregate conclusions (Simpson's paradox) \cite{sep_simpsons_2024}. Intersectional settings suffer from small cells; Bayesian modeling improves coverage but is typically deployed within a single dataset rather than across heterogeneous audits \cite{foulds2020intersectional,foulds2020bayesian}. On the web, harms often arise through exposure and attention in ranking---where fairness is naturally pairwise/exposure-based rather than purely classification-based \cite{singh2018exposure,beutel2019pairwise}. These considerations motivate moving from per-audit point estimates to interval-valued statements that pool evidence across audits, with explicit uncertainty that supports governance. Methodologically, decades of evidence synthesis suggest how to aggregate heterogeneous studies (random-effects, beta--binomial/Dirichlet--multinomial), but fairness audits introduce additional structure: multiple metric families, subgroup lattices, and frequent ``metric-only'' reports without counts \cite{dersimonian1986meta,mathes2021betabinomial}. Fairness definitions are known to be mutually incompatible under realistic conditions; as a result, auditing a single metric can be misleading about overall risk.
+% (Optionally cite classic incompatibility results here.)
+Pooling across multiple audits and metrics helps contextualize these tradeoffs. Because deployment decisions often depend on which audits are available, we complement pooling with between-audit heterogeneity reporting and leave-one-audit-out (LOAO) sensitivity to assess external validity.
+
+
+We propose a Bayesian audit-of-audits that pools heterogeneous audits---including both count-based and metric-only reports and spanning classification and exposure/ranking settings---into interval-valued fairness claims with explicit uncertainty and policy-risk tables aligned to practitioner thresholds. We study:
+ \textbf{RQ1 (Robustness).} Do posterior credible intervals from a cross-audit hierarchical model achieve nominal coverage and improved resolution (narrower width) relative to single-audit intervals across metric choices, subgroup granularities (including intersectional), and perturbations (re-binning, label noise, dataset shift)?
+\textbf{RQ2 (Decision stability).} Do interval-valued claims with policy-risk summaries yield fewer deploy/defer/mitigate decision flips than point-estimate audits under realistic perturbations, including web-native exposure/ranking scenarios?
+ \textbf{RQ3 (Partial information).} When some audits provide only aggregated metric values (no counts), can the meta-evaluator integrate them without bias, and quantify the expected interval shrinkage contributed by a prospective audit (VoI), in line with evidence-synthesis best practices?
+
+
+Consider an ad-delivery system that has been audited repeatedly over the past
+year. Internal and external teams have produced a dozen fairness audits
+spanning different markets, subgroup partitions,
+metric families,
+and report formats. The legal
+and policy teams must answer questions such as: ``Over this period of operation,
+how likely is it that we violated the 80\% rule by gender?'' and
+``Under plausible label-noise and dataset-shift scenarios, is it defensible to
+deploy the current model in a new market without further auditing?'' Our audit-of-audits is designed to support exactly such governance questions.
+It consumes heterogeneous audits, pools information at the rate level while
+respecting subgroup lattices and between-audit heterogeneity, and produces
+interval-valued, threshold-aligned fairness claims together with policy-risk
+tables that can be attached to internal documentation or regulator-facing reports.
+\vspace{-9pt}
+
+\paragraph{Contributions.}
+We introduce a \emph{Bayesian audit-of-audits} that turns heterogeneous fairness audits into interval-valued, decision-ready claims. Rate-level pooling across audits. A hierarchical model on latent \emph{rates} (prevalence, TPR/FPR; exposure/CTR) pools evidence across datasets, time windows, and subgroup partitions; fairness disparities are \emph{derived} from posterior draws. Metric-only integration. A transform-aware measurement model (stabilized logit for bounded differences; log for ratios) ingests audits that report only metric values and CIs/SEs, maintaining calibrated uncertainty. Cross-granularity coherence. Soft, class-conditional coherence links coarse and intersectional partitions via learned composition weights, mitigating Simpson-type reversals while propagating uncertainty. Decision support. Threshold-aligned tail probabilities (e.g., 80\% rule), heterogeneity (I$^2$-like) and LOAO diagnostics, and a Value-of-Information procedure to prioritize the next audit. Figure~\ref{fig:pipeline} provides a high-level overview of the framework.
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Tooling for per–audit fairness assessment}
+Early open–source toolkits made group fairness auditing accessible and reproducible at the level of a single audit. \textsc{AI Fairness 360} (\textsc{AIF360}) aggregates datasets, metrics, and mitigations into a unified workflow but reports primarily point estimates or per–audit intervals without cross–audit synthesis \cite{bellamy2018aif360}. \textsc{Fairlearn} contributes assessors (e.g., \texttt{MetricFrame}) and reduction–based mitigations, with an emphasis on transparent reporting and sociotechnical framing \cite{weerts2023fairlearn,bird2020fairlearnwp}. \textsc{Aequitas} focuses on audit usability and a dashboarded report flow \cite{saleiro2018aequitas}, while \textsc{fairkit-learn} supports model comparison under fairness constraints \cite{johnson2022fairkit}. 
+These libraries are complementary to our work: they generate the inputs (counts or metric summaries) we meta–analyze. None aims to pool heterogeneous audits (differing metrics, subgroup partitions, datasets/time windows) into interval–valued, policy–aligned claims across audits.
+
+\subsection{Subgroup and intersectional fairness}
+Auditing only a small set of pre–defined groups can conceal large violations over richer subgroup structures. The subgroup–fairness framework and the associated fairness gerrymandering phenomenon formalize this risk and propose auditor–learner procedures to test/learn with exponentially many subgroups \cite{kearns2018subgroup}. Multicalibration tightens guarantees by enforcing calibration over computationally identifiable subpopulations \cite{hebertjohnson2018multicalibration}.  
+Intersectional fairness criteria such as Differential Fairness provide privacy–style guarantees across intersections and motivate explicit modeling of small cells \cite{foulds2020intersectional}. Bayesian approaches for intersectional fairness pool information to improve estimation robustness and credible–interval coverage when group counts are scarce \cite{foulds2020bayesian}.  
+Our lattice–coherence constraints operationalize these insights in a meta–evaluation setting: coarse partitions (e.g., \texttt{sex}) and fine partitions (e.g., \texttt{sex}$\times$\texttt{race}) are linked by estimated composition weights so that pooled intervals remain coherent across granularities.
+
+\subsection{Fairness for ranking and exposure}
+On the Web, harms often arise through exposure and attention. Exposure–aware formulations treat exposure as a constrained resource in ranking \cite{singh2018exposure}, and equity–of–attention proposes amortized individual fairness across sequences of rankings where cumulative attention matters \cite{biega2018equity}. In recommender ranking, pairwise notions of fairness measure disparities in win rates or pairwise accuracy and lead to natural BTL–style objectives \cite{beutel2019pairwise,narasimhan2020pairwise}. Representation–constrained top–$k$ ranking (\textsc{FA*IR} and extensions) addresses fairness for multiple protected groups \cite{zehlike2017fair,zehlike2022fairtopk}.  
+We contribute a statistical complement: Poisson/Binomial count models for exposures and clicks with offsets, a BTL branch for pairwise wins, and a measurement model for audits that release only exposure–disparity metrics. This places ranking and exposure on equal footing with classification in a single meta–evaluation framework.
+
+\subsection{Uncertainty for fairness}
+A growing line of work argues that fairness should be reported with uncertainty. Bayesian inference can produce calibrated intervals for fairness metrics even when labels are missing or scarce \cite{ji2020trustfairnessmetric}. In retrieval/ranking, recent work quantifies uncertainty in fairness under partial feedback and derives finite–sample intervals that guide thresholding decisions \cite{wang2023uqranking}. Benchmarking studies highlight that ad hoc uncertainty estimates can be unstable or miscalibrated, advocating principled uncertainty reporting for fair decision making \cite{rosenblatt2025fairlyuncertain}.  
+Our contribution aligns with this trajectory but addresses a distinct gap: we deliver cross–audit posteriors---intervals and policy–risk tables that synthesize evidence across metrics, partitions, and datasets/time windows, including audits that publish only metric values.
+
+\subsection{Evidence synthesis and meta–analysis}
+Classical meta–analysis pools effect sizes across studies under within– and between–study variability, e.g., the DerSimonian–Laird random–effects model \cite{dersimonian1986meta} and linear mixed–effects formulations \cite{stram1996lme}. For binary outcomes, Beta–Binomial meta–analysis is well–suited to sparse data and rare events, with recent surveys comparing parameterizations and operating characteristics \cite{mathes2021betabinomial,felsch2022performance}.  
+We build on these foundations but differ in two key ways. First, we model latent rates (prevalence, TPR, FPR, exposure/CTR) with hierarchical pooling and derive disparities from posterior draws, rather than meta–analyzing reported disparities directly. Second, we admit metric–only audits through a transform–aware measurement model, enabling principled pooling even when raw counts cannot be shared. Deployment decisions are typically made against policy thresholds and governance frameworks. The EEOC Uniform Guidelines popularized the “four–fifths rule” (80\% adverse–impact threshold) for selection–rate ratios \cite{eeoc80rule}. The \textsc{NIST} AI Risk Management Framework advocates uncertainty–aware measurements and documentation as part of risk controls \cite{nist_ai_rmf_2023}. The EU AI Act (Reg.\ 2024/1689) formalizes auditability and documentation requirements for high–risk AI systems, motivating defensible, interval–valued evidence \cite{eu_ai_act_2024}.  
+Finally, subgroup re–binning can trigger Simpson’s paradox---aggregate trends reversing at finer granularity---which we address by enforcing cross–granularity coherence with uncertainty propagation \cite{sep_simpsons_2024}.
+
+\subsection{Positioning and novelty}
+Across these areas, prior work either (i) audits and mitigates at the single–audit level \cite{bellamy2018aif360,weerts2023fairlearn,saleiro2018aequitas}, (ii) proposes subgroup/intersectional criteria without a cross–audit synthesis mechanism \cite{kearns2018subgroup,hebertjohnson2018multicalibration,foulds2020intersectional}, (iii) develops exposure/pairwise metrics for ranking without meta–evaluation \cite{singh2018exposure,beutel2019pairwise}, or (iv) offers uncertainty for a single audit/task \cite{ji2020trustfairnessmetric,wang2023uqranking}. Our framework fills this gap by pooling heterogeneous audits at the rate level, integrating metric–only reports, enforcing lattice coherence across granularities, and extending to exposure/ranking, delivering interval valued, policy aligned claims that support governance at web scale.
+
+\section{Method}
+\label{sec:method}
+
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=0.88\linewidth]{Figures/piplineaudit.pdf}
+  \caption{\textbf{Audit-of-audits pipeline.} Heterogeneous inputs (count-based audits and metric-only reports across classification and ranking settings) are pooled at the rate level with subgroup-lattice coherence. Posterior summaries yield interval-valued claims, policy-risk tables aligned to governance thresholds, and diagnostics for deployment decisions.}
+  \label{fig:pipeline}
+\end{figure*}
+Our goal is to turn heterogeneous fairness audits into interval-valued, decision-ready claims. We model audits at the rate level (prevalence $p$, TPR/FPR for classification; exposure/CTR for ranking) and derive disparities from a pooled posterior.
+\paragraph{Core path.}
+(i) Counts: Binomial/Multinomial likelihood with logit-normal random effects across datasets and subgroup partitions.
+(ii) Metric-only audits: a transform-aware measurement model (logit for bounded differences; log for ratios) tied to the same latent rates.
+(iii) Subgroup-lattice coherence: soft constraints linking coarse and intersectional partitions via mixture weights.
+(iv) Summaries: posterior credible intervals and policy-risk tail probabilities for thresholds.
+\paragraph{Design rule: exactly one dispersion mechanism.}
+We adopt a simple but important design constraint: for each audit bundle, we
+use \emph{either} (i) Binomial/Multinomial likelihoods with logit-normal
+random effects (Mode~A), \emph{or} (ii) an overdispersed Beta--Binomial or
+Dirichlet--Multinomial likelihood with no per-cell idiosyncratic random
+effects (Mode~B). Combining both random effects and overdispersion would risk
+double-counting variability and artificially inflating uncertainty; we therefore
+reserve Mode~B for settings such as CivilComments--WILDS where overlapping groups violate the
+partition assumptions underlying Mode~A (Appendix~\ref{app:overlap}).
+
+\subsection{Data and notation}
+\label{sec:method:notation}
+Audits are indexed by dataset $d \in \mathcal{D}$, subgroup partition $s \in \mathcal{S}$ (e.g., \texttt{sex} or \texttt{sex}$\times$\texttt{race}), and group $g \in \mathcal{G}(s)$.
+For classification we observe $Y\!\in\!\{0,1\}$ and decision $\hat Y\!\in\!\{0,1\}$.
+Some audits provide counts $\mathbf{c}_{dsg}=(tp,fp,fn,tn)$ with total $n_{dsg}$; others provide only metrics (e.g., disparities, ratios) with CIs/SEs.
+
+We parameterize latent rates per $(d,s,g)$ as prevalence $p_{dsg}=\Pr(Y{=}1)$, true-positive rate $\theta^{\mathrm{TPR}}_{dsg}=\Pr(\hat Y{=}1\mid Y{=}1)$, false-positive rate $\theta^{\mathrm{FPR}}_{dsg}=\Pr(\hat Y{=}1\mid Y{=}0)$, and marginal selection probability
+\begin{equation}
+q_{dsg}= \Pr(\hat Y=1)= p_{dsg}\,\theta^{\mathrm{TPR}}_{dsg} + (1-p_{dsg})\,\theta^{\mathrm{FPR}}_{dsg}.
+\label{eq:selection}
+\end{equation}
+Disparities for groups $(g_a,g_b)$ include demographic-parity difference $\Delta_{\mathrm{DP}} = q_{dsg_a} - q_{dsg_b}$, equal-opportunity difference $\Delta_{\mathrm{EO}} = \theta^{\mathrm{TPR}}_{dsg_a} - \theta^{\mathrm{TPR}}_{dsg_b}$, equalized-odds vector $(\Delta \mathrm{TPR},\Delta \mathrm{FPR})$, and adverse-impact ratio $R_{\mathrm{AIR}} = q_{dsg_a} / q_{dsg_b}$.
+All other scalar metrics we report are deterministic functions of $(p,\theta^{\mathrm{TPR}},\theta^{\mathrm{FPR}})$.
+
+\subsection{Core generative model for count-based audits}
+\label{sec:method:counts-core}
+Let $y_{dsg}=tp_{dsg}+fn_{dsg}$ be the number of positives.
+We treat the total number of positives $y_{dsg}$ as random given the prevalence
+$p_{dsg}$. Concretely, we include a Binomial component
+\begin{equation}
+  y_{dsg} \sim \mathrm{Binomial}\!\bigl(n_{dsg},\, p_{dsg}\bigr),
+  \label{eq:binom-prev}
+\end{equation}
+so that $(p_{dsg},\theta^{\mathrm{TPR}}_{dsg},\theta^{\mathrm{FPR}}_{dsg})$ together
+induce a full 2$\times$2 table over $(Y,\hat Y)$ via~\eqref{eq:pi}.
+This makes the selection probability $q_{dsg}$ in~\eqref{eq:selection}
+a derived quantity with direct likelihood support, rather than a free parameter.
+We then use a Binomial factorization equivalent to a Multinomial over $(tp,fp,fn,tn)$:
+\begin{align}
+tp_{dsg} &\sim \mathrm{Binomial}\!\bigl(y_{dsg},\ \theta^{\mathrm{TPR}}_{dsg}\bigr), \label{eq:binom-tp}\\
+fp_{dsg} &\sim \mathrm{Binomial}\!\bigl(n_{dsg}-y_{dsg},\ \theta^{\mathrm{FPR}}_{dsg}\bigr). \label{eq:binom-fp}
+\end{align}
+To share strength across datasets and partitions we place logit-normal random effects on each rate:
+\begin{align}
+\mathrm{logit}(p_{dsg}) &= \mu^p_g + \alpha^p_d + \beta^p_s + \varepsilon^p_{dsg}, \label{eq:hier-prev}\\
+\mathrm{logit}(\theta^{\mathrm{TPR}}_{dsg}) &= \mu^{\mathrm{TPR}}_g + \alpha^{\mathrm{TPR}}_d + \beta^{\mathrm{TPR}}_s + \varepsilon^{\mathrm{TPR}}_{dsg}, \label{eq:hier-tpr}\\
+\mathrm{logit}(\theta^{\mathrm{FPR}}_{dsg}) &= \mu^{\mathrm{FPR}}_g + \alpha^{\mathrm{FPR}}_d + \beta^{\mathrm{FPR}}_s + \varepsilon^{\mathrm{FPR}}_{dsg}. \label{eq:hier-fpr}
+\end{align}
+Dataset ($\alpha^\cdot_d$), partition ($\beta^\cdot_s$), and idiosyncratic ($\varepsilon^\cdot_{dsg}$) terms are zero-mean Gaussians with hierarchical half-normal priors on their scales (priors summarized in App.~\ref{app:priors}). See App.~\ref{appx:model-toy} for a self-contained toy example illustrating these constructions on two groups and two audits.
+
+\subsection{Metric-only audits: transform-aware measurement model}
+\label{sec:method:metriconly}
+Many partners can share only disparity values (differences or ratios) and CIs/SEs.
+We link a reported metric $\widehat{M}_{m,a}$ to the same latent rates $(p,\theta^{\mathrm{TPR}},\theta^{\mathrm{FPR}})$ governing counts.
+
+Differences (bounded in $[-1,1]$) are modeled on the stabilized logit:
+\begin{equation}
+h\!\big(\widehat{\Delta}_{m,a}\big) \sim \mathcal{N}\!\Bigl(h\big(\Delta_{m,a}(\Theta)\big),\ \sigma^2_{m,a}\Bigr),
+\quad h(x)=\mathrm{logit}\!\Big(\frac{x+1}{2}\Big),
+\label{eq:meas-diff}
+\end{equation}
+with $\widehat{\Delta}_{m,a}$ clamped to $[-1{+}\epsilon,1{-}\epsilon]$ ($\epsilon{=}10^{-6}$) for numerical stability.
+
+Ratios (e.g., AIR) are modeled on the log scale:
+\begin{equation}
+\log\widehat{R}_{m,a} \sim \mathcal{N}\!\Bigl(\log R_{m,a}(\Theta),\ \sigma^2_{m,a}\Bigr).
+\label{eq:meas-ratio}
+\end{equation}
+When only CIs are given, we obtain $\sigma_{m,a}$ by the delta method; if neither CI nor SE is available we use a weak $\sigma_{m,a}\!\sim\!\mathrm{HalfNormal}(0.05)$ (calibration validated in App.~\ref{app:metriconly-calib}). Vector metrics (equalized odds) use a diagonal Gaussian in the transformed space unless a covariance is supplied.
+
+\paragraph{Assumptions and limitations.}
+The measurement model in~\eqref{eq:meas-diff}--\eqref{eq:meas-ratio} treats
+partner-reported CIs or standard errors as if they arose from approximately
+Gaussian noise on a transformed scale (stabilized logit for differences, log
+for ratios). This corresponds to assuming that
+(i) the reported uncertainty is roughly symmetric on the transformed scale, and
+(ii) multiple metrics reported from the same audit are conditionally independent
+given the underlying rate parameters $\Theta$. In practice, CIs may be computed
+via ad hoc bootstraps, may be slightly miscalibrated, and metrics such as DP,
+EO and AIR are correlated. Our implementation therefore uses these observations
+as \emph{soft} constraints: when CIs are wide, the measurement variance
+$\sigma^2_{m,a}$ is large and the metric-only audit contributes little beyond
+the prior and other audits; when CIs are tight but inconsistent with the rest
+of the evidence, the hierarchical structure and heterogeneity diagnostics flag
+the resulting tension. We discuss robustness to mis-specified metric-only reports
+in App.~\ref{app:metriconly-calib}.
+
+\subsection{Subgroup-lattice coherence across granularities}
+\label{sec:method:lattice}
+Let a coarse group $g$ decompose into $(g,r)$ with $r\in\mathcal{R}$ (e.g., \texttt{sex=F} into \texttt{sex=F}$\times$\texttt{race}). We place a Dirichlet prior on the \emph{unconditional} composition weights
+\[
+\mathbf{w}_{\cdot\mid g} \sim \mathrm{Dirichlet}(\kappa\,\bar{\mathbf{w}}_{\cdot\mid g}),
+\]
+centered at reference proportions $\bar{\mathbf{w}}_{\cdot\mid g}$ (platform marginals or raked estimates). Let $p_{ds,(g,r)}$ denote latent prevalence for $(d,s,(g,r))$ and $p_{ds,g}$ the corresponding coarse-group prevalence.
+
+We induce \emph{class-conditional} mixture weights from $(\mathbf{w}_{\cdot\mid g},p)$:
+\begin{equation}
+\label{eq:wplus-wminus}
+\begin{aligned}
+w^{+}_{r\mid g,ds} \;=\; \frac{w_{r\mid g}\,p_{ds,(g,r)}}{\sum_{r'} w_{r'\mid g}\,p_{ds,(g,r')}} \,, \quad
+w^{-}_{r\mid g,ds} \;=\; \frac{w_{r\mid g}\,\big(1-p_{ds,(g,r)}\big)}{\sum_{r'} w_{r'\mid g}\,\big(1-p_{ds,(g,r')}\big)}\,.
+\end{aligned}
+\end{equation}
+Intuitively, $w^{+}_{r\mid g,ds}$ is the fraction of positives in the coarse
+group $g$ that belong to refinement $r$, while $w^{-}_{r\mid g,ds}$ is the
+fraction of negatives in $g$ that belong to $r$.
+These are the probabilities of refinement $r$ among positives ($w^{+}$) and among negatives ($w^{-}$), respectively.
+
+We then impose \emph{class-conditional} soft coherence:
+\begin{align}
+\theta^{\mathrm{TPR}}_{ds,g} - \sum_{r} w^{+}_{r\mid g,ds}\,\theta^{\mathrm{TPR}}_{ds,(g,r)} &\sim \mathcal{N}(0,\,\tau^2_{\mathrm{coh},+}), \label{eq:coh-tpr}\\
+\theta^{\mathrm{FPR}}_{ds,g} - \sum_{r} w^{-}_{r\mid g,ds}\,\theta^{\mathrm{FPR}}_{ds,(g,r)} &\sim \mathcal{N}(0,\,\tau^2_{\mathrm{coh},-}). \label{eq:coh-fpr}
+\end{align}
+We learn the penalty scales with weakly-informative priors, \\
+$\ \tau_{\mathrm{coh},+},\tau_{\mathrm{coh},-}\sim \mathcal{N}^{+}(0,0.1)$,
+so that data can relax coherence when composition is uncertain. This construction makes the coherence \emph{exact in expectation} under the induced class-conditional mixtures and avoids bias from using a single unconditional weight vector for both TPR and FPR.
+
+\subsection{Posterior summaries and decision metrics}
+\label{sec:method:policy}
+From posterior draws of $\Theta=\{p,\theta^{\mathrm{TPR}},\theta^{\mathrm{FPR}}\}$ we compute disparities $\,\Delta_{m,a}(\Theta)\,$ or ratios $\,R_{m,a}(\Theta)$ and report:
+(i) $(1-\alpha)$ credible intervals (default $90\%$), and
+(ii) policy-risk tail probabilities for a threshold $\delta$,
+\begin{align}
+r^{\mathrm{diff}}_{m,a}(\delta) &= \Pr\!\bigl(|\Delta_{m,a}(\Theta)| > \delta \,\bigm|\, \mathcal{D}\bigr), \label{eq:risk-diff}\\
+r^{\mathrm{ratio}}_{m,a}(\delta) &= \Pr\!\bigl(\min\{R_{m,a}(\Theta),\,1/R_{m,a}(\Theta)\} < \delta \,\bigm|\, \mathcal{D}\bigr). \label{eq:risk-ratio}
+\end{align}
+For equalized odds we report componentwise risks and the union event.
+Worst‑group functionals (e.g., WGAcc) are computed as minima over groups on each posterior draw (details for overlapping groups in App.~\ref{app:overlap}).
+
+\subsection{Between-audit heterogeneity and Value-of-Information}
+\label{sec:method:heterogeneity}
+We summarize between-audit heterogeneity by an $I^2$-like diagnostic that
+compares between- and within-audit variance of per-audit disparities; see
+App.~\ref{app:heterogeneity} for details. An $I^2$ value near zero indicates
+that most posterior variance arises from within-audit noise, while larger
+values signal meaningful cross-audit differences. We report $I^2$ for each
+metric family (DP, EO, AIR) in Sec.~\ref{sec:results:hetero}. To prioritize future audits, we compute a Value-of-Information (VoI) score
+for each candidate audit design, defined as the expected reduction in a target
+interval width when that audit is hypothetically added to the bundle. We follow
+a standard EVSI-style Monte Carlo procedure (App.~\ref{app:voi}) and report VoI
+for synthetic and ads settings in Sec.~\ref{sec:results:zoo} and Sec.~\ref{sec:results:ads}.
+
+\subsection{Variants used only where needed}
+\label{sec:method:variants}
+In a few settings we deviate from the default Binomial/Multinomial + logit-normal
+random-effects path. For overlapping identity groups (CivilComments--WILDS), we switch to a
+Beta--Binomial overdispersed likelihood and disable lattice coherence
+(App.~\ref{app:overlap}). For label-noise sensitivity, we introduce a group-specific
+misclassification matrix that maps latent $(\hat Y,Y^\star)$ rates to observed
+$(\hat Y,Y)$ (App.~\ref{app:label-noise}). For exposure/CTR and pairwise ranking,
+we extend the rate-level setup to Poisson/Binomial and BTL models with an optional
+propensity-weighted path (App.~\ref{app:exposure}). These variants share the same
+posterior summarization as the core model.
+
+\subsection{Inference and implementation}
+\label{sec:method:inference}
+We fit the model by HMC/NUTS; for larger bundles we use mean‑field VI with PSIS correction and spot‑check with HMC.
+All priors, hyperpriors, and sampling settings are summarized in Appendix~\ref{app:priors} and \ref{app:inference}.
+We verify calibration via simulation-based calibration and posterior predictive checks (Appendix~\ref{app:sbc}).
+\section{Experimental}
+\label{sec:exp}
+
+We evaluate the meta-evaluator on three settings: (i) a synthetic Audit Zoo stressing calibration and stability, (ii) a web-native \\ CivilComments--WILDS moderation task with overlapping identity groups, and (iii) an ad-delivery simulation with optimization-induced skew. We compare against strong baselines and report calibration, resolution, decision stability, and threshold-aligned policy risk.
+
+\subsection{Global experimental protocol}
+\label{sec:exp:protocol}
+
+Unless noted, we evaluate (i) $\Delta_{\mathrm{DP}}$ and $\Delta_{\mathrm{EO}}$ at thresholds $\delta\in\{0.02,0.05\}$, and (ii) $R_{\mathrm{AIR}}$ at $\delta=0.8$ (80\% rule). Policy risk is computed as in Sec.~\ref{sec:method:policy}. For CivilComments--WILDS, worst-group functionals use $\delta\in\{0.70,0.75\}$ for WGAcc and $\{0.70,0.80\}$ for WGTPR/WGTNR.
+
+We report:
+Calibration: empirical coverage of $(1-\alpha)$ credible intervals vs.\ nominal (default $\alpha=0.1$).
+Resolution: median posterior interval width at fixed nominal coverage.
+ Decision stability: fraction of (deploy/defer/mitigate) flips under (a) subgroup re-binning, (b) $+2$pp label-noise, (c) dataset shift (Audit Zoo).
+Policy risk: $r(\delta)$ tail probability against the thresholds above. We compare to five common baselines (Table~\ref{tab:baselines}): Single-audit point/CI, per-audit bootstrap, random-effects meta-analysis on reported disparities, beta–binomial meta-synthesis on counts, and toolkit metrics (AIF360/Fairlearn/Aequitas-like). The baseline set is consistent across settings.
+
+\begin{table}[!htp]
+\centering
+\small
+\caption{\textbf{Baselines} compared in all settings.}
+\label{tab:baselines}
+\resizebox{\linewidth}{!}{%
+\begin{tabularx}{0.5\textwidth}{p{1.8cm} >{\RaggedRight}X}
+\toprule
+\textbf{Baseline} & \textbf{Description} \\
+\midrule
+Single-audit point \citep{kim2013categorical} 
+  & Compute disparity from one audit (chosen by sample size) without pooling; no uncertainty or only plugin CI. \\
+Bootstrap per-audit \citep{efron1994bootstrap}
+  & Nonparametric bootstrap CIs per audit; ignores cross-audit variability and lattice coherence. \\
+Random-effects meta-analysis 
+  & DerSimonian–Laird on reported disparities (differences/ratios), metric-wise; no rate-level modeling. \\
+Beta--binomial meta-synthesis \citep{mathes2021betabinomial,felsch2022performance}
+  & Meta-analysis on counts using beta–binomial components; no lattice coherence or metric-bridging. \\
+Toolkit metrics \citep{bellamy2018aif360,weerts2023fairlearn,saleiro2018aequitas}
+  & AIF360/Fairlearn/Aequitas-style per-audit metrics and (when available) per-audit CIs; no cross-audit pooling. \\
+\bottomrule
+\end{tabularx}
+}
+\vspace{-15pt}
+\end{table}
+
+We use weakly-informative Gaussian priors on logit-scale rates, half-normal priors on random-effect scales, and $\mathrm{HalfNormal}(0.1)$ for the lattice penalty (Sec.~\ref{sec:method:lattice}). Unless stated otherwise, we run NUTS with 4 chains (1{,}000 warmup + 1{,}000 draws; target accept 0.9); for large bundles we use mean-field VI with 20{,}000 iterations and PSIS correction, spot-checking a subset with HMC. Diagnostics: $\widehat{R}<1.01$, bulk/tail ESS$>400$. Unless otherwise noted, deploy if $r(\delta)<0.1$, defer if $0.1\le r(\delta)\le 0.4$, and mitigate if $r(\delta)>0.4$. These cutoffs are illustrative and should in
+practice be negotiated with domain experts, legal teams, and affected stakeholders. 
+
+\subsection{Settings}
+\label{sec:exp:settings}
+
+\subsubsection{Audit Zoo}
+\label{sec:exp:zoo}
+We simulate features $X$, protected attributes $A$ (\texttt{sex}, \texttt{race}), and outcomes $Y$ from logistic models with group effects on prevalence and error rates. A stochastic decision rule generates $\hat Y$ with controllable TPR/FPR gaps, class imbalance, and label noise. Each bundle draws $K{=}12$ audits from a factor grid. We vary (i) metric family (DP, EO, EOdds, AIR, and combinations), (ii) subgroup
+partition (\texttt{sex}, \texttt{race}, \texttt{sex}$\times$\texttt{race}), (iii)
+sample sizes per group (500, 2{,}000, 10{,}000 with mild imbalance), (iv) label
+noise levels (0, 2, 5 percentage points), (v) dataset shift type (none, prevalence,
+TPR, FPR, or all), (vi) report type (counts, metric-only, or a 50/50 mix), and
+(vii) an optional exposure/ranking branch. We replicate each grid cell $R{=}50$ times. Lattice coherence (Sec.~\ref{sec:method:lattice}) is enabled by default. The full factor grid appears in App.~\ref{app:exp:zoo-factors}.
+
+\subsubsection{CivilComments--WILDS}
+\label{sec:exp:civil}
+We follow WILDS splits~\cite{koh2021wilds}. Identity indicators: male, female, LGBTQ, Christian, Muslim, other\_religions, Black, White. We form 16 identity $\times$ label cells and audit (i) per-identity TPR/TNR with uncertainty and (ii) worst-group functionals (WGAcc, WGTPR, WGTNR). We create a bundle by varying model/training objective (ERM; label-reweighted; GroupDRO), seed (5), and threshold (5 ROC points). To mimic partner constraints, 50\% of audits are converted to metric-only reports with CIs. Overlap handling. Identity groups overlap; we therefore switch to the Beta--Binomial overdispersed variant and disable lattice coherence. The identity-size table is in App.~\ref{app:civil:sizes}.
+
+\subsubsection{Ad-delivery simulation}
+\label{sec:exp:ads}
+We simulate six campaigns with budget caps, pacing, and inventory constraints. Even with neutral targeting, optimization can induce skew; we also include a mild proxy-targeting variant. We vary budget (low/medium/high), optimization objective (CTR-only vs.\ CTR+CPA), targeting (neutral vs.\ mild demographic proxy), and partitions (\texttt{sex}, \texttt{race}, \texttt{sex}$\times$\texttt{race}). For each campaign we produce audits across 3 time windows with 20 replicates per cell. We report selection/exposure AIR and (when defined) EO-like click outcomes. We log impression-level propensities to enable an IPW CTR sensitivity. The full factor grid appears in App.~\ref{app:exp:ads-factors}.
+
+\subsection{Sensitivities and diagnostics}
+\label{sec:exp:once}
+We complement the core experiments with three sensitivity analyses: (i) a
+selection-bias sensitivity where audits are included with probabilities that
+depend on their disparity magnitude and interval width, (ii) a propensity-weighted
+CTR analysis for exposure audits to assess position/selection bias, and
+(iii) a leave-one-audit-out (LOAO) analysis and $I^2$-like heterogeneity
+diagnostic. We refer to App.~\ref{app:selection}, \ref{app:exposure}, and
+\ref{app:heterogeneity} for the full specifications of these procedures.
+
+\section{Results}
+\label{sec:results}
+\subsection{Audit Zoo (RQ1--RQ3)}
+\label{sec:results:zoo}
+
+\paragraph{Calibration and resolution.}
+Table~\ref{tab:zoo-core} summarizes empirical coverage and widths over 50 replicates per factor cell (averaged across cells). Our meta-evaluator attains near-nominal coverage with narrower intervals than bootstrap and random-effects meta-analysis, reflecting partial pooling at the rate level. 
+\begin{table}[!htp]
+\centering
+\small
+\caption{\textbf{Audit Zoo:} Empirical 90\% coverage and median CI width (averaged across factor grid). Differences reported on absolute scale; AIR width reported for $\min(R,1/R)$.}
+\label{tab:zoo-core}
+\resizebox{\linewidth}{!}{%
+\begin{tabularx}{0.6\textwidth}{>{\RaggedRight}X cccccc}
+\toprule
+& \multicolumn{2}{c}{DP diff} & \multicolumn{2}{c}{EO diff} & \multicolumn{2}{c}{AIR ratio} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+\textbf{Method} & \textbf{Cov.} & \textbf{Width} & \textbf{Cov.} & \textbf{Width} & \textbf{Cov.} & \textbf{Width} \\
+\midrule
+\textbf{Ours (pooled + coherence)} & \textbf{0.91} & \textbf{0.036} & \textbf{0.90} & \textbf{0.039} & \textbf{0.90} & \textbf{0.120} \\
+Random-effects meta-analysis & 0.85 & 0.046 & 0.84 & 0.050 & 0.83 & 0.160 \\
+Bootstrap per-audit only & 0.82 & 0.043 & 0.81 & 0.047 & 0.80 & 0.175 \\
+Single-audit point/CI & 0.76 & 0.034 & 0.75 & 0.036 & 0.74 & 0.150 \\
+\bottomrule
+\end{tabularx}
+}
+\vspace{-15pt}
+\end{table}
+
+\paragraph{Decision stability.}
+We measure the fraction of (deploy/defer/mitigate) decision flips when we (i) re-bin subgroups, (ii) increase label noise by $+2$pp, and (iii) shift prevalence across datasets.
+Our intervals reduce flips relative to non-pooled baselines (Table~\ref{tab:zoo-flips}). Flip rates are consistently lower for our meta‑evaluator than for per‑audit bootstrap, with the largest gains under re‑binning and dataset shift.
+
+\begin{table}[!htp]
+\centering
+\caption{\textbf{Audit Zoo:} Decision flip rate (\%) under perturbations (lower is better).}
+\label{tab:zoo-flips}
+\resizebox{\linewidth}{!}{%
+\begin{tabularx}{0.6\textwidth}{>{\RaggedRight}X ccc}
+\toprule
+\textbf{Method} & Re-binning & +2pp label-noise & Dataset shift \\
+\midrule
+\textbf{Ours (pooled + coherence)} & \textbf{7.2} & \textbf{9.4} & \textbf{11.1} \\
+Bootstrap per-audit & 13.5 & 16.0 & 18.2 \\
+Single-audit point/CI & 21.4 & 24.1 & 27.0 \\
+\bottomrule
+\end{tabularx}
+}
+\vspace{-15pt}
+\end{table}
+
+
+\paragraph{Partial-information robustness (RQ3).}
+We degrade the bundle so that 50\% of audits are metric-only. Our measurement model maintains calibration and only slightly widens intervals (Table~\ref{tab:zoo-partial}). Using EVSI (Appendix~\ref{app:voi}), we rank prospective audits by expected interval-width shrinkage per unit cost. Intersectional counts provide the largest return (Table~\ref{tab:zoo-voi}). Intersectional counts deliver the largest expected shrinkage (Fig.~\ref{fig:voi-bars}), while metric‑only reports remain cost‑efficient.
+
+\begin{table}[!htp]
+\centering
+\caption{\textbf{Audit Zoo:} Partial-information (50\% metric-only). EO results shown; DP/AIR similar.}
+\label{tab:zoo-partial}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Variant} & 90\% Coverage & Median Width \\
+\midrule
+\textbf{Ours (counts + metric-only)} & \textbf{0.89} & \textbf{0.041} \\
+Ours (counts only) & 0.90 & 0.039 \\
+Ours (metric-only only) & 0.87 & 0.046 \\
+Random-effects meta-analysis & 0.83 & 0.052 \\
+\bottomrule
+\end{tabular}
+\vspace{-15pt}
+\end{table}
+
+
+
+\begin{table}[!htp]
+\centering
+\small
+\caption{\textbf{Audit Zoo:} VoI ranking (average across bundles). Efficiency is total width shrink per cost unit.}
+\label{tab:zoo-voi}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Candidate audit} & $\Delta W_{\mathrm{EO}}$ & $\Delta W_{\mathrm{AIR}}$ & Cost & Efficiency \\
+\midrule
+\textbf{Intersectional counts (2k/group)} & \textbf{0.010} & \textbf{0.050} & 5.0 & \textbf{0.012} \\
+Coarse counts (5k/group) & 0.006 & 0.028 & 4.0 & 0.0085 \\
+Metric-only (EO + AIR) & 0.004 & 0.017 & 1.5 & 0.014 \\
+Extra time-window (counts 1k/group) & 0.003 & 0.012 & 1.2 & 0.0125 \\
+\bottomrule
+\end{tabular}
+}
+\vspace{-15pt}
+\end{table}
+
+% === Results §6.1: Audit Zoo – VoI bars ===
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.95\linewidth]{Figures/fig_voi_bars.pdf}
+  \caption{Expected interval-width shrink (EVSI) across candidate audits.}
+  \label{fig:voi-bars}
+  \vspace{-15pt}
+\end{figure}
+
+
+\subsection{Additional sensitivities}
+\label{sec:results:hetero}
+We briefly summarize four additional sensitivity analyses (full details and
+plots in App.~\ref{app:heterogeneity}--\ref{appx:hetero}). 
+Heterogeneity and LOAO: Across settings, $I^2$ remains moderate (median $0.31$ for EO; $0.28$ for AIR), indicating meaningful but not overwhelming between-audit variability. LOAO changes in policy-risk are small (median absolute change $<0.02$), with the $95^{\mathrm{th}}$ percentile $<0.08$.
+Coherence: With lattice coherence
+disabled, mean absolute coherence residuals increase and Simpson-style reversals
+occur in roughly 5--8\% of synthetic cells, supporting the role of the coherence
+penalty. 
+Selection-bias: Under an adverse selection scenario where audits with large
+$|\Delta|$ are more likely to be included, pooled EO intervals widen by about
+0.004 on average and $I^2$ increases by $\approx 0.05$, while policy decisions
+remain largely stable (the defer region expands slightly). 
+IPW exposure/CTR: In the
+ad-delivery setting, propensity-weighted CTR analyses shift AIR and CTR gaps
+by 1--3 points and change $r(\delta{=}0.8)$ by 0.05--0.12, indicating that
+position/selection bias can materially affect apparent disparities when
+propensities differ sharply by group.
+
+\subsection{CivilComments--WILDS}
+\label{sec:results:civil}
+
+Pooling across seeds, thresholds, and training objectives improves calibration of per-identity TPR/TNR and yields tighter intervals for worst-group metrics (Table~\ref{tab:wilds-wg} and Table~\ref{tab:wilds-identity}). For example, our 90\% CI for WGAcc narrows by $\sim$20–30\% vs.\ per-audit bootstrap while maintaining near-nominal coverage. Policy-risk tables at $\delta\in\{0.70,0.75\}$ show fewer defer/mitigate flips across model variants relative to single-audit decisions. Identity‑wise uncertainty narrows for larger groups (Fig.~\ref{fig:wilds-identity}) for TNR and TPR, while notably hard identities retain wider CIs. WGAcc is the minimum of identity-wise accuracy across the 16 identity$\times$label cells; WGTPR (resp.\ WGTNR) is the minimum of identity-wise TPR (resp.\ TNR). We compute policy-risk tail probabilities $r(\delta)=\Pr(\text{WG}<\delta\mid\mathcal{D})$ from posterior draws. 
+\begin{table}[!htp]
+\centering
+\caption{\textbf{CivilComments--WILDS:} Worst-group summaries (posterior median [90\% CI]) and policy risk $r(\delta)$.}
+\label{tab:wilds-wg}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{Median [90\% CI]} & \textbf{$r(\delta{=}0.70)$} & \textbf{$r(\delta{=}0.75)$} & \textbf{$r(\delta{=}0.80)$} \\
+\midrule
+WGAcc  & $0.71\ [0.68,\ 0.74]$ & $0.44$ & $0.91$ & $0.99$ \\
+WGTPR  & $0.70\ [0.66,\ 0.73]$ & $0.51$ & $0.94$ & $0.99$ \\
+WGTNR  & $0.73\ [0.70,\ 0.76]$ & $0.19$ & $0.66$ & $0.89$ \\
+\bottomrule
+\end{tabular}
+}
+\vspace{-10pt}
+\end{table}
+
+From a moderation perspective, Table~\ref{tab:wilds-wg} indicates that even
+after pooling across models, seeds, and thresholds, the system exhibits
+substantial uncertainty in its worst-group performance. For example, the
+posterior median worst-group accuracy (WGAcc) is $0.71$ with a 90\% credible
+interval $[0.68, 0.74]$, and there is a 91\% posterior probability that WGAcc
+falls below $0.75$. In other words, under most plausible parameter values the
+system fails to achieve what many stakeholders might consider an acceptable
+worst-group accuracy threshold. Our framework makes this residual risk explicit,
+rather than allowing a single favorable audit to obscure the possibility that
+some identity group experiences much lower accuracy.
+
+\begin{table}[!htp]
+\centering
+\caption{\textbf{CivilComments--WILDS:} Per-identity performance (posterior median [90\% CI]) for TNR (non-toxic) and TPR (toxic).}
+\label{tab:wilds-identity}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Identity} & \textbf{TNR (non-toxic)} & \textbf{TPR (toxic)} \\
+\midrule
+Male              & $0.884\ [0.876,\ 0.892]$ & $0.751\ [0.730,\ 0.771]$ \\
+Female            & $0.900\ [0.894,\ 0.906]$ & $0.737\ [0.715,\ 0.758]$ \\
+LGBTQ             & $0.760\ [0.745,\ 0.774]$ & $0.737\ [0.705,\ 0.766]$ \\
+Christian         & $0.926\ [0.921,\ 0.930]$ & $0.692\ [0.662,\ 0.722]$ \\
+Muslim            & $0.807\ [0.793,\ 0.820]$ & $0.721\ [0.695,\ 0.745]$ \\
+Other religions   & $0.874\ [0.859,\ 0.888]$ & $0.720\ [0.687,\ 0.754]$ \\
+Black             & $0.722\ [0.705,\ 0.739]$ & $0.796\ [0.772,\ 0.818]$ \\
+White             & $0.734\ [0.722,\ 0.746]$ & $0.788\ [0.766,\ 0.808]$ \\
+\bottomrule
+\end{tabular}
+\vspace{-11pt}
+\end{table}
+
+
+Table~\ref{tab:wilds-identity} reveals notable variation across identities. In particular, Black and White groups exhibit the lowest TNR (non-toxic classification), suggesting that the model over-predicts toxicity for comments mentioning these identities. LGBTQ and Muslim identities also show elevated false-positive rates. This pattern---higher TPR but lower TNR for race-related identities---aligns with known annotation biases in toxicity datasets.
+
+% === Results §6.3: WILDS Identity TNR/TPR (two panels) ===
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.99\linewidth]{Figures/fig_wilds_identity_combined.pdf}
+  \caption{Per-identity TNR and TPR side-by-side with 90\% CIs.}
+  \label{fig:wilds-identity}
+  \vspace{-15pt}
+\end{figure}
+
+\subsection{Ad-delivery Simulation} 
+\label{sec:results:ads}
+We simulate six campaigns with neutral vs.\ mild proxy targeting across budgets (low/med/high), creating audits over \texttt{sex}, \texttt{race}, and intersections. 
+Pooling across campaigns and windows separates sampling variance from optimization-induced skew (Table~\ref{tab:ads-air}). Risk varies across campaigns and time windows; proxy targeting increases the probability of violating the 80\% rule. Intersectional counts at medium budget delivered the largest $\Delta W$ for AIR (\(\approx 0.05\) average shrink), while an extra neutral high-budget window yielded smaller but cost-efficient gains (Table~\ref{tab:zoo-voi}).
+
+\begin{table}[!htp]
+\centering
+\small
+\caption{\textbf{Ad-delivery:} AIR for female vs.\ male exposure by campaign. Reported as median [90\% CI] with $r(\delta{=}0.8)$.}
+\label{tab:ads-air}
+\resizebox{\linewidth}{!}{%
+\begin{tabularx}{0.5\textwidth}{lccc}
+\toprule
+\textbf{Campaign} & \textbf{Ours: AIR [90\% CI]} & $r(\delta)$ & Single-audit AIR \\
+\midrule
+Neutral / Low budget & $0.86\ [0.79,\ 0.94]$ & $0.31$ & $0.83\ [0.73,\ 0.95]$ \\
+Neutral / High budget & $0.91\ [0.86,\ 0.97]$ & $0.12$ & $0.90\ [0.82,\ 1.00]$ \\
+Proxy (mild) / Medium & $0.78\ [0.72,\ 0.84]$ & $0.67$ & $0.75\ [0.66,\ 0.85]$ \\
+Proxy (mild) / High & $0.81\ [0.75,\ 0.87]$ & $0.44$ & $0.80\ [0.71,\ 0.91]$ \\
+Creative variant A / Med & $0.88\ [0.82,\ 0.95]$ & $0.21$ & $0.86\ [0.77,\ 0.97]$ \\
+Creative variant B / Med & $0.84\ [0.78,\ 0.91]$ & $0.36$ & $0.81\ [0.71,\ 0.93]$ \\
+\bottomrule
+\end{tabularx}
+}
+\vspace{-10pt}
+\end{table}
+
+For the ad-delivery simulation, pooling across campaigns and time windows
+distinguishes sampling variability from optimization-induced skew. For instance,
+the ``Proxy (mild) / Medium'' campaign has a pooled female-to-male exposure AIR
+of $0.78$ with a 90\% credible interval $[0.72, 0.84]$, and a 67\% posterior
+probability of violating the 80\% rule ($r(\delta{=}0.8)=0.67$). By contrast,
+the neutral high-budget campaign has $r(\delta{=}0.8)=0.12$. This suggests that
+even mild proxy targeting can produce substantively higher policy risk than
+neutral targeting, and that relying on a single audit window could easily
+undervalue or overstate this risk depending on when the audit was conducted.
+Our audit-of-audits aggregates over these windows and reports a stable risk
+profile aligned with governance thresholds.
+
+\subsection{Ablations and Sensitivity}
+\label{sec:results:ablations}
+
+We ablate key components on the Audit Zoo and report sensitivity to priors and label-noise assumptions.
+Table~\ref{tab:ablations} shows coverage/width for EO and decision flips.
+
+\begin{table}[!htp]
+\centering
+\caption{\textbf{Ablations (Audit Zoo, EO metric).} Left: empirical coverage and width. Right: flip rate (\%).}
+\label{tab:ablations}
+\resizebox{\linewidth}{!}{%
+\begin{tabularx}{0.6\textwidth}{>{\RaggedRight}X cccc} 
+\toprule
+\small
+& \multicolumn{2}{c}{Coverage/Width} & \multicolumn{2}{c}{Flip rate (\%)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Variant} & Cov. & Width & Re-binning & Shift \\
+\midrule
+\textbf{Full (pooled + coherence)} & \textbf{0.90} & \textbf{0.039} & \textbf{7.2} & \textbf{11.1} \\
+No hierarchical pooling & 0.84 & 0.047 & 12.9 & 17.8 \\
+No lattice coherence & 0.88 & 0.043 & 9.6 & 13.9 \\
+No label-noise model & 0.88 & 0.040 & 8.4 & 12.7 \\
+Overdispersed like.\ only\footnotemark & 0.87 & 0.044 & 10.2 & 14.6 \\
+Stronger priors (scales $\times 0.5$) & 0.91 & 0.037 & 7.0 & 10.8 \\
+Weaker priors (scales $\times 2$) & 0.89 & 0.041 & 7.6 & 11.9 \\
+Diff.\ vs.\ log-ratio (AIR) & 0.90 & 0.120\,(AIR) &  -- & -- \\
+\bottomrule
+\end{tabularx}
+}
+\end{table}
+\vspace{-15pt}
+\footnotetext{Enable either REs or overdispersion, not both.}
+
+\section{Discussion and Conclusion}
+\label{sec:discussion}
+
+This paper introduces a Bayesian audit-of-audits that synthesizes heterogeneous fairness audits---count-based and metric-only, classification and exposure---into interval-valued, threshold-aligned claims. By pooling at the rate level and enforcing soft coherence across subgroup granularities, the method achieves near-nominal coverage with tighter intervals, reduces decision flips under realistic perturbations, and integrates partial-information audits without ad hoc adjustments. The approach is intentionally pragmatic: it fits within current audit toolchains, aligns with risk-based governance practices, and foregrounds uncertainty in deployment decisions.
+
+Our results demonstrate that estimating uncertainty at the rate level and deriving disparities post hoc yields claims that are both calibrated and decision-stable. This directly addresses three core tensions: disagreement across metric families, instability under subgroup re-binning, and fragmented evidence when partners share only metric summaries. By reporting threshold-aligned tail probabilities (policy risk), our summaries map cleanly to governance thresholds such as the 80\% adverse-impact rule \cite{eeoc80rule} and contemporary risk-management guidance \cite{nist_ai_rmf_2023,eu_ai_act_2024}. Methodologically, pooling latent rates generalizes Beta-Binomial meta-analysis \cite{dersimonian1986meta,mathes2021betabinomial} to multi-metric, multi-partition regimes. The transform-aware measurement model allows principled incorporation of metric-only audits without requiring raw counts, while the subgroup-lattice penalties integrate insights from intersectional fairness---mitigating Simpson-style reversals by softly linking coarse and intersectional partitions \cite{kearns2018subgroup,foulds2020intersectional,sep_simpsons_2024}. For ranking and feeds, the exposure/CTR branch places pairwise and exposure fairness on the same statistical footing as classification audits \cite{singh2018exposure,beutel2019pairwise}.
+
+Practically, a single posterior over rate parameters supports a compact workflow: audits are encoded as counts or metric-only measurements with CIs/SEs; the model is fit once using the default dispersion path (Binomial/Multinomial with logit-normal random effects); and decision summaries are read directly from posterior intervals and policy-risk tables. Between-audit heterogeneity ($I^2$) and leave-one-audit-out sensitivity provide external-validity diagnostics---$I^2$ remains moderate across our studies, and LOAO perturbations of policy risk are correspondingly small, suggesting pooled claims are not dominated by any single audit. Value-of-Information calculations operationalize audit planning by ranking prospective audits by expected interval-width reduction, which is particularly useful when partners must decide whether to invest in intersectional counts versus lower-cost metric-only reports.
+
+Audits should be pooled only when they plausibly measure the same underlying system in comparable contexts---same model family and product surface, with differences across datasets or time windows viewed as sampling variation rather than fundamentally different causal regimes. Regulatory or governance questions should be posed at the level of the pooled object. When $I^2$ is low or moderate and LOAO perturbations are small, pooled intervals offer compact and defensible summaries; when $I^2$ is high or LOAO reveals large changes when individual audits are removed, practitioners should treat pooled summaries as exploratory and inspect per-audit intervals or fit separate models per system version, region, or other salient context.
+
+Our outputs---interval-valued disparities and policy-risk tables---serve three stakeholder groups. Internal audit and responsible-AI teams can use pooled intervals to avoid cherry-picking single favorable audits and quantify residual risk of threshold violations under realistic uncertainty. Legal and compliance teams can attach these summaries to documentation as part of risk-based governance frameworks such as the NIST AI RMF and EU AI Act, which explicitly call for uncertainty-aware measurement. External auditors and civil-society partners can use the same tools to interrogate whether a platform is presenting a balanced picture of audit outcomes. Risk tables can be rendered in plain language for non-technical stakeholders. Any meta-analytic tool can be misused for ``audit washing''---selectively including favorable audits or choosing pooling strategies that downplay heterogeneity. We recommend three safeguards: (i) transparent disclosure of included audits and their basic characteristics (time window, system version, partitions, metrics), (ii) routine sensitivity checks (selection-bias, LOAO) with reported envelopes of policy risk $r(\delta)$, and (iii) independent cross-functional review involving legal, policy, and affected stakeholders in decisions about audit inclusion and threshold choices. These safeguards make it easier for external observers to detect and contest results inconsistent with underlying evidence.
+
+The analysis is observational: we quantify statistical disparities, not causal effects, and platform-level confounding can persist without additional identification structure. The measurement model for metric-only audits inherits the quality of external CIs/SEs; weakly informative noise priors help guard against mis-specification but cannot fully repair biased uncertainty reports. Lattice coherence relies on partially identified composition weights when only one-way marginals are available; the Dirichlet prior and learned penalty variance let the data relax the constraint, yet residual misspecification is possible. These limitations are visible through our sensitivity analyses.
+
+Three directions appear impactful: extending rate-level synthesis to multiclass and multilabel moderation and recommendation tasks; adding privacy-preserving metric-only interfaces with uncertainty propagation; and developing streaming/amortized inference for continuous auditing.
+
+
+
+
+\newpage
+\bibliographystyle{ACM-Reference-Format}
+\balance
+\bibliography{software}
+\appendix
+
+\section{Notation Reference}
+\label{app:notation}
+Table~\ref{tab:notation} summarizes the key symbols and their meanings used throughout this paper.
+
+\begin{table}[h]
+\centering
+\small
+\caption{\textbf{Notation reference.} Key symbols used in the paper.}
+\label{tab:notation}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l l}
+\toprule
+\textbf{Symbol} & \textbf{Description} \\
+\midrule
+\multicolumn{2}{l}{\textit{Indices}} \\
+$d \in \mathcal{D}$ & Dataset / audit index \\
+$s \in \mathcal{S}$ & Subgroup partition (e.g., \texttt{sex}, \texttt{sex}$\times$\texttt{race}) \\
+$g \in \mathcal{G}(s)$ & Group within partition $s$ \\
+$r \in \mathcal{R}$ & Refinement index for intersectional groups \\
+$m, a$ & Metric type and audit index (for metric-only reports) \\
+\midrule
+\multicolumn{2}{l}{\textit{Observations}} \\
+$Y \in \{0,1\}$ & True label (ground truth) \\
+$\hat{Y} \in \{0,1\}$ & Predicted label / decision \\
+$(tp, fp, fn, tn)_{dsg}$ & Confusion matrix counts for $(d,s,g)$ \\
+$n_{dsg}$ & Total sample size for cell $(d,s,g)$ \\
+$y_{dsg}$ & Number of positives ($tp + fn$) \\
+$\widehat{M}_{m,a}$, $\widehat{\Delta}_{m,a}$, $\widehat{R}_{m,a}$ & Reported metric, difference, or ratio from metric-only audit \\
+\midrule
+\multicolumn{2}{l}{\textit{Latent rates}} \\
+$p_{dsg}$ & Prevalence: $\Pr(Y=1)$ for cell $(d,s,g)$ \\
+$\theta^{\mathrm{TPR}}_{dsg}$ & True-positive rate: $\Pr(\hat{Y}=1 \mid Y=1)$ \\
+$\theta^{\mathrm{FPR}}_{dsg}$ & False-positive rate: $\Pr(\hat{Y}=1 \mid Y=0)$ \\
+$q_{dsg}$ & Selection probability: $\Pr(\hat{Y}=1)$ (derived) \\
+$\lambda_{dsg}$, $\theta_{dsg}$ & Exposure rate and CTR (for ranking/exposure audits) \\
+\midrule
+\multicolumn{2}{l}{\textit{Disparities}} \\
+$\Delta_{\mathrm{DP}}$ & Demographic-parity difference: $q_{g_a} - q_{g_b}$ \\
+$\Delta_{\mathrm{EO}}$ & Equal-opportunity difference: $\theta^{\mathrm{TPR}}_{g_a} - \theta^{\mathrm{TPR}}_{g_b}$ \\
+$R_{\mathrm{AIR}}$ & Adverse-impact ratio: $q_{g_a} / q_{g_b}$ \\
+WGAcc, WGTPR, WGTNR & Worst-group accuracy, TPR, TNR \\
+\midrule
+\multicolumn{2}{l}{\textit{Hierarchical structure}} \\
+$\mu^{(\cdot)}_g$ & Group-level mean (logit scale) \\
+$\alpha^{(\cdot)}_d$ & Dataset random effect \\
+$\beta^{(\cdot)}_s$ & Partition random effect \\
+$\varepsilon^{(\cdot)}_{dsg}$ & Idiosyncratic random effect \\
+$\sigma_{\alpha}, \sigma_{\beta}, \sigma_{\varepsilon}$ & Random-effect scale parameters \\
+\midrule
+\multicolumn{2}{l}{\textit{Lattice coherence}} \\
+$\mathbf{w}_{\cdot \mid g}$ & Composition weights for refinements within coarse group $g$ \\
+$w^{+}_{r\mid g}$, $w^{-}_{r\mid g}$ & Class-conditional weights (positives / negatives) \\
+$\tau_{\mathrm{coh},+}$, $\tau_{\mathrm{coh},-}$ & Coherence penalty scales \\
+$\kappa$ & Dirichlet concentration for composition weights \\
+\midrule
+\multicolumn{2}{l}{\textit{Summaries and diagnostics}} \\
+$r(\delta)$ & Policy-risk tail probability for threshold $\delta$ \\
+$I^2$ & Between-audit heterogeneity measure \\
+$\Delta W$ & Expected interval-width reduction (VoI) \\
+LOAO & Leave-one-audit-out sensitivity \\
+\midrule
+\multicolumn{2}{l}{\textit{Transforms and measurement}} \\
+$h(x) = \mathrm{logit}\big(\frac{x+1}{2}\big)$ & Stabilized logit for differences in $[-1,1]$ \\
+$\sigma_{m,a}$ & Measurement noise scale for metric-only audit \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\section{Additional Method Details}
+
+\subsection{Priors and hyperpriors}
+\label{app:priors}
+We use weakly informative Gaussian priors on logit-scaled rates with half-normal priors on RE scales ($\sigma_{\alpha,\cdot},\sigma_{\beta,\cdot},\sigma_{\varepsilon,\cdot}$). Defaults and ranges are in Table~\ref{tab:priors-counts-default}. We keep the same priors across datasets for comparability.
+
+\subsection{Dispersion modes: when to use which}
+\label{app:dispersion}
+\textbf{Mode A (default):} Multinomial/Binomial + logit-normal REs. Use when groups form a partition and counts are independent given rates.  
+\textbf{Mode B (overdispersed):} Dirichlet--Multinomial or Beta--Binomial with no per-cell idiosyncratic REs. Use when within-cell dependence or overlap violates independence (e.g., CivilComments--WILDS).  
+Do not combine per-cell REs and overdispersion.
+
+\subsection{Metric-only calibration and delta method}
+\label{app:metriconly-calib}
+When a partner reports a disparity $\widehat{M}$ with CI $(L,U)$, we set $\sigma$ in \eqref{eq:meas-diff}–\eqref{eq:meas-ratio} from the reported scale or via the delta method on the transformation $h(\cdot)$. We validate calibration by simulating audits from known counts, fitting the measurement model, and checking empirical coverage (SBC plots included).
+
+\paragraph{Robustness to miscalibrated CIs.}
+To probe sensitivity to mis-specified metric-only uncertainty, we rerun the
+Audit Zoo with metric-only audits whose reported CIs are artificially shrunk
+(by 30\%) or inflated (by 30\%) relative to the truth. In the under-confident
+case, the pooled intervals modestly narrow and empirical coverage decreases by
+$\approx 2$--3 percentage points; in the over-confident case, intervals widen
+and coverage increases slightly. In both cases, the $I^2$ diagnostic and LOAO
+curves signal discordant audits when they conflict with the bulk of the
+evidence, suggesting that our framework is reasonably robust as long as most
+audits are reported with approximately honest uncertainty.
+
+\subsection{Lattice weights $\boldsymbol{w}_{\cdot \mid g}$}
+\label{app:lattice-weights}
+We estimate $\bar{\boldsymbol{w}}_{\cdot \mid g}$ via raking or simple MRP using available one-way marginals and place $\mathbf{w}_{\cdot\mid g}\sim\mathrm{Dirichlet}(\kappa\,\bar{\mathbf{w}}_{\cdot\mid g})$ with $\kappa$ learned or set from platform demographics. We monitor coherence residuals and tune the penalty scale $\tau_{\mathrm{coh}}$ to avoid overconstraining.
+
+\subsection{Overlapping groups}
+\label{app:overlap}
+Identity groups in CivilComments--WILDS overlap (e.g., a comment can mention both ``Black'' and
+``female''), so the group indicators do not form a partition. This violates the
+independence assumptions underlying the Multinomial / logit-normal RE construction
+from Sec.~\ref{sec:method:counts-core}: the same example contributes to multiple
+group counts. To avoid double-counting variance, we therefore switch to a
+Beta--Binomial mean--precision parameterization at the identity$\times$label
+cell level and disable lattice coherence. We report worst-group accuracy and its components by taking minima over identities for each posterior draw.
+
+\subsection{Exposure, CTR, and ranking fairness}
+\label{app:exposure}
+Exposures: $E_{dsg}\sim\mathrm{Poisson}(\lambda_{dsg}T_{dsg})$, $\log \lambda_{dsg}$ with REs. CTR: conditional Binomial on exposures with logit-normal REs. Optional BTL for pairwise wins. If impression propensities $\pi_i$ are available, we use stabilized IPW in a quasi-Binomial likelihood and provide sensitivity to weight caps.
+
+\subsection{Selection-bias sensitivity for audit inclusion}
+\label{app:selection}
+We reweight each audit contribution by $1/\hat\pi_a$ where $\hat\pi_a=\mathrm{logit}^{-1}(\gamma_0+\gamma_1|\mu_{m,a}|+\gamma_2 w_{m,a})$; $\gamma_0$ matches the observed inclusion rate. We sweep $(\gamma_1,\gamma_2)\in\{-1,0,+1\}^2$ and report envelopes for pooled intervals and $I^2$.
+
+\subsection{Label-noise mapping and priors}
+\label{app:label-noise}
+We vectorize $\boldsymbol{\pi}^\star$ over $(\hat Y, Y^\star)$ in the order $(1,1),(1,0),(0,1),(0,0)$ (i.e., $Y^\star$ varies fastest within $\hat Y$) and map via $\boldsymbol{\pi}^{\mathrm{obs}}=(I_2\otimes T^\top)\boldsymbol{\pi}^\star$. We place $\eta^+_g,\eta^-_g\sim\mathrm{Beta}(a_\eta,b_\eta)$ centered near $0$ and report policy-risk bands across $(a_\eta,b_\eta)$ grids.
+
+\subsection{Heterogeneity diagnostic details}
+\label{app:heterogeneity}
+We compute $I^2$ from per-audit posterior means/variances and attach uncertainty via a bootstrap over draws ($B{=}2{,}000$ by default). We also report posterior summaries of RE scales as a heterogeneity dashboard.
+
+\subsection{EVSI / VoI implementation}
+\label{app:voi}
+We estimate $\Delta W(\mathcal{A}^\star)$ by: sampling $\Theta^{(s)}\sim p(\Theta\mid\mathcal{D})$, simulating $\widetilde{\mathcal{D}}^{\star(s)}$, and refitting (or reweighting) to measure interval width reduction; we average over $s$. We also report $\Delta W$ per cost unit.
+
+\subsection{Inference details and runtime}
+\label{app:inference}
+We use NUTS (4 chains; 1{,}000 warmup; 1{,}000 draws; target accept 0.9) with $\widehat{R}{<}1.01$ and ESS$>{}400$. For large bundles we fit mean‑field VI (20k iters) with PSIS correction and spot‑check with NUTS. We include wall‑clock medians and memory footprints.
+
+\subsection{Simulation-based calibration (SBC) and PPCs}
+\label{app:sbc}
+We generate synthetic audits, fit the model, and compute rank statistics for key parameters; PPCs compare observed per-group rates and per-audit disparities to posterior predictive distributions. We report uniformity tests and coverage curves.
+
+% ===================== EXPERIMENTAL APPENDIX =====================
+\section{Experimental Details}
+\label{app:exp}
+
+\subsection{Audit Zoo factor grid}
+\label{app:exp:zoo-factors}
+\begin{table}[h]
+\centering
+\small
+\caption{Audit Zoo factor grid (default values in italics).}
+\label{tab:zoo-factors}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l l l}
+\toprule
+\textbf{Factor} & \textbf{Levels} & \textbf{Symbol / Notes} \\
+\midrule
+Metric family & DP diff; EO diff; EOdds vector; AIR ratio; DP+EO+AIR & $\Delta_{\mathrm{DP}}, \Delta_{\mathrm{EO}}, R_{\mathrm{AIR}}$ \\
+Subgroup partition & \texttt{sex}; \texttt{race}; \texttt{sex}$\times$\texttt{race} & lattice coherence active \\
+Sample size per group & $n\in\{500, 2{,}000, 10{,}000\}$ & imbalanced cells \\
+Label noise & $\eta^\pm\in\{0, 0.02, 0.05\}$ & flip probabilities \\
+Dataset shift & none; prevalence; TPR; FPR; all & shift across $d$ \\
+Report type & counts; metric-only; mix 50/50 & metric-only has CIs \\
+Exposure/ranking & off; on & optional \\
+Replicates & $R{=}50$ & per factor cell \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsection{Ad-delivery simulation factors}
+\label{app:exp:ads-factors}
+\begin{table}[h]
+\centering
+\small
+\caption{Ad-delivery simulation factors.}
+\label{tab:ads-factors}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{l l l}
+\toprule
+\textbf{Factor} & \textbf{Levels} & \textbf{Notes} \\
+\midrule
+Budget & low / medium / high & affects pacing \\
+Optimization & CTR-only / CTR+CPA & exploration vs.\ exploitation \\
+Targeting & neutral / mild proxy & no explicit protected targeting \\
+Partitions & \texttt{sex}, \texttt{race}, intersection & coherence active \\
+Report type & counts / metric-only AIR & emulate partner reports \\
+Windows & 3 per campaign & delivery shift over time \\
+Replicates & 20 per cell & stochastic auctions \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsection{CivilComments--WILDS identity sizes (test split)}
+\label{app:civil:sizes}
+\begin{table}[h]
+\centering
+\small
+\caption{CivilComments--WILDS identity group sizes in the test split.}
+\label{tab:civil-group-sizes-app}
+\begin{tabular}{lrr}
+\toprule
+Identity & Non-toxic & Toxic \\
+\midrule
+Male & 12{,}092 & 2{,}203 \\
+Female & 14{,}179 & 2{,}270 \\
+LGBTQ & 3{,}210 & 1{,}216 \\
+Christian & 12{,}101 & 1{,}260 \\
+Muslim & 5{,}355 & 1{,}627 \\
+Other religions & 2{,}980 & 520 \\
+Black & 3{,}335 & 1{,}537 \\
+White & 5{,}723 & 2{,}246 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Priors, Hyperpriors, and Value-of-Information}
+\label{app:priors-voi}
+\begin{table}[h]
+\centering
+\small
+\caption{\textbf{Counts branch: Binomial/Multinomial with logit-normal random effects.}}
+\label{tab:priors-counts-default}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Prior} \\
+\midrule
+$\mu^{p}_g$ & group logit-prevalence mean & $\mathcal{N}(0,\,1.5)$ \\
+$\mu^{\mathrm{TPR}}_g,\ \mu^{\mathrm{FPR}}_g$ & group logit-rate means & $\mathcal{N}(0,\,1.5)$ \\
+$\alpha^{(\cdot)}_d$ & dataset RE (logit) & $\mathcal{N}(0,\,\sigma_{\alpha,(\cdot)})$ \\
+$\sigma_{\alpha,(\cdot)}$ & dataset RE scale & $\mathcal{N}^{+}(0,\,0.5)$ \\
+$\beta^{(\cdot)}_s$ & partition RE (logit) & $\mathcal{N}(0,\,\sigma_{\beta,(\cdot)})$ \\
+$\sigma_{\beta,(\cdot)}$ & partition RE scale & $\mathcal{N}^{+}(0,\,0.5)$ \\
+$\varepsilon^{(\cdot)}_{dsg}$ & idiosyncratic RE (logit) & $\mathcal{N}(0,\,\sigma_{\varepsilon,(\cdot)})$ \\
+$\sigma_{\varepsilon,(\cdot)}$ & idiosyncratic scale & $\mathcal{N}^{+}(0,\,0.3)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Formal Likelihoods and Options}
+\label{appx:model}
+
+\subsection{Mapping from latent rates to 2×2 cell probabilities}
+\label{appx:pi}
+For each \((d,s,g)\), let \(p_{dsg}\) be prevalence, \(\theta^{\mathrm{TPR}}_{dsg}\) the true‑positive rate,
+and \(\theta^{\mathrm{FPR}}_{dsg}\) the false‑positive rate. The 2×2 probabilities are
+\begin{equation}
+\label{eq:pi}
+\begin{aligned}
+\pi_{dsg}(\mathrm{tp}) &= p_{dsg}\,\theta^{\mathrm{TPR}}_{dsg},\quad
+&&\pi_{dsg}(\mathrm{fn}) = p_{dsg}\,(1-\theta^{\mathrm{TPR}}_{dsg}),\\
+\pi_{dsg}(\mathrm{fp}) &= (1-p_{dsg})\,\theta^{\mathrm{FPR}}_{dsg},\quad
+&&\pi_{dsg}(\mathrm{tn}) = (1-p_{dsg})\,(1-\theta^{\mathrm{FPR}}_{dsg}).
+\end{aligned}
+\end{equation}
+We use a Binomial factorization for counts (equivalently Multinomial with cell
+probs \(\pi_{dsg}\)).
+
+\subsection{Toy example (two audits, two groups)}
+\label{appx:model-toy}
+To fix ideas, consider two audits $a \in \{1,2\}$ of the same system, each
+reporting counts for two groups $g \in \{\textsc{A},\textsc{B}\}$.
+For audit~1 we might observe
+\[
+\begin{aligned}
+  (tp,fp,fn,tn)_{1,\textsc{A}} = (80, 10, 20, 890), \\
+  (tp,fp,fn,tn)_{1,\textsc{B}} = (90, 30, 10, 870),
+\end{aligned}
+\]
+with analogous counts for audit~2. The model introduces latent rate parameters
+$p_{a,g}$, $\theta^{\mathrm{TPR}}_{a,g}$ and $\theta^{\mathrm{FPR}}_{a,g}$, and
+attaches them to the counts via~\eqref{eq:binom-prev}--\eqref{eq:binom-fp}.
+Group- and audit-level random effects in~\eqref{eq:hier-prev}--\eqref{eq:hier-fpr}
+encourage partial pooling of rates across $(a,g)$, and disparities such as
+$\Delta_{\mathrm{EO}} = \theta^{\mathrm{TPR}}_{a,\textsc{A}} -
+\theta^{\mathrm{TPR}}_{a,\textsc{B}}$ or AIR are computed as functions of these
+rates on each posterior draw. This simple example illustrates the pattern we
+follow throughout: pool at the rate level, and derive fairness metrics post hoc.
+
+\subsection{Metric-only measurement models}
+\label{appx:metriconly}
+Let \(h_{\Delta}(x)=\mathrm{logit}\!\big((x+1)/2\big)\) map differences
+\(\Delta\in[-1,1]\) to \(\mathbb{R}\), and \(h_R(x)=\log x\) map ratios \(R>0\).
+Given a reported \(\widehat{\Delta}\) or \(\widehat{R}\), we use:
+\begin{align}
+h_{\Delta}(\widehat{\Delta}) &\sim \mathcal{N}\!\big(h_{\Delta}(\Delta(\Theta)),\,\sigma^2\big), \\
+h_R(\widehat{R}) &\sim \mathcal{N}\!\big(h_R(R(\Theta)),\,\sigma^2\big).
+\end{align}
+\subsection{Exposure/CTR branch}
+\label{appx:ctr}
+For aggregated CTR per group \(g\), \(C_g\sim\mathrm{Binomial}(E_g,\theta_g)\),
+with \(\mathrm{logit}(\theta_g)=\mu_g+\alpha_d+\beta_s+\varepsilon_{dsg}\).
+When impression‑level propensities \(\pi_i\) are present, we use stabilized IPW
+weights \(w_i=\min\{w_{\max},\,1/\pi_i\}\) normalized to \(\bar w=1\).
+A weighted pseudo‑likelihood for group \(g\) is
+\begin{equation}
+\label{eq:ctr-ipw-like}
+\ell_g(\theta_g) \;=\; \sum_{i\in\mathcal{I}_g} w_i \Big[
+y_i \log \theta_g + (1-y_i)\log (1-\theta_g) \Big],
+\end{equation}
+where \(y_i\in\{0,1\}\). We monitor the effective sample size
+\(\mathrm{ESS} = \big(\sum_i w_i\big)^2 \big/ \sum_i w_i^2\) and report
+sensitivity to \(w_{\max}\in\{5,10,20\}\). Offsets (e.g., exposure time) can be
+added as \(\mathrm{logit}(\theta_{ig})=\eta_g+\gamma \log \mathrm{offset}_i\).
+
+
+% =============================================================
+
+\section{Lattice Coherence: Identifiability and Stress Tests}
+\label{appx:lattice}
+
+\subsection{Soft coherence and composition weights}
+\label{appx:lattice-soft}
+For coarse \(g\) and refinements \(r\in\mathcal{R}\),
+\(\theta^{\bullet}_{ds,g} \approx \sum_r w_{r\mid g}\,\theta^{\bullet}_{ds,(g,r)}\),
+with \(w_{\cdot\mid g}\sim\mathrm{Dirichlet}(\kappa_w \bar w_{\cdot\mid g})\)
+and \(\theta\)-coherence penalty \(\mathcal{N}(0,\tau_{\mathrm{coh}}^2)\).
+When only marginals are available, \(w\) is weakly identified; we recommend
+\(\kappa_w\in[20,200]\) and to learn \(\tau_{\mathrm{coh}}\sim\mathcal{N}^+(0,0.1)\).
+
+\subsection{Misspecified weights sensitivity}
+\label{appx:lattice-stress}
+We inject a \(+15\%\) bias into \(\bar w_{r\mid g}\) toward the largest \(r\) and refit.
+On 50 synthetic bundles, we observe:
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Outcome & Median CI width $\Delta$ & Decision flips (\%) \\
+\midrule
+EO diff (coherence ON) & +0.004 & 2.8 \\
+EO diff (coherence OFF) & +0.006 & 4.1 \\
+AIR (coherence ON) & +0.013 & 3.5 \\
+AIR (coherence OFF) & +0.017 & 5.0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Coherence increases stability but can narrow CIs slightly when weights are badly
+misspecified. We thus report both the primary fit and a “no‑coherence” sensitivity.
+
+% =============================================================
+
+\section{Selection-Bias and Threshold Sensitivities}
+\label{appx:sens}
+
+\subsection{Selection-bias sensitivity (audit inclusion)}
+\label{appx:selection}
+We emulate missing‑not‑at‑random inclusion via \\
+\(\Pr(S_a{=}1)=\mathrm{logit}^{-1}(\gamma_0+\gamma_1|\mu_a|+\gamma_2 w_a)\),
+where \(\mu_a\) is the per‑audit disparity mean and \(w_a\) its width;
+\(\gamma_0\) matches observed inclusion. We reweight each audit by \(1/\hat\pi_a\)
+and recompute pooled intervals.
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+Setting & EO 90\% cov. & EO median width & $I^2_{\text{EO}}$ \\
+\midrule
+Neutral selection ($\gamma_1{=}0,\gamma_2{=}0$) & 0.90 & 0.039 & 0.31 \\
+Favor large $|\mu|$ ($\gamma_1{=}{+}1$)         & 0.89 & 0.043 & 0.36 \\
+Favor narrow CIs ($\gamma_2{=}{-}1$)            & 0.91 & 0.037 & 0.28 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+
+\subsection{Threshold sensitivity (policy risk mapping)}
+\label{appx:decision}
+We map risk \(r(\delta)\) to actions: deploy if \(<0.10\), defer if \([0.10,0.40]\),
+mitigate if \(>0.40\). 
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Cutoffs & Deploy & Defer & Mitigate \\
+\midrule
+(0.10, 0.40) & 58\% & 24\% & 18\% \\
+(0.15, 0.45) & 55\% & 27\% & 18\% \\
+(0.10, 0.30) & 53\% & 29\% & 18\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+Most changes occur near borderline cases.
+
+% =============================================================
+
+\section{Heterogeneity and Leave-One-Audit-Out}
+\label{appx:hetero}
+Per metric \(m\), let \(\mu_{m,a}\) and \(v_{m,a}\) be the per‑audit posterior
+mean and variance. We summarize:
+\[
+\hat I^2_m=\max\!\left(0,\ \frac{\mathrm{Var}_a(\mu_{m,a})}
+{\mathrm{Var}_a(\mu_{m,a})+\frac{1}{K}\sum_a v_{m,a}}\right).
+\]
+Typical values on our bundles: \(I^2_{\text{EO}}\in[0.25,0.40]\),
+\(I^2_{\text{AIR}}\in[0.20,0.35]\). LOAO risk changes (absolute) had median
+\(<0.02\) and 95th percentile \(<0.08\).
+
+
+
+\end{document}

@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sintefcolor}[2026/05/15 UM palette]
+
+\RequirePackage{xcolor}
+
+% ----- University of Malaya palette -----
+% Royal blue from the UM crest (PMS 286-ish)
+\definecolor{maincolor}{RGB}{28,48,130}
+% Warm grey paper tone (kept compatible with existing theme code)
+\definecolor{sintefgrey}{RGB}{238,238,232}
+\colorlet{sintefgray}{sintefgrey}
+
+% Accent palette inspired by the UM crest: gold, hibiscus red, blue tints
+\definecolor{sintefyellow}{RGB}{223,176,28}    % UM gold
+\definecolor{sintefdarkgreen}{RGB}{13,32,90}   % deep navy (named for theme back-compat)
+\definecolor{sintefgreen}{RGB}{52,76,160}      % mid royal blue
+\definecolor{sinteflightgreen}{RGB}{210,220,245} % pale blue paper
+\definecolor{sintefpurple}{RGB}{170,30,40}     % hibiscus red
+\definecolor{sinteflilla}{RGB}{120,140,200}    % soft accent
+\definecolor{nuaablue}{RGB}{28,48,130}
+\definecolor{nuaalightblue}{RGB}{120,140,200}
+
+% Deprecated colours kept for backward compatibility
+\definecolorset{HTML}{sintef}{}{cyan,      22A7E5;%
+                                magenta,   EC008C;%
+                                lightgrey, D8D0C7}
+\colorlet{sinteflightgray}{sinteflightgrey}
