@@ -79,6 +79,10 @@ redirect_from:
   </div>
 
   <div class="news-item">
+    <strong>[2026-06]</strong> 🎉 Journal article published (Early Access) in <strong>IEEE Transactions on Computational Social Systems</strong>: "Textless, Tiny, and Private: Hashed n-Grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-05]</strong> Two papers accepted by <strong>ICML 2026</strong> (CCF A): first-author paper "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation" and coauthored paper "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion"
   </div>
 

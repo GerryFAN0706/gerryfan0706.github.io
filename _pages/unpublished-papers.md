@@ -100,8 +100,8 @@ ___
 
 - **投稿日期：** 2025-11-30
 - **目标期刊/会议：** IEEE Transactions on Computational Social Systems (Special Issue on Mental Disorder Detection on Social Media)
-- **当前状态：** Major Revision (revised and resubmitted)
-- **预计结果时间：** 2026-02-25
+- **当前状态：** ✅ Accepted（已录用，IEEE Xplore Early Access）
+- **结果时间：** 2026-06（已录用 / Early Access）
 - **作者：** Dandan Liu, Guangrui Fan (Corresponding), Qian Guo, Rui Zhang, Lihu Pan
 - **重要时间节点：**
   - 第一轮审稿完成：2026-01-01
@@ -110,7 +110,7 @@ ___
   - 修改稿截止（第二轮）：2026-02-15
   - 最终决定通知：2026-02-25
   - 发表时间：2026-04
-- **备注：** 特刊，心理健康筛查，本地差分隐私
+- **备注：** 特刊，心理健康筛查，本地差分隐私；DOI: 10.1109/TCSS.2026.3693692
 
 ---
 

@@ -291,7 +291,7 @@ layout: single
           <li>ICML 2026 ×2：Graph-Preference Learning、Incomplete Multi-View Clustering</li>
           <li>ICASSP 2026：LePER（异配图学习）</li>
           <li>TOIS 2026：Conformal@K（Top-K 漏检风险控制，已录用）</li>
-          <li>IEEE TCSS：在修论文</li>
+          <li>IEEE TCSS 2026：Textless, Tiny, and Private（隐私保护心理健康筛查，已录用）</li>
         </ul>
       </div>
     </div>
