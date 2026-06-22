@@ -88,8 +88,8 @@ ___
 
 - **投稿日期：** 2025-11-09
 - **目标期刊/会议：** ACM Transactions on Information Systems (TOIS)
-- **当前状态：** Major Revision (revised and resubmitted)
-- **预计结果时间：** 2026-05
+- **当前状态：** ✅ Accepted（已录用）
+- **结果时间：** 2026-06（已录用 / Accepted）
 - **作者：** Guangrui Fan, Dandan Liu, Lihu Pan
 - **Manuscript ID：** TOIS-2025-0753
 - **备注：** CCF A

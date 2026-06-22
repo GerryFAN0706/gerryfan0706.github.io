@@ -246,7 +246,7 @@ layout: single
       <span class="stat-label">ESI 高被引论文（IJSTEM）</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">10</span>
+      <span class="stat-number">11</span>
       <span class="stat-label">CCF A（含2026年录用）</span>
     </div>
     <div class="stat-card">
@@ -290,7 +290,8 @@ layout: single
           <li>ACME 2025：Traffic Flow Prediction GNN Survey（系统综述）</li>
           <li>ICML 2026 ×2：Graph-Preference Learning、Incomplete Multi-View Clustering</li>
           <li>ICASSP 2026：LePER（异配图学习）</li>
-          <li>TOIS / IEEE TCSS：在修论文</li>
+          <li>TOIS 2026：Conformal@K（Top-K 漏检风险控制，已录用）</li>
+          <li>IEEE TCSS：在修论文</li>
         </ul>
       </div>
     </div>

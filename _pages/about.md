@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-06]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Information Systems (TOIS)</strong> (CCF A): "Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-05]</strong> Two papers accepted by <strong>ICML 2026</strong> (CCF A): first-author paper "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation" and coauthored paper "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion"
   </div>
 
