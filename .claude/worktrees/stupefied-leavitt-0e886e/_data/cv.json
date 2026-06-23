@@ -1,0 +1,274 @@
+{
+  "basics": {
+    "name": "Guangrui Fan (樊光瑞)",
+    "label": "Lecturer | Ph.D. Candidate",
+    "email": "fgr@tyust.edu.cn",
+    "phone": "+86 13387574446",
+    "website": "https://gerryfan0706.github.io",
+    "summary": "Lecturer at Taiyuan University of Science and Technology and Ph.D. candidate in Computer Science at Universiti Malaya. Research interests include Human-Centered AI, AI in Education, AI-Mediated Communication & Trust, and fair spatiotemporal prediction.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Taiyuan",
+      "countryCode": "CN",
+      "region": "Shanxi"
+    },
+    "profiles": [
+      {
+        "network": "ORCID",
+        "username": "",
+        "url": "https://orcid.org/0009-0001-8570-1636"
+      },
+      {
+        "network": "GitHub",
+        "username": "gerryfan0706",
+        "url": "https://github.com/gerryfan0706"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Taiyuan University of Science and Technology",
+      "position": "Lecturer",
+      "startDate": "2018-06",
+      "endDate": "Present",
+      "summary": "School of Computer Science and Technology, Taiyuan, Shanxi, China",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universiti Malaya, Kuala Lumpur, Malaysia",
+      "area": "Ph.D. in Computer Science",
+      "studyType": "Ph.D.",
+      "startDate": "2022-09",
+      "endDate": "2026-03 (Expected)",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Shanghai Jiao Tong University, Shanghai, China",
+      "area": "M.S. in Software Engineering",
+      "studyType": "M.S.",
+      "startDate": "2014-09",
+      "endDate": "2018-02",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Huazhong University of Science and Technology, Wuhan, China",
+      "area": "B.S. in Software Engineering",
+      "studyType": "B.S.",
+      "startDate": "2010-09",
+      "endDate": "2014-06",
+      "gpa": null,
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Research Areas",
+      "keywords": [
+        "Human-Centered AI",
+        "Human-AI Interaction",
+        "AI in Education",
+        "AI-Mediated Communication & Trust",
+        "Social Computing",
+        "Fairness in ML",
+        "Spatiotemporal Prediction (GNNs)"
+      ]
+    },
+    {
+      "name": "Tools & Programming",
+      "keywords": [
+        "Python",
+        "Java",
+        "JavaScript"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Tennis",
+      "keywords": []
+    }
+  ],
+  "references": [],
+  "publications": [
+    {
+      "name": "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation",
+      "publisher": "ICML 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "First-author paper"
+    },
+    {
+      "name": "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion",
+      "publisher": "ICML 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Coauthored paper"
+    },
+    {
+      "name": "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity",
+      "publisher": "ACL 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication",
+      "publisher": "CHI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants",
+      "publisher": "CHI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "ACM CHI 2026 Honourable Mention Award"
+    },
+    {
+      "name": "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences",
+      "publisher": "CHI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering: A Controlled, Multi-Domain Study of Emotional Requirements Elicitation",
+      "publisher": "FSE 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims",
+      "publisher": "WWW 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities",
+      "publisher": "AAAI 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Creative Momentum Transfer: How Timing and Labeling of AI Suggestions Shape Iterative Human Ideation",
+      "publisher": "IJCAI 2025",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "LePER: Label-Free Edge Polarity Reweighting for Heterophily",
+      "publisher": "ICASSP 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Oral presentation"
+    },
+    {
+      "name": "Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent",
+      "publisher": "ECSCW 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance: a comparative study with traditional pair programming and individual approaches",
+      "publisher": "International Journal of STEM Education",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": "ESI Highly Cited Paper"
+    },
+    {
+      "name": "Tool, tutor, or crutch?: A grounded theory of cognitive scaffolding and offloading in AI-assisted programming education",
+      "publisher": "International Journal of STEM Education",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting",
+      "publisher": "Engineering Applications of Artificial Intelligence",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Emerging Trends in Graph Neural Networks for Traffic Flow Prediction: A Survey",
+      "publisher": "Archives of Computational Methods in Engineering",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading",
+      "publisher": "International Journal of Human--Computer Interaction",
+      "releaseDate": "2025",
+      "website": "",
+      "summary": ""
+    },
+    {
+      "name": "Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees",
+      "publisher": "ACM Transactions on Information Systems",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Second-round revision"
+    },
+    {
+      "name": "Textless, Tiny, and Private: Hashed n-grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media",
+      "publisher": "IEEE Transactions on Computational Social Systems",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Second-round revision"
+    }
+  ],
+  "presentations": [],
+  "teaching": [
+    {
+      "course": "Java Web Development",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
+      "description": ""
+    },
+    {
+      "course": "Oracle Database Management",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
+      "description": ""
+    },
+    {
+      "course": "Computer Graphics",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
+      "description": ""
+    },
+    {
+      "course": "Computer Animation Principles",
+      "institution": "Taiyuan University of Science and Technology",
+      "date": "2018",
+      "role": "Course Instructor",
+      "description": ""
+    }
+  ],
+  "portfolio": []
+}
