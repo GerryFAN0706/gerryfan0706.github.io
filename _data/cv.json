@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Guangrui Fan (樊光瑞)",
-    "label": "Lecturer | Ph.D. Candidate",
+    "label": "Lecturer | Ph.D.",
     "email": "fgr@tyust.edu.cn",
     "phone": "+86 13387574446",
     "website": "https://gerryfan0706.github.io",
-    "summary": "Lecturer at Taiyuan University of Science and Technology and Ph.D. candidate in Computer Science at Universiti Malaya. Research interests include Human-Centered AI, AI in Education, AI-Mediated Communication & Trust, and fair spatiotemporal prediction.",
+    "summary": "Lecturer at Taiyuan University of Science and Technology with a Ph.D. in Computer Science from Universiti Malaya. Research interests include Human-Centered AI, AI in Education, AI-Mediated Communication & Trust, and fair spatiotemporal prediction.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -42,7 +42,7 @@
       "area": "Ph.D. in Computer Science",
       "studyType": "Ph.D.",
       "startDate": "2022-09",
-      "endDate": "2026-03 (Expected)",
+      "endDate": "2026-06",
       "gpa": null,
       "courses": []
     },

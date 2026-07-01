@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-07]</strong> Completed my <strong>Ph.D. in Computer Science</strong> at <strong>Universiti Malaya</strong> and received my Ph.D. degree.
+  </div>
+
+  <div class="news-item">
     <strong>[2026-06]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Information Systems (TOIS)</strong> (CCF A): "Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees"
   </div>
 
@@ -168,7 +172,7 @@ function toggleNews() {
 
 ## About Me
 
-I am a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and a Ph.D. candidate in Computer Science at Universiti Malaya. My research focuses on **Human-Centered AI** and **Human-AI Interaction**, with applications in education, mental health, and social computing.
+I am a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology, and I received my Ph.D. in Computer Science from Universiti Malaya. My research focuses on **Human-Centered AI** and **Human-AI Interaction**, with applications in education, mental health, and social computing.
 
 I am particularly interested in understanding how AI transforms human learning, communication, and decision-making—and how we can design AI systems that genuinely serve human needs.
 
@@ -187,7 +191,7 @@ Across these areas, I combine **empirical HCI methods** (experiments, surveys, q
 
 ## Education
 
-* **Ph.D. in Computer Science**, Universiti Malaya, Malaysia (In Progress)
+* **Ph.D. in Computer Science**, Universiti Malaya, Malaysia (2026)
 * **M.S. in Software Engineering**, Shanghai Jiao Tong University, China (2018)
 * **B.S. in Software Engineering**, Huazhong University of Science and Technology, China (2014)
 
