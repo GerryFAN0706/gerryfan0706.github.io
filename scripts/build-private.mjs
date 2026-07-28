@@ -10,6 +10,7 @@ marked.setOptions({ gfm: true, breaks: false });
 // Order here = order of nav bar and of the staticrypt file list in package.json.
 export const PAGES = [
   { slug: "index", label: "🏠 Hub" },
+  { slug: "status", label: "📊 Status" },
   { slug: "pipeline", label: "📚 Pipeline" },
   { slug: "career", label: "🧭 Career" },
   { slug: "projects", label: "🏗️ Projects" },
