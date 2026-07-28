@@ -21,6 +21,7 @@ export const PAGES = [
 // One page per project (rendered from _private_src/projects/<src>.md). Reached from the
 // Status board, not the top nav. Output file is proj-<src>.html.
 export const PROJECTS = [
+  "policytrace", "halflife", "agent-review",
   "traffic", "trust", "hai", "comm", "gnn",
   "platform-a", "platform-b", "nsfc", "indep", "grants",
 ];
