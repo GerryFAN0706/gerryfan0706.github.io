@@ -7,7 +7,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 
 marked.setOptions({ gfm: true, breaks: false });
 
-// Order here = order of nav bar and of the staticrypt file list in package.json.
+// Top-nav pages (rendered from _private_src/pages/<slug>.md).
 export const PAGES = [
   { slug: "index", label: "🏠 Hub" },
   { slug: "status", label: "📊 Status" },
@@ -16,6 +16,13 @@ export const PAGES = [
   { slug: "projects", label: "🏗️ Projects" },
   { slug: "positions", label: "💼 Positions" },
   { slug: "links", label: "🔗 Links" },
+];
+
+// One page per project (rendered from _private_src/projects/<src>.md). Reached from the
+// Status board, not the top nav. Output file is proj-<src>.html.
+export const PROJECTS = [
+  "traffic", "trust", "hai", "comm", "gnn",
+  "platform-a", "platform-b", "nsfc", "indep",
 ];
 
 const CSS = `
@@ -46,6 +53,7 @@ const CSS = `
     color:var(--accent);background:#fff;border:1px solid #dfe3f6}
   nav.pnav a.here{background:var(--accent);color:#fff}
   nav.pnav a:hover{background:var(--accent);color:#fff;text-decoration:none}
+  .back{margin:.1rem 0 1rem;font-size:.9em}
 
   /* hub menu cards */
   .hub-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.8rem;margin:1rem 0}
@@ -100,22 +108,33 @@ function navBar(current) {
     `</nav>`;
 }
 
-function renderPage(slug) {
-  const body = marked.parse(readFileSync(`_private_src/pages/${slug}.md`, "utf8"));
+function wrap(navHtml, body) {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Notes</title>
 <style>${CSS}</style></head><body><div class="wrap">
-${navBar(slug)}
+${navHtml}
 ${body}
 </div></body></html>`;
 }
 
 mkdirSync("_private_build", { recursive: true });
+
+// Top-nav pages
 for (const p of PAGES) {
+  const body = marked.parse(readFileSync(`_private_src/pages/${p.slug}.md`, "utf8"));
   const out = `_private_build/${p.slug}.html`;
-  writeFileSync(out, renderPage(p.slug));
+  writeFileSync(out, wrap(navBar(p.slug), body));
+  console.log("built " + out);
+}
+
+// Project pages (Status highlighted in nav + a back link)
+for (const src of PROJECTS) {
+  const body = marked.parse(readFileSync(`_private_src/projects/${src}.md`, "utf8"));
+  const back = `<p class="back"><a href="status.html">← Back to Status Board</a></p>`;
+  const out = `_private_build/proj-${src}.html`;
+  writeFileSync(out, wrap(navBar("status"), back + body));
   console.log("built " + out);
 }
