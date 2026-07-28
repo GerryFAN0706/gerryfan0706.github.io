@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-07]</strong> 🎉 Journal article accepted by <strong>Social Media + Society</strong> (SSCI 中科院Q1 Top): "Fairness Labels in Feeds: Process Disclosures, Provenance, and User Choice Among Short-Video Creators in Mainland China"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-06]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Information Systems (TOIS)</strong> (CCF A): "Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees"
   </div>
 
@@ -110,6 +114,7 @@ redirect_from:
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
   </div>
 
+  <div class="news-more">
   <div class="news-item">
     <strong>[2026]</strong> 🎉 Journal article accepted by <strong>International Journal of STEM Education</strong> (SCI 中科院Q1 Top): "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education"
   </div>
@@ -125,7 +130,6 @@ redirect_from:
     <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
   </div>
 
-  <div class="news-more">
   <div class="news-item">
     <strong>[2025]</strong> 🏆 Received <strong>First-Class Paper Award</strong> and <strong>Best Presentation Award</strong> at CPEC2025 (第九届中国计算机实践教育学术会议)
   </div>
@@ -136,8 +140,8 @@ redirect_from:
   </div>
 
   <button class="news-toggle" onclick="toggleNews()">
-    <span id="toggleText">Show More News</span>
-    <span class="news-count" id="moreCount">+2</span>
+    <span id="toggleText">Show more · 更多 (Others)</span>
+    <span class="news-count" id="moreCount">+5</span>
   </button>
 </div>
 
@@ -154,11 +158,11 @@ function toggleNews() {
   
   if (newsExpanded) {
     moreNews.style.display = 'block';
-    toggleText.textContent = 'Show Less';
+    toggleText.textContent = 'Show less · 折叠';
     moreCount.style.display = 'none';
   } else {
     moreNews.style.display = 'none';
-    toggleText.textContent = 'Show More News';
+    toggleText.textContent = 'Show more · 更多 (Others)';
     moreCount.style.display = 'inline-block';
   }
 }
