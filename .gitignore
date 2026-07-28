@@ -17,3 +17,4 @@ _private_src/
 _private_build/
 .claude/
 *.pptx
+*.docx
