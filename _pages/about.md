@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-08]</strong> Paper accepted by <strong>Findings of EMNLP 2026</strong>: "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness"
+  </div>
+
+  <div class="news-item">
     <strong>[2026-07]</strong> 🎉 Journal article accepted by <strong>Social Media + Society</strong> (SSCI 中科院Q1 Top): "Fairness Labels in Feeds: Process Disclosures, Provenance, and User Choice Among Short-Video Creators in Mainland China"
   </div>
 
@@ -110,11 +114,11 @@ redirect_from:
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>FSE 2026</strong> (CCF A): "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering"
   </div>
 
+  <div class="news-more">
   <div class="news-item">
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
   </div>
 
-  <div class="news-more">
   <div class="news-item">
     <strong>[2026]</strong> 🎉 Journal article accepted by <strong>International Journal of STEM Education</strong> (SCI 中科院Q1 Top): "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education"
   </div>
@@ -141,7 +145,7 @@ redirect_from:
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show more · 更多 (Others)</span>
-    <span class="news-count" id="moreCount">+5</span>
+    <span class="news-count" id="moreCount">+6</span>
   </button>
 </div>
 
