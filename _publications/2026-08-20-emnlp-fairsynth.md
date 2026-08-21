@@ -1,5 +1,5 @@
 ---
-title: "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness"
+title: "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness (CCF B)"
 collection: publications
 category: conferences
 permalink: /publication/2026-emnlp-fairsynth
