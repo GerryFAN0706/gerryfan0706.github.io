@@ -75,6 +75,10 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-08]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Social Computing (TSC)</strong>: "From Solo Post to Shared Space: How a Public LLM Agent Reshapes Human-to-Human Conversation Structure on a Social Platform" — Dandan Liu (first author); Guangrui Fan (corresponding author)
+  </div>
+
+  <div class="news-item">
     <strong>[2026-08]</strong> Paper accepted by <strong>Findings of EMNLP 2026</strong>: "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness"
   </div>
 
@@ -110,11 +114,11 @@ redirect_from:
     <strong>[2026-01]</strong> 🎉🎉🎉 <strong>3 papers accepted by CHI 2026</strong> (CCF A): "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication", "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants", and "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences"
   </div>
 
+  <div class="news-more">
   <div class="news-item">
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>FSE 2026</strong> (CCF A): "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering"
   </div>
 
-  <div class="news-more">
   <div class="news-item">
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
   </div>
@@ -145,7 +149,7 @@ redirect_from:
 
   <button class="news-toggle" onclick="toggleNews()">
     <span id="toggleText">Show more · 更多 (Others)</span>
-    <span class="news-count" id="moreCount">+6</span>
+    <span class="news-count" id="moreCount">+7</span>
   </button>
 </div>
 
