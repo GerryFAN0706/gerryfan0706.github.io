@@ -2,10 +2,10 @@
   "basics": {
     "name": "Guangrui Fan (樊光瑞)",
     "label": "Lecturer | Ph.D.",
-    "email": "fgr@tyust.edu.cn",
+    "email": "gerryfan2022@gmail.com",
     "phone": "+86 13387574446",
     "website": "https://gerryfan0706.github.io",
-    "summary": "Lecturer at Taiyuan University of Science and Technology with a Ph.D. in Computer Science from Universiti Malaya. My research develops trustworthy learning and decision-making methods for complex human–AI and networked systems, spanning trustworthy learning from human and network feedback, cognitive reliability in human–AI collaboration, AI-mediated communication and social trust, and graph spatiotemporal intelligence for transportation.",
+    "summary": "Lecturer at Taiyuan University of Science and Technology with a Ph.D. in Computer Science from Universiti Malaya. My research focuses on Human-AI Interaction, Social Computing, and Trustworthy LLM Evaluation. I have published or had accepted 21 conference and journal papers as first or corresponding author, including 10 CCF-A papers and 5 CAS Zone 1 Top journal papers.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -33,7 +33,9 @@
       "startDate": "2018-06",
       "endDate": "Present",
       "summary": "School of Computer Science and Technology, Taiyuan, Shanxi, China",
-      "highlights": []
+      "highlights": [
+        "Full-time teaching and research through September 2022; approved unpaid study leave from September 2022 to June 2026 for doctoral study."
+      ]
     }
   ],
   "education": [
@@ -57,7 +59,7 @@
     },
     {
       "institution": "Huazhong University of Science and Technology, Wuhan, China",
-      "area": "B.S. in Software Engineering",
+      "area": "B.S. in Digital Media Technology",
       "studyType": "B.S.",
       "startDate": "2010-09",
       "endDate": "2014-06",
@@ -69,13 +71,11 @@
     {
       "name": "Research Areas",
       "keywords": [
-        "Trustworthy Machine Learning",
-        "Human–AI Collaboration",
-        "AI-Mediated Communication & Social Trust",
-        "Algorithmic Fairness & Risk Calibration",
-        "Conformal Prediction",
-        "Graph Neural Networks",
-        "Spatiotemporal Learning for Transportation"
+        "Human-AI Interaction",
+        "Social Computing",
+        "Trustworthy LLM Evaluation",
+        "AI for Software Engineering",
+        "Affective Computing"
       ]
     },
     {
@@ -105,6 +105,27 @@
   ],
   "references": [],
   "publications": [
+    {
+      "name": "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness",
+      "publisher": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Accepted; first author; CCF B"
+    },
+    {
+      "name": "From Solo Post to Shared Space: How a Public LLM Agent Reshapes Human-to-Human Conversation Structure on a Social Platform",
+      "publisher": "ACM Transactions on Social Computing",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Accepted; corresponding author"
+    },
+    {
+      "name": "Fairness Labels in Feeds: Process Disclosures, Provenance, and User Choice Among Short-Video Creators in Mainland China",
+      "publisher": "Social Media + Society",
+      "releaseDate": "2026",
+      "website": "",
+      "summary": "Accepted; corresponding author; CAS Zone 1 Top"
+    },
     {
       "name": "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation",
       "publisher": "ICML 2026",
