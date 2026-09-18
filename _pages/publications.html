@@ -6,6 +6,8 @@ author_profile: true
 ---
 
 <style>
+#publication-index { scroll-margin-top: 80px; }
+
 .pub-nav {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
@@ -14,29 +16,15 @@ author_profile: true
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.pub-nav-links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-.pub-nav-link {
-  background: rgba(255, 255, 255, 0.2);
+.pub-nav h2 {
+  margin: 0 0 8px;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
-.pub-nav-link:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: white;
-  transform: translateY(-2px);
+.pub-filter-hint {
+  color: white;
+  margin: 0;
+  font-size: 0.9em;
 }
 
 .pub-stats {
@@ -52,6 +40,53 @@ author_profile: true
   border-radius: 8px;
   text-align: center;
   color: white;
+}
+
+.pub-stat, .year-item {
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid transparent;
+  min-width: 0;
+}
+
+.pub-stat:hover, .pub-stat[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+}
+
+.year-item:hover, .year-item[aria-pressed="true"] {
+  border-color: #667eea;
+  background: #eef2ff;
+}
+
+#publication-index button:focus-visible {
+  outline: 3px solid #1e3a8a;
+  outline-offset: 3px;
+}
+
+#publication-index [hidden] {
+  display: none !important;
+}
+
+.pub-results-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pub-results-summary p { margin: 0; }
+
+.pub-reset {
+  font: inherit;
+  color: #4c51bf;
+  background: white;
+  border: 1px solid #667eea;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 .pub-stat-number {
@@ -112,13 +147,11 @@ author_profile: true
 }
 
 @media (max-width: 768px) {
-  .pub-nav-links {
-    flex-direction: column;
-  }
-  
   .pub-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
+  .pub-stat { padding: 10px; }
 }
 </style>
 
@@ -154,7 +187,7 @@ author_profile: true
 
 <div class="selected-pubs">
   <h2>⭐ Selected Publications</h2>
-  <p class="selected-intro">A short, thematic selection. The complete list by year and venue is below.</p>
+  <p class="selected-intro">A short, thematic selection. <a href="#publication-index">Browse and filter the complete publication list below.</a></p>
 
   <div class="sel-group">
     <div class="sel-group-title">Newly Accepted for 2027</div>
@@ -201,42 +234,44 @@ author_profile: true
 </div>
 
 <!-- Navigation and Statistics -->
+<section id="publication-index" aria-labelledby="publication-index-title">
 <div class="pub-nav">
-  <div class="pub-nav-links">
-    <a href="#journal-articles" class="pub-nav-link">📄 Journal Articles</a>
-    <a href="#conference-papers" class="pub-nav-link">🎤 Conference Papers</a>
-    <a href="#year-statistics" class="pub-nav-link">📊 By Year</a>
-  </div>
+  <h2 id="publication-index-title">All Publications</h2>
+  <p class="pub-filter-hint">Published and accepted papers. Select a category or ranking, then narrow by year. Counts show totals across all years.</p>
   
-  <div class="pub-stats">
+  <div class="pub-stats" role="group" aria-label="Publication category or ranking">
     {% assign total_pubs = site.publications | size %}
     {% assign manuscripts = site.publications | where: "category", "manuscripts" | size %}
     {% assign conferences = site.publications | where: "category", "conferences" | size %}
     {% assign rank1_pubs = site.publications | where: "rank", 1 | size %}
     
-    <div class="pub-stat">
+    <button type="button" class="pub-stat" data-filter="all" aria-pressed="true" aria-controls="publication-results">
       <span class="pub-stat-number">{{ total_pubs }}</span>
-      <span class="pub-stat-label">Published / Accepted</span>
-    </div>
-    <div class="pub-stat">
+      <span class="pub-stat-label">All Publications</span>
+    </button>
+    <button type="button" class="pub-stat" data-filter="manuscripts" aria-pressed="false" aria-controls="publication-results">
       <span class="pub-stat-number">{{ manuscripts }}</span>
       <span class="pub-stat-label">Journal Articles</span>
-    </div>
-    <div class="pub-stat">
+    </button>
+    <button type="button" class="pub-stat" data-filter="conferences" aria-pressed="false" aria-controls="publication-results">
       <span class="pub-stat-number">{{ conferences }}</span>
       <span class="pub-stat-label">Conference Papers</span>
-    </div>
-    <div class="pub-stat">
+    </button>
+    <button type="button" class="pub-stat" data-filter="top" aria-pressed="false" aria-controls="publication-results">
       <span class="pub-stat-number">{{ rank1_pubs }}</span>
       <span class="pub-stat-label">CCF A / Q1 Top</span>
-    </div>
+    </button>
   </div>
 </div>
 
 <!-- Year Statistics -->
 <div id="year-statistics" class="year-stats">
   <h3>📊 Publications by Year</h3>
-  <div class="year-grid">
+  <div class="year-grid" role="group" aria-label="Publication year">
+    <button type="button" class="year-item" data-year="all" aria-pressed="true" aria-controls="publication-results">
+      <strong>All years</strong>
+      <span>{{ total_pubs }} papers</span>
+    </button>
     {% capture publication_years %}{% for post in site.publications %}{% if post.publication_year %}{{ post.publication_year }}{% else %}{{ post.date | date: '%Y' }}{% endif %}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
     {% assign publication_years = publication_years | split: ',' | uniq | sort | reverse %}
     {% for year in publication_years %}
@@ -246,15 +281,21 @@ author_profile: true
         {% if post.publication_year %}{% assign publication_year = post.publication_year | append: '' %}{% endif %}
         {% if publication_year == year %}{% assign year_count = year_count | plus: 1 %}{% endif %}
       {% endfor %}
-      <div class="year-item">
+      <button type="button" class="year-item" data-year="{{ year }}" aria-pressed="false" aria-controls="publication-results">
         <strong>{{ year }}</strong>
         <span>{{ year_count }} papers</span>
-      </div>
+      </button>
     {% endfor %}
   </div>
 </div>
 
 <!-- Publications by Category -->
+<div class="pub-results-summary">
+  <p id="publication-result-count" role="status" aria-live="polite" aria-atomic="true">Showing all {{ total_pubs }} publications.</p>
+  <button type="button" class="pub-reset" aria-controls="publication-results" hidden>Clear filters</button>
+</div>
+<div id="publication-results">
+<p class="pub-empty" hidden>No publications match these filters. Choose another year or clear the filters.</p>
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign category_pubs = site.publications | where: "category", category[0] %}
@@ -288,19 +329,57 @@ author_profile: true
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
+</div>
+</section>
 
 <script>
-// Smooth scroll for navigation links
-document.querySelectorAll('.pub-nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+(() => {
+  const index = document.getElementById('publication-index');
+  const papers = Array.from(index.querySelectorAll('.publication-item'));
+  const categories = index.querySelectorAll('.category-section');
+  const filterButtons = index.querySelectorAll('[data-filter]');
+  const yearButtons = index.querySelectorAll('.year-item');
+  const resetButton = index.querySelector('.pub-reset');
+  const status = document.getElementById('publication-result-count');
+  const labels = { all: 'All publications', manuscripts: 'Journal articles', conferences: 'Conference papers', top: 'CCF A / Q1 Top' };
+  let filter = 'all';
+  let year = 'all';
+
+  function applyFilters() {
+    let visible = 0;
+    papers.forEach(paper => {
+      const matchesFilter = filter === 'all' || (filter === 'top' ? paper.dataset.rank === '1' : paper.dataset.category === filter);
+      const matchesYear = year === 'all' || paper.dataset.year === year;
+      paper.hidden = !(matchesFilter && matchesYear);
+      if (!paper.hidden) visible++;
+    });
+    categories.forEach(category => {
+      category.hidden = !category.querySelector('.publication-item:not([hidden])');
+    });
+    filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
+    yearButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.year === year)));
+    resetButton.hidden = filter === 'all' && year === 'all';
+    index.querySelector('.pub-empty').hidden = visible !== 0;
+    status.textContent = `Showing ${visible} of ${papers.length} publications · ${labels[filter]} · ${year === 'all' ? 'All years' : year}`;
+  }
+
+  filterButtons.forEach(button => button.addEventListener('click', () => {
+    filter = button.dataset.filter;
+    if (filter === 'all') year = 'all';
+    applyFilters();
+  }));
+  yearButtons.forEach(button => button.addEventListener('click', () => {
+    year = button.dataset.year;
+    applyFilters();
+  }));
+  resetButton.addEventListener('click', () => {
+    filter = 'all';
+    year = 'all';
+    applyFilters();
+    index.querySelector('[data-filter="all"]').focus();
   });
-});
+  applyFilters();
+})();
 
 </script>
 

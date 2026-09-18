@@ -34,7 +34,7 @@ redirect_from:
   border-radius: 6px;
 }
 
-.news-more {
+.news-container [hidden] {
   display: none;
 }
 
@@ -63,8 +63,8 @@ redirect_from:
 
 .news-count {
   display: inline-block;
-  background: rgba(14, 165, 233, 0.1);
-  color: #0369a1;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
   padding: 3px 10px;
   border-radius: 12px;
   font-size: 0.85em;
@@ -74,6 +74,8 @@ redirect_from:
 </style>
 
 <div class="news-container">
+  <!-- Keep news in reverse chronological order; the visible limit is automatic. -->
+  <div id="news-list">
   <div class="news-item">
     <strong>[2026-09 update]</strong> 🎉 Paper accepted for <strong>UbiComp/ISWC 2027</strong> (CCF A): <a href="/publication/2027-ubicomp-wearable-wellness-scores">When the Score Speaks First: Negotiating the Authority of Wearable Wellness Scores in Everyday Life</a> — Dandan Liu (first author); Guangrui Fan (corresponding author). Forthcoming.
   </div>
@@ -122,7 +124,6 @@ redirect_from:
     <strong>[2026-01]</strong> 🎉🎉🎉 <strong>3 papers accepted by CHI 2026</strong> (CCF A): "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication", "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants", and "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences"
   </div>
 
-  <div class="news-more">
   <div class="news-item">
     <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>FSE 2026</strong> (CCF A): "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering"
   </div>
@@ -155,33 +156,36 @@ redirect_from:
   </div>
   </div>
 
-  <button class="news-toggle" onclick="toggleNews()">
-    <span id="toggleText">Show more · 更多 (Others)</span>
-    <span class="news-count" id="moreCount">+7</span>
+  <button type="button" class="news-toggle" aria-controls="news-list" aria-expanded="false" hidden>
+    <span class="news-toggle-text">Show more · 更多</span>
+    <span class="news-count"></span>
   </button>
 </div>
 
 <script>
-let newsExpanded = false;
+(() => {
+  const container = document.querySelector('.news-container');
+  const olderNews = Array.from(container.querySelectorAll('.news-item')).slice(10);
+  const button = container.querySelector('.news-toggle');
+  const label = button.querySelector('.news-toggle-text');
+  const count = button.querySelector('.news-count');
+  let expanded = false;
 
-function toggleNews() {
-  const moreNews = document.querySelector('.news-more');
-  const toggleBtn = document.querySelector('.news-toggle');
-  const toggleText = document.getElementById('toggleText');
-  const moreCount = document.getElementById('moreCount');
-  
-  newsExpanded = !newsExpanded;
-  
-  if (newsExpanded) {
-    moreNews.style.display = 'block';
-    toggleText.textContent = 'Show less · 折叠';
-    moreCount.style.display = 'none';
-  } else {
-    moreNews.style.display = 'none';
-    toggleText.textContent = 'Show more · 更多 (Others)';
-    moreCount.style.display = 'inline-block';
+  function updateNews() {
+    olderNews.forEach(item => { item.hidden = !expanded; });
+    button.hidden = olderNews.length === 0;
+    button.setAttribute('aria-expanded', String(expanded));
+    label.textContent = expanded ? 'Show less · 折叠' : 'Show more · 更多';
+    count.textContent = '+' + olderNews.length;
+    count.hidden = expanded;
   }
-}
+
+  button.addEventListener('click', () => {
+    expanded = !expanded;
+    updateNews();
+  });
+  updateNews();
+})();
 </script>
 
 ---
