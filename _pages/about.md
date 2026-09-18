@@ -75,6 +75,14 @@ redirect_from:
 
 <div class="news-container">
   <div class="news-item">
+    <strong>[2026-09 update]</strong> 🎉 Paper accepted for <strong>UbiComp/ISWC 2027</strong> (CCF A): <a href="/publication/2027-ubicomp-wearable-wellness-scores">When the Score Speaks First: Negotiating the Authority of Wearable Wellness Scores in Everyday Life</a> — Dandan Liu (first author); Guangrui Fan (corresponding author). Forthcoming.
+  </div>
+
+  <div class="news-item">
+    <strong>[2026-09]</strong> 🎉 Paper accepted for <strong>CSCW 2027</strong> (CCF A): <a href="/publication/2027-cscw-continuity-work">When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration</a> — Guangrui Fan (corresponding author). Accepted 14 September 2026; forthcoming.
+  </div>
+
+  <div class="news-item">
     <strong>[2026-08]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Social Computing (TSC)</strong>: "From Solo Post to Shared Space: How a Public LLM Agent Reshapes Human-to-Human Conversation Structure on a Social Platform" — Dandan Liu (first author); Guangrui Fan (corresponding author)
   </div>
 

@@ -157,6 +157,14 @@ author_profile: true
   <p class="selected-intro">A short, thematic selection. The complete list by year and venue is below.</p>
 
   <div class="sel-group">
+    <div class="sel-group-title">Newly Accepted for 2027</div>
+    <ul class="sel-list">
+      <li class="sel-item"><a href="/publication/2027-ubicomp-wearable-wellness-scores">When the Score Speaks First: Negotiating the Authority of Wearable Wellness Scores in Everyday Life</a><span class="sel-badge">CCF A · Accepted</span><span class="sel-venue">UbiComp/ISWC 2027 · Corresponding author · Forthcoming</span></li>
+      <li class="sel-item"><a href="/publication/2027-cscw-continuity-work">When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration</a><span class="sel-badge">CCF A · Accepted</span><span class="sel-venue">CSCW 2027 · Corresponding author · Forthcoming</span></li>
+    </ul>
+  </div>
+
+  <div class="sel-group">
     <div class="sel-group-title">Learning from Biased Feedback, with Guarantees</div>
     <ul class="sel-list">
       <li class="sel-item"><a href="/publication/2026-icml-graph-preference-learning">Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation</a><span class="sel-badge">CCF A</span><span class="sel-venue">ICML 2026</span></li>
@@ -208,7 +216,7 @@ author_profile: true
     
     <div class="pub-stat">
       <span class="pub-stat-number">{{ total_pubs }}</span>
-      <span class="pub-stat-label">Total Publications</span>
+      <span class="pub-stat-label">Published / Accepted</span>
     </div>
     <div class="pub-stat">
       <span class="pub-stat-number">{{ manuscripts }}</span>
@@ -229,11 +237,18 @@ author_profile: true
 <div id="year-statistics" class="year-stats">
   <h3>📊 Publications by Year</h3>
   <div class="year-grid">
-    {% assign pubs_by_year = site.publications | group_by_exp: "post", "post.date | date: '%Y'" | sort: "name" | reverse %}
-    {% for year_group in pubs_by_year %}
+    {% capture publication_years %}{% for post in site.publications %}{% if post.publication_year %}{{ post.publication_year }}{% else %}{{ post.date | date: '%Y' }}{% endif %}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+    {% assign publication_years = publication_years | split: ',' | uniq | sort | reverse %}
+    {% for year in publication_years %}
+      {% assign year_count = 0 %}
+      {% for post in site.publications %}
+        {% assign publication_year = post.date | date: '%Y' %}
+        {% if post.publication_year %}{% assign publication_year = post.publication_year | append: '' %}{% endif %}
+        {% if publication_year == year %}{% assign year_count = year_count | plus: 1 %}{% endif %}
+      {% endfor %}
       <div class="year-item">
-        <strong>{{ year_group.name }}</strong>
-        <span>{{ year_group.items | size }} papers</span>
+        <strong>{{ year }}</strong>
+        <span>{{ year_count }} papers</span>
       </div>
     {% endfor %}
   </div>

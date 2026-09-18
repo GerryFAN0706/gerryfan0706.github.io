@@ -5,7 +5,7 @@
     "email": "gerryfan2022@gmail.com",
     "phone": "+86 13387574446",
     "website": "https://gerryfan0706.github.io",
-    "summary": "Lecturer at Taiyuan University of Science and Technology with a Ph.D. in Computer Science from Universiti Malaya. My research focuses on Human-AI Interaction, Social Computing, and Trustworthy LLM Evaluation. I have published or had accepted 21 conference and journal papers as first or corresponding author, including 10 CCF-A papers and 5 CAS Zone 1 Top journal papers.",
+    "summary": "Lecturer at Taiyuan University of Science and Technology with a Ph.D. in Computer Science from Universiti Malaya. My research focuses on Human-AI Interaction, Social Computing, and Trustworthy LLM Evaluation. My current CV lists 23 published or accepted conference and journal papers as first or corresponding author, including 12 CCF-A papers and 5 CAS Zone 1 Top journal papers.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -105,6 +105,20 @@
   ],
   "references": [],
   "publications": [
+    {
+      "name": "When the Score Speaks First: Negotiating the Authority of Wearable Wellness Scores in Everyday Life",
+      "publisher": "ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp/ISWC 2027)",
+      "releaseDate": "2027",
+      "website": "https://gerryfan0706.github.io/publication/2027-ubicomp-wearable-wellness-scores",
+      "summary": "Accepted; forthcoming. CCF A (UbiComp). Authors: Dandan Liu and Guangrui Fan (corresponding author)."
+    },
+    {
+      "name": "When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration",
+      "publisher": "ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2027)",
+      "releaseDate": "2027",
+      "website": "https://gerryfan0706.github.io/publication/2027-cscw-continuity-work",
+      "summary": "Accepted 14 September 2026; forthcoming. CCF A. Guangrui Fan is the corresponding author."
+    },
     {
       "name": "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness",
       "publisher": "Findings of the Association for Computational Linguistics: EMNLP 2026",

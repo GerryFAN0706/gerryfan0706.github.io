@@ -41,10 +41,12 @@
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
+          {% assign publication_year = post.date | date: '%Y' %}
+          {% if post.publication_year %}{% assign publication_year = post.publication_year %}{% endif %}
           {% if post.status %}
-            <p>{{ post.status }} for <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+            <p>{{ post.status }} for <i>{{ post.venue }}</i>, {{ publication_year }} </p>
           {% else %}
-            <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+            <p>Published in <i>{{ post.venue }}</i>, {{ publication_year }} </p>
           {% endif %}
           {% if post.honourable_mention %}
             <p>🏆 <strong>Honourable Mention Award</strong></p>
