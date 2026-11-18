@@ -13,6 +13,36 @@ $gf-sidebar: 220px; // width of the pinned author sidebar
 $gf-sidebar-gap: 56px; // space between sidebar and content
 
 /* --------------------------------------------------------------------------
+   Self-hosted web fonts (see assets/fonts/README.md for source and license).
+   Hosted with the site so every visitor gets the same fonts, including
+   visitors in mainland China where Google Fonts is often blocked.
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2-variations"),
+       url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-wght-normal.woff2") format("woff2-variations"),
+       url("../fonts/source-serif-4-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* --------------------------------------------------------------------------
    Tokens
    -------------------------------------------------------------------------- */
 
@@ -185,8 +215,10 @@ h1, h2, h3, h4, h5, h6 {
 /* From 1024px the theme pins the sidebar (position: fixed). A fixed element's
    percentage width is measured against the window, while the content column is
    measured against the page frame, so on wide screens the two overlapped.
-   Give both explicit widths so the content always starts after the sidebar. */
-@media screen and (min-width: $sidebar-screen-min-width) {
+   Give both explicit widths so the content always starts after the sidebar.
+   Applied from the two-column breakpoint (925px) so every screen that shows
+   the sidebar beside the content gets the same layout. */
+@include breakpoint($large) {
   #main,
   .masthead__inner-wrap,
   .page__footer footer {
