@@ -5,233 +5,49 @@ permalink: /publications/
 author_profile: true
 ---
 
-<style>
-#publication-index { scroll-margin-top: 80px; }
-
-.pub-nav {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.pub-nav h2 {
-  margin: 0 0 8px;
-  color: white;
-}
-
-.pub-filter-hint {
-  color: white;
-  margin: 0;
-  font-size: 0.9em;
-}
-
-.pub-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.pub-stat {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  color: white;
-}
-
-.pub-stat, .year-item {
-  font: inherit;
-  cursor: pointer;
-  border: 2px solid transparent;
-  min-width: 0;
-}
-
-.pub-stat:hover, .pub-stat[aria-pressed="true"] {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: white;
-}
-
-.year-item:hover, .year-item[aria-pressed="true"] {
-  border-color: #667eea;
-  background: #eef2ff;
-}
-
-#publication-index button:focus-visible {
-  outline: 3px solid #1e3a8a;
-  outline-offset: 3px;
-}
-
-#publication-index [hidden] {
-  display: none !important;
-}
-
-.pub-results-summary {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.pub-results-summary p { margin: 0; }
-
-.pub-reset {
-  font: inherit;
-  color: #4c51bf;
-  background: white;
-  border: 1px solid #667eea;
-  border-radius: 6px;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
-.pub-stat-number {
-  font-size: 2em;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.pub-stat-label {
-  font-size: 0.9em;
-  opacity: 0.95;
-}
-
-.year-stats {
-  background: #f9fafb;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  border-left: 4px solid #667eea;
-}
-
-.year-stats h3 {
-  margin-top: 0;
-  color: #667eea;
-  font-size: 1.3em;
-}
-
-.year-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 12px;
-}
-
-.year-item {
-  background: white;
-  padding: 12px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.year-item strong {
-  display: block;
-  font-size: 1.5em;
-  color: #667eea;
-  margin-bottom: 5px;
-}
-
-.year-item span {
-  color: #6b7280;
-  font-size: 0.9em;
-}
-
-.category-section {
-  margin-bottom: 40px;
-  scroll-margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-  .pub-stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-  .pub-stat { padding: 10px; }
-}
-</style>
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap" style="margin-bottom: 20px;">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<style>
-.selected-pubs { margin-bottom: 35px; }
-.selected-pubs > h2 { margin-bottom: 6px; }
-.selected-intro { color: #6b7280; margin: 0 0 22px; }
-.sel-group { margin-bottom: 22px; }
-.sel-group-title {
-  font-size: 1.05em; font-weight: 700; color: #4c51bf;
-  border-left: 4px solid #667eea; padding-left: 10px; margin: 0 0 12px;
-}
-.sel-list { list-style: none; padding: 0; margin: 0; }
-.sel-item {
-  background: #f9fafb; border: 1px solid #eef0f4; border-radius: 10px;
-  padding: 12px 16px; margin-bottom: 10px; transition: all .2s ease;
-}
-.sel-item:hover { box-shadow: 0 4px 10px rgba(102,126,234,.12); transform: translateY(-1px); }
-.sel-item a { font-weight: 600; text-decoration: none; }
-.sel-venue { display: block; color: #6b7280; font-size: .9em; margin-top: 3px; }
-.sel-badge {
-  display: inline-block; font-size: .72em; font-weight: 700; padding: 2px 8px;
-  border-radius: 10px; margin-left: 6px; vertical-align: middle;
-  background: rgba(102,126,234,.12); color: #4c51bf;
-}
-</style>
+{% if site.author.googlescholar %}
+  <p>You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
+{% endif %}
 
-<div class="selected-pubs">
-  <h2>⭐ Selected Publications</h2>
-  <p class="selected-intro">A short, thematic selection. <a href="#publication-index">Browse and filter the complete publication list below.</a></p>
+<p class="pub-legend">My name is shown in bold. * corresponding author · # co-first author. Badges show CCF or CAS rankings and awards.</p>
 
-  <div class="sel-group">
-    <div class="sel-group-title">Newly Accepted for 2027</div>
-    <ul class="sel-list">
-      <li class="sel-item"><a href="/publication/2027-ubicomp-wearable-wellness-scores">When the Score Speaks First: Negotiating the Authority of Wearable Wellness Scores in Everyday Life</a><span class="sel-badge">CCF A · Accepted</span><span class="sel-venue">UbiComp/ISWC 2027 · Corresponding author · Forthcoming</span></li>
-      <li class="sel-item"><a href="/publication/2027-cscw-continuity-work">When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration</a><span class="sel-badge">CCF A · Accepted</span><span class="sel-venue">CSCW 2027 · Corresponding author · Forthcoming</span></li>
-    </ul>
-  </div>
+<h2>Selected publications</h2>
+<p>A short, thematic selection. <a href="#publication-index">Browse and filter the complete list below.</a></p>
 
-  <div class="sel-group">
-    <div class="sel-group-title">Learning from Biased Feedback, with Guarantees</div>
-    <ul class="sel-list">
-      <li class="sel-item"><a href="/publication/2026-icml-graph-preference-learning">Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation</a><span class="sel-badge">CCF A</span><span class="sel-venue">ICML 2026</span></li>
-      <li class="sel-item"><a href="/publication/2026-tois-conformal-k">Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation</a><span class="sel-badge">CCF A</span><span class="sel-venue">ACM Transactions on Information Systems (TOIS)</span></li>
-      <li class="sel-item"><a href="/publication/2026-www-audit-of-audits">Audit-of-Audits: Bayesian Meta-Evaluation for Interval-Valued Fairness Claims</a><span class="sel-badge">CCF A</span><span class="sel-venue">The Web Conference (WWW) 2026</span></li>
-    </ul>
-  </div>
+<h3 class="pub-group-title">Newly accepted for 2027</h3>
+<ul class="pub-cards">
+{% include pub-card.html url="/publication/2027-ubicomp-wearable-wellness-scores" %}
+{% include pub-card.html url="/publication/2027-cscw-continuity-work" %}
+</ul>
 
-  <div class="sel-group">
-    <div class="sel-group-title">When AI Helps — and When It Hurts</div>
-    <ul class="sel-list">
-      <li class="sel-item"><a href="/publication/2026-chi-verification-load">When Help Hurts: Verification Load and Fatigue with AI Coding Assistants</a><span class="sel-badge">CCF A · 🏆 Honourable Mention</span><span class="sel-venue">ACM CHI 2026</span></li>
-      <li class="sel-item"><a href="/publication/2026-ijstem-tool-tutor-crutch">Tool, Tutor, or Crutch? Cognitive Scaffolding and Offloading in AI-Assisted Programming Education</a><span class="sel-badge">SCI Q1 Top</span><span class="sel-venue">International Journal of STEM Education</span></li>
-      <li class="sel-item"><a href="/publication/2025-ijse-ai-pair-programming">The Impact of AI-Assisted Pair Programming on Student Motivation and Performance</a><span class="sel-badge">ESI Highly Cited</span><span class="sel-venue">International Journal of STEM Education</span></li>
-    </ul>
-  </div>
+<h3 class="pub-group-title">Learning from biased feedback, with guarantees</h3>
+<ul class="pub-cards">
+{% include pub-card.html url="/publication/2026-icml-graph-preference-learning" %}
+{% include pub-card.html url="/publication/2026-tois-conformal-k" %}
+{% include pub-card.html url="/publication/2026-www-audit-of-audits" %}
+</ul>
 
-  <div class="sel-group">
-    <div class="sel-group-title">Authorship, Emotion & Trust in AI-Mediated Communication</div>
-    <ul class="sel-list">
-      <li class="sel-item"><a href="/publication/2026-chi-authorship-authenticity">Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Communication</a><span class="sel-badge">CCF A</span><span class="sel-venue">ACM CHI 2026</span></li>
-      <li class="sel-item"><a href="/publication/2026-acl-feeling-rules">Feeling Rules in Language Models: Norms of Emotional Appropriateness Across Roles and Institutions</a><span class="sel-badge">CCF A</span><span class="sel-venue">ACL 2026</span></li>
-      <li class="sel-item"><a href="/publication/2026-ecscw-consent-boundaries">Consent Boundaries by Play: Eliciting Stable Preferences and Diagnosing Opt-Out Friction</a><span class="sel-badge">CCF B</span><span class="sel-venue">ECSCW 2026</span></li>
-    </ul>
-  </div>
+<h3 class="pub-group-title">When AI helps, and when it hurts</h3>
+<ul class="pub-cards">
+{% include pub-card.html url="/publication/2026-chi-verification-load" %}
+{% include pub-card.html url="/publication/2026-ijstem-tool-tutor-crutch" %}
+{% include pub-card.html url="/publication/2025-ijse-ai-pair-programming" %}
+</ul>
 
-  <div class="sel-group">
-    <div class="sel-group-title">Graph Learning for Transportation</div>
-    <ul class="sel-list">
-      <li class="sel-item"><a href="/publication/2025-eaai-dynakey-gnn">DynaKey-GNN: Dynamic Graph Spatiotemporal Traffic Forecasting</a><span class="sel-badge">SCI Q1 Top</span><span class="sel-venue">Engineering Applications of Artificial Intelligence</span></li>
-      <li class="sel-item"><a href="/publication/2025-acme-gnn-survey">Graph Neural Networks for Traffic Forecasting: A Survey</a><span class="sel-venue">Archives of Computational Methods in Engineering</span></li>
-    </ul>
-  </div>
-</div>
+<h3 class="pub-group-title">Authorship, emotion, and trust in AI-mediated communication</h3>
+<ul class="pub-cards">
+{% include pub-card.html url="/publication/2026-chi-authorship-authenticity" %}
+{% include pub-card.html url="/publication/2026-acl-feeling-rules" %}
+{% include pub-card.html url="/publication/2026-ecscw-consent-boundaries" %}
+</ul>
+
+<h3 class="pub-group-title">Graph learning for transportation</h3>
+<ul class="pub-cards">
+{% include pub-card.html url="/publication/2025-eaai-dynakey-gnn" %}
+{% include pub-card.html url="/publication/2025-acme-gnn-survey" %}
+</ul>
 
 <!-- Navigation and Statistics -->
 <section id="publication-index" aria-labelledby="publication-index-title">
@@ -259,14 +75,14 @@ author_profile: true
     </button>
     <button type="button" class="pub-stat" data-filter="top" aria-pressed="false" aria-controls="publication-results">
       <span class="pub-stat-number">{{ rank1_pubs }}</span>
-      <span class="pub-stat-label">CCF A / Q1 Top</span>
+      <span class="pub-stat-label">CCF A / CAS Zone 1 Top</span>
     </button>
   </div>
 </div>
 
 <!-- Year Statistics -->
 <div id="year-statistics" class="year-stats">
-  <h3>📊 Publications by Year</h3>
+  <h3>Publications by year</h3>
   <div class="year-grid" role="group" aria-label="Publication year">
     <button type="button" class="year-item" data-year="all" aria-pressed="true" aria-controls="publication-results">
       <strong>All years</strong>
@@ -341,7 +157,7 @@ author_profile: true
   const yearButtons = index.querySelectorAll('.year-item');
   const resetButton = index.querySelector('.pub-reset');
   const status = document.getElementById('publication-result-count');
-  const labels = { all: 'All publications', manuscripts: 'Journal articles', conferences: 'Conference papers', top: 'CCF A / Q1 Top' };
+  const labels = { all: 'All publications', manuscripts: 'Journal articles', conferences: 'Conference papers', top: 'CCF A / CAS Zone 1 Top' };
   let filter = 'all';
   let year = 'all';
 

@@ -1,5 +1,5 @@
 ---
-title: "DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting (SCI 中科院Q1 Top)"
+title: "DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting"
 collection: publications
 category: manuscripts
 permalink: /publication/2025-eaai-dynakey-gnn
@@ -7,6 +7,15 @@ date: 2025-09-15
 rank: 1
 venue: 'Engineering Applications of Artificial Intelligence'
 citation: 'Fan, G., Sabri, A. Q. M., Rahman, S. S. A., & Pan, L. (2025). DynaKey-GNN: An efficient dynamic key-node multi-graph neural network for spatio-temporal traffic flow forecasting. <i>Engineering Applications of Artificial Intelligence, 159</i>, 111757.'
+tier: 'CAS Zone 1 Top'
+venue_short: 'EAAI'
+authors: 
+  - 'Fan, G.'
+  - 'Sabri, A.Q.M.*'
+  - 'Rahman, S.S.A.'
+  - 'Pan, L.'
+doi: '10.1016/j.engappai.2025.111757'
+bibkey: 'fan2025dynakey'
 ---
 
 A dynamic key-node multi-graph neural network for traffic flow prediction that achieves up to 12.37% higher accuracy than state-of-the-art baselines.

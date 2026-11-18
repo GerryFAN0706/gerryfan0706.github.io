@@ -9,13 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
-I study how individuals verify and learn with AI, how teams recover when AI fails, and how evaluators can measure and control risk. See [Research](/research/) for the three themes and [Publications](/publications/) for current citation information.
+I study human-AI interaction: collaboration and trust in complex knowledge tasks. My work spans how individuals verify and learn with AI, how teams recover when AI fails, and how evaluators can measure and control risk. See [Research](/research/) for the three research levels and [Publications](/publications/) for the full list.
 
-My current CV lists 23 published or accepted conference and journal papers as first or corresponding author, including 12 CCF-A papers (11 conference papers and ACM TOIS) and 5 CAS Zone 1 Top journal papers. One paper received an ACM CHI 2026 Honourable Mention Award, and one was recognized as an ESI Highly Cited Paper.
+My CV lists 23 published or accepted papers as first or corresponding author, including 12 CCF-A papers (11 conference papers and *ACM TOIS*) and 5 CAS Zone 1 Top journal papers. Highlights include an ACM CHI 2026 Honorable Mention Award, two ESI Highly Cited Papers, 417 Google Scholar citations (November 2026), and a Shanxi Provincial Basic Research Program Youth Project as principal investigator.
 
-Current English and Chinese versions of my CV are available below. They include my education, research interests, publications, projects, teaching, and academic service.
+Both versions cover education, research overview and plan, publications, projects, teaching, honors, and academic service.
 
 [Download English CV (PDF)]({{ base_path }}/files/guangrui-fan-cv-en.pdf){: .btn .btn--primary}
 [Download Chinese CV (PDF)]({{ base_path }}/files/guangrui-fan-cv-cn.pdf){: .btn .btn--primary}
 
-The linked PDF editions are unchanged from September 2026. The [publication list](/publications/) reflects later publication updates.
+The PDFs were last updated in November 2026. The [publication list](/publications/) is updated as new papers appear.

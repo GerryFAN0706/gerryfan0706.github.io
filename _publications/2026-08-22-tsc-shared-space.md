@@ -8,13 +8,17 @@ rank: 2
 venue: 'ACM Transactions on Social Computing'
 status: 'Published'
 citation: 'Liu, D., Pan, L., Sabri, A.Q.M., & Fan, G. (2026). From Solo Post to Shared Space: How a Public LLM Agent Reshapes Human-to-Human Conversation Structure on a Social Platform. <i>ACM Transactions on Social Computing</i>. Advance online publication. doi:10.1145/3844666.'
+venue_short: 'ACM TSC'
+authors: 
+  - 'Liu, D.'
+  - 'Pan, L.'
+  - 'Sabri, A.Q.M.'
+  - 'Fan, G.*'
+doi: '10.1145/3844666'
+bibkey: 'liu2026solo'
 ---
 
 Published online in *ACM Transactions on Social Computing* (TSC).
-
-[Publisher record](https://doi.org/10.1145/3844666)
-
-**Authors:** Dandan Liu (first author), Lihu Pan, Aznul Qalid Md Sabri, and Guangrui Fan (corresponding author).
 
 **Keywords:** Public LLM agents, Social platforms, Human-to-human conversation, Conversation structure, Human–AI interaction
 

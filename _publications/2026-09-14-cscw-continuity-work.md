@@ -1,5 +1,5 @@
 ---
-title: "When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration (CCF A)"
+title: "When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration"
 collection: publications
 category: conferences
 permalink: /publication/2027-cscw-continuity-work
@@ -11,13 +11,18 @@ rank: 1
 venue: 'ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW)'
 status: 'Accepted'
 citation: 'Liu, D., Sabri, A.Q.M., Rahman, S.S.A., Pan, L., & Fan, G.* (2027). When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration. <i>ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2027)</i>. Accepted; forthcoming.'
+tier: 'CCF A'
+venue_short: 'CSCW 2027'
+authors: 
+  - 'Liu, D.'
+  - 'Sabri, A.Q.M.'
+  - 'Rahman, S.S.A.'
+  - 'Pan, L.'
+  - 'Fan, G.*'
+bibkey: 'liu2027breaks'
 ---
 
-**Accepted for CSCW 2027; forthcoming.** CCF A.
-
-**Authors:** Dandan Liu; Aznul Qalid Md Sabri; Siti Soraya Abdul Rahman; Lihu Pan; **Guangrui Fan***.
-
-*Corresponding author: Guangrui Fan.*
+**Accepted for CSCW 2027; forthcoming.**
 
 **Accepted:** 14 September 2026.
 

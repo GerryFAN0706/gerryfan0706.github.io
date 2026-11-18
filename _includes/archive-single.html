@@ -40,37 +40,16 @@
       {% endif %}
     </h2>
     
+    {% if post.collection == 'publications' %}
+      {% if post.teaser %}<img class="pub-teaser" src="{% if post.teaser contains '://' %}{{ post.teaser }}{% else %}{{ base_path }}/images/{{ post.teaser }}{% endif %}" alt="">{% endif %}
+      {% include pub-meta.html pub=post %}
+    {% else %}
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          {% if post.status %}
-            <p>{{ post.status }} for <i>{{ post.venue }}</i>, {{ publication_year }} </p>
-          {% else %}
-            <p>Published in <i>{{ post.venue }}</i>, {{ publication_year }} </p>
-          {% endif %}
-          {% if post.honourable_mention %}
-            <p>🏆 <strong>Honourable Mention Award</strong></p>
-          {% endif %}
-          {% if post.presentation_type %}
-            <p>🎤 <strong>{{ post.presentation_type }}</strong></p>
-          {% endif %}
-          {% if post.esi_highly_cited or post.most_cited_recent or post.most_popular_recent_rank %}
-            <p>
-              {% if post.esi_highly_cited %}
-                🔥 <strong>ESI Highly Cited Paper (ESI 高被引论文)</strong><br />
-              {% endif %}
-              {% if post.most_cited_recent %}
-                🏅 <strong>Most cited articles (past two years)</strong> in {{ post.venue }}<br />
-              {% endif %}
-              {% if post.most_popular_recent_rank %}
-                📈 <strong>Most popular articles (past 9 months)</strong> in {{ post.venue }} (Rank {{ post.most_popular_recent_rank }})
-              {% endif %}
-            </p>
-          {% endif %}
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
@@ -109,6 +88,8 @@
       <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.bibtexurl %}
       <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% endif %}
+
     {% endif %}
 
   </article>

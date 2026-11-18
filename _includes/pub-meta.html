@@ -1,0 +1,43 @@
+{% comment %}
+  Authors, venue, badges, and links for one publication.
+  Usage: {% include pub-meta.html pub=post %}  (add compact=true inside cards)
+  Front matter it reads: authors, venue, publication_year, status, tier,
+  honourable_mention, esi_highly_cited, presentation_type, paperurl, doi,
+  pdf, code, slidesurl, bibkey, category.
+{% endcomment %}
+{% assign pub = include.pub %}
+{% assign pub_year = pub.date | date: '%Y' %}
+{% if pub.publication_year %}{% assign pub_year = pub.publication_year %}{% endif %}
+{% if pub.authors %}
+<p class="pub-authors">{% for a in pub.authors %}{% if forloop.last and forloop.length > 1 %}&amp; {% endif %}{{ a | replace: "Fan, G.", "<strong>Fan, G.</strong>" }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+{% endif %}
+{% unless include.compact %}
+<p class="pub-venue"><em>{{ pub.venue }}</em>{% unless pub.venue contains pub_year %}, {{ pub_year }}{% endunless %}{% if pub.status == "Accepted" %} · <span class="pub-status">Accepted, forthcoming</span>{% endif %}</p>
+{% endunless %}
+<div class="pub-row">
+  {% if include.compact and pub.status == "Accepted" %}<span class="pub-tag pub-tag--plain">Forthcoming</span>{% endif %}
+  {% if pub.tier %}<span class="pub-tag">{{ pub.tier }}</span>{% endif %}
+  {% if pub.honourable_mention %}<span class="pub-tag pub-tag--award">Honorable Mention</span>{% endif %}
+  {% if pub.esi_highly_cited %}<span class="pub-tag pub-tag--award">ESI Highly Cited</span>{% endif %}
+  {% if pub.presentation_type %}<span class="pub-tag pub-tag--plain">{{ pub.presentation_type }}</span>{% endif %}
+  {% if pub.paperurl %}<a class="pub-link" href="{{ pub.paperurl }}">Paper</a>{% endif %}
+  {% if pub.doi %}<a class="pub-link" href="https://doi.org/{{ pub.doi }}">DOI</a>{% endif %}
+  {% if pub.pdf %}<a class="pub-link" href="{% if pub.pdf contains '://' %}{{ pub.pdf }}{% else %}{{ base_path }}/files/{{ pub.pdf }}{% endif %}">PDF</a>{% endif %}
+  {% if pub.code %}<a class="pub-link" href="{{ pub.code }}">Code</a>{% endif %}
+  {% if pub.slidesurl %}<a class="pub-link" href="{{ pub.slidesurl }}">Slides</a>{% endif %}
+  {% if pub.bibkey %}
+    {% assign lb = "{" %}{% assign rb = "}" %}
+    <details class="pub-bibtex">
+      <summary class="pub-link">BibTeX</summary>
+<pre>@{% if pub.category == "conferences" %}inproceedings{% else %}article{% endif %}{{ lb }}{{ pub.bibkey }},
+  title     = {{ lb }}{{ pub.title | escape }}{{ rb }},
+  author    = {{ lb }}{{ pub.authors | join: " and " | remove: "*" | remove: "#" | escape }}{{ rb }},
+  {% if pub.category == "conferences" %}booktitle{% else %}journal  {% endif %} = {{ lb }}{{ pub.venue | escape }}{{ rb }},
+  year      = {{ lb }}{{ pub_year }}{{ rb }}{% if pub.doi %},
+  doi       = {{ lb }}{{ pub.doi }}{{ rb }}{% endif %}{% if pub.paperurl %},
+  url       = {{ lb }}{{ pub.paperurl }}{{ rb }}{% endif %}{% if pub.status == "Accepted" %},
+  note      = {{ lb }}Accepted, forthcoming{{ rb }}{% endif %}
+{{ rb }}</pre>
+    </details>
+  {% endif %}
+</div>

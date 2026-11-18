@@ -1,0 +1,15 @@
+/* Styles for _pages/cv-json.md (moved from an inline <style> block). */
+.page--cv-json {
+  .archive {
+      width: 80%;
+      margin: 0 auto;
+      float: none;
+      padding-right: 0;
+    }
+  
+    @media (min-width: 80em) {
+      .archive {
+        width: 70%;
+      }
+    }
+}

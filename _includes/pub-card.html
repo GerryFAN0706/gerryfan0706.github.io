@@ -1,0 +1,25 @@
+{% comment %}
+  Card for one publication, looked up by permalink.
+  Usage: {% include pub-card.html url="/publication/2026-chi-verification-load" %}
+{% endcomment %}
+{% include base_path %}
+{% assign card = site.publications | where: "permalink", include.url | first %}
+{% if card %}
+{% assign card_year = card.date | date: '%Y' %}
+{% if card.publication_year %}{% assign card_year = card.publication_year %}{% endif %}
+{% assign card_venue = card.venue_short | default: card.venue | remove: card_year | strip %}
+<li class="pub-card">
+  <div class="pub-card__tile" aria-hidden="true">
+    {% if card.teaser %}
+      <img src="{% if card.teaser contains '://' %}{{ card.teaser }}{% else %}{{ base_path }}/images/{{ card.teaser }}{% endif %}" alt="">
+    {% else %}
+      <span class="pub-card__venue">{{ card_venue }}</span>
+      <span class="pub-card__year">{{ card_year }}</span>
+    {% endif %}
+  </div>
+  <div class="pub-card__body">
+    <a class="pub-card__title" href="{{ base_path }}{{ card.url }}">{{ card.title }}</a>
+    {% include pub-meta.html pub=card compact=true %}
+  </div>
+</li>
+{% endif %}

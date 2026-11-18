@@ -1,5 +1,5 @@
 ---
-title: "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities (CCF A)"
+title: "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
 collection: publications
 category: conferences
 permalink: /publication/2026-aaai-reply-gap
@@ -7,6 +7,14 @@ date: 2026-02-01
 rank: 1
 venue: 'AAAI Conference on Artificial Intelligence (AAAI 2026)'
 citation: 'Fan, G., Liu, D., & Pan, L. (2026). Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities. In <i>Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)</i>.'
+tier: 'CCF A'
+venue_short: 'AAAI 2026'
+authors: 
+  - 'Fan, G.*#'
+  - 'Liu, D.#'
+  - 'Pan, L.'
+paperurl: 'https://ojs.aaai.org/index.php/AAAI/article/view/41184'
+bibkey: 'fan2026mind'
 ---
 
 This paper unifies predictive modeling, causal inference, and offline policy evaluation to demonstrate how an AI system can identify Reddit users in distress at risk of being ignored and proactively route effective emotional support to them faster.
