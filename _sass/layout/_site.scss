@@ -9,6 +9,8 @@ $gf-serif: "Source Serif 4", "Source Serif Pro", Georgia, Cambria, "Times New Ro
   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", serif;
 $gf-wide: 1160px;   // overall page width (masthead, sidebar + content, footer)
 $gf-measure: 46rem; // maximum width of the reading column
+$gf-sidebar: 220px; // width of the pinned author sidebar
+$gf-sidebar-gap: 56px; // space between sidebar and content
 
 /* --------------------------------------------------------------------------
    Tokens
@@ -167,10 +169,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #main {
   margin-top: 2.6em;
-
-  @include breakpoint($x-large) {
-    max-width: $gf-wide;
-  }
 }
 
 .page,
@@ -181,6 +179,35 @@ h1, h2, h3, h4, h5, h6 {
 
   .page__inner-wrap {
     max-width: $gf-measure;
+  }
+}
+
+/* From 1024px the theme pins the sidebar (position: fixed). A fixed element's
+   percentage width is measured against the window, while the content column is
+   measured against the page frame, so on wide screens the two overlapped.
+   Give both explicit widths so the content always starts after the sidebar. */
+@media screen and (min-width: $sidebar-screen-min-width) {
+  #main,
+  .masthead__inner-wrap,
+  .page__footer footer {
+    max-width: $gf-wide;
+  }
+
+  .sidebar {
+    width: $gf-sidebar;
+    max-width: $gf-sidebar;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .page,
+  .archive {
+    float: right;
+    width: calc(100% - #{$gf-sidebar + $gf-sidebar-gap});
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
