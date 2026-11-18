@@ -7,32 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I have been a lecturer in the School of Computer Science and Technology at Taiyuan University of Science and Technology since June 2018. I received my Ph.D. in Computer Science from Universiti Malaya.
-
-I study **how people and teams can work with AI without losing the ability to verify its output, make their own decisions, or recover when it fails**. I combine empirical human–computer interaction (HCI) with machine learning methods that help measure and control risk under imperfect feedback.
-
-## Research
-
-- **How individuals verify and learn with AI.** I study the work of checking AI output, when that work becomes fatiguing, and what learners can still do when the AI is removed.
-- **How teams recover when AI breaks down.** I study how collaborators notice failures, redistribute work, and keep a shared task moving when AI is embedded in their workflow.
-- **How to evaluate and control AI risk.** I develop methods for learning from unevenly sampled feedback and measuring risk across groups and changing conditions.
-
-[Explore the research themes](/research/) · [中文简介](/zh/)
-
-## Selected papers
-
-- [When Help Hurts: Verification Load and Fatigue with AI Coding Assistants](/publication/2026-chi-verification-load) · CHI 2026, Honorable Mention
-- [When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration](/publication/2027-cscw-continuity-work) · CSCW 2027, forthcoming
-- [Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation](/publication/2026-icml-graph-preference-learning) · ICML 2026
-- [The Impact of AI-Assisted Pair Programming on Student Motivation and Performance](/publication/2025-ijse-ai-pair-programming) · International Journal of STEM Education
-
-[All publications](/publications/)
-
-## Funded research
-
-I am the **principal investigator** of a Shanxi Provincial Basic Research Program Youth Project on how people and AI should divide responsibilities and collaborate reliably on complex knowledge tasks.
-
-## Recent updates
+## News
 
 <style>
 .news-container {
@@ -135,6 +110,33 @@ I am the **principal investigator** of a Shanxi Provincial Basic Research Progra
     </div>
   </details>
 </div>
+
+## About Me
+
+I have been a lecturer in the School of Computer Science and Technology at Taiyuan University of Science and Technology since June 2018. I received my Ph.D. in Computer Science from Universiti Malaya.
+
+I study **how people and teams can work with AI without losing the ability to verify its output, make their own decisions, or recover when it fails**. I combine empirical human–computer interaction (HCI) with machine learning methods that help measure and control risk under imperfect feedback.
+
+## Research
+
+- **How individuals verify and learn with AI.** I study the work of checking AI output, when that work becomes fatiguing, and what learners can still do when the AI is removed.
+- **How teams recover when AI breaks down.** I study how collaborators notice failures, redistribute work, and keep a shared task moving when AI is embedded in their workflow.
+- **How to evaluate and control AI risk.** I develop methods for learning from unevenly sampled feedback and measuring risk across groups and changing conditions.
+
+[Explore the research themes](/research/) · [中文简介](/zh/)
+
+## Selected papers
+
+- [When Help Hurts: Verification Load and Fatigue with AI Coding Assistants](/publication/2026-chi-verification-load) · CHI 2026, Honorable Mention
+- [When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration](/publication/2027-cscw-continuity-work) · CSCW 2027, forthcoming
+- [Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation](/publication/2026-icml-graph-preference-learning) · ICML 2026
+- [The Impact of AI-Assisted Pair Programming on Student Motivation and Performance](/publication/2025-ijse-ai-pair-programming) · International Journal of STEM Education
+
+[All publications](/publications/)
+
+## Funded research
+
+I am the **principal investigator** of a Shanxi Provincial Basic Research Program Youth Project on how people and AI should divide responsibilities and collaborate reliably on complex knowledge tasks.
 
 ## Academic activities
 
