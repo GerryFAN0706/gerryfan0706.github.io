@@ -5,90 +5,30 @@ permalink: /research/
 author_profile: true
 ---
 
-My research develops trustworthy learning and decision-making methods for
-complex human–AI and networked systems. I study how AI can learn from biased,
-sparse, and dynamic human and environmental feedback while maintaining
-calibrated risk, human agency, and social trust.
+I study how people and teams learn, make decisions, and recover from failures when they work with AI. My work combines HCI experiments and qualitative studies with graph learning, large language models, and statistical methods for measuring and controlling risk.
 
-The four directions below share one methodological core: real-world AI systems
-learn from imperfect human and network feedback, and the decisions they support
-carry risks that must be measured, calibrated, and controlled.
+## 1. How individuals verify and learn with AI
 
----
+Getting an answer from AI can be fast. Figuring out whether it is right, and whether you could solve the problem without it, is a separate task. In coding and programming education, I study when checking AI output becomes a source of fatigue, how learners decide what to delegate, and what skills they retain after the assistance is removed.
 
-## Trustworthy Learning from Human & Network Feedback
+**Selected work:** [When Help Hurts](/publication/2026-chi-verification-load) (CHI 2026, Honorable Mention) · [Tool, Tutor, or Crutch?](/publication/2026-ijstem-tool-tutor-crutch) · [AI-Assisted Pair Programming](/publication/2025-ijse-ai-pair-programming) (International Journal of STEM Education)
 
-Clicks, ratings, and peer responses are not a clean signal of what people
-actually need. Active users are over-represented, silent users are invisible,
-feedback is strategic, and behavior drifts over time. I develop methods that
-debias network-sampled feedback and attach distribution-free guarantees to the
-resulting predictions and decisions.
+## 2. How teams recover when AI breaks down
 
-*Questions I ask:*
-- How can we debias feedback observed through a social network, where active users are over-represented and silent users are invisible?
-- Can we give distribution-free guarantees on top-K miss risk, fairness claims, and calibration — per group, not just on average?
-- When does a prediction justify an intervention, and how do we evaluate intervention policies offline?
+When a shared AI tool fails, collaborators have to notice the failure, decide who will fix it, and keep the task moving. I study this often-invisible work of maintaining continuity, as well as how teams can assess the role of AI in gathering and interpreting input. In software engineering, one line of work compares AI-generated personas with human baselines for eliciting requirements.
 
-*Representative work:* [Graph-Preference Learning](/publication/2026-icml-graph-preference-learning) (ICML 2026) ·
-[Conformal@K](/publication/2026-tois-conformal-k) (ACM TOIS) ·
-[Audit-of-Audits](/publication/2026-www-audit-of-audits) (WWW 2026)
+**Selected work:** [When AI Breaks Down](/publication/2027-cscw-continuity-work) (CSCW 2027, forthcoming) · [Multi-LLM Persona Generation for Virtual Focus Groups](/publication/2026-fse-multi-llm-persona) (FSE 2026)
 
----
+## 3. How to evaluate and control AI risk
 
-## Cognitive Reliability in Human–AI Collaboration
+Feedback collected through networks can overrepresent some communities and miss others. I develop methods to correct for uneven sampling and to quantify which users or groups face the most risk. Graph-Preference Learning addresses bias in network-sampled human feedback; Conformal@K provides distribution-free guarantees on the chance that a top-K recommendation misses a relevant item.
 
-AI assistance does not only change task performance — it changes how people
-verify, understand, and ultimately learn. I study the mechanisms that decide
-whether help builds lasting capability or quietly replaces it, using AI-assisted
-programming as a primary setting.
+**Selected work:** [Graph-Preference Learning](/publication/2026-icml-graph-preference-learning) (ICML 2026) · [Conformal@K](/publication/2026-tois-conformal-k) (ACM TOIS) · [Audit-of-Audits](/publication/2026-www-audit-of-audits) (The Web Conference 2026)
 
-*Questions I ask:*
-- When does AI help turn into verification burden, and how do we measure that burden?
-- What remains of a skill after the AI is taken away?
-- How should assistance adapt to a user's ability and to the risk of the task?
+**Application: transportation.** Road networks provide a test bed for learning from incomplete or changing observations. [DynaKey-GNN](/publication/2025-eaai-dynakey-gnn) develops graph-based spatiotemporal methods for traffic forecasting. I also contribute to a Shanxi research project on traffic prediction.
 
-*Representative work:* [When Help Hurts: Verification Load](/publication/2026-chi-verification-load) (CHI 2026, Honourable Mention 🏆) ·
-[Tool, Tutor, or Crutch?](/publication/2026-ijstem-tool-tutor-crutch) (IJ STEM Ed) ·
-[AI-Assisted Pair Programming](/publication/2025-ijse-ai-pair-programming) (IJ STEM Ed, ESI Highly Cited)
+## Funded research
 
----
+I lead a Shanxi Provincial Basic Research Program Youth Project on how people and AI allocate roles and collaborate reliably on complex knowledge tasks.
 
-## AI-Mediated Communication & Social Trust
-
-When AI participates in human expression, receivers must judge who created a
-message, whether it is authentic, whether it is appropriate, and whether its
-AI involvement should have been disclosed. I study how these judgments form and
-how they shape trust.
-
-*Questions I ask:*
-- How does the degree of AI involvement change who counts as "the author"?
-- What norms govern emotional appropriateness across roles, institutions, and intensity?
-- What kinds of disclosure are transparent without stigmatizing the people who used AI?
-
-*Representative work:* [Is It Still You?](/publication/2026-chi-authorship-authenticity) (CHI 2026) ·
-[Feeling Rules in Language Models](/publication/2026-acl-feeling-rules) (ACL 2026) ·
-[Consent Boundaries by Play](/publication/2026-ecscw-consent-boundaries) (ECSCW 2026)
-
----
-
-## Graph Spatiotemporal Intelligence for Transportation
-
-Transportation networks are dynamic graphs: sensors fail, topology changes with
-construction and incidents, and traffic patterns drift with holidays, weather,
-and events. I build graph learning methods for reliable state estimation and
-risk-aware prediction under these conditions.
-
-*Questions I ask:*
-- How can we recover traffic state and graph structure when observations are missing and topology changes?
-- Can predictions carry calibrated intervals and miss-risk guarantees under distribution drift?
-- How do these methods connect to the risk-control and calibration tools from my other work?
-
-*Representative work:* [DynaKey-GNN](/publication/2025-eaai-dynakey-gnn) (EAAI) ·
-[GNN for Traffic Forecasting: A Survey](/publication/2025-acme-gnn-survey)
-
----
-
-I combine empirical HCI methods — experiments, surveys, and qualitative studies —
-with machine learning techniques including graph neural networks, large language
-models, and conformal prediction. For a full list of papers, see
-[Publications](/publications/).
+[Full publication list](/publications/)

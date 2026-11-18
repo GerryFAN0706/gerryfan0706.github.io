@@ -1,13 +1,38 @@
 ---
 permalink: /
-title: "Home"
+title: "Guangrui Fan (樊光瑞)"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-## 📰 News
+I have been a lecturer in the School of Computer Science and Technology at Taiyuan University of Science and Technology since June 2018. I received my Ph.D. in Computer Science from Universiti Malaya.
+
+I study **how people and teams can work with AI without losing the ability to verify its output, make their own decisions, or recover when it fails**. I combine empirical human–computer interaction (HCI) with machine learning methods that help measure and control risk under imperfect feedback.
+
+## Research
+
+- **How individuals verify and learn with AI.** I study the work of checking AI output, when that work becomes fatiguing, and what learners can still do when the AI is removed.
+- **How teams recover when AI breaks down.** I study how collaborators notice failures, redistribute work, and keep a shared task moving when AI is embedded in their workflow.
+- **How to evaluate and control AI risk.** I develop methods for learning from unevenly sampled feedback and measuring risk across groups and changing conditions.
+
+[Explore the research themes](/research/) · [中文简介](/zh/)
+
+## Selected papers
+
+- [When Help Hurts: Verification Load and Fatigue with AI Coding Assistants](/publication/2026-chi-verification-load) · CHI 2026, Honorable Mention
+- [When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration](/publication/2027-cscw-continuity-work) · CSCW 2027, forthcoming
+- [Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation](/publication/2026-icml-graph-preference-learning) · ICML 2026
+- [The Impact of AI-Assisted Pair Programming on Student Motivation and Performance](/publication/2025-ijse-ai-pair-programming) · International Journal of STEM Education
+
+[All publications](/publications/)
+
+## Funded research
+
+I am the **principal investigator** of a Shanxi Provincial Basic Research Program Youth Project on how people and AI should divide responsibilities and collaborate reliably on complex knowledge tasks.
+
+## Recent updates
 
 <style>
 .news-container {
@@ -16,6 +41,7 @@ redirect_from:
   border-radius: 12px;
   border-left: 4px solid #0ea5e9;
   margin-bottom: 20px;
+  color: #0c4a6e;
 }
 
 .news-item {
@@ -34,219 +60,88 @@ redirect_from:
   border-radius: 6px;
 }
 
-.news-container [hidden] {
-  display: none;
+.news-archive {
+  margin-top: 12px;
 }
 
-.news-toggle {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #0ea5e9, #0284c7);
-  color: white;
-  border: none;
-  border-radius: 8px;
+.news-archive summary {
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.news-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.news-toggle:active {
-  transform: translateY(0);
-}
-
-.news-count {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.85em;
-  font-weight: 600;
-  margin-left: 10px;
 }
 </style>
 
 <div class="news-container">
-  <!-- Keep news in reverse chronological order; the visible limit is automatic. -->
-  <div id="news-list">
   <div class="news-item">
-    <strong>[2026-09 update]</strong> 🎉 Paper accepted for <strong>UbiComp/ISWC 2027</strong> (CCF A): <a href="/publication/2027-ubicomp-wearable-wellness-scores">When the Score Speaks First: Negotiating the Authority of Wearable Wellness Scores in Everyday Life</a> — Dandan Liu (first author); Guangrui Fan (corresponding author). Forthcoming.
+    <strong>[2026-10]</strong> <a href="/publication/2026-emnlp-fairsynth">FairSynth</a> was published in <strong>Findings of EMNLP 2026</strong>.
   </div>
-
   <div class="news-item">
-    <strong>[2026-09]</strong> 🎉 Paper accepted for <strong>CSCW 2027</strong> (CCF A): <a href="/publication/2027-cscw-continuity-work">When AI Breaks Down: Continuity Work, Dependency, and Repair in AI-Mediated Collaboration</a> — Guangrui Fan (corresponding author). Accepted 14 September 2026; forthcoming.
+    <strong>[2026-09]</strong> <a href="/publication/2027-cscw-continuity-work">When AI Breaks Down</a> was accepted for <strong>CSCW 2027</strong> and is forthcoming.
   </div>
-
   <div class="news-item">
-    <strong>[2026-08]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Social Computing (TSC)</strong>: "From Solo Post to Shared Space: How a Public LLM Agent Reshapes Human-to-Human Conversation Structure on a Social Platform" — Dandan Liu (first author); Guangrui Fan (corresponding author)
+    <strong>[2026-09]</strong> <a href="/publication/2027-ubicomp-wearable-wellness-scores">When the Score Speaks First</a> was accepted for <strong>UbiComp/ISWC 2027</strong> and is forthcoming.
   </div>
-
-  <div class="news-item">
-    <strong>[2026-08]</strong> Paper accepted by <strong>Findings of EMNLP 2026</strong>: "FairSynth: Instrument-Relative Evaluation and Calibration of LLM Survey Simulations for Measurement Fairness"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-07]</strong> 🎉 Journal article accepted by <strong>Social Media + Society</strong> (SSCI 中科院Q1 Top): "Fairness Labels in Feeds: Process Disclosures, Provenance, and User Choice Among Short-Video Creators in Mainland China"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-06]</strong> 🎉 Journal article accepted by <strong>ACM Transactions on Information Systems (TOIS)</strong> (CCF A): "Conformal@K: Distribution-Free Top-K Miss-Risk Control for Recommendation with Overlapping-Group and Two-Stage Guarantees"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-06]</strong> 🎉 Journal article published (Early Access) in <strong>IEEE Transactions on Computational Social Systems</strong>: "Textless, Tiny, and Private: Hashed n-Grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-05]</strong> Two papers accepted by <strong>ICML 2026</strong> (CCF A): first-author paper "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation" and coauthored paper "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-04]</strong> Paper accepted by <strong>ECSCW 2026</strong> (CCF B): "Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-04]</strong> 🎉 Paper accepted by <strong>ACL 2026</strong> (CCF A, Main Conference): "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-03]</strong> 🏆 Paper "<strong>When Help Hurts: Verification Load and Fatigue with AI Coding Assistants</strong>" received <strong>Honourable Mention Award</strong> at <strong>ACM CHI 2026</strong>!
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-01]</strong> 🎉🎉🎉 <strong>3 papers accepted by CHI 2026</strong> (CCF A): "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication", "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants", and "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>FSE 2026</strong> (CCF A): "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
-  </div>
-
-  <div class="news-item">
-    <strong>[2026]</strong> 🎉 Journal article accepted by <strong>International Journal of STEM Education</strong> (SCI 中科院Q1 Top): "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education"
-  </div>
-
-  <div class="news-item">
-    <strong>[2025]</strong> 🔥 Paper "<strong>The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance</strong>" in <em>International Journal of STEM Education</em> recognized as:
-    <br />- <strong>ESI Highly Cited Paper (ESI 高被引论文)</strong>
-    <br />- <strong>Most cited articles (past two years)</strong>
-    <br />- <strong>Most popular articles (past 9 months)</strong> (Rank 1)
-  </div>
-
-  <div class="news-item">
-    <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
-  </div>
-
-  <div class="news-item">
-    <strong>[2025]</strong> 🏆 Received <strong>First-Class Paper Award</strong> and <strong>Best Presentation Award</strong> at CPEC2025 (第九届中国计算机实践教育学术会议)
-  </div>
-
-  <div class="news-item">
-    <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI (CCF A) 2025 Satellite Event</strong> in Guangzhou, China
-  </div>
-  </div>
-
-  <button type="button" class="news-toggle" aria-controls="news-list" aria-expanded="false" hidden>
-    <span class="news-toggle-text">Show more · 更多</span>
-    <span class="news-count"></span>
-  </button>
+  <details class="news-archive">
+    <summary>Older updates</summary>
+    <div class="news-item">
+      <strong>[2026-08]</strong> <a href="/publication/2026-tsc-shared-space">From Solo Post to Shared Space</a> was published online in <strong>ACM Transactions on Social Computing</strong>.
+    </div>
+    <div class="news-item">
+      <strong>[2026-08]</strong> <a href="/publication/2026-sms-fairness-labels">Fairness Labels in Feeds</a> was published in <strong>Social Media + Society</strong>.
+    </div>
+    <div class="news-item">
+      <strong>[2026-08]</strong> <a href="/publication/2026-tois-conformal-k">Conformal@K</a> appeared in <strong>ACM Transactions on Information Systems</strong>.
+    </div>
+    <div class="news-item">
+      <strong>[2026-06]</strong> 🎉 Journal article published (Early Access) in <strong>IEEE Transactions on Computational Social Systems</strong>: "Textless, Tiny, and Private: Hashed n-Grams with LLM-Teacher Distillation and Local Differential Privacy for Mental-Health Screening on Social Media"
+    </div>
+    <div class="news-item">
+      <strong>[2026-05]</strong> Two papers accepted by <strong>ICML 2026</strong> (CCF A): first-author paper "Graph-Preference Learning: Debiasing Network-Sampled Human Feedback for Target Welfare Estimation" and coauthored paper "Incomplete Multi-View Clustering via Neighborhood-Conditioned Diffusion"
+    </div>
+    <div class="news-item">
+      <strong>[2026-04]</strong> Paper accepted by <strong>ECSCW 2026</strong> (CCF B): "Consent Boundaries by Play: A CI-Grounded Micro-Game for Eliciting Stable Preferences and Diagnosing Opt-Out Friction in Web Consent"
+    </div>
+    <div class="news-item">
+      <strong>[2026-04]</strong> 🎉 Paper accepted by <strong>ACL 2026</strong> (CCF A, Main Conference): "Feeling Rules in Language Models: Mapping Norms of Emotional Appropriateness Across Roles, Institutions, and Intensity"
+    </div>
+    <div class="news-item">
+      <strong>[2026-03]</strong> 🏆 Paper "<strong>When Help Hurts: Verification Load and Fatigue with AI Coding Assistants</strong>" received <strong>Honourable Mention Award</strong> at <strong>ACM CHI 2026</strong>!
+    </div>
+    <div class="news-item">
+      <strong>[2026-01]</strong> 🎉🎉🎉 <strong>3 papers accepted by CHI 2026</strong> (CCF A): "Is It Still You? Attributing Authorship and Authenticity in AI-Assisted Romantic Communication", "When Help Hurts: Verification Load and Fatigue with AI Coding Assistants", and "Co-Adaptive Eco-Nudging: A Privacy-Preserving Contextual Bandit with User-Taught Preferences"
+    </div>
+    <div class="news-item">
+      <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>FSE 2026</strong> (CCF A): "Multi-LLM Persona Generation for Virtual Focus Groups in Software Engineering"
+    </div>
+    <div class="news-item">
+      <strong>[2026-01]</strong> 🎉 Paper accepted by <strong>The Web Conference (WWW) 2026</strong> (CCF A): "Audit-of-Audits for the Web: Bayesian Meta-Evaluation that Yields Interval-Valued, Threshold-Aligned Fairness Claims"
+    </div>
+    <div class="news-item">
+      <strong>[2026]</strong> 🎉 Journal article accepted by <strong>International Journal of STEM Education</strong> (SCI 中科院Q1 Top): "Tool, Tutor, or Crutch?: A Grounded Theory of Cognitive Scaffolding and Offloading in AI-Assisted Programming Education"
+    </div>
+    <div class="news-item">
+      <strong>[2025]</strong> 🔥 Paper "<strong>The impact of AI-assisted pair programming on student motivation, programming anxiety, collaborative learning, and programming performance</strong>" in <em>International Journal of STEM Education</em> recognized as:
+      <br />- <strong>ESI Highly Cited Paper (ESI 高被引论文)</strong>
+      <br />- <strong>Most cited articles (past two years)</strong>
+      <br />- <strong>Most popular articles (past 9 months)</strong> (Rank 1)
+    </div>
+    <div class="news-item">
+      <strong>[2025-12]</strong> 🎉 Paper accepted by <strong>AAAI 2026</strong> (CCF A): "Mind the Gap: Predicting, Explaining and Reducing Time-to-First-Comment (Reply Gap) in Online Mental-Health Communities"
+    </div>
+    <div class="news-item">
+      <strong>[2025]</strong> 🏆 Received <strong>First-Class Paper Award</strong> and <strong>Best Presentation Award</strong> at CPEC2025 (第九届中国计算机实践教育学术会议)
+    </div>
+    <div class="news-item">
+      <strong>[2025]</strong> 🎤 Oral presentation at <strong>IJCAI (CCF A) 2025 Satellite Event</strong> in Guangzhou, China
+    </div>
+  </details>
 </div>
 
-<script>
-(() => {
-  const container = document.querySelector('.news-container');
-  const olderNews = Array.from(container.querySelectorAll('.news-item')).slice(10);
-  const button = container.querySelector('.news-toggle');
-  const label = button.querySelector('.news-toggle-text');
-  const count = button.querySelector('.news-count');
-  let expanded = false;
+## Academic activities
 
-  function updateNews() {
-    olderNews.forEach(item => { item.hidden = !expanded; });
-    button.hidden = olderNews.length === 0;
-    button.setAttribute('aria-expanded', String(expanded));
-    label.textContent = expanded ? 'Show less · 折叠' : 'Show more · 更多';
-    count.textContent = '+' + olderNews.length;
-    count.hidden = expanded;
-  }
+[Talks](/talks/) · [Workshops](/workshop/) · [Teaching and mentoring](/teaching/)
 
-  button.addEventListener('click', () => {
-    expanded = !expanded;
-    updateNews();
-  });
-  updateNews();
-})();
-</script>
-
----
-
-## About Me
-
-I am a Lecturer at the School of Computer Science and Technology, Taiyuan University of Science and Technology. I received my Ph.D. in Computer Science from Universiti Malaya.
-
-My research develops **trustworthy learning and decision-making methods for complex human–AI and networked systems**. I study how AI can learn from biased, sparse, and dynamic human and environmental feedback while maintaining calibrated risk, human agency, and social trust.
-
-## Research
-
-My work spans four connected directions. What ties them together is a simple concern: real-world AI systems learn from imperfect human and network feedback, and the decisions they support carry risks that must be measured and controlled. I combine **empirical HCI methods** (experiments, surveys, qualitative studies) with **machine learning** (graph neural networks, LLMs, conformal prediction). See the [Research](/research/) page for details.
-
-**Trustworthy Learning from Human & Network Feedback.** Clicks, ratings, and peer responses are biased, incomplete, and constantly shifting. I develop methods that debias network-sampled feedback and provide distribution-free guarantees on risk, fairness, and calibration.
-<br />*Representative:* [Graph-Preference Learning](/publication/2026-icml-graph-preference-learning) (ICML 2026) · [Conformal@K](/publication/2026-tois-conformal-k) (ACM TOIS) · [Audit-of-Audits](/publication/2026-www-audit-of-audits) (WWW 2026)
-
-**Cognitive Reliability in Human–AI Collaboration.** AI assistance changes how people verify, understand, and learn. I study when help genuinely builds capability and when it quietly erodes it—verification load, cognitive offloading, and skill retention after the AI is gone.
-<br />*Representative:* [When Help Hurts](/publication/2026-chi-verification-load) (CHI 2026, Honourable Mention 🏆) · [Tool, Tutor, or Crutch?](/publication/2026-ijstem-tool-tutor-crutch) (IJ STEM Ed) · [AI-Assisted Pair Programming](/publication/2025-ijse-ai-pair-programming) (IJ STEM Ed, ESI Highly Cited)
-
-**AI-Mediated Communication & Social Trust.** When AI participates in human expression, people must judge who authored a message, whether it is authentic, and whether it is appropriate. I study authorship attribution, emotional norms, and disclosure in AI-mediated communication.
-<br />*Representative:* [Is It Still You?](/publication/2026-chi-authorship-authenticity) (CHI 2026) · [Feeling Rules in Language Models](/publication/2026-acl-feeling-rules) (ACL 2026) · [Consent Boundaries by Play](/publication/2026-ecscw-consent-boundaries) (ECSCW 2026)
-
-**Graph Spatiotemporal Intelligence for Transportation.** Transportation networks are dynamic graphs with failing sensors, changing topology, and distribution drift. I build graph learning methods for reliable traffic state estimation and risk-aware prediction.
-<br />*Representative:* [DynaKey-GNN](/publication/2025-eaai-dynakey-gnn) (EAAI) · [GNN for Traffic Forecasting: A Survey](/publication/2025-acme-gnn-survey)
-
-
-## Education
-
-* **Ph.D. in Computer Science**, Universiti Malaya, Malaysia (2026)
-* **M.S. in Software Engineering**, Shanghai Jiao Tong University, China (2018)
-* **B.S. in Software Engineering**, Huazhong University of Science and Technology, China (2014)
-
-## Current Position
-
-**Lecturer**, School of Computer Science and Technology  
-Taiyuan University of Science and Technology, Taiyuan, China (2018 - Present)
-
-## Professional Service
-
-### Program Committee Member
-
-* **The Web Conference (WWW) 2026** - Special Track: Web4Good (CCF A)
-
-### Conference & Journal Reviewer
-
-* **CHI 2026** - Conference on Human Factors in Computing Systems (CCF A)
-* **Engineering Applications of Artificial Intelligence** (EAAI, SCI 中科院Q1 Top)
-* **International Journal of STEM Education** (SCI 中科院Q1 Top)
-* **Information, Communication & Society** (SSCI 中科院Q1 Top)
-
-<!-- 
-### Conference Organization
-* TBD
-
-### Program Committee & Chair
-* TBD
--->
+I served on the program committee for the Web4Good special track at The Web Conference 2026. My reviewing includes CHI 2026, *Engineering Applications of Artificial Intelligence*, *International Journal of STEM Education*, and *Information, Communication & Society*.
 
 ## Contact
 
-📧 Email: fgr@tyust.edu.cn
-
-Feel free to reach out for research collaboration or academic inquiries.
+For research collaboration and academic inquiries: [fgr@tyust.edu.cn](mailto:fgr@tyust.edu.cn).
