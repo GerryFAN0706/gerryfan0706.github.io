@@ -1,5 +1,5 @@
 ---
-title: "计算机图形学 | Computer Graphics"
+title: "计算机图形学 · Computer Graphics"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2018-computer-graphics

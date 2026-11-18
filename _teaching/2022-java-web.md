@@ -1,5 +1,5 @@
 ---
-title: "JAVA Web 开发 | JAVA Web Development"
+title: "JAVA Web 开发 · JAVA Web Development"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2022-java-web

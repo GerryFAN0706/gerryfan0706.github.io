@@ -1,5 +1,5 @@
 ---
-title: "物联网RFID原理与技术 | IoT RFID Principles and Technology"
+title: "物联网RFID原理与技术 · IoT RFID Principles and Technology"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2019-iot-rfid

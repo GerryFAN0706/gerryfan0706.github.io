@@ -1,5 +1,5 @@
 ---
-title: "Oracle 数据库管理技术 | Oracle Database Management"
+title: "Oracle 数据库管理技术 · Oracle Database Management"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2020-oracle-database

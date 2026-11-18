@@ -4,6 +4,7 @@ title: "樊光瑞"
 permalink: /zh/
 lang: zh-CN
 author_profile: false
+body_class: page--home page--zh
 ---
 
 [English homepage](/)
@@ -12,16 +13,19 @@ author_profile: false
 
 我于 2018 年 6 月起任太原科技大学计算机科学与技术学院讲师，获马来亚大学计算机科学博士学位。我的研究关注一个问题：**在使用人工智能时，个人和团队如何保有独立判断、验证结果和应对故障的能力？** 我结合人机交互实验、质性研究与机器学习方法，研究真实使用场景中的协作与风险。
 
+以第一或通讯作者发表及录用论文 23 篇，其中 <strong class="hl">CCF A 类论文 12 篇</strong>，涵盖 CHI（3 篇）、CSCW、UbiComp、ICML、ACL、AAAI、IJCAI、WWW、FSE 与 ACM TOIS。
+
 ## 成果概览
 
 <ul class="glance" aria-label="成果概览">
+  <li class="glance__feature"><span class="glance__value">12 篇</span><span class="glance__label">CCF A 类（会议 11 篇、ACM TOIS 1 篇）</span></li>
   <li><span class="glance__value">23 篇</span><span class="glance__label">第一/通讯作者论文</span></li>
-  <li><span class="glance__value">12 篇</span><span class="glance__label">CCF A 类（会议 11 篇、ACM TOIS 1 篇）</span></li>
   <li><span class="glance__value">5 篇</span><span class="glance__label">中科院 1 区 Top 期刊</span></li>
   <li><span class="glance__value">2 篇</span><span class="glance__label">ESI 高被引论文</span></li>
   <li><span class="glance__value">417 次</span><span class="glance__label">Google Scholar 总被引</span></li>
+  <li><span class="glance__value">CHI 2026</span><span class="glance__label">最佳论文提名（Honorable Mention）</span></li>
 </ul>
-<p class="glance-note">另获 CHI 2026 最佳论文提名（Honorable Mention）；主持省部级青年项目 1 项。被引次数截至 2026 年 11 月。</p>
+<p class="glance-note">另主持省部级青年项目 1 项。被引次数截至 2026 年 11 月。</p>
 
 ## 研究方向
 

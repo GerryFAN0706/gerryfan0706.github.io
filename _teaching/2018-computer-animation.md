@@ -1,5 +1,5 @@
 ---
-title: "计算机动画原理 | Computer Animation Principles"
+title: "计算机动画原理 · Computer Animation Principles"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/2018-computer-animation

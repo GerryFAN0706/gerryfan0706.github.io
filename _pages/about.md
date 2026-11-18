@@ -2,6 +2,7 @@
 permalink: /
 title: "Guangrui Fan (樊光瑞)"
 author_profile: true
+body_class: page--home
 redirect_from:
   - /about/
   - /about.html
@@ -13,16 +14,19 @@ redirect_from:
 I have been a lecturer in the School of Computer Science and Technology at Taiyuan University of Science and Technology since June 2018. I received my Ph.D. in Computer Science from Universiti Malaya.
 
 I study **how people and teams can work with AI without losing the ability to verify its output, make their own decisions, or recover when it fails**. I combine empirical human–computer interaction (HCI) with machine learning methods that help measure and control risk under imperfect feedback.
+
+I am first or corresponding author on 23 papers, including <strong class="hl">12 CCF A papers</strong> at CHI (×3), CSCW, UbiComp, ICML, ACL, AAAI, IJCAI, WWW, FSE, and ACM TOIS.
 </div>
 
 <ul class="glance" aria-label="Research at a glance">
+  <li class="glance__feature"><span class="glance__value">12</span><span class="glance__label">CCF A papers as first or corresponding author</span></li>
   <li><span class="glance__value">23</span><span class="glance__label">papers as first or corresponding author</span></li>
   <li><span class="glance__value">CHI 2026</span><span class="glance__label">Honorable Mention Award</span></li>
   <li><span class="glance__value">2</span><span class="glance__label">ESI Highly Cited Papers</span></li>
   <li><span class="glance__value">417</span><span class="glance__label">Google Scholar citations</span></li>
   <li><span class="glance__value">PI</span><span class="glance__label">Shanxi Provincial Youth Project</span></li>
 </ul>
-<p class="glance-note">Venues include CHI (×3), CSCW, UbiComp, ICML, ACL, AAAI, IJCAI, WWW, FSE, and ACM TOIS. Citations as of November 2026.</p>
+<p class="glance-note">Citations as of November 2026.</p>
 
 ## News
 

@@ -16,7 +16,7 @@
 {% endunless %}
 <div class="pub-row">
   {% if include.compact and pub.status == "Accepted" %}<span class="pub-tag pub-tag--plain">Forthcoming</span>{% endif %}
-  {% if pub.tier %}<span class="pub-tag">{{ pub.tier }}</span>{% endif %}
+  {% if pub.tier %}<span class="pub-tag{% if pub.tier == 'CCF A' or pub.tier == 'CAS Zone 1 Top' %} pub-tag--top{% endif %}">{{ pub.tier }}</span>{% endif %}
   {% if pub.honourable_mention %}<span class="pub-tag pub-tag--award">Honorable Mention</span>{% endif %}
   {% if pub.esi_highly_cited %}<span class="pub-tag pub-tag--award">ESI Highly Cited</span>{% endif %}
   {% if pub.presentation_type %}<span class="pub-tag pub-tag--plain">{{ pub.presentation_type }}</span>{% endif %}

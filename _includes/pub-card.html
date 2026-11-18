@@ -13,7 +13,7 @@
     {% if card.teaser %}
       <img src="{% if card.teaser contains '://' %}{{ card.teaser }}{% else %}{{ base_path }}/images/{{ card.teaser }}{% endif %}" alt="">
     {% else %}
-      <span class="pub-card__venue">{{ card_venue }}</span>
+      <span class="pub-card__venue">{{ card_venue | replace: "/", "/<wbr>" }}</span>
       <span class="pub-card__year">{{ card_year }}</span>
     {% endif %}
   </div>
